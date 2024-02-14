@@ -1,0 +1,190 @@
+:root{
+    --Fuente-primaria: 'Barlow', sans-serif;
+    --Fuente-secundaria: 'Caudex', serif;
+    --color-base: #FFF3E3;
+    --azul-talavera: #282667;
+    --rosa-mexicano: #E1456C;
+    --negro: #333333;
+    --blanco: #FFFFFF;
+    --gris: #F4F5F7;
+    --bordes: #E1456C;
+    --bold: 700;
+    --medium: 600;
+    --regular: 400;
+
+}
+
+/*Header banner*/
+#Banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 293px;
+    width: 100%;
+    padding: 0 100px;
+    margin: 100px 0 0 0;
+    background-image: url("../src/img/bannerFondo.png");
+    background-size: 100% 100%;
+}
+
+#Banner h1{
+    font-family: var(--Fuente-primaria);
+    font-size: 70px;
+    font-weight: var(--bold);
+    color: var(--blanco);
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-shadow: 3px 3px 2px var(--bordes);
+}
+
+#Banner .breadcrumb{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#Banner .breadcrumb nav {
+    --bs-breadcrumb-divider: '>';
+    --breadcrumb-divider-color: var(--blanco);
+    --bs-breadcrumb-divider-color: #ffffff;
+    color: var(--blanco);
+}
+
+#Banner .breadcrumb nav ol li {
+    color: var(--blanco);
+    font-family: var(--Fuente-primaria);
+    font-size: 24px;
+    font-weight: var(--bold);
+    text-shadow: 1px 1px 2px var(--bordes);
+    --bs-breadcrumb-divider-color: var(--blanco);
+}
+
+#Banner .breadcrumb nav ol li a {
+    color: var(--blanco);
+    font-family: var(--Fuente-primaria);
+    font-size: 24px;
+    font-weight: var(--bold);
+    text-decoration: none;
+    text-shadow: 2px 1px 2px var(--bordes);
+}
+
+#Banner .breadcrumb nav ol li:hover{
+    pointer-events: auto;
+}
+
+/*Header banner*/
+/*Garantias*/
+.garantias {
+    height: 270px;
+    width: 100%;
+    background-color: var(--color-base);
+    padding: 0;
+    margin: 0;
+}
+.garantias .garantiasContenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.garantias .garantiasContenedor .garantiasItem {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0
+}
+
+.garantias .garantiasContenedor .garantiasItem .texto {
+    padding-left: 5px;
+}
+
+.garantias .garantiasContenedor .garantiasItem h3{
+    font-family: var(--Fuente-primaria);
+    font-size: 24px;
+    font-weight: var(--bold);
+    color: var(--azul-talavera);
+    margin: 0;
+}
+
+.garantias .garantiasContenedor .garantiasItem span {
+    font-family: var(--Fuente-secundaria);
+    font-size: 18px;
+    font-weight: var(--regular);
+    color: var(--azul-talavera);
+}
+/*Garantias*/
+
+@media (max-width: 575.98px){
+    /*Banner*/
+    #Banner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        padding: 0 50px;
+        margin: 100px 0 0 0;
+        background-image: url("../images/bannerFondo.png");
+    }
+
+    #Banner h1{
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-shadow: 3px 3px 2px var(--bordes);
+        line-height: 40px;
+    }
+
+    #Banner .breadcrumb{
+        line-height: 12px;
+        padding: 0;
+        margin: 0;
+    }
+
+    #Banner .breadcrumb nav ol li {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0;
+    }
+    
+    #Banner .breadcrumb nav ol li a {
+        font-size: 12px;
+        font-weight: var(--bold);
+        text-decoration: none;
+        text-shadow: 2px 1px 2px var(--bordes);
+    }
+    /*Baner*/
+
+    /*Garantias*/
+    .garantias {
+        height: 600px;
+        width: 100%;
+    }
+    .garantias .garantiasContenedor{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
+        padding: 0 50px;
+    }
+
+    .garantias .garantiasContenedor .garantiasItem {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    /*Garantias*/
+}
