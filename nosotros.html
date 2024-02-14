@@ -11,6 +11,41 @@
     <link rel="stylesheet" href="./css/nosotros.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Nosotros</title>
+    <style>
+
+        .persona {
+            margin: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .persona img {
+            width: 150px; /* Tamaño de la imagen */
+            height: 150px;
+            border-radius: 50%; /* Forma de círculo */
+        }
+
+        .persona p {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        /* Estilos para modal */
+        .modal-dialog {
+            max-width: 300px; /* Ancho máximo del modal */
+        }
+
+        .modal-content {
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .modal-body img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
 </head>
 <body>
     <header>
@@ -64,28 +99,159 @@
             <hr class="linea">
         </div>
     </section>
-   <section class="conocenos contenedor margenes">
-
-    <div class="contenedorEquipo">
-        <div class="persona">
-            <div class="descripcion">
+        <section class="conocenos contenedor margenes">
+            <h2>Conócenos</h2>
+                <p>
+                    ¡Saludos! Somos el equipo detrás del desarrollo de este proyecto, un placer conocerte.
+                </p>
+                <div class="contenedorEquipo row">
+                    <div class="persona col-md-2" data-toggle="modal" data-target="#coreyModal">
+                        <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey">
+                        <p>Corey</p>
+                    </div>
+                    <div class="persona col-md-2" data-toggle="modal" data-target="#OllincatlModal">
+                        <img src="src/img/Photoroom-20240213_140538_2.png" alt="Ollincatl">
+                        <p>Ollincatl</p>
+                    </div>
+                    <div class="persona col-md-2" data-toggle="modal" data-target="#EdgarModal">
+                        <img src="src/img/Photoroom-20240213_140538_3.png" alt="Edgar">
+                        <p>Edgar</p>
+                    </div>
+                    <div class="persona col-md-2" data-toggle="modal" data-target="#JetsaelModal">
+                        <img src="src/img/Photoroom-20240213_140538_5.png" alt="Jetsael">
+                        <p>Jetsael</p>
+                    </div>
+                    <div class="persona col-md-3" data-toggle="modal" data-target="#AbrilModal">
+                        <img src="src/img/Photoroom-20240213_140538_6-transformed.png" alt="Abril">
+                        <p>Abril</p>
+                    </div>
+                    <div class="persona col-md-3" data-toggle="modal" data-target="#EstefaníaModal">
+                        <img src="src/img/Photoroom-20240213_140538_8.png" alt="Estefanía">
+                        <p>Estefanía</p>
+                    </div>
+                    <div class="persona col-md-3" data-toggle="modal" data-target="#UlisesModal">
+                        <img src="src/img/Photoroom-20240213_144857.png" alt="Ulises">
+                        <p>Ulises</p>
+                    </div>
+                    <div class="persona col-md-3" data-toggle="modal" data-target="#DhyanaModal">
+                        <img src="src/img/Photoroom-20240213_144932.png" alt="Dhyana">
+                        <p>Dhyana</p>
+                    </div>
+                </div>
+            </section>
+               <!-- Modal Corey -->
+    <div class="modal fade" id="coreyModal" tabindex="-1" role="dialog" aria-labelledby="coreyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey">
+                    <p>Corey</p>
+                    <p>
+                     Corey es una persona apasionada por la tecnología, es desarrollador fullstack Jr
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="persona">
-        </div>
-        <div class="persona">
-        </div>
-        <div class="persona">
-        </div>
-        <div class="persona">
-        </div>
-        <div class="persona">
-        </div>
-        <div class="persona">
-        </div>
-        <div class="persona">
+    </div>
+ <!-- Modal Ollincatl -->
+<div class="modal fade" id="OllincatlModal" tabindex="-1" role="dialog" aria-labelledby="OllincatlModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="src/img/Photoroom-20240213_140538_2.png" alt="Imagen de Ollincatl" class="img-fluid rounded-circle mb-2">
+                <p>Ollincatl</p>
+                <p>Egresado de la licenciatura de Matemáticas Aplicadas y Computación y Desarrollador Full Stack Junior en proyecto e-commerce YolliCalli.</p>
+            </div>
         </div>
     </div>
+</div>
+ <!-- Modal Edgar-->
+ <div class="modal fade" id="EdgarModal" tabindex="-1" role="dialog" aria-labelledby="EdgarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="src/img/Photoroom-20240213_140538_3.png" alt="Imagen de Edagr" class="img-fluid rounded-circle mb-2">
+                <p>Edgar</p>
+                <p>
+                    Desarrollador Java Full Stack en el proyecto de e-commerce “YolliCalli” e Ingeniero en Mecatrónica.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modal Jetsael-->
+ <div class="modal fade" id="JetsaelModal" tabindex="-1" role="dialog" aria-labelledby="JetsaelModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="src/img/Photoroom-20240213_140538_5.png" alt="Imagen de Jetsael" class="img-fluid rounded-circle mb-2">
+                <p>Jetsael</p>
+                <p>
+                    Comunicólogo y Desarrollador Full Java Stack en el proyecto de e-commerce “YolliCalli”.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- Modal Abril-->
+  <div class="modal fade" id="AbrilModal" tabindex="-1" role="dialog" aria-labelledby="AbrilModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="src/img/Photoroom-20240213_140538_6-transformed.png" alt="Imagen de Abril" class="img-fluid rounded-circle mb-2">
+                <p>Abril</p>
+                <p>
+                    Arquitecta y desarrolladora Java Full Stack Jr dentro del e-commerce YolliCalli.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Modal Estefanía-->
+ <div class="modal fade" id="EstefaníaModal" tabindex="-1" role="dialog" aria-labelledby="EstefaníaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="src/img/Photoroom-20240213_140538_8.png" alt="Imagen de Estefanía" class="img-fluid rounded-circle mb-2">
+                <p>Estefanía</p>
+                <p>
+                    Geocientífica y Desarrolladora Java Full Stack en el proyecto de comercio electrónico YolliCalli
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modal Ulises-->
+ <div class="modal fade" id="UlisesModal" tabindex="-1" role="dialog" aria-labelledby="UlisesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="src/img/Photoroom-20240213_144857.png"alt="Imagen de Ulises" class="img-fluid rounded-circle mb-2">
+                <p>Ulises</p>
+                <p>
+                    Ingeniero quimico metalurgico, desarrollador java full stack jr en proyecto YolliCalli, he sido valuador, gerente, analista de información y de facturación.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Dhyana-->
+<div class="modal fade" id="DhyanaModal" tabindex="-1" role="dialog" aria-labelledby="DhyanaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="src/img/Photoroom-20240213_144932.png" alt="Imagen de Dhyana" class="img-fluid rounded-circle mb-2">
+                <p>Dhyana</p>
+                <p>
+                    Ingeniera en Sistemas Computacionales y Desarrolladora Full Stack Junior en proyecto YolliCalli. 
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------->
    </section>
    <section class="contacto margenes">
         <div class="contactoElementos contenedor">
@@ -163,5 +329,10 @@
     </div>
    </section>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
