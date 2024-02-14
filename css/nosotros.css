@@ -1,21 +1,20 @@
-:root{
-    --Fuente-primaria: 'Barlow', sans-serif;
-    --Fuente-secundaria: 'Caudex', serif;
-    --color-base: #FFF3E3;
+:root {
+    --Fuente-primaria: "Barlow", sans-serif;
+    --Fuente-secundaria: "Caudex", serif;
+    --color-base: #fff3e3;
     --azul-talavera: #282667;
-    --rosa-mexicano: #E1456C;
+    --rosa-mexicano: #e1456c;
     --negro: #333333;
-    --blanco: #FFFFFF;
-    --gris: #F4F5F7;
-    --bordes: #E1456C;
+    --blanco: #ffffff;
+    --gris: #f4f5f7;
+    --bordes: #e1456c;
     --bold: 700;
     --medium: 600;
     --regular: 400;
-
 }
 
 /*Header banner*/
-#Banner{
+#Banner {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +27,7 @@
     background-size: 100% 100%;
 }
 
-#Banner h1{
+#Banner h1 {
     font-family: var(--Fuente-primaria);
     font-size: 70px;
     font-weight: var(--bold);
@@ -40,14 +39,14 @@
     text-shadow: 3px 3px 2px var(--bordes);
 }
 
-#Banner .breadcrumb{
+#Banner .breadcrumb {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 #Banner .breadcrumb nav {
-    --bs-breadcrumb-divider: '>';
+    --bs-breadcrumb-divider: ">";
     --breadcrumb-divider-color: var(--blanco);
     --bs-breadcrumb-divider-color: #ffffff;
     color: var(--blanco);
@@ -71,7 +70,7 @@
     text-shadow: 2px 1px 2px var(--bordes);
 }
 
-#Banner .breadcrumb nav ol li:hover{
+#Banner .breadcrumb nav ol li:hover {
     pointer-events: auto;
 }
 
@@ -84,7 +83,7 @@
     padding: 0;
     margin: 0;
 }
-.garantias .garantiasContenedor{
+.garantias .garantiasContenedor {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -97,14 +96,14 @@
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 0
+    margin: 0;
 }
 
 .garantias .garantiasContenedor .garantiasItem .texto {
     padding-left: 5px;
 }
 
-.garantias .garantiasContenedor .garantiasItem h3{
+.garantias .garantiasContenedor .garantiasItem h3 {
     font-family: var(--Fuente-primaria);
     font-size: 24px;
     font-weight: var(--bold);
@@ -120,9 +119,9 @@
 }
 /*Garantias*/
 
-@media (max-width: 575.98px){
+@media (max-width: 575.98px) {
     /*Banner*/
-    #Banner{
+    #Banner {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -131,10 +130,9 @@
         width: 100%;
         padding: 0 50px;
         margin: 100px 0 0 0;
-        
     }
 
-    #Banner h1{
+    #Banner h1 {
         font-size: 40px;
         width: 100%;
         text-align: center;
@@ -144,7 +142,7 @@
         line-height: 40px;
     }
 
-    #Banner .breadcrumb{
+    #Banner .breadcrumb {
         line-height: 12px;
         padding: 0;
         margin: 0;
@@ -155,7 +153,7 @@
         line-height: 12px;
         margin: 0;
     }
-    
+
     #Banner .breadcrumb nav ol li a {
         font-size: 12px;
         font-weight: var(--bold);
@@ -169,7 +167,7 @@
         height: 600px;
         width: 100%;
     }
-    .garantias .garantiasContenedor{
+    .garantias .garantiasContenedor {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -191,7 +189,7 @@
 
 /*Aquí inicia seccion Donaciones*/
 .sectionDonar {
-    background-color: #FFF3E3;
+    background-color: #fff3e3;
     height: 270px; /*Modificar*/
     margin: 0;
     padding: 0 100px;
@@ -199,7 +197,7 @@
     flex-direction: row;
     justify-content: center;
 }
-.ContenidoDonar{
+.ContenidoDonar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,19 +244,16 @@
     font-weight: var(--regular);
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     .sectionDonar {
-        
         height: 357px; /*Modificar*/
-        
+
         padding: 0 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
-        
     }
-    .ContenidoDonar{
+    .ContenidoDonar {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -284,70 +279,66 @@
         width: 100%;
         padding-left: 77px;
     }
-
 }
 /*Aquí inicia seccion Acerca de*/
-.misionVision{
+.misionVision {
     display: grid;
     padding: 0 20px;
-
 }
-.tituloMision{
+.tituloMision {
     color: rgb(51, 51, 51);
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
 }
-h2{
-    font-family:'Times New Roman', Times, serif ;
+h2 {
+    font-family: "Times New Roman", Times, serif;
     font-size: 32px;
-    color:rgb(51, 51, 51) ;
+    color: rgb(51, 51, 51);
 }
-p{
+p {
     font-size: 18px;
-    font-family: 'Times New Roman', Times, serif;
-
+    font-family: "Times New Roman", Times, serif;
 }
-.TitulosMisionVision{
+.TitulosMisionVision {
     color: rgb(225, 69, 108);
     font-size: 32px;
-    font-family: 'Times New Roman', Times, serif;
-
+    font-family: "Times New Roman", Times, serif;
 }
 .mision {
     color: rgb(51, 51, 51);
-
 }
 .vision {
     color: rgb(51, 51, 51);
-
 }
 /*Telefono*/
-@media(min-width: 768px){
-    .misionVision{
+@media (min-width: 768px) {
+    .misionVision {
         padding: 0 100px;
         margin: 0;
     }
 }
-.linea{
-    border: solid 2px #E1456C;
+.linea {
+    border: solid 2px #e1456c;
 }
 
 /*Animación FOTOS*/
-.persona{
+.persona {
     width: 285px;
     height: 300px;
     transition: 0.5s;
     object-fit: cover;
 }
 
-.persona:hover{
+.persona:hover {
     cursor: pointer;
     transform: scale(1.2);
 }
 
 /*Boton ENVIAR*/
-#boton-enviar{
-    background-color: #E1456C;
+#boton-enviar {
+    background-color: #e1456c;
     border-radius: 10px;
     width: 237px;
     height: 50.48px;
@@ -361,7 +352,7 @@ p{
 
 /*Esta propiedad está aplicada a ambos botones*/
 button:active {
-    transform: scale(0.96)
+    transform: scale(0.96);
 }
 
 /*Modales*/
@@ -409,9 +400,68 @@ button:active {
     }
 }
 
-  /* Margen responsivos pequeños*/
+/* Margen responsivos pequeños*/
 @media (max-width: 576px) {
     .margenes {
+        margin: 20px;
+    }
+}
+
+.icono {
+    width: 23px;
+    height: 23px;
+    color: #282667;
+}
+
+.contactoElementos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.mediosElemento {
+    display: flex;
+}
+
+.medioTexto {
+    margin-left: 23px;
+}
+
+.formulario {
+    background-color: #fff3e3;
+    border-radius: 10px;
+    box-shadow: 0px 18px 28px #091e424c;
+}
+
+.formulario,
+.mediosDeContacto {
+    margin: 55px;
+    padding: 50px;
+}
+
+.contactanosTexto {
+    margin: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120px;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 425px) {
+    .contactanosTexto,
+    .mediosDeContacto {
+        width: 385px;
+        padding: 0;
+        margin-block: 20px;
+    }
+
+    .formulario {
+        width: 385px;
+        padding: 10px;
         margin: 20px;
     }
 }
