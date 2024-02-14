@@ -131,7 +131,7 @@
         width: 100%;
         padding: 0 50px;
         margin: 100px 0 0 0;
-        background-image: url("../images/bannerFondo.png");
+        
     }
 
     #Banner h1{
@@ -187,4 +187,104 @@
         margin: 0;
     }
     /*Garantias*/
+}
+
+/*Aquí inicia seccion Donaciones*/
+.sectionDonar {
+    background-color: #FFF3E3;
+    height: 270px; /*Modificar*/
+    margin: 0;
+    padding: 0 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    
+}
+.ContenidoDonar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.iconoDonar img {
+    width: 60px;
+    height: 60px;
+}
+.iconoDonar {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-right: 10px;
+}
+.botonDonar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.botonDonar img {
+    width: 20px;
+    height: 20px;
+}
+.botonDonar .btn {
+    color: var(--blanco);
+    background-color: var(--rosa-mexicano);
+    border: var(--rosa-mexicano);
+    border-radius: 10px;
+    width: 237px;
+    height: 50px;
+}
+.textoDonar h3 {
+    font-family: var(--Fuente-primaria);
+    color: var(--azul-talavera);
+    font-size: 24px;
+    font-weight: var(--bold);
+}
+.textoDonar span {
+    font-family: var(--Fuente-secundaria);
+    color: var(--azul-talavera);
+    font-size: 18px;
+    font-weight: var(--regular);
+}
+
+@media(max-width:768px) {
+    .sectionDonar {
+        
+        height: 357px; /*Modificar*/
+        
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        
+    }
+    .ContenidoDonar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .iconoDonar {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding-bottom: 165px;
+        margin-right: 10px;
+        width: 30%;
+    }
+    .textoDonar {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+    }
+    .botonDonar {
+        width: 100%;
+        padding-left: 77px;
+    }
+
 }
