@@ -198,8 +198,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
-    
 }
 .ContenidoDonar{
     display: flex;
@@ -334,3 +332,86 @@ p{
     border: solid 2px #E1456C;
 }
 
+/*Animación FOTOS*/
+.persona{
+    width: 285px;
+    height: 300px;
+    transition: 0.5s;
+    object-fit: cover;
+}
+
+.persona:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/*Boton ENVIAR*/
+#boton-enviar{
+    background-color: #E1456C;
+    border-radius: 10px;
+    width: 237px;
+    height: 50.48px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    font-family: caudex;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+/*Esta propiedad está aplicada a ambos botones*/
+button:active {
+    transform: scale(0.96)
+}
+
+/*Modales*/
+.persona {
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.persona img {
+    width: 150px; /* Tamaño de la imagen */
+    height: 150px;
+    border-radius: 50%; /* Forma de círculo */
+}
+
+.persona p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Estilos para modal */
+.modal-dialog {
+    max-width: 300px; /* Ancho máximo del modal */
+}
+
+.modal-content {
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para el margen */
+.margenes {
+    margin: 100px;
+}
+
+/* Margen responsivos */
+@media (max-width: 768px) {
+    .margenes {
+        margin: 20px;
+    }
+}
+
+  /* Margen responsivos pequeños*/
+@media (max-width: 576px) {
+    .margenes {
+        margin: 20px;
+    }
+}
