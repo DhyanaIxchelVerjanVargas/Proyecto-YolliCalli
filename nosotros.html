@@ -413,6 +413,7 @@
                                 placeholder="Nombre Apellido"
                                 required
                             />
+                            <div id="alertNombre" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Correo electrónico</label>
@@ -424,6 +425,7 @@
                                 placeholder="ejemplo@correo.com"
                                 required
                             />
+                            <div id="alertCorreo" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
                             <label for="inputAsunto" class="form-label">Asunto</label>
@@ -434,6 +436,7 @@
                                 placeholder="Escribe tu texto aquí"
                                 required
                             />
+                            <div id="alertAsunto" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
                             <label for="inputMensaje" class="form-label">Mensaje</label>
@@ -444,12 +447,14 @@
                                 placeholder="Escribe tu texto aquí"
                                 required
                             />
+                            <div id="alertMensaje" style="display: none;"></div>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="checkContacto" required />
                             <label class="marcadorTexto form-check-label" for="checkContacto"
                                 >Acepto que mis datos sean tratados con discreción por YolliCalli®️</label
                             >
+                            <div id="alertCondiciones" style="display: none;"></div>
                         </div>
                         <button type="submit" class="btn" id="boton-enviar">Enviar</button>
                     </form>
