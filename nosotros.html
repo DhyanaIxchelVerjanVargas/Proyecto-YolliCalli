@@ -6,18 +6,18 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Caudex:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Caudex:wght@400;700display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/estilosGlobales.css" />
-        <link rel="stylesheet" href="./css/nosotros.css" />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <!-- <link rel="stylesheet" href="./css/normalize.css" /> -->
+        <link rel="stylesheet" href="./css/estilosGlobales.css" />
+        <link rel="stylesheet" href="./css/nosotros.css" />
         <title>Nosotros</title>
     </head>
     <body>
@@ -30,38 +30,28 @@
                     <nav aria-labelledby="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item" aria-current="page">
-                                <a href="#">Inicio</a>
+                                <!-- link cambiado a index -->
+                                <a href="./index.html">Inicio</a>
                             </li>
-                            <li
-                                class="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                Nosotros
-                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Nosotros</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </header>
-        <section class="sectionDonar col-12">
-            <div class="ContenidoDonar">
-                <div class="iconoDonar col-2">
+        <section class="sectionDonar">
+            <div class="contenidoDonar">
+                <div class="iconoDonar">
                     <img src="src/img/icono_ayuda.png" alt="DonarIcono" />
                 </div>
-                <div class="textoDonar col-7">
-                    <h3>
-                        Tu ayuda es importante, contribuyamos juntos al
-                        #ComercioJusto
-                    </h3>
-                    <span
-                        >Puedes apoyarnos haciendo un donativo a través de
-                        PayPal</span
-                    >
+                <div class="textoDonar">
+                    <h3>Tu ayuda es importante, contribuyamos juntos al #ComercioJusto</h3>
+                    <p>Puedes apoyarnos haciendo un donativo a través de PayPal</p>
                 </div>
-                <div class="botonDonar col-3">
+                <div class="botonDonar">
                     <button type="btn btn-primary" class="btn btn-primary">
-                        <img src="src/img/paypal_logo_icon.png" alt="" />Dona
-                        aquí
+                        <img src="src/img/paypal_logo_icon.png" alt="" />
+                        <p>Dona aquí</p>
                     </button>
                 </div>
             </div>
@@ -72,132 +62,72 @@
                 <h2>Acerca de YolliCalli</h2>
             </div>
             <div class="mision">
+                <!-- Cambiar div por h2 o h3 -->
                 <div class="TitulosMisionVision">Misión</div>
                 <p>
-                    Proporcionamos una plataforma de comercio electrónico que
-                    conecta a los entusiastas del arte y las artesanías
-                    directamente con artesanos mexicanos, mediante la promoción
-                    de artículos que muestran la riqueza multicultural de
-                    México. Contribuimos al sustento y reconocimiento de
-                    creadores locales, apoyados por las donaciones voluntarias
-                    de ustedes, nuestros patrocinadores.
+                    Proporcionamos una plataforma de comercio electrónico que conecta a los entusiastas del arte y las
+                    artesanías directamente con artesanos mexicanos, mediante la promoción de artículos que muestran la
+                    riqueza multicultural de México. Contribuimos al sustento y reconocimiento de creadores locales,
+                    apoyados por las donaciones voluntarias de ustedes, nuestros patrocinadores.
                     <br />
                     <br />
-                    Nos enorgullece ser una plataforma que valora la tradición,
-                    la diversidad y la pasión detrás de cada artículo que
-                    ofrecemos.
+                    Nos enorgullece ser una plataforma que valora la tradición, la diversidad y la pasión detrás de cada
+                    artículo que ofrecemos.
                 </p>
             </div>
             <div class="vision">
+                <!-- Cambiar div por h2 o h3 -->
                 <div class="TitulosMisionVision">Visión</div>
                 <p>
-                    Apoyar la economía nacional y ser la principal plataforma de
-                    comercio electrónico que logre conectar a los entusiastas
-                    del arte y las artesanías con los artesanos de todo México,
-                    mediante la promoción y la preservación de la riqueza
-                    multicultural del país.
+                    Apoyar la economía nacional y ser la principal plataforma de comercio electrónico que logre conectar
+                    a los entusiastas del arte y las artesanías con los artesanos de todo México, mediante la promoción
+                    y la preservación de la riqueza multicultural del país.
                 </p>
-
-                <hr class="linea" />
             </div>
+            <hr class="linea" />
         </section>
         <section class="conocenos contenedor margenes">
-            <h2>Conócenos</h2>
-            <p>
-                ¡Saludos! Somos el equipo detrás del desarrollo de este
-                proyecto, un placer conocerte.
-            </p>
+            <!-- Se agrega clase "contactanosTexto" para aplicar estilos a los mismos elementos -->
+            <div class="conocenosTexto">
+                <h2>Conócenos</h2>
+                <p>¡Saludos! Somos el equipo detrás del desarrollo de este proyecto, un placer conocerte.</p>
+            </div>
             <div class="contenedorEquipo row">
-                <div
-                    class="persona col-md-2"
-                    data-toggle="modal"
-                    data-target="#coreyModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140537_1.png"
-                        alt="Corey"
-                    />
+                <div class="persona" data-toggle="modal" data-target="#coreyModal">
+                    <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey" />
                     <p>Corey</p>
                 </div>
-                <div
-                    class="persona col-md-2"
-                    data-toggle="modal"
-                    data-target="#OllincatlModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_2.png"
-                        alt="Ollincatl"
-                    />
+                <div class="persona" data-toggle="modal" data-target="#OllincatlModal">
+                    <img src="src/img/Photoroom-20240213_140538_2.png" alt="Ollincatl" />
                     <p>Ollincatl</p>
                 </div>
-                <div
-                    class="persona col-md-2"
-                    data-toggle="modal"
-                    data-target="#EdgarModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_3.png"
-                        alt="Edgar"
-                    />
+                <div class="persona" data-toggle="modal" data-target="#EdgarModal">
+                    <img src="src/img/Photoroom-20240213_140538_3.png" alt="Edgar" />
                     <p>Edgar</p>
                 </div>
-                <div
-                    class="persona col-md-2"
-                    data-toggle="modal"
-                    data-target="#JetsaelModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_5.png"
-                        alt="Jetsael"
-                    />
+                <div class="persona" data-toggle="modal" data-target="#JetsaelModal">
+                    <img src="src/img/Photoroom-20240213_140538_5.png" alt="Jetsael" />
                     <p>Jetsael</p>
                 </div>
-                <div
-                    class="persona col-md-3"
-                    data-toggle="modal"
-                    data-target="#AbrilModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_6-transformed.png"
-                        alt="Abril"
-                    />
+                <div class="persona" data-toggle="modal" data-target="#AbrilModal">
+                    <img src="src/img/Photoroom-20240213_140538_6-transformed.png" alt="Abril" />
                     <p>Abril</p>
                 </div>
-                <div
-                    class="persona col-md-3"
-                    data-toggle="modal"
-                    data-target="#EstefaníaModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_8.png"
-                        alt="Estefanía"
-                    />
+                <div class="persona" data-toggle="modal" data-target="#EstefaníaModal">
+                    <img src="src/img/Photoroom-20240213_140538_8.png" alt="Estefanía" />
                     <p>Estefanía</p>
                 </div>
-                <div
-                    class="persona col-md-3"
-                    data-toggle="modal"
-                    data-target="#UlisesModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_144857.png"
-                        alt="Ulises"
-                    />
+                <div class="persona" data-toggle="modal" data-target="#UlisesModal">
+                    <img src="src/img/Photoroom-20240213_144857.png" alt="Ulises" />
                     <p>Ulises</p>
                 </div>
-                <div
-                    class="persona col-md-3"
-                    data-toggle="modal"
-                    data-target="#DhyanaModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_144932.png"
-                        alt="Dhyana"
-                    />
+                <div class="persona" data-toggle="modal" data-target="#DhyanaModal">
+                    <img src="src/img/Photoroom-20240213_144932.png" alt="Dhyana" />
                     <p>Dhyana</p>
                 </div>
             </div>
         </section>
+        <!-- Agregar sección modal o agregar a sección conocenos -->
         <!-- Modal Corey -->
         <div
             class="modal fade"
@@ -207,17 +137,15 @@
             aria-labelledby="coreyModalLabel"
             aria-hidden="true"
         >
-            <div class="modal-dialog modal-sm" role="document">
+            <!-- Ajustado para aparecer al centro en versión móvil -->
+            <div class="modal-dialog modal-sm d-flex justify-content-center" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <img
-                            src="src/img/Photoroom-20240213_140537_1.png"
-                            alt="Corey"
-                        />
+                        <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey" />
                         <p>Corey</p>
                         <p>
-                            Corey es una persona apasionada por la tecnología,
-                            es desarrollador fullstack Jr
+                            Corey es una persona apasionada por la tecnología, es desarrollador fullstack Jr, gusta de
+                            aprender nuevas habilidades y superar retos
                         </p>
                     </div>
                 </div>
@@ -242,9 +170,8 @@
                         />
                         <p>Ollincatl</p>
                         <p>
-                            Egresado de la licenciatura de Matemáticas Aplicadas
-                            y Computación y Desarrollador Full Stack Junior en
-                            proyecto e-commerce YolliCalli.
+                            Egresado de la licenciatura de Matemáticas Aplicadas y Computación y Desarrollador Full
+                            Stack Junior en proyecto e-commerce YolliCalli.
                         </p>
                     </div>
                 </div>
@@ -269,8 +196,8 @@
                         />
                         <p>Edgar</p>
                         <p>
-                            Desarrollador Java Full Stack en el proyecto de
-                            e-commerce “YolliCalli” e Ingeniero en Mecatrónica.
+                            Desarrollador Java Full Stack en el proyecto de e-commerce “YolliCalli” e Ingeniero en
+                            Mecatrónica.
                         </p>
                     </div>
                 </div>
@@ -294,10 +221,7 @@
                             class="img-fluid rounded-circle mb-2"
                         />
                         <p>Jetsael</p>
-                        <p>
-                            Comunicólogo y Desarrollador Full Java Stack en el
-                            proyecto de e-commerce “YolliCalli”.
-                        </p>
+                        <p>Comunicólogo y Desarrollador Full Java Stack en el proyecto de e-commerce “YolliCalli”.</p>
                     </div>
                 </div>
             </div>
@@ -320,15 +244,11 @@
                             class="img-fluid rounded-circle mb-2"
                         />
                         <p>Abril</p>
-                        <p>
-                            Arquitecta y desarrolladora Java Full Stack Jr
-                            dentro del e-commerce YolliCalli.
-                        </p>
+                        <p>Arquitecta y desarrolladora Java Full Stack Jr dentro del e-commerce YolliCalli.</p>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Modal Estefanía-->
         <div
             class="modal fade"
@@ -348,8 +268,8 @@
                         />
                         <p>Estefanía</p>
                         <p>
-                            Geocientífica y Desarrolladora Java Full Stack en el
-                            proyecto de comercio electrónico YolliCalli
+                            Geocientífica y Desarrolladora Java Full Stack en el proyecto de comercio electrónico
+                            YolliCalli
                         </p>
                     </div>
                 </div>
@@ -374,10 +294,8 @@
                         />
                         <p>Ulises</p>
                         <p>
-                            Ingeniero quimico metalurgico, desarrollador java
-                            full stack jr en proyecto YolliCalli, he sido
-                            valuador, gerente, analista de información y de
-                            facturación.
+                            Ingeniero quimico metalurgico, desarrollador java full stack jr en proyecto YolliCalli, he
+                            sido valuador, gerente, analista de información y de facturación.
                         </p>
                     </div>
                 </div>
@@ -402,23 +320,21 @@
                         />
                         <p>Dhyana</p>
                         <p>
-                            Ingeniera en Sistemas Computacionales y
-                            Desarrolladora Full Stack Junior en proyecto
+                            Ingeniera en Sistemas Computacionales y Desarrolladora Full Stack Junior en proyecto
                             YolliCalli.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-
         <!--Sección "Contactanos"-->
         <section class="contacto margenes">
             <!--Encabezado de sección-->
             <div class="contactanosTexto">
                 <h2>Contáctanos</h2>
                 <p>
-                    Para más información acerca de nuestros productos y
-                    servicios, por favor envíanos un correo electrónico.
+                    Para más información acerca de nuestros productos y servicios, por favor envíanos un correo
+                    electrónico.
                     <br />
                     Nuestro equipo siempre estará para atenderte.
                 </p>
@@ -489,9 +405,7 @@
                 <div class="formulario">
                     <form>
                         <div class="mb-3">
-                            <label for="inputNombre" class="form-label"
-                                >Nombre Completo</label
-                            >
+                            <label for="inputNombre" class="form-label">Nombre Completo</label>
                             <input
                                 type="text"
                                 class="marcadorTexto form-control"
@@ -501,9 +415,7 @@
                             />
                         </div>
                         <div class="mb-3">
-                            <label for="inputEmail" class="form-label"
-                                >Correo electrónico</label
-                            >
+                            <label for="inputEmail" class="form-label">Correo electrónico</label>
                             <input
                                 type="email"
                                 class="marcadorTexto form-control"
@@ -514,9 +426,7 @@
                             />
                         </div>
                         <div class="mb-3">
-                            <label for="inputAsunto" class="form-label"
-                                >Asunto</label
-                            >
+                            <label for="inputAsunto" class="form-label">Asunto</label>
                             <input
                                 type="text"
                                 class="marcadorTexto form-control"
@@ -526,9 +436,7 @@
                             />
                         </div>
                         <div class="mb-3">
-                            <label for="inputMensaje" class="form-label"
-                                >Mensaje</label
-                            >
+                            <label for="inputMensaje" class="form-label">Mensaje</label>
                             <input
                                 type="text"
                                 class="marcadorTexto form-control"
@@ -538,22 +446,12 @@
                             />
                         </div>
                         <div class="mb-3 form-check">
-                            <input
-                                type="checkbox"
-                                class="form-check-input"
-                                id="checkContacto"
-                                required
-                            />
-                            <label
-                                class="marcadorTexto form-check-label"
-                                for="checkContacto"
-                                >Acepto que mis datos sean tratados con
-                                discreción por YolliCalli®️</label
+                            <input type="checkbox" class="form-check-input" id="checkContacto" required />
+                            <label class="marcadorTexto form-check-label" for="checkContacto"
+                                >Acepto que mis datos sean tratados con discreción por YolliCalli®️</label
                             >
                         </div>
-                        <button type="submit" class="btn" id="boton-enviar">
-                            Enviar
-                        </button>
+                        <button type="submit" class="btn" id="boton-enviar">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -599,12 +497,7 @@
                         </g>
                         <defs>
                             <clipPath id="clip0_117_3296">
-                                <rect
-                                    width="60"
-                                    height="60"
-                                    fill="white"
-                                    transform="translate(0.666504)"
-                                />
+                                <rect width="60" height="60" fill="white" transform="translate(0.666504)" />
                             </clipPath>
                         </defs>
                     </svg>
@@ -630,12 +523,7 @@
                         </g>
                         <defs>
                             <clipPath id="clip0_117_3304">
-                                <rect
-                                    width="60"
-                                    height="60"
-                                    fill="white"
-                                    transform="translate(0.333496)"
-                                />
+                                <rect width="60" height="60" fill="white" transform="translate(0.333496)" />
                             </clipPath>
                         </defs>
                     </svg>
