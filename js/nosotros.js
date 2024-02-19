@@ -154,14 +154,47 @@ botonEnviar.addEventListener("click",function(event){
     }
 
     if(isValido){
-        /*Las siguientes lineas es para limpiar lo campos del formularios*/
-        /*No se si seria buena idea ponerlas despues de que se alla enviado el correo exitosamente */
-        inputNombre.value = "";
-        inputEmail.value = "";
-        inputAsunto.value = "";
-        inputMensaje.value = "";
-        checkCondicones.checked = false;
         /*Aqui deberia ir el codigo codigo para los que es el envio del mensaje*/
+        let ebody = `
+            <strong>Nombre: </strong>${inputNombre.value}
+            <br/>
+            <strong>Email: </strong>${inputEmail.value}
+            <br/>
+            <strong>Asunto: </strong>${inputAsunto.value}
+            <br/>
+            <strong>Mensaje: </strong>${inputMensaje.value}
+            <br/>
+            `
+        
+            // Email code here
+            Email.send({
+                SecureToken : "346ac9c0-85e9-4c0b-ae5a-9bd1607a4ea4",
+                To : 'yollicalli.g@gmail.com',
+                From : "yollicalli.g@gmail.com",
+                Subject : `${inputAsunto.value}`,
+                Body : ebody
+            }).then(function (message) {
+                if(String(message)=="OK"){
+                    alert("Mensaje enviado satisfactoriamente")
+                    /*Las siguientes lineas es para limpiar lo campos del formularios*/
+                    /*No se si seria buena idea ponerlas despues de que se alla enviado el correo exitosamente */
+                    inputNombre.value = "";
+                    inputEmail.value = "";
+                    inputAsunto.value = "";
+                    inputMensaje.value = "";
+                    checkCondicones.checked = false;
+                }else {
+                    alert("Error en el envío")
+                }
+            })
+            
+            /*then(function (message) {
+            alert("Mensaje enviado satisfactoriamente")
+            });*/
+            
+            /*then(
+              message => alert(message)
+            );*/
 
     }
 })
