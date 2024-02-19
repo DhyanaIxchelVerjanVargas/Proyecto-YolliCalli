@@ -36,6 +36,17 @@ botonEnviar.addEventListener("click",function(event){
     alertMensaje.style.display = "none";
     alertCondiciones.style.display = "none";
 
+    checkCondicones.style.border = "solid var(--azul-talavera) thin";
+    checkCondicones.style.removeProperty("box-shadow");
+    inputNombre.style.border = "solid var(--azul-talavera) thin";
+    inputNombre.style.removeProperty("box-shadow");
+    inputEmail.style.border = "solid var(--azul-talavera) thin";
+    inputEmail.style.removeProperty("box-shadow");
+    inputAsunto.style.border = "solid var(--azul-talavera) thin";
+    inputAsunto.style.removeProperty("box-shadow");
+    inputMensaje.style.border = "solid var(--azul-talavera) thin";
+    inputMensaje.style.removeProperty("box-shadow");
+
     //Se quitan los espacios de las entradas 
     inputNombre.value = inputNombre.value.trim();
     inputEmail.value = inputEmail.value.trim();
@@ -49,6 +60,8 @@ botonEnviar.addEventListener("click",function(event){
         alertCondiciones.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Debe aceptar las condicones.</span>`);
         alertCondiciones.style.display= "inline";
         checkCondicones.focus(); 
+        checkCondicones.style.border = "solid #ff0909 thin";
+        checkCondicones.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     }
 
@@ -57,18 +70,24 @@ botonEnviar.addEventListener("click",function(event){
         alertMensaje.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un mensaje.</span>`);
         alertMensaje.style.display= "inline";
         inputMensaje.focus();
+        inputMensaje.style.border = "solid #ff0909 thin";
+        inputMensaje.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     } else if (inputMensaje.value.length <= 20){
         alertMensaje.style.display = "inline";
         alertMensaje.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">El mensaje es muy corto.</span>`);
         alertMensaje.style.display= "inline";
         inputMensaje.focus(); 
+        inputMensaje.style.border = "solid #ff0909 thin";
+        inputMensaje.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     } else if (!expresiones.texto.test(inputMensaje.value)){
         alertMensaje.style.display = "inline";
         alertMensaje.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">El mensaje es invalido.</span>`);
         alertMensaje.style.display= "inline";
         inputMensaje.focus(); 
+        inputMensaje.style.border = "solid #ff0909 thin";
+        inputMensaje.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     }
 
@@ -77,18 +96,24 @@ botonEnviar.addEventListener("click",function(event){
         alertAsunto.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un asunto.</span>`);
         alertAsunto.style.display= "inline";
         inputAsunto.focus();
+        inputAsunto.style.border = "solid #ff0909 thin";
+        inputAsunto.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     } else if (inputAsunto.value.length <= 5){
         alertAsunto.style.display = "inline";
         alertAsunto.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">El asunto es muy corto.</span>`);
         alertAsunto.style.display= "inline";
-        alertAsunto.focus(); 
+        inputAsunto.focus(); 
+        inputAsunto.style.border = "solid #ff0909 thin";
+        inputAsunto.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     } else if (!expresiones.texto.test(inputAsunto.value)){
         alertAsunto.style.display = "inline";
         alertAsunto.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">El asunto es invalido.</span>`);
         alertAsunto.style.display= "inline";
         inputAsunto.focus(); 
+        inputEinputAsuntomail.style.border = "solid #ff0909 thin";
+        inputAsunto.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     }
 
@@ -97,12 +122,16 @@ botonEnviar.addEventListener("click",function(event){
         alertCorreo.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un correo.</span>`);
         alertCorreo.style.display= "inline";
         inputEmail.focus();
+        inputEmail.style.border = "solid #ff0909 thin";
+        inputEmail.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     }  else if (!expresiones.correo.test(inputEmail.value) || inputEmail.value.length <= 5 ){
         alertCorreo.style.display = "inline";
         alertCorreo.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Correo invalido.</span>`);
         alertCorreo.style.display= "inline";
         inputEmail.focus(); 
+        inputEmail.style.border = "solid #ff0909 thin";
+        inputEmail.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     }
 
@@ -110,12 +139,16 @@ botonEnviar.addEventListener("click",function(event){
         alertNombre.style.display = "inline";
         alertNombre.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un nombre.</span>`);
         alertNombre.style.display= "inline";
+        inputNombre.style.border = "solid #ff0909 thin";
+        inputNombre.style.boxShadow = "0 0 5px #ff0909"
         inputNombre.focus();
         isValido = false;
     } else if (!expresiones.nombre.test(inputNombre.value)  || inputNombre.value.length <= 3){
         alertNombre.style.display = "inline";
         alertNombre.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Nombre invalido.</span>`);
         alertNombre.style.display= "inline";
+        inputNombre.style.border = "solid #ff0909 thin";
+        inputNombre.style.boxShadow = "0 0 5px #ff0909"
         inputNombre.focus(); 
         isValido = false;
     }
@@ -128,7 +161,6 @@ botonEnviar.addEventListener("click",function(event){
         inputAsunto.value = "";
         inputMensaje.value = "";
         checkCondicones.checked = false;
-        console.log("se envio mensaje");
         /*Aqui deberia ir el codigo codigo para los que es el envio del mensaje*/
 
     }
