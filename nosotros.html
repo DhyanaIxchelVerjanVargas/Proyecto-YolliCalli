@@ -18,6 +18,7 @@
         <!-- <link rel="stylesheet" href="./css/normalize.css" /> -->
         <link rel="stylesheet" href="./css/estilosGlobales.css" />
         <link rel="stylesheet" href="./css/nosotros.css" />
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <title>Nosotros</title>
     </head>
     <body>
@@ -413,6 +414,7 @@
                                 placeholder="Nombre Apellido"
                                 required
                             />
+                            <div id="alertNombre" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Correo electrónico</label>
@@ -424,6 +426,7 @@
                                 placeholder="ejemplo@correo.com"
                                 required
                             />
+                            <div id="alertCorreo" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
                             <label for="inputAsunto" class="form-label">Asunto</label>
@@ -434,6 +437,7 @@
                                 placeholder="Escribe tu texto aquí"
                                 required
                             />
+                            <div id="alertAsunto" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
                             <label for="inputMensaje" class="form-label">Mensaje</label>
@@ -444,18 +448,27 @@
                                 placeholder="Escribe tu texto aquí"
                                 required
                             />
+                            <div id="alertMensaje" style="display: none;"></div>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="checkContacto" required />
                             <label class="marcadorTexto form-check-label" for="checkContacto"
                                 >Acepto que mis datos sean tratados con discreción por YolliCalli®️</label
                             >
+                            <div id="alertCondiciones" style="display: none;"></div>
                         </div>
                         <button type="submit" class="btn" id="boton-enviar">Enviar</button>
                     </form>
                 </div>
+            </div>   
+            <!-- Modal de alerta de envio exitoso -->
+            <!-- Button trigger modal -->
+            <button id="btnEnvioEstado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEnvioEstado" style="display: none;">
+            </button>
+  
+            <!-- Modal -->
+            <div class="modal fade" id="modalEnvioEstado" tabindex="-1" aria-labelledby="estadoModalLabel" aria-hidden="true">
             </div>
-        </section>
 
         <!--------------------------------------------------------------------------------------------------------------------------------->
 
@@ -568,5 +581,6 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="./js/nosotros.js"></script>
     </body>
 </html>
