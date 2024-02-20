@@ -161,7 +161,7 @@
     padding: 4rem 100px;
 }
 
-.ContenidoDonar {
+.contenidoDonar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,28 +169,19 @@
 
 .contenidoDonar > div {
     margin: 1rem 0;
-    text-align: center;
+    text-align: left;
 }
 
 .contenidoDonar > div:nth-child(1) {
-    flex-basis: 25%;
+    flex: 1 1 0;
 }
 
 .contenidoDonar > div:nth-child(2) {
-    flex-basis: 50%;
+    flex: 2 1 50%;
 }
 
 .contenidoDonar > div:nth-child(3) {
-    flex-basis: 25%;
-}
-
-@media (max-width: 425px) {
-    .sectionDonar {
-        padding: 0 1rem;
-    }
-    .contenidoDonar {
-        flex-direction: column;
-    }
+    flex: 1 1 0;
 }
 
 .iconoDonar {
@@ -212,6 +203,7 @@
 .botonDonar img {
     width: 20px;
     height: 20px;
+    margin: 0.5rem;
 }
 
 .botonDonar .btn {
@@ -220,23 +212,47 @@
     background-color: var(--rosa-mexicano);
     border: var(--rosa-mexicano);
     border-radius: 10px;
-    width: 237px;
-    height: 50px;
+    width: 18rem;
+    height: 5rem;
     font-size: var(--texto-general);
     justify-content: center;
     align-items: center;
 }
 
+.textoDonar {
+    padding-left: 2rem;
+}
+
 .textoDonar h3 {
+    text-align: left;
     color: var(--azul-talavera);
     font-size: var(--titulos-h3-rutas);
     font-weight: var(--bold);
 }
 
 .textoDonar span {
+    text-align: left;
     color: var(--azul-talavera);
     font-size: var(--texto-general);
     font-weight: var(--regular);
+}
+
+@media (max-width: 425px) {
+    .sectionDonar {
+        padding: 2.5rem 1rem;
+    }
+    .contenidoDonar {
+        flex-direction: column;
+    }
+
+    .contenidoDonar > div {
+        text-align: center;
+    }
+
+    .textoDonar h3 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
 }
 
 /*Aquí inicia seccion Acerca de*/
@@ -272,8 +288,7 @@
 }
 
 .linea {
-    /* Linea agregada para añadir espacio arriba y abajo del hr */
-    margin-block: 60px;
+    margin-block: 30px;
     border: solid 2px var(--rosa-mexicano);
 }
 
@@ -297,7 +312,7 @@ button:active {
 
 /* Estilos para el margen */
 .margenes {
-    margin: 100px;
+    margin-inline: 100px;
 }
 
 /* Margen responsivos pequeños*/
@@ -318,11 +333,12 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .mediosElemento {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .medioTexto {
@@ -333,14 +349,17 @@ button:active {
     background-color: var(--color-base);
     border-radius: 10px;
     box-shadow: 0px 18px 28px #091e424c;
+    margin-block: 50px;
+    padding: 50px;
+    flex: 2 1 60%;
 }
+
 .formulario div input {
     font-size: var(--texto-general);
 }
 
-.formulario,
 .mediosDeContacto {
-    margin: 55px;
+    margin-block: 50px;
     padding: 50px;
 }
 
@@ -355,6 +374,10 @@ button:active {
 }
 
 @media (max-width: 425px) {
+    .contactoElementos {
+        flex-wrap: wrap;
+    }
+
     .contactanosTexto,
     .mediosDeContacto {
         padding: 0;
@@ -362,8 +385,7 @@ button:active {
     }
 
     .formulario {
-        padding: 10px;
-        margin: 20px;
+        padding: 30px;
     }
 }
 
@@ -392,48 +414,103 @@ button:active {
 }
 
 .persona img {
-    width: 50%; /* Tamaño de la imagen */
+    width: 100%; /* Tamaño de la imagen */
     border-radius: 50%; /* Forma de círculo */
 }
 
 /*Modales*/
 /* Sección Animaciones: FOTOS*/
-.persona {
-    margin: 10px;
-    cursor: pointer;
-    text-align: center;
-    transition: 0.5s;
-    background-color: var(--color-base);
-    padding: 5rem 2rem;
+.conocenos {
+    width: 80%;
+    margin: 0 auto;
+}
+.contenedorEquipo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Columnas dinámicas */
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .conocenos {
+        width: 90%;
+    }
+    .conocenos .contenedorEquipo {
+        grid-template-columns: repeat(3, 1fr); /* Columnas dinámicas */
+        grid-template-rows: repeat(3, 350px);
+    }
+}
+@media (max-width: 425px) {
+    .conocenos {
+        width: 100%;
+    }
+    .conocenos .contenedorEquipo {
+        grid-template-columns: repeat(1, 300px); /* Columnas dinámicas */
+        grid-template-rows: repeat(8, 350px);
+    }
 }
 
-.persona .imagenPersona {
-    width: 100%;
-    height: 50%;
+.persona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    gap: 5px;
+}
+
+.persona img {
+    width: 200px; /* Tamaño deseado para las imágenes */
+    height: auto; /* Para mantener la proporción de aspecto */
+}
+
+.conocenos {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    flex-direction: column; /* Alinea los elementos en una columna */
+}
+
+.texto-intro {
+    text-align: center; /* Centra el contenido */
+    margin-bottom: 20px; /* Espacio entre el texto y las imágenes */
+}
+.persona {
+    padding: 10px;
+    text-align: center;
+    background-color: #fff3e3;
+    transition: transform ease 300ms;
+}
+.persona p {
+    font-size: 24px;
+    color: #282667;
+    font-weight: bold;
+}
+.persona a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: var(--azul-talavera);
 }
 
 .persona:hover {
+    font-family: var(--Fuente-primaria);
     cursor: pointer;
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
-
-.contenedorEquipo {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    justify-items: center;
-    gap: 2rem;
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
 }
-
-@media (max-width: 768px) {
-    .contenedorEquipo {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-    }
+.modal-body .nombreModal {
+    font-size: var(--titulos-h3-rutas);
+    font-weight: bold;
+    color: var(--azul-talavera);
 }
-
-@media (max-width: 425px) {
-    .contenedorEquipo {
-        grid-template-columns: repeat(1, 1fr);
-    }
+.modal-content {
+    background-color: var(--color-base);
+    margin: auto 0;
+    transform: translate(0, -50px);
 }
