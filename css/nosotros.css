@@ -1,18 +1,3 @@
-:root {
-    --Fuente-primaria: "Barlow", sans-serif;
-    --Fuente-secundaria: "Caudex", serif;
-    --color-base: #fff3e3;
-    --azul-talavera: #282667;
-    --rosa-mexicano: #e1456c;
-    --negro: #333333;
-    --blanco: #ffffff;
-    --gris: #f4f5f7;
-    --bordes: #e1456c;
-    --bold: 700;
-    --medium: 600;
-    --regular: 400;
-}
-
 /*Header banner*/
 #Banner {
     display: flex;
@@ -28,8 +13,7 @@
 }
 
 #Banner h1 {
-    font-family: var(--Fuente-primaria);
-    font-size: 70px;
+    font-size: var(--titulo-banner);
     font-weight: var(--bold);
     color: var(--blanco);
     width: 100%;
@@ -48,29 +32,27 @@
 #Banner .breadcrumb nav {
     --bs-breadcrumb-divider: ">";
     --breadcrumb-divider-color: var(--blanco);
-    --bs-breadcrumb-divider-color: #ffffff;
+    --bs-breadcrumb-divider-color: var(--blanco);
     color: var(--blanco);
 }
 
-#Banner .breadcrumb nav ol li {
+#Banner .breadcrumb .breadcrumb-item {
     color: var(--blanco);
-    font-family: var(--Fuente-primaria);
-    font-size: 24px;
+    font-size: var(--titulos-h3-rutas);
     font-weight: var(--bold);
     text-shadow: 1px 1px 2px var(--bordes);
     --bs-breadcrumb-divider-color: var(--blanco);
 }
 
-#Banner .breadcrumb nav ol li a {
+#Banner .breadcrumb .breadcrumb-item a {
     color: var(--blanco);
-    font-family: var(--Fuente-primaria);
-    font-size: 24px;
+    font-size: var(--titulos-h3-rutas);
     font-weight: var(--bold);
     text-decoration: none;
     text-shadow: 2px 1px 2px var(--bordes);
 }
 
-#Banner .breadcrumb nav ol li:hover {
+#Banner .breadcrumb .breadcrumb-item:hover {
     pointer-events: auto;
 }
 
@@ -78,7 +60,6 @@
 /*Garantias*/
 .garantias {
     height: 270px;
-    width: 100%;
     background-color: var(--color-base);
     padding: 0;
     margin: 0;
@@ -86,17 +67,13 @@
 .garantias .garantiasContenedor {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    justify-content: space-around;
-    height: 100%;
     width: 100%;
 }
 
 .garantias .garantiasContenedor .garantiasItem {
     justify-content: center;
     align-items: center;
-    padding: 0;
-    margin: 0;
+    color: var(--azul-talavera);
 }
 
 .garantias .garantiasContenedor .garantiasItem .texto {
@@ -104,18 +81,14 @@
 }
 
 .garantias .garantiasContenedor .garantiasItem h3 {
-    font-family: var(--Fuente-primaria);
-    font-size: 24px;
+    font-size: var(--titulos-h3-rutas);
     font-weight: var(--bold);
-    color: var(--azul-talavera);
     margin: 0;
 }
 
 .garantias .garantiasContenedor .garantiasItem span {
-    font-family: var(--Fuente-secundaria);
-    font-size: 18px;
+    font-size: var(--texto-general);
     font-weight: var(--regular);
-    color: var(--azul-talavera);
 }
 /*Garantias*/
 
@@ -133,7 +106,7 @@
     }
 
     #Banner h1 {
-        font-size: 40px;
+        font-size: var(--titulos-h3-rutas);
         width: 100%;
         text-align: center;
         padding: 0;
@@ -147,20 +120,21 @@
         padding: 0;
         margin: 0;
     }
-
-    #Banner .breadcrumb nav ol li {
+    /* #Banner .breadcrumb nav ol li { */
+    #Banner .breadcrumb .breadcrumb-item {
         font-size: 12px;
         line-height: 12px;
         margin: 0;
     }
 
-    #Banner .breadcrumb nav ol li a {
+    /* #Banner .breadcrumb nav ol li a { */
+    #Banner .breadcrumb .breadcrumb-item a {
         font-size: 12px;
         font-weight: var(--bold);
         text-decoration: none;
         text-shadow: 2px 1px 2px var(--bordes);
     }
-    /*Baner*/
+    /*Banner*/
 
     /*Garantias*/
     .garantias {
@@ -170,183 +144,149 @@
     .garantias .garantiasContenedor {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         justify-content: space-around;
-        height: 100%;
-        width: 100%;
         padding: 0 50px;
     }
 
     .garantias .garantiasContenedor .garantiasItem {
-        justify-content: center;
-        align-items: center;
         width: 100%;
-        padding: 0;
-        margin: 0;
     }
     /*Garantias*/
 }
 
 /*Aquí inicia seccion Donaciones*/
 .sectionDonar {
-    background-color: #fff3e3;
-    height: 270px; /*Modificar*/
+    background-color: var(--color-base);
     margin: 0;
-    padding: 0 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    padding: 4rem 100px;
 }
+
 .ContenidoDonar {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
 }
+
+.contenidoDonar > div {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.contenidoDonar > div:nth-child(1) {
+    flex-basis: 25%;
+}
+
+.contenidoDonar > div:nth-child(2) {
+    flex-basis: 50%;
+}
+
+.contenidoDonar > div:nth-child(3) {
+    flex-basis: 25%;
+}
+
+@media (max-width: 425px) {
+    .sectionDonar {
+        padding: 0 1rem;
+    }
+    .contenidoDonar {
+        flex-direction: column;
+    }
+}
+
+.iconoDonar {
+    display: flex;
+    justify-content: center;
+}
+
 .iconoDonar img {
     width: 60px;
     height: 60px;
 }
-.iconoDonar {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    margin-right: 10px;
-}
+
 .botonDonar {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .botonDonar img {
     width: 20px;
     height: 20px;
 }
+
 .botonDonar .btn {
     color: var(--blanco);
+    display: flex;
     background-color: var(--rosa-mexicano);
     border: var(--rosa-mexicano);
     border-radius: 10px;
     width: 237px;
     height: 50px;
+    font-size: var(--texto-general);
+    justify-content: center;
+    align-items: center;
 }
+
 .textoDonar h3 {
-    font-family: var(--Fuente-primaria);
     color: var(--azul-talavera);
-    font-size: 24px;
+    font-size: var(--titulos-h3-rutas);
     font-weight: var(--bold);
 }
+
 .textoDonar span {
-    font-family: var(--Fuente-secundaria);
     color: var(--azul-talavera);
-    font-size: 18px;
+    font-size: var(--texto-general);
     font-weight: var(--regular);
 }
 
-@media (max-width: 768px) {
-    .sectionDonar {
-        height: 357px; /*Modificar*/
-
-        padding: 0 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .ContenidoDonar {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-    .iconoDonar {
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        padding-bottom: 165px;
-        margin-right: 10px;
-        width: 30%;
-    }
-    .textoDonar {
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-    }
-    .botonDonar {
-        width: 100%;
-        padding-left: 77px;
-    }
-}
 /*Aquí inicia seccion Acerca de*/
 .misionVision {
     display: grid;
     padding: 0 20px;
 }
+
 .tituloMision {
-    color: rgb(51, 51, 51);
+    color: var(--negro);
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-        sans-serif;
 }
-h2 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 32px;
-    color: rgb(51, 51, 51);
-}
-p {
-    font-size: 18px;
-    font-family: "Times New Roman", Times, serif;
-}
+
 .TitulosMisionVision {
-    color: rgb(225, 69, 108);
-    font-size: 32px;
-    font-family: "Times New Roman", Times, serif;
+    color: var(--rosa-mexicano);
+    font-size: var(--encabezados-h2);
 }
+
 .mision {
-    color: rgb(51, 51, 51);
+    color: var(--negro);
 }
+
 .vision {
-    color: rgb(51, 51, 51);
+    color: var(--negro);
 }
-/*Telefono*/
+
+/*Telefono*/ /* ? */ /* Responsividad está al revés en comparación a los demás */
 @media (min-width: 768px) {
     .misionVision {
         padding: 0 100px;
         margin: 0;
     }
 }
+
 .linea {
-    border: solid 2px #e1456c;
+    /* Linea agregada para añadir espacio arriba y abajo del hr */
+    margin-block: 60px;
+    border: solid 2px var(--rosa-mexicano);
 }
 
-/*Animación FOTOS*/
-.persona {
-    width: 285px;
-    height: 300px;
-    transition: 0.5s;
-    object-fit: cover;
-}
-
-.persona:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-}
-
-/*Boton ENVIAR*/
+/*  Sección Animaciones: Boton ENVIAR*/
 #boton-enviar {
-    background-color: #e1456c;
+    background-color: var(--rosa-mexicano);
     border-radius: 10px;
     width: 237px;
     height: 50.48px;
     cursor: pointer;
     border: none;
-    font-size: 18px;
-    font-family: caudex;
-    color: #ffffff;
+    font-size: var(--texto-general);
+    color: var(--blanco);
     transition: all 0.2s ease;
 }
 
@@ -355,49 +295,9 @@ button:active {
     transform: scale(0.96);
 }
 
-/*Modales*/
-.persona {
-    margin: 10px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.persona img {
-    width: 150px; /* Tamaño de la imagen */
-    height: 150px;
-    border-radius: 50%; /* Forma de círculo */
-}
-
-.persona p {
-    margin-top: 5px;
-    font-weight: bold;
-}
-
-/* Estilos para modal */
-.modal-dialog {
-    max-width: 300px; /* Ancho máximo del modal */
-}
-
-.modal-content {
-    padding: 20px;
-    border-radius: 20px;
-}
-
-.modal-body img {
-    max-width: 100%;
-    height: auto;
-}
-
 /* Estilos para el margen */
 .margenes {
     margin: 100px;
-}
-
-/* Margen responsivos */
-@media (max-width: 768px) {
-    .margenes {
-        margin: 20px;
-    }
 }
 
 /* Margen responsivos pequeños*/
@@ -407,10 +307,11 @@ button:active {
     }
 }
 
+/* Sección Contacto */
 .icono {
     width: 23px;
     height: 23px;
-    color: #282667;
+    color: var(--azul-talavera);
 }
 
 .contactoElementos {
@@ -429,9 +330,12 @@ button:active {
 }
 
 .formulario {
-    background-color: #fff3e3;
+    background-color: var(--color-base);
     border-radius: 10px;
     box-shadow: 0px 18px 28px #091e424c;
+}
+.formulario div input {
+    font-size: var(--texto-general);
 }
 
 .formulario,
@@ -441,27 +345,95 @@ button:active {
 }
 
 .contactanosTexto {
-    margin: auto;
     margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 120px;
     width: 100%;
     text-align: center;
+    padding: 3rem;
 }
 
 @media (max-width: 425px) {
     .contactanosTexto,
     .mediosDeContacto {
-        width: 385px;
         padding: 0;
         margin-block: 20px;
     }
 
     .formulario {
-        width: 385px;
         padding: 10px;
         margin: 20px;
+    }
+}
+
+.conocenosTexto {
+    text-align: center;
+    color: var(--azul-talavera);
+    margin-bottom: 3rem;
+}
+
+/* Estilos para modal */
+.modal-content {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+.persona p {
+    color: var(--azul-talavera);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: bold;
+}
+
+.persona img {
+    width: 50%; /* Tamaño de la imagen */
+    border-radius: 50%; /* Forma de círculo */
+}
+
+/*Modales*/
+/* Sección Animaciones: FOTOS*/
+.persona {
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
+    background-color: var(--color-base);
+    padding: 5rem 2rem;
+}
+
+.persona .imagenPersona {
+    width: 100%;
+    height: 50%;
+}
+
+.persona:hover {
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+.contenedorEquipo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .contenedorEquipo {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 425px) {
+    .contenedorEquipo {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
