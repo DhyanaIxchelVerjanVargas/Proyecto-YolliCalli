@@ -198,6 +198,8 @@ botonEnviar.addEventListener("click",function(event){
                     </div>
                 </div>
                     `);
+                    
+                      btnEnvioEstado.click();
                 }else {
                     modalEnvioEstado.insertAdjacentHTML("beforeend", `
                     <div class="modal-dialog modal-lg">
@@ -209,9 +211,11 @@ botonEnviar.addEventListener("click",function(event){
                         <div class="modal-body">
                         <p>Error en el envío</p>
                         </div>
+                    <   /div>
                     </div>
-                </div>
                     `);
+                    
+                    btnEnvioEstado.click();
                 }
             })
             
@@ -223,7 +227,6 @@ botonEnviar.addEventListener("click",function(event){
               message => alert(message)
             );*/
     }
-    btnEnvioEstado.click();
 })
 
 
