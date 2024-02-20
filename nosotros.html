@@ -6,18 +6,19 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Caudex:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/estilosGlobales.css" />
-        <link rel="stylesheet" href="./css/nosotros.css" />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <!-- <link rel="stylesheet" href="./css/normalize.css" /> -->
+        <link rel="stylesheet" href="./css/estilosGlobales.css" />
+        <link rel="stylesheet" href="./css/nosotros.css" />
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <title>Nosotros</title>
     </head>
     <body>
@@ -30,38 +31,28 @@
                     <nav aria-labelledby="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item" aria-current="page">
-                                <a href="#">Inicio</a>
+                                <!-- link cambiado a index -->
+                                <a href="./index.html">Inicio</a>
                             </li>
-                            <li
-                                class="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                Nosotros
-                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Nosotros</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </header>
-        <section class="sectionDonar col-12">
-            <div class="ContenidoDonar">
-                <div class="iconoDonar col-2">
+        <section class="sectionDonar">
+            <div class="contenidoDonar">
+                <div class="iconoDonar">
                     <img src="src/img/icono_ayuda.png" alt="DonarIcono" />
                 </div>
-                <div class="textoDonar col-7">
-                    <h3>
-                        Tu ayuda es importante, contribuyamos juntos al
-                        #ComercioJusto
-                    </h3>
-                    <span
-                        >Puedes apoyarnos haciendo un donativo a través de
-                        PayPal</span
-                    >
+                <div class="textoDonar">
+                    <h3>Tu ayuda es importante, contribuyamos juntos al #ComercioJusto</h3>
+                    <p>Puedes apoyarnos haciendo un donativo a través de PayPal.</p>
                 </div>
-                <div class="botonDonar col-3">
+                <div class="botonDonar">
                     <button type="btn btn-primary" class="btn btn-primary">
-                        <img src="src/img/paypal_logo_icon.png" alt="" />Dona
-                        aquí
+                        <img src="src/img/paypal_logo_icon.png" alt="" />
+                        <p>Dona aquí</p>
                     </button>
                 </div>
             </div>
@@ -72,353 +63,173 @@
                 <h2>Acerca de YolliCalli</h2>
             </div>
             <div class="mision">
+                <!-- Cambiar div por h2 o h3 -->
                 <div class="TitulosMisionVision">Misión</div>
                 <p>
-                    Proporcionamos una plataforma de comercio electrónico que
-                    conecta a los entusiastas del arte y las artesanías
-                    directamente con artesanos mexicanos, mediante la promoción
-                    de artículos que muestran la riqueza multicultural de
-                    México. Contribuimos al sustento y reconocimiento de
-                    creadores locales, apoyados por las donaciones voluntarias
-                    de ustedes, nuestros patrocinadores.
+                    Proporcionamos una plataforma de comercio electrónico que conecta a los entusiastas del arte y las
+                    artesanías directamente con artesanos mexicanos, mediante la promoción de artículos que muestran la
+                    riqueza multicultural de México. Contribuimos al sustento y reconocimiento de creadores locales,
+                    apoyados por las donaciones voluntarias de ustedes, nuestros patrocinadores.
                     <br />
                     <br />
-                    Nos enorgullece ser una plataforma que valora la tradición,
-                    la diversidad y la pasión detrás de cada artículo que
-                    ofrecemos.
+                    Nos enorgullece ser una plataforma que valora la tradición, la diversidad y la pasión detrás de cada
+                    artículo que ofrecemos.
                 </p>
             </div>
             <div class="vision">
+                <!-- Cambiar div por h2 o h3 -->
                 <div class="TitulosMisionVision">Visión</div>
                 <p>
-                    Apoyar la economía nacional y ser la principal plataforma de
-                    comercio electrónico que logre conectar a los entusiastas
-                    del arte y las artesanías con los artesanos de todo México,
-                    mediante la promoción y la preservación de la riqueza
-                    multicultural del país.
+                    Apoyar la economía nacional y ser la principal plataforma de comercio electrónico que logre conectar
+                    a los entusiastas del arte y las artesanías con los artesanos de todo México, mediante la promoción
+                    y la preservación de la riqueza multicultural del país.
                 </p>
-
-                <hr class="linea" />
             </div>
+            <hr class="linea" />
         </section>
         <section class="conocenos contenedor margenes">
-            <h2>Conócenos</h2>
-            <p>
-                ¡Saludos! Somos el equipo detrás del desarrollo de este
-                proyecto, un placer conocerte.
-            </p>
-            <div class="contenedorEquipo row">
-                <div
-                    class="persona col-md-2"
-                    data-toggle="modal"
-                    data-target="#coreyModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140537_1.png"
-                        alt="Corey"
-                    />
-                    <p>Corey</p>
-                </div>
-                <div
-                    class="persona col-md-2"
-                    data-toggle="modal"
-                    data-target="#OllincatlModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_2.png"
-                        alt="Ollincatl"
-                    />
-                    <p>Ollincatl</p>
-                </div>
-                <div
-                    class="persona col-md-2"
-                    data-toggle="modal"
-                    data-target="#EdgarModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_3.png"
-                        alt="Edgar"
-                    />
-                    <p>Edgar</p>
-                </div>
-                <div
-                    class="persona col-md-2"
-                    data-toggle="modal"
-                    data-target="#JetsaelModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_5.png"
-                        alt="Jetsael"
-                    />
-                    <p>Jetsael</p>
-                </div>
-                <div
-                    class="persona col-md-3"
-                    data-toggle="modal"
-                    data-target="#AbrilModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_6-transformed.png"
-                        alt="Abril"
-                    />
-                    <p>Abril</p>
-                </div>
-                <div
-                    class="persona col-md-3"
-                    data-toggle="modal"
-                    data-target="#EstefaníaModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_140538_8.png"
-                        alt="Estefanía"
-                    />
-                    <p>Estefanía</p>
-                </div>
-                <div
-                    class="persona col-md-3"
-                    data-toggle="modal"
-                    data-target="#UlisesModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_144857.png"
-                        alt="Ulises"
-                    />
-                    <p>Ulises</p>
-                </div>
-                <div
-                    class="persona col-md-3"
-                    data-toggle="modal"
-                    data-target="#DhyanaModal"
-                >
-                    <img
-                        src="src/img/Photoroom-20240213_144932.png"
-                        alt="Dhyana"
-                    />
-                    <p>Dhyana</p>
-                </div>
-            </div>
-        </section>
-        <!-- Modal Corey -->
-        <div
-            class="modal fade"
-            id="coreyModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="coreyModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img
-                            src="src/img/Photoroom-20240213_140537_1.png"
-                            alt="Corey"
-                        />
-                        <p>Corey</p>
-                        <p>
-                            Corey es una persona apasionada por la tecnología,
-                            es desarrollador fullstack Jr
-                        </p>
-                    </div>
-                </div>
-            </div>
+                <!--=================================================Conócenos================================-->
+  <main class="container">
+    <section class="conocenos">
+      <div class="texto-intro">
+        <h2>Conócenos</h2>
+        <p>¡Saludos! Somos el equipo detrás del desarrollo de este proyecto, un placer conocerte.</p>
+      </div>
+      <div class="contenedorEquipo">
+        <div class="persona" data-toggle="modal" data-target="#CoreyModal">
+          <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey">
+          <p>Corey</p><a href="http://www.linkedin.com/in/miguel-angel-rosas-ortiz-corey" target="_blank">LinkedIn</a>
         </div>
-        <!-- Modal Ollincatl -->
-        <div
-            class="modal fade"
-            id="OllincatlModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="OllincatlModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img
-                            src="src/img/Photoroom-20240213_140538_2.png"
-                            alt="Imagen de Ollincatl"
-                            class="img-fluid rounded-circle mb-2"
-                        />
-                        <p>Ollincatl</p>
-                        <p>
-                            Egresado de la licenciatura de Matemáticas Aplicadas
-                            y Computación y Desarrollador Full Stack Junior en
-                            proyecto e-commerce YolliCalli.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="persona" data-toggle="modal" data-target="#OllincatlModal">
+          <img src="src/img/Photoroom-20240213_140538_2.png" alt="Ollicantl">
+          <p>Ollincatl</p><a href="https://www.linkedin.com/in/ollincatl-jmnz/" target="_blank">LinkedIn</a>
         </div>
-        <!-- Modal Edgar-->
-        <div
-            class="modal fade"
-            id="EdgarModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="EdgarModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img
-                            src="src/img/Photoroom-20240213_140538_3.png"
-                            alt="Imagen de Edagr"
-                            class="img-fluid rounded-circle mb-2"
-                        />
-                        <p>Edgar</p>
-                        <p>
-                            Desarrollador Java Full Stack en el proyecto de
-                            e-commerce “YolliCalli” e Ingeniero en Mecatrónica.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="persona" data-toggle="modal" data-target="#EdgarModal">
+          <img src="src/img/Photoroom-20240213_140538_3.png" alt="Edgar">
+          <p>Edgar</p><a href="https://www.linkedin.com/in/edgar-gz-dev" target="_blank">LinkedIn</a>
         </div>
-        <!-- Modal Jetsael-->
-        <div
-            class="modal fade"
-            id="JetsaelModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="JetsaelModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img
-                            src="src/img/Photoroom-20240213_140538_5.png"
-                            alt="Imagen de Jetsael"
-                            class="img-fluid rounded-circle mb-2"
-                        />
-                        <p>Jetsael</p>
-                        <p>
-                            Comunicólogo y Desarrollador Full Java Stack en el
-                            proyecto de e-commerce “YolliCalli”.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="persona" data-toggle="modal" data-target="#JetsaelModal">
+          <img src="src/img/Photoroom-20240213_140538_5.png" alt="Jetsael">
+          <p>Jetsael</p><a href="https://www.linkedin.com/in/jetsaelvillegas/" target="_blank">LinkedIn</a>
         </div>
-        <!-- Modal Abril-->
-        <div
-            class="modal fade"
-            id="AbrilModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="AbrilModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img
-                            src="src/img/Photoroom-20240213_140538_6-transformed.png"
-                            alt="Imagen de Abril"
-                            class="img-fluid rounded-circle mb-2"
-                        />
-                        <p>Abril</p>
-                        <p>
-                            Arquitecta y desarrolladora Java Full Stack Jr
-                            dentro del e-commerce YolliCalli.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="persona" data-toggle="modal" data-target="#AbrilModal">
+          <img src="src/img/Photoroom-20240213_140538_6-transformed.png" alt="Abril">
+          <p>Abril</p><a href="https://www.linkedin.com/in/abril-barrera1/" target="_blank">LinkedIn</a>
         </div>
-
-        <!-- Modal Estefanía-->
-        <div
-            class="modal fade"
-            id="EstefaníaModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="EstefaníaModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img
-                            src="src/img/Photoroom-20240213_140538_8.png"
-                            alt="Imagen de Estefanía"
-                            class="img-fluid rounded-circle mb-2"
-                        />
-                        <p>Estefanía</p>
-                        <p>
-                            Geocientífica y Desarrolladora Java Full Stack en el
-                            proyecto de comercio electrónico YolliCalli
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="persona" data-toggle="modal" data-target="#EstefaníaModal">
+          <img src="src/img/Photoroom-20240213_140538_8.png" alt="Estefanía">
+          <p>Estefanía</p><a href="http://linkedin.com/in/nadiaemg/" target="_blank">LinkedIn</a>
         </div>
-        <!-- Modal Ulises-->
-        <div
-            class="modal fade"
-            id="UlisesModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="UlisesModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img
-                            src="src/img/Photoroom-20240213_144857.png"
-                            alt="Imagen de Ulises"
-                            class="img-fluid rounded-circle mb-2"
-                        />
-                        <p>Ulises</p>
-                        <p>
-                            Ingeniero quimico metalurgico, desarrollador java
-                            full stack jr en proyecto YolliCalli, he sido
-                            valuador, gerente, analista de información y de
-                            facturación.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="persona" data-toggle="modal" data-target="#UlisesModal">
+          <img src="src/img/Photoroom-20240213_144857.png" alt="Ulises">
+          <p>Ulises</p><a href="https://www.linkedin.com/in/edgar-ulises-benitez-cabriales-5aab81237/" target="_blank">LinkedIn</a>
         </div>
-        <!-- Modal Dhyana-->
-        <div
-            class="modal fade"
-            id="DhyanaModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="DhyanaModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img
-                            src="src/img/Photoroom-20240213_144932.png"
-                            alt="Imagen de Dhyana"
-                            class="img-fluid rounded-circle mb-2"
-                        />
-                        <p>Dhyana</p>
-                        <p>
-                            Ingeniera en Sistemas Computacionales y
-                            Desarrolladora Full Stack Junior en proyecto
-                            YolliCalli.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="persona" data-toggle="modal" data-target="#DhyanaModal">
+          <img src="src/img/Photoroom-20240213_144932.png" alt="Dhyana">
+          <p>Dhyana</p><a href="https://www.linkedin.com/in/dhyanaverjanvargas/" target="_blank">LinkedIn</a>
         </div>
-
+      </div>
+    </section>
+  </main>
+  <!--=====================================================================================Modales-->
+  <!-- Modal Corey -->
+  <div class="modal fade" id="CoreyModal" tabindex="-1" role="dialog" aria-labelledby="CoreyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey">
+          <p class="nombreModal">Corey</p>
+          <p>Corey es una persona apasionada por la tecnología, es desarrollador fullstack Jr</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal Ollincatl -->
+  <div class="modal fade" id="OllincatlModal" tabindex="-1" role="dialog" aria-labelledby="OllincatlModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="src/img/Photoroom-20240213_140538_2.png" alt="Imagen de Ollincatl" class="img-fluid rounded-circle mb-2">
+          <p class="nombreModal">Ollincatl</p>
+          <p>Egresado de la licenciatura de Matemáticas Aplicadas y Computación y Desarrollador Full Stack Junior en proyecto e-commerce YolliCalli.</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal Edgar-->
+  <div class="modal fade" id="EdgarModal" tabindex="-1" role="dialog" aria-labelledby="EdgarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="src/img/Photoroom-20240213_140538_3.png" alt="Imagen de Edagr" class="img-fluid rounded-circle mb-2">
+          <p class="nombreModal">Edgar</p>
+          <p>Desarrollador Java Full Stack en el proyecto de e-commerce “YolliCalli” e Ingeniero en Mecatrónica.</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal Jetsael-->
+  <div class="modal fade" id="JetsaelModal" tabindex="-1" role="dialog" aria-labelledby="JetsaelModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="src/img/Photoroom-20240213_140538_5.png" alt="Imagen de Jetsael" class="img-fluid rounded-circle mb-2">
+          <p class="nombreModal">Jetsael</p>
+          <p>Comunicólogo y Desarrollador Full Java Stack en el proyecto de e-commerce “YolliCalli”.</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal Abril-->
+  <div class="modal fade" id="AbrilModal" tabindex="-1" role="dialog" aria-labelledby="AbrilModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="src/img/Photoroom-20240213_140538_6-transformed.png" alt="Imagen de Abril" class="img-fluid rounded-circle mb-2">
+          <p class="nombreModal">Abril</p>
+          <p>Arquitecta y desarrolladora Java Full Stack Jr dentro del e-commerce YolliCalli.</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal Estefanía-->
+  <div class="modal fade" id="EstefaníaModal" tabindex="-1" role="dialog" aria-labelledby="EstefaníaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="src/img/Photoroom-20240213_140538_8.png" alt="Imagen de Estefanía" class="img-fluid rounded-circle mb-2">
+          <p class="nombreModal">Estefanía</p>
+          <p>Geocientífica y Desarrolladora Java Full Stack en el proyecto de comercio electrónico YolliCalli</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal Ulises-->
+  <div class="modal fade" id="UlisesModal" tabindex="-1" role="dialog" aria-labelledby="UlisesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="src/img/Photoroom-20240213_144857.png" alt="Imagen de Ulises" class="img-fluid rounded-circle mb-2">
+          <p class="nombreModal">Ulises</p>
+          <p>Ingeniero quimico metalurgico, desarrollador java full stack jr en proyecto YolliCalli, he sido valuador, gerente, analista de información y de facturación.</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal Dhyana-->
+  <div class="modal fade" id="DhyanaModal" tabindex="-1" role="dialog" aria-labelledby="DhyanaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="src/img/Photoroom-20240213_144932.png" alt="Imagen de Dhyana" class="img-fluid rounded-circle mb-2">
+          <p class="nombreModal">Dhyana</p>
+          <p>Ingeniera en Sistemas Computacionales y Desarrolladora Full Stack Junior en proyecto YolliCalli.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--==========================================================================================-->
         <!--Sección "Contactanos"-->
         <section class="contacto margenes">
             <!--Encabezado de sección-->
             <div class="contactanosTexto">
                 <h2>Contáctanos</h2>
                 <p>
-                    Para más información acerca de nuestros productos y
-                    servicios, por favor envíanos un correo electrónico.
+                    Para más información acerca de nuestros productos y servicios, por favor envíanos un correo
+                    electrónico.
                     <br />
                     Nuestro equipo siempre estará para atenderte.
                 </p>
@@ -489,9 +300,7 @@
                 <div class="formulario">
                     <form>
                         <div class="mb-3">
-                            <label for="inputNombre" class="form-label"
-                                >Nombre Completo</label
-                            >
+                            <label for="inputNombre" class="form-label">Nombre Completo</label>
                             <input
                                 type="text"
                                 class="marcadorTexto form-control"
@@ -499,11 +308,10 @@
                                 placeholder="Nombre Apellido"
                                 required
                             />
+                            <div id="alertNombre" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="inputEmail" class="form-label"
-                                >Correo electrónico</label
-                            >
+                            <label for="inputEmail" class="form-label">Correo electrónico</label>
                             <input
                                 type="email"
                                 class="marcadorTexto form-control"
@@ -512,11 +320,10 @@
                                 placeholder="ejemplo@correo.com"
                                 required
                             />
+                            <div id="alertCorreo" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="inputAsunto" class="form-label"
-                                >Asunto</label
-                            >
+                            <label for="inputAsunto" class="form-label">Asunto</label>
                             <input
                                 type="text"
                                 class="marcadorTexto form-control"
@@ -524,11 +331,10 @@
                                 placeholder="Escribe tu texto aquí"
                                 required
                             />
+                            <div id="alertAsunto" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="inputMensaje" class="form-label"
-                                >Mensaje</label
-                            >
+                            <label for="inputMensaje" class="form-label">Mensaje</label>
                             <input
                                 type="text"
                                 class="marcadorTexto form-control"
@@ -536,26 +342,25 @@
                                 placeholder="Escribe tu texto aquí"
                                 required
                             />
+                            <div id="alertMensaje" style="display: none;"></div>
                         </div>
                         <div class="mb-3 form-check">
-                            <input
-                                type="checkbox"
-                                class="form-check-input"
-                                id="checkContacto"
-                                required
-                            />
-                            <label
-                                class="marcadorTexto form-check-label"
-                                for="checkContacto"
-                                >Acepto que mis datos sean tratados con
-                                discreción por YolliCalli®️</label
+                            <input type="checkbox" class="form-check-input" id="checkContacto" required />
+                            <label class="marcadorTexto form-check-label" for="checkContacto"
+                                >Acepto que mis datos sean tratados con discreción por YolliCalli®️</label
                             >
+                            <br>
+                            <div id="alertCondiciones" style="display: none;"></div>
                         </div>
-                        <button type="submit" class="btn" id="boton-enviar">
-                            Enviar
-                        </button>
+                        <button type="submit" class="btn" id="boton-enviar">Enviar</button>
                     </form>
                 </div>
+            </div>
+            <!-- Modal de alerta de envio exitoso -->
+            <button id="btnEnvioEstado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEnvioEstado" style="display: none;">
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modalEnvioEstado" tabindex="-1" aria-labelledby="estadoModalLabel" aria-hidden="true">
             </div>
         </section>
 
@@ -599,12 +404,7 @@
                         </g>
                         <defs>
                             <clipPath id="clip0_117_3296">
-                                <rect
-                                    width="60"
-                                    height="60"
-                                    fill="white"
-                                    transform="translate(0.666504)"
-                                />
+                                <rect width="60" height="60" fill="white" transform="translate(0.666504)" />
                             </clipPath>
                         </defs>
                     </svg>
@@ -630,12 +430,7 @@
                         </g>
                         <defs>
                             <clipPath id="clip0_117_3304">
-                                <rect
-                                    width="60"
-                                    height="60"
-                                    fill="white"
-                                    transform="translate(0.333496)"
-                                />
+                                <rect width="60" height="60" fill="white" transform="translate(0.333496)" />
                             </clipPath>
                         </defs>
                     </svg>
