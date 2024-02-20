@@ -66,3 +66,23 @@ h3 {
     font-size: var(--titulos-h3-rutas);
     color: var(--rosaMexicano);
 }
+
+.boton{
+    width: 240px;
+    height: 58px;
+    border-width: 0.5px;
+    background-color: #e1456c;
+    border-color: #e1456c;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: var(--barlow);
+    color: #ffffff;
+    transition: all .5s ease;
+}
+
+.boton:hover{
+   background-color: #ffffff;
+   color: #e1456c; 
+   border-color: #e1456c;
+}
+
