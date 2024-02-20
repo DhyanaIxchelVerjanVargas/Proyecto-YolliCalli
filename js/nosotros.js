@@ -5,6 +5,8 @@ let inputAsunto = document.getElementById("inputAsunto");
 let inputMensaje = document.getElementById("inputMensaje"); 
 let checkCondicones = document.getElementById("checkContacto");
 let botonEnviar = document.getElementById("boton-enviar");
+let modalEnvioEstado = document.getElementById("modalEnvioEstado");
+let btnEnvioEstado = document.getElementById("btnEnvioEstado");
 
 let alertNombre = document.getElementById("alertNombre");
 let alertCorreo = document.getElementById("alertCorreo");
@@ -153,6 +155,7 @@ botonEnviar.addEventListener("click",function(event){
         isValido = false;
     }
 
+    modalEnvioEstado.innerHTML=""
     if(isValido){
         /*Aqui deberia ir el codigo codigo para los que es el envio del mensaje*/
         let ebody = `
@@ -175,7 +178,6 @@ botonEnviar.addEventListener("click",function(event){
                 Body : ebody
             }).then(function (message) {
                 if(String(message)=="OK"){
-                    alert("Mensaje enviado satisfactoriamente")
                     /*Las siguientes lineas es para limpiar lo campos del formularios*/
                     /*No se si seria buena idea ponerlas despues de que se alla enviado el correo exitosamente */
                     inputNombre.value = "";
@@ -183,8 +185,33 @@ botonEnviar.addEventListener("click",function(event){
                     inputAsunto.value = "";
                     inputMensaje.value = "";
                     checkCondicones.checked = false;
+                    modalEnvioEstado.insertAdjacentHTML("beforeend", `
+                    <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="estadoModalLabel">YolliCalli</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerral"></button>
+                        </div>
+                        <div class="modal-body">
+                        <p>Mensaje enviado satisfactoriamenta</p>
+                        </div>
+                    </div>
+                </div>
+                    `);
                 }else {
-                    alert("Error en el envío")
+                    modalEnvioEstado.insertAdjacentHTML("beforeend", `
+                    <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="estadoModalLabel">YolliCalli</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerral"></button>
+                        </div>
+                        <div class="modal-body">
+                        <p>Error en el envío</p>
+                        </div>
+                    </div>
+                </div>
+                    `);
                 }
             })
             
@@ -195,8 +222,8 @@ botonEnviar.addEventListener("click",function(event){
             /*then(
               message => alert(message)
             );*/
-
     }
+    btnEnvioEstado.click();
 })
 
 

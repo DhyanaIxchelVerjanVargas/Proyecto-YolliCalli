@@ -404,7 +404,7 @@
                 </div>
                 <!--Agregue etiquetas a los input para el formato de los placeholders "marcadorTexto"-->
                 <div class="formulario">
-                    <form class="form-contact">
+                    <form>
                         <div class="mb-3">
                             <label for="inputNombre" class="form-label">Nombre Completo</label>
                             <input
@@ -460,8 +460,15 @@
                         <button type="submit" class="btn" id="boton-enviar">Enviar</button>
                     </form>
                 </div>
+            </div>   
+            <!-- Modal de alerta de envio exitoso -->
+            <!-- Button trigger modal -->
+            <button id="btnEnvioEstado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEnvioEstado" style="display: none;">
+            </button>
+  
+            <!-- Modal -->
+            <div class="modal fade" id="modalEnvioEstado" tabindex="-1" aria-labelledby="estadoModalLabel" aria-hidden="true">
             </div>
-        </section>
 
         <!--------------------------------------------------------------------------------------------------------------------------------->
 
