@@ -86,3 +86,360 @@ h3 {
    border-color: #e1456c;
 }
 
+
+/*Header Barra de navegacion*/
+header{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#Navegacion {
+    height: 100px;
+    width: 100%;
+    padding: 0 100px;
+    margin: 0;
+    background-color: var(--blanco);
+}
+
+#Navegacion > div {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#Navegacion > div .contenedorLogo .logoRosa {
+    width: 168px;
+    height: 84px;
+}
+
+#Navegacion > div .offcanvas .offcanvas-header h3 {
+    font-family: var(--barlow);
+    font-size: 24;
+    font-weight: var(--bold);
+    color: var(--azul-talavera);
+}
+
+#Navegacion > div .offcanvas .offcanvas-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+#Navegacion > div .offcanvas .offcanvas-body ul {
+    display: flex;
+    justify-content: space-between;
+}
+#Navegacion > div .offcanvas .offcanvas-body ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Navegacion > div .offcanvas .offcanvas-body ul li a{
+    font-family: var(--barlow);
+    font-size: 18px;
+    font-weight: var(--bold);
+    color: var(--azul-talavera);
+    padding: 0;
+    margin: 2px;
+}
+
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .itemIcons {
+    min-width: 28px;
+}
+
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .navIconsItems{
+    font-size: 28px;
+    color: var(--azul-talavera);
+}
+
+/**/
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda  .subContenedorBusqueda {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    min-width: 28px;
+}
+
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda .divBusqueda{ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    box-sizing: border-box;
+    height: 28px;
+    width: 0;
+    transition: all .7s ease;
+    padding: 0;
+    margin-right: 1px;
+
+}
+
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda .divBusqueda input {
+    outline: none;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    color: var(--azul-talavera);
+    font-family: var(--Fuente-primaria);
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid var(--rosa-mexicano);
+    transition: all .7s ease;
+}
+
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda .divBusqueda .cancelarBusqueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--rosa-mexicano);
+    border-radius: 50%;
+    height: 28px;
+    position:absolute;
+    cursor: pointer;
+}
+
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda input::placeholder {
+    color: var(--rosa-mexicano);
+}
+
+#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda .navIconsItems {
+    position: absolute;
+    background-color: var(--blanco);
+    cursor: pointer;
+}
+/**/
+
+#Navegacion .navbar-toggler {
+    padding: 0;
+    border: none;
+}
+
+#Navegacion .navbar-toggler .btnIconCollapse {
+    color: var(--azul-talavera);
+    font-size: 35px;
+}
+
+/*Footer*/
+footer {
+    justify-content: space-between;
+    width: 100%;
+    height: 505px;
+    background-color: var(--blanco);
+    padding: 0 100px;
+    margin: 0;
+    border-top: 2px solid var(--gris);
+}
+
+footer .footerContent{
+    height: 90%;
+    padding: 0;
+    margin: 0;
+}
+footer .footerDerechos{
+    padding: 0;
+    margin: 0;
+    height: 10%;
+}
+
+footer .footerContent .footerLogo,
+footer .footerContent .footerVinculos,
+footer .footerContent .footerAyuda {
+    height: 100%;
+}
+
+footer .footerContent .footerVinculos,
+footer .footerContent .footerAyuda {
+    padding-top: 48px;
+}
+
+footer .footerContent .footerVinculos h4, 
+footer .footerContent .footerAyuda h4 {
+    font-family: var(--barlow);
+    font-size: 20px;
+    color: var(--rosa-mexicano);
+}
+
+footer .footerContent .footerVinculos ul,
+footer .footerContent .footerAyuda ul {
+    width: 100%;
+    padding: 0;
+}
+
+footer .footerContent .footerVinculos ul li,
+footer .footerContent .footerAyuda ul li {
+    font-family: var(--barlow);
+    font-size: 16px;
+    color: var(--azul-talavera);
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+footer .footerContent .footerVinculos ul li a,
+footer .footerContent .footerAyuda ul li a {
+    font-family: var(--barlow);
+    font-size: 16px;
+    color: var(--azul-talavera);
+    text-decoration: none;
+}
+
+footer .footerContent .footerLogo .logoRosa{
+    height: 117px;
+    width: 267px;
+}
+
+footer .footerContent .footerLogo span{
+    font-family: var(--barlow);
+    font-size: 20px;
+    font-weight: var(--regular);
+    text-align: center;
+    color: var(--azul-talavera);
+}
+
+footer hr{
+    color: var(--bordes);
+    height: 6px;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+}
+
+footer .footerDerechos span {
+    font-family: var(--barlow);
+    font-size: 20px;
+    font-weight: var(--regular);
+}
+/*Foter*/
+
+@media (max-width: 991.98px){
+        /*Barra de navegacion*/
+        #Navegacion {
+            height: 100px;
+            width: 100%;
+            padding: 0 50px;
+            margin: 0;
+        }
+    
+        #Navegacion > div .contenedorLogo .logoRosa{
+            width: 97.42px;
+            height: 44px;
+        }
+    
+        #Navegacion > div .offcanvas .offcanvas-header {
+            justify-content: end;
+        }
+    
+        #Navegacion > div .offcanvas .offcanvas-header h3 {
+            position: absolute;
+            left: 40%;
+        }
+    
+        #Navegacion > div .offcanvas .offcanvas-header button{
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            color: var(--azul-talavera);
+        }
+    
+        #Navegacion > div .offcanvas .offcanvas-body{
+            display: flex;
+            flex-direction: column;
+            justify-content:flex-start;
+            align-items: center;
+        }
+    
+        #Navegacion > div .offcanvas .offcanvas-body ul{
+            width: 100%;
+        }
+        #Navegacion > div .offcanvas .offcanvas-body li{
+            width: 100%;
+            text-align:center;
+        }
+    
+        #Navegacion > div .offcanvas .offcanvas-body .navbarIcons {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-top: 20px;
+        }
+    
+        #Navegacion > div .offcanvas .offcanvas-body .navbarIcons .itemIcons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+        }
+    
+        #Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda {
+            width: 100%;
+        }
+    
+        #Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda .navIconsItems {
+            position: absolute;
+        }
+    
+        /*Barra de navegacion*/
+}
+
+@media (max-width: 767.98px){
+    /*footer*/
+    footer {
+        justify-content: space-between;
+        width: 100%;
+        height: 513px;
+        padding: 0 50px;
+        margin: 0;
+        border-top: 2px solid var(--gris);
+    }
+
+    footer .footerContent{
+        display: flex;
+        flex-direction: row;
+        height: 90%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    footer .footerContent .footerLogo{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    
+    footer .footerContent .footerVinculos,
+    footer .footerContent .footerAyuda {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    /*footer*/
+}
+/*Parte de los Media Querys*/
