@@ -15,58 +15,61 @@
   <!-- navBar-->
   <header>
     <nav id="Navegacion" class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <div class="col-sm-3 contenedorLogo">
-                <a class="navbar-brand" href="./index.html"><img class="logoRosa" src="./src/img/logorosa.png" alt="logo de YolliCalli"></a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
-            </button>
-            <div class="offcanvas offcanvas-end col-sm-9" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h3 class="offcanvas-title" id="offcanvasNavbarLabel">YolliCalli</h3>
-                    <button type="button" class="btn-close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close">
-                        <span><i class="bi bi-x-lg"></i></span>
-                    </button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav col-6">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./tienda.html">Tienda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./nosotros.html">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./nosotros.html#contacto">Contacto</a>
-                        </li>
-                    </ul>
-                    <div class="navbarIcons col-6">
-                        <div class="itemIcons contenedorBusqueda col-9">
-                            <div class="subContenedorBusqueda">
-                                <div class="divBusqueda" id="divBusqueda">
-                                    <input type="text" name="" id="txtBusqueda" value="" placeholder="Buscar">
-                                    <a class="cancelarBusqueda" id="CancelarBusqueda"><i class="bi bi-x"></i></a>
-                                </div>
-                                <a class="navIconsItems" id="btnBuscar"><i class="bi bi-search"></i></a>
-                            </div>
-                        </div>
-                        <div class="itemIcons col-1 d-flex justify-content-center">
-                            <a href="./perfil.html#fav" class="navIconsItems"><i class="bi bi-heart"></i></a>
-                        </div>
-                        <div class="itemIcons col-1">
-                            <a href="./carrito.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-cart3"></i></a>
-                        </div>
-                        <div class="itemIcons col-1">
-                            <a href="./perfil.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-person"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="container-fluid">
+          <div class="col-sm-3 contenedorLogo">
+              <a class="navbar-brand" href="#"><img class="logoRosa" src="./src/img/logorosa.png" alt="logo de YolliCalli"></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                  <div class="imgVacia"></div>
+                  <img src="src/img/logorosa.png" alt="Logo de yollicalli">
+                  <button type="button" class="btn-close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close">
+                      <span><i class="bi bi-x-lg"></i></span>
+                  </button>
+              </div>
+              <div class="offcanvas-body">
+                  <ul class="navbar-nav col-4">
+                      <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="./tienda.html">Tienda</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="./nosotros.html">Nosotros</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="./nosotros.html#contacto">Contacto</a>
+                      </li>
+                  </ul>
+                  <div class="col-4">
+                      <div class="contenedorBusqueda col-9">
+                          <div class="subContenedorBusqueda">
+                              <div class="divBusqueda" id="divBusqueda">
+                                  <input type="text" name="" id="txtBusqueda" value="" placeholder="Buscar">
+                                  <a class="cancelarBusqueda" id="CancelarBusqueda"><i class="bi bi-x"></i></a>
+                              </div>
+                              <a class="navIconsItems" id="btnBuscar"><i class="bi bi-search"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="navbarIcons col-4">
+                      <div class="itemIcons col-1 d-flex justify-content-center">
+                          <a href="./perfil.html#fav" class="navIconsItems"><i class="bi bi-heart"></i></a>
+                      </div>
+                      <div class="itemIcons col-1">
+                          <a href="./carrito.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-cart3"></i></a>
+                      </div>
+                      <div class="itemIcons col-1">
+                          <a href="./perfil.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-person"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     </nav>
     <br>
     <br>
