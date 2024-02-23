@@ -6,27 +6,91 @@
     <title>Publica tu producto</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!--Styles-->
+    <link rel="stylesheet" href="./css/estilosGlobales.css">
 </head>
 <body>
   <!--Navbar (pendiente)-->
-  <!--Banner-->
   <header>
-    <div id="Banner" class="banner">
-      <div>
-        <h2 class="titulosRosas">¡Publica tu producto!</h2>
-          </div>
-            <div class="breadcrumb">
-              <nav aria-labelledby="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item" aria-current="page">
-                        <!-- link cambiado a index -->
-                        <a href="./index.html">Perfil</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">Publicación de producto</li>
-                  </ol>
-              </nav>
+    <nav id="Navegacion" class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <div class="col-sm-3 contenedorLogo">
+                <a class="navbar-brand" href="#"><img class="logoRosa" src="./src/img/logorosa.png" alt="logo de YolliCalli"></a>
             </div>
-         </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <div class="imgVacia"></div>
+                    <img src="src/img/logorosa.png" alt="Logo de yollicalli">
+                    <button type="button" class="btn-close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <span><i class="bi bi-x-lg"></i></span>
+                    </button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav col-4">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./tienda.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./nosotros.html#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                    <div class="col-4">
+                        <div class="contenedorBusqueda col-9">
+                            <div class="subContenedorBusqueda">
+                                <div class="divBusqueda" id="divBusqueda">
+                                    <input type="text" name="" id="txtBusqueda" value="" placeholder="Buscar">
+                                    <a class="cancelarBusqueda" id="CancelarBusqueda"><i class="bi bi-x"></i></a>
+                                </div>
+                                <a class="navIconsItems" id="btnBuscar"><i class="bi bi-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbarIcons col-4">
+                        <div class="itemIcons col-1 d-flex justify-content-center">
+                            <a href="./perfil.html#fav" class="navIconsItems"><i class="bi bi-heart"></i></a>
+                        </div>
+                        <div class="itemIcons col-1">
+                            <a href="./carrito.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-cart3"></i></a>
+                        </div>
+                        <div class="itemIcons col-1">
+                            <a href="./perfil.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-person"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+  <!--Banner-->
+  <div id="Banner" class="banner">
+    <div>
+      <h2 class="titulosRosas">¡Publica tu producto!</h2>
+        </div>
+          <div class="breadcrumb">
+            <nav aria-labelledby="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item" aria-current="page">
+                      <!-- link cambiado a index -->
+                      <a href="./index.html">Perfil</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">Publicación de producto</li>
+                </ol>
+            </nav>
+          </div>
+       </div>
   </header>
   <!--Formulario-->
   <form>
@@ -64,7 +128,37 @@
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
+  <footer class="col-12 flex-column d-flex">
+    <div class="footerContent row d-flex">
+        <div class="footerLogo col-sm-4 d-flex flex-column align-items-center">
+            <img class="logoRosa" src="./src/img/logorosa.png" alt="">
+            <span>By Generation México</span>
+        </div>
+        <div class="footerVinculos col-sm-4 d-flex flex-column">
+            <h4>Vinculos</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+        </div>
+        <div class="footerAyuda col-sm-4 d-flex flex-column">
+            <h4>Ayuda</h4>
+            <ul>
+                <li><a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a></li>
+                <li><a href="./nosotros.html#contacto">Contacto</a></li>
+                <li><a href="./politicas.html" target="_blank">Politicas de privacidad</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="footerDerechos row d-flex">
+        <span>2024 YolliCalli. Todos los derechos reservados.</span>
+    </div>
+</footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!--JS-->
+    <script src="./js/main.js"></script>
 </body>
 </html>
