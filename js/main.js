@@ -21,7 +21,7 @@ btnBuscar.addEventListener("click", function(event){
         sessionStorage.setItem("palabraBuscada", txtBusqueda.value);
         txtBusqueda.value = txtBusqueda.value.trim();
         txtBusqueda.value = "";
-        location.href = "index.html";
+        location.href = "tienda.html";
         
         
     }
@@ -29,7 +29,7 @@ btnBuscar.addEventListener("click", function(event){
 
 txtBusqueda.addEventListener("keyup", function(event){
     if(event.code == 'Enter' && txtBusqueda.value.length != 0){
-        location.href = "index.html";
+        location.href = "tienda.html";
         sessionStorage.setItem("palabraBuscada", txtBusqueda.value);
     }
 });
