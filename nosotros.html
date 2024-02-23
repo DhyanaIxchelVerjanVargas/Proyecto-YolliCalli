@@ -31,30 +31,31 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
                     </button>
-                    <div class="offcanvas offcanvas-end col-sm-9" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div class="offcanvas-header">
-                            <h3 class="offcanvas-title" id="offcanvasNavbarLabel">YolliCalli</h3>
+                            <div class="imgVacia"></div>
+                            <img src="src/img/logorosa.png" alt="Logo de yollicalli">
                             <button type="button" class="btn-close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close">
                                 <span><i class="bi bi-x-lg"></i></span>
                             </button>
                         </div>
                         <div class="offcanvas-body">
-                            <ul class="navbar-nav col-6">
+                            <ul class="navbar-nav col-4">
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                                    <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Tienda</a>
+                                    <a class="nav-link" href="./tienda.html">Tienda</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Nosotros</a>
+                                    <a class="nav-link active" href="./nosotros.html">Nosotros</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Contacto</a>
+                                    <a class="nav-link" href="./nosotros.html#contacto">Contacto</a>
                                 </li>
                             </ul>
-                            <div class="navbarIcons col-6">
-                                <div class="itemIcons contenedorBusqueda col-9">
+                            <div class="col-4">
+                                <div class="contenedorBusqueda col-9">
                                     <div class="subContenedorBusqueda">
                                         <div class="divBusqueda" id="divBusqueda">
                                             <input type="text" name="" id="txtBusqueda" value="" placeholder="Buscar">
@@ -63,14 +64,16 @@
                                         <a class="navIconsItems" id="btnBuscar"><i class="bi bi-search"></i></a>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="navbarIcons col-4">
                                 <div class="itemIcons col-1 d-flex justify-content-center">
-                                    <a href="" class="navIconsItems"><i class="bi bi-heart"></i></a>
+                                    <a href="./perfil.html#fav" class="navIconsItems"><i class="bi bi-heart"></i></a>
                                 </div>
                                 <div class="itemIcons col-1">
-                                    <a href="" class="navIconsItems d-flex justify-content-center"><i class="bi bi-cart3"></i></a>
+                                    <a href="./carrito.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-cart3"></i></a>
                                 </div>
                                 <div class="itemIcons col-1">
-                                    <a href="" class="navIconsItems d-flex justify-content-center"><i class="bi bi-person"></i></a>
+                                    <a href="./perfil.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-person"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -281,7 +284,7 @@
         <section class="contacto margenes">
             <!--Encabezado de sección-->
             <div class="contactanosTexto">
-                <h2>Contáctanos</h2>
+                <h2 id="contacto">Contáctanos</h2>
                 <p>
                     Para más información acerca de nuestros productos y servicios, por favor envíanos un correo
                     electrónico.
@@ -552,9 +555,9 @@
                 <div class="footerAyuda col-sm-4 d-flex flex-column">
                     <h4>Ayuda</h4>
                     <ul>
-                        <li><a href="#">Opciones de pago</a></li>
-                        <li><a href="#">Atención al cliente</a></li>
-                        <li><a href="#">Politicas de privacidad</a></li>
+                        <li><a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a></li>
+                        <li><a href="./nosotros.html#contacto">Contacto</a></li>
+                        <li><a href="./politicas.html">Politicas de privacidad</a></li>
                     </ul>
                 </div>
             </div>
@@ -572,5 +575,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="./js/nosotros.js"></script>
+        <script src="./js/main.js"></script>
     </body>
 </html>
