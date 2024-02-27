@@ -11,9 +11,12 @@ btnBuscar.addEventListener("click", function(event){
     if (txtBusqueda.value.length == 0 && txtBusqueda.clientWidth <= 10){
         divBusqueda.style.width = "200px";
         divBusqueda.style.marginRight = "29px";
-    } else if(txtBusqueda.value.length == 0 && txtBusqueda.clientWidth >= 190 ){
+        txtBusqueda.style.width = "200px";
+        
+    } else if(txtBusqueda.value.length == 0 && txtBusqueda.clientWidth >= 50 ){
         divBusqueda.style.width = "0px";
         divBusqueda.style.marginRight = "1px"
+        txtBusqueda.style.width = "0px";
         txtBusqueda.value = "";
     } else {
         
@@ -37,7 +40,9 @@ txtBusqueda.addEventListener("keyup", function(event){
 btnCancelarBusqueda.addEventListener("click",function(event){
     divBusqueda.style.width = "0px";
     divBusqueda.style.marginRight = "1px"
+    txtBusqueda.style.width = "0px";
     txtBusqueda.value = txtBusqueda.value.trim();
     txtBusqueda.value = "";
+    
 })
 /*Secion de la barra de navegacion */
