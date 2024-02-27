@@ -7,14 +7,18 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"/>
+            rel="stylesheet"
+        />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
         <!-- <link rel="stylesheet" href="./css/normalize.css" /> -->
         <link rel="stylesheet" href="./css/estilosGlobales.css" />
         <link rel="stylesheet" href="./css/nosotros.css" />
@@ -22,65 +26,46 @@
         <title>Nosotros</title>
     </head>
     <body>
-        <header>
-            <nav id="Navegacion" class="navbar navbar-expand-lg fixed-top">
-                <div class="container-fluid">
-                    <div class="col-sm-3 contenedorLogo">
-                        <a class="navbar-brand" href="#"><img class="logoRosa" src="./src/img/logorosa.png" alt="logo de YolliCalli"></a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <header id="header">
+            <nav class="navbar" id="navbar">
+                <div class="navbarContainer navLogo" id="navLogo">
+                    <div class="vacio"></div>
+                    <img src="./src/img/logorosa.png" alt="Logo" />
+                    <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
                         <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <div class="imgVacia"></div>
-                            <img src="src/img/logorosa.png" alt="Logo de yollicalli">
-                            <button type="button" class="btn-close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close">
-                                <span><i class="bi bi-x-lg"></i></span>
-                            </button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav col-4">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./tienda.html">Tienda</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="./nosotros.html">Nosotros</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./nosotros.html#contacto">Contacto</a>
-                                </li>
-                            </ul>
-                            <div class="col-4">
-                                <div class="contenedorBusqueda col-9">
-                                    <div class="subContenedorBusqueda">
-                                        <div class="divBusqueda" id="divBusqueda">
-                                            <input type="text" name="" id="txtBusqueda" value="" placeholder="Buscar">
-                                            <a class="cancelarBusqueda" id="CancelarBusqueda"><i class="bi bi-x"></i></a>
-                                        </div>
-                                        <a class="navIconsItems" id="btnBuscar"><i class="bi bi-search"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="navbarIcons col-4">
-                                <div class="itemIcons col-1 d-flex justify-content-center">
-                                    <a href="./perfil.html#fav" class="navIconsItems"><i class="bi bi-heart"></i></a>
-                                </div>
-                                <div class="itemIcons col-1">
-                                    <a href="./carrito.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-cart3"></i></a>
-                                </div>
-                                <div class="itemIcons col-1">
-                                    <a href="./perfil.html" class="navIconsItems d-flex justify-content-center"><i class="bi bi-person"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="navbarContainer navMenu" id="navMenu">
+                    <ul>
+                        <li><a href="./index.html" class="menuLink">Inicio</a></li>
+                        <li><a href="./tienda.html" class="menuLink">Tienda</a></li>
+                        <li><a href="./nosotros.html" class="menuLink">Nosotros</a></li>
+                        <li><a href="./nosotros.html#contacto" class="menuLink">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="navbarContainer navIcons" id="navIcons">
+                    <div class="searchField" role="search" id="searchField">
+                        <input
+                            class="searchBox searchInput"
+                            type="search"
+                            placeholder="Buscar"
+                            aria-label="Search"
+                            id="txtBusqueda"
+                        />
+                        <a class="navIconsItems btnBuscar" id="btnBuscar"><i class="bi bi-search"></i></a>
                     </div>
+                    <ul>
+                        <li>
+                            <a href="./perfil.html#fav" class="navIconsItems"><i class="bi bi-heart"></i><h4>Favoritos</h4></a>
+                        </li>
+                        <li>
+                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><h4>Carrito</h4></a>
+                        </li>
+                        <li>
+                            <a href="./perfil.html" class="navIconsItems"><i class="bi bi-person"></i><h4>Perfil</h4></a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
-|
             <div id="Banner" class="banner">
                 <div>
                     <h1>Nosotros</h1>
@@ -98,6 +83,17 @@
                 </div>
             </div>
         </header>
+        <aside>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <div class="vacio"></div>
+                <img src="./src/img/logorosa.png" alt="Logo" />
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body" id="offcanvas-body">
+            </div>
+            </div>
+        </aside>
         <section class="sectionDonar">
             <div class="contenidoDonar">
                 <div class="iconoDonar">
@@ -109,7 +105,7 @@
                 </div>
                 <div class="botonDonar">
                     <button type="button" class="boton" id="boton-donar">
-                        <p> <i class="bi bi-paypal"></i> Donar</p>
+                        <p><i class="bi bi-paypal"></i> Donar</p>
                     </button>
                 </div>
             </div>
@@ -145,139 +141,261 @@
             <hr class="linea" />
         </section>
         <section class="conocenos contenedor margenes">
-                <!--=================================================Conócenos================================-->
+            <!--=================================================Conócenos================================-->
             <main class="container">
                 <section class="conocenos">
-                <div class="texto-intro">
-                    <h2>Conócenos</h2>
-                    <p>¡Saludos! Somos el equipo detrás del desarrollo de este proyecto, un placer conocerte.</p>
-                </div>
-                <div class="contenedorEquipo">
-                    <div class="persona" data-toggle="modal" data-target="#CoreyModal">
-                    <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey">
-                    <p>Corey</p><a href="http://www.linkedin.com/in/miguel-angel-rosas-ortiz-corey" target="_blank">LinkedIn</a>
+                    <div class="texto-intro">
+                        <h2>Conócenos</h2>
+                        <p>¡Saludos! Somos el equipo detrás del desarrollo de este proyecto, un placer conocerte.</p>
                     </div>
-                    <div class="persona" data-toggle="modal" data-target="#OllincatlModal">
-                    <img src="src/img/Photoroom-20240213_140538_2.png" alt="Ollicantl">
-                    <p>Ollincatl</p><a href="https://www.linkedin.com/in/ollincatl-jmnz/" target="_blank">LinkedIn</a>
+                    <div class="contenedorEquipo">
+                        <div class="persona" data-toggle="modal" data-target="#CoreyModal">
+                            <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey" />
+                            <p>Corey</p>
+                            <a href="http://www.linkedin.com/in/miguel-angel-rosas-ortiz-corey" target="_blank"
+                                >LinkedIn</a
+                            >
+                        </div>
+                        <div class="persona" data-toggle="modal" data-target="#OllincatlModal">
+                            <img src="src/img/Photoroom-20240213_140538_2.png" alt="Ollicantl" />
+                            <p>Ollincatl</p>
+                            <a href="https://www.linkedin.com/in/ollincatl-jmnz/" target="_blank">LinkedIn</a>
+                        </div>
+                        <div class="persona" data-toggle="modal" data-target="#EdgarModal">
+                            <img src="src/img/Photoroom-20240213_140538_3.png" alt="Edgar" />
+                            <p>Edgar</p>
+                            <a href="https://www.linkedin.com/in/edgar-gz-dev" target="_blank">LinkedIn</a>
+                        </div>
+                        <div class="persona" data-toggle="modal" data-target="#JetsaelModal">
+                            <img src="src/img/Photoroom-20240213_140538_5.png" alt="Jetsael" />
+                            <p>Jetsael</p>
+                            <a href="https://www.linkedin.com/in/jetsaelvillegas/" target="_blank">LinkedIn</a>
+                        </div>
+                        <div class="persona" data-toggle="modal" data-target="#AbrilModal">
+                            <img src="src/img/Photoroom-20240213_140538_6-transformed.png" alt="Abril" />
+                            <p>Abril</p>
+                            <a href="https://www.linkedin.com/in/abril-barrera1/" target="_blank">LinkedIn</a>
+                        </div>
+                        <div class="persona" data-toggle="modal" data-target="#EstefaníaModal">
+                            <img src="src/img/Photoroom-20240213_140538_8.png" alt="Estefanía" />
+                            <p>Estefanía</p>
+                            <a href="http://linkedin.com/in/nadiaemg/" target="_blank">LinkedIn</a>
+                        </div>
+                        <div class="persona" data-toggle="modal" data-target="#UlisesModal">
+                            <img src="src/img/Photoroom-20240213_144857.png" alt="Ulises" />
+                            <p>Ulises</p>
+                            <a
+                                href="https://www.linkedin.com/in/edgar-ulises-benitez-cabriales-5aab81237/"
+                                target="_blank"
+                                >LinkedIn</a
+                            >
+                        </div>
+                        <div class="persona" data-toggle="modal" data-target="#DhyanaModal">
+                            <img src="src/img/Photoroom-20240213_144932.png" alt="Dhyana" />
+                            <p>Dhyana</p>
+                            <a href="https://www.linkedin.com/in/dhyanaverjanvargas/" target="_blank">LinkedIn</a>
+                        </div>
                     </div>
-                    <div class="persona" data-toggle="modal" data-target="#EdgarModal">
-                    <img src="src/img/Photoroom-20240213_140538_3.png" alt="Edgar">
-                    <p>Edgar</p><a href="https://www.linkedin.com/in/edgar-gz-dev" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="persona" data-toggle="modal" data-target="#JetsaelModal">
-                    <img src="src/img/Photoroom-20240213_140538_5.png" alt="Jetsael">
-                    <p>Jetsael</p><a href="https://www.linkedin.com/in/jetsaelvillegas/" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="persona" data-toggle="modal" data-target="#AbrilModal">
-                    <img src="src/img/Photoroom-20240213_140538_6-transformed.png" alt="Abril">
-                    <p>Abril</p><a href="https://www.linkedin.com/in/abril-barrera1/" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="persona" data-toggle="modal" data-target="#EstefaníaModal">
-                    <img src="src/img/Photoroom-20240213_140538_8.png" alt="Estefanía">
-                    <p>Estefanía</p><a href="http://linkedin.com/in/nadiaemg/" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="persona" data-toggle="modal" data-target="#UlisesModal">
-                    <img src="src/img/Photoroom-20240213_144857.png" alt="Ulises">
-                    <p>Ulises</p><a href="https://www.linkedin.com/in/edgar-ulises-benitez-cabriales-5aab81237/" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="persona" data-toggle="modal" data-target="#DhyanaModal">
-                    <img src="src/img/Photoroom-20240213_144932.png" alt="Dhyana">
-                    <p>Dhyana</p><a href="https://www.linkedin.com/in/dhyanaverjanvargas/" target="_blank">LinkedIn</a>
-                    </div>
-                </div>
                 </section>
             </main>
             <!--=====================================================================================Modales-->
-                <!-- Modal Corey -->
-                <div class="modal fade" id="CoreyModal" tabindex="-1" role="dialog" aria-labelledby="CoreyModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm" role="document">
+            <!-- Modal Corey -->
+            <div
+                class="modal fade"
+                id="CoreyModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="CoreyModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-sm" role="document">
                     <div class="modal-content">
                         <div class="modal-body">
-                        <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey">
-                        <p class="nombreModal">Corey</p>
-                        <p>Corey es una persona apasionada por la tecnología, es desarrollador fullstack Jr</p>
+                            <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey" />
+                            <p class="nombreModal">Corey</p>
+                            <p>Corey es una persona apasionada por la tecnología, es desarrollador fullstack Jr</p>
                         </div>
-                    </div>
-                    </div>
-                </div><!-- Modal Ollincatl -->
-                <div class="modal fade" id="OllincatlModal" tabindex="-1" role="dialog" aria-labelledby="OllincatlModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                        <img src="src/img/Photoroom-20240213_140538_2.png" alt="Imagen de Ollincatl" class="img-fluid rounded-circle mb-2">
-                        <p class="nombreModal">Ollincatl</p>
-                        <p>Egresado de la licenciatura de Matemáticas Aplicadas y Computación y Desarrollador Full Stack Junior en proyecto e-commerce YolliCalli.</p>
-                        </div>
-                    </div>
-                    </div>
-                </div><!-- Modal Edgar-->
-                <div class="modal fade" id="EdgarModal" tabindex="-1" role="dialog" aria-labelledby="EdgarModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                        <img src="src/img/Photoroom-20240213_140538_3.png" alt="Imagen de Edagr" class="img-fluid rounded-circle mb-2">
-                        <p class="nombreModal">Edgar</p>
-                        <p>Desarrollador Java Full Stack en el proyecto de e-commerce “YolliCalli” e Ingeniero en Mecatrónica.</p>
-                        </div>
-                    </div>
-                    </div>
-                </div><!-- Modal Jetsael-->
-                <div class="modal fade" id="JetsaelModal" tabindex="-1" role="dialog" aria-labelledby="JetsaelModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                        <img src="src/img/Photoroom-20240213_140538_5.png" alt="Imagen de Jetsael" class="img-fluid rounded-circle mb-2">
-                        <p class="nombreModal">Jetsael</p>
-                        <p>Comunicólogo y Desarrollador Full Java Stack en el proyecto de e-commerce “YolliCalli”.</p>
-                        </div>
-                    </div>
-                    </div>
-                </div><!-- Modal Abril-->
-                <div class="modal fade" id="AbrilModal" tabindex="-1" role="dialog" aria-labelledby="AbrilModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                        <img src="src/img/Photoroom-20240213_140538_6-transformed.png" alt="Imagen de Abril" class="img-fluid rounded-circle mb-2">
-                        <p class="nombreModal">Abril</p>
-                        <p>Arquitecta y desarrolladora Java Full Stack Jr dentro del e-commerce YolliCalli.</p>
-                        </div>
-                    </div>
-                    </div>
-                </div><!-- Modal Estefanía-->
-                <div class="modal fade" id="EstefaníaModal" tabindex="-1" role="dialog" aria-labelledby="EstefaníaModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                        <img src="src/img/Photoroom-20240213_140538_8.png" alt="Imagen de Estefanía" class="img-fluid rounded-circle mb-2">
-                        <p class="nombreModal">Estefanía</p>
-                        <p>Geocientífica y Desarrolladora Java Full Stack en el proyecto de comercio electrónico YolliCalli</p>
-                        </div>
-                    </div>
-                    </div>
-                </div><!-- Modal Ulises-->
-                <div class="modal fade" id="UlisesModal" tabindex="-1" role="dialog" aria-labelledby="UlisesModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                        <img src="src/img/Photoroom-20240213_144857.png" alt="Imagen de Ulises" class="img-fluid rounded-circle mb-2">
-                        <p class="nombreModal">Ulises</p>
-                        <p>Ingeniero quimico metalurgico, desarrollador java full stack jr en proyecto YolliCalli, he sido valuador, gerente, analista de información y de facturación.</p>
-                        </div>
-                    </div>
-                    </div>
-                </div><!-- Modal Dhyana-->
-                <div class="modal fade" id="DhyanaModal" tabindex="-1" role="dialog" aria-labelledby="DhyanaModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                        <img src="src/img/Photoroom-20240213_144932.png" alt="Imagen de Dhyana" class="img-fluid rounded-circle mb-2">
-                        <p class="nombreModal">Dhyana</p>
-                        <p>Ingeniera en Sistemas Computacionales y Desarrolladora Full Stack Junior en proyecto YolliCalli.</p>
-                        </div>
-                    </div>
                     </div>
                 </div>
+            </div>
+            <!-- Modal Ollincatl -->
+            <div
+                class="modal fade"
+                id="OllincatlModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="OllincatlModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img
+                                src="src/img/Photoroom-20240213_140538_2.png"
+                                alt="Imagen de Ollincatl"
+                                class="img-fluid rounded-circle mb-2"
+                            />
+                            <p class="nombreModal">Ollincatl</p>
+                            <p>
+                                Egresado de la licenciatura de Matemáticas Aplicadas y Computación y Desarrollador Full
+                                Stack Junior en proyecto e-commerce YolliCalli.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Edgar-->
+            <div
+                class="modal fade"
+                id="EdgarModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="EdgarModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img
+                                src="src/img/Photoroom-20240213_140538_3.png"
+                                alt="Imagen de Edagr"
+                                class="img-fluid rounded-circle mb-2"
+                            />
+                            <p class="nombreModal">Edgar</p>
+                            <p>
+                                Desarrollador Java Full Stack en el proyecto de e-commerce “YolliCalli” e Ingeniero en
+                                Mecatrónica.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Jetsael-->
+            <div
+                class="modal fade"
+                id="JetsaelModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="JetsaelModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img
+                                src="src/img/Photoroom-20240213_140538_5.png"
+                                alt="Imagen de Jetsael"
+                                class="img-fluid rounded-circle mb-2"
+                            />
+                            <p class="nombreModal">Jetsael</p>
+                            <p>
+                                Comunicólogo y Desarrollador Full Java Stack en el proyecto de e-commerce “YolliCalli”.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Abril-->
+            <div
+                class="modal fade"
+                id="AbrilModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="AbrilModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img
+                                src="src/img/Photoroom-20240213_140538_6-transformed.png"
+                                alt="Imagen de Abril"
+                                class="img-fluid rounded-circle mb-2"
+                            />
+                            <p class="nombreModal">Abril</p>
+                            <p>Arquitecta y desarrolladora Java Full Stack Jr dentro del e-commerce YolliCalli.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Estefanía-->
+            <div
+                class="modal fade"
+                id="EstefaníaModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="EstefaníaModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img
+                                src="src/img/Photoroom-20240213_140538_8.png"
+                                alt="Imagen de Estefanía"
+                                class="img-fluid rounded-circle mb-2"
+                            />
+                            <p class="nombreModal">Estefanía</p>
+                            <p>
+                                Geocientífica y Desarrolladora Java Full Stack en el proyecto de comercio electrónico
+                                YolliCalli
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Ulises-->
+            <div
+                class="modal fade"
+                id="UlisesModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="UlisesModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img
+                                src="src/img/Photoroom-20240213_144857.png"
+                                alt="Imagen de Ulises"
+                                class="img-fluid rounded-circle mb-2"
+                            />
+                            <p class="nombreModal">Ulises</p>
+                            <p>
+                                Ingeniero quimico metalurgico, desarrollador java full stack jr en proyecto YolliCalli,
+                                he sido valuador, gerente, analista de información y de facturación.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Dhyana-->
+            <div
+                class="modal fade"
+                id="DhyanaModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="DhyanaModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img
+                                src="src/img/Photoroom-20240213_144932.png"
+                                alt="Imagen de Dhyana"
+                                class="img-fluid rounded-circle mb-2"
+                            />
+                            <p class="nombreModal">Dhyana</p>
+                            <p>
+                                Ingeniera en Sistemas Computacionales y Desarrolladora Full Stack Junior en proyecto
+                                YolliCalli.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!--==========================================================================================-->
         </section>
         <!--Sección "Contactanos"-->
@@ -366,7 +484,7 @@
                                 placeholder="Nombre Apellido"
                                 required
                             />
-                            <div id="alertNombre" style="display: none;"></div>
+                            <div id="alertNombre" style="display: none"></div>
                         </div>
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Correo electrónico</label>
@@ -378,7 +496,7 @@
                                 placeholder="ejemplo@correo.com"
                                 required
                             />
-                            <div id="alertCorreo" style="display: none;"></div>
+                            <div id="alertCorreo" style="display: none"></div>
                         </div>
                         <div class="mb-3">
                             <label for="inputAsunto" class="form-label">Asunto</label>
@@ -389,7 +507,7 @@
                                 placeholder="Escribe tu texto aquí"
                                 required
                             />
-                            <div id="alertAsunto" style="display: none;"></div>
+                            <div id="alertAsunto" style="display: none"></div>
                         </div>
                         <div class="mb-3">
                             <label for="inputMensaje" class="form-label">Mensaje</label>
@@ -400,38 +518,58 @@
                                 placeholder="Escribe tu texto aquí"
                                 required
                             />
-                            <div id="alertMensaje" style="display: none;"></div>
+                            <div id="alertMensaje" style="display: none"></div>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="checkContacto" required />
                             <label class="marcadorTexto form-check-label" for="checkContacto"
                                 >Acepto que mis datos sean tratados con discreción por YolliCalli®️</label
                             >
-                            <br>
-                            <div id="alertCondiciones" style="display: none;"></div>
+                            <br />
+                            <div id="alertCondiciones" style="display: none"></div>
                         </div>
                         <div class="botonEnviar">
-                            <button type="submit" class="boton" id="boton-enviar">
-                                Enviar
-                            </button>
+                            <button type="submit" class="boton" id="boton-enviar">Enviar</button>
                         </div>
                     </form>
                 </div>
-            </div>   
+            </div>
             <!-- Modal de alerta de envio exitoso -->
             <!-- Button trigger modal -->
-            <button id="btnEnvioEstado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEnvioEstado" style="display: none;">
-            </button>
-  
+            <button
+                id="btnEnvioEstado"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalEnvioEstado"
+                style="display: none"
+            ></button>
+
             <!-- Modal -->
-            <div class="modal fade" id="modalEnvioEstado" tabindex="-1" aria-labelledby="estadoModalLabel" aria-hidden="true">
-            </div>
+            <div
+                class="modal fade"
+                id="modalEnvioEstado"
+                tabindex="-1"
+                aria-labelledby="estadoModalLabel"
+                aria-hidden="true"
+            ></div>
             <!-- Modal de alerta de envio exitoso -->
-            <button id="btnEnvioEstado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEnvioEstado" style="display: none;">
-            </button>
+            <button
+                id="btnEnvioEstado"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalEnvioEstado"
+                style="display: none"
+            ></button>
             <!-- Modal -->
-            <div class="modal fade" id="modalEnvioEstado" tabindex="-1" aria-labelledby="estadoModalLabel" aria-hidden="true">
-            </div>
+            <div
+                class="modal fade"
+                id="modalEnvioEstado"
+                tabindex="-1"
+                aria-labelledby="estadoModalLabel"
+                aria-hidden="true"
+            ></div>
         </section>
 
         <!--------------------------------------------------------------------------------------------------------------------------------->
@@ -541,7 +679,7 @@
         <footer class="col-12 flex-column d-flex">
             <div class="footerContent row d-flex">
                 <div class="footerLogo col-sm-4 d-flex flex-column align-items-center">
-                    <img class="logoRosa" src="./src/img/logorosa.png" alt="">
+                    <img class="logoRosa" src="./src/img/logorosa.png" alt="" />
                     <span>By Generation México</span>
                 </div>
                 <div class="footerVinculos col-sm-4 d-flex flex-column">
@@ -555,13 +693,17 @@
                 <div class="footerAyuda col-sm-4 d-flex flex-column">
                     <h4>Ayuda</h4>
                     <ul>
-                        <li><a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a></li>
+                        <li>
+                            <a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank"
+                                >Donar</a
+                            >
+                        </li>
                         <li><a href="./nosotros.html#contacto">Contacto</a></li>
                         <li><a href="./politicas.html">Politicas de privacidad</a></li>
                     </ul>
                 </div>
             </div>
-            <hr>
+            <hr />
             <div class="footerDerechos row d-flex">
                 <span>2024 YolliCalli. Todos los derechos reservados.</span>
             </div>
