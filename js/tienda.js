@@ -61,10 +61,10 @@ let botonesPaginacion= document.querySelectorAll(".btnPaginacion");
  productos.push(new Producto("Muñeca lele","Cojín bordado por artesanos de Veracruz","https://www.turismomexico.es/wp-content/uploads/2019/01/munecas_mexicanas.jpg",1000,"Artesanos de Veracruz"));
  productos.push(new Producto("Florero Artesenal","Cojín bordado por artesanos de Puebla","https://http2.mlstatic.com/D_NQ_NP_708931-MLM71088880686_082023-O.webp",1100,"Artesanos de Puebla"));
  productos.push(new Producto("Mezcal en olla de barro","Cojín bordado por artesanos de Hidalgo","https://i.pinimg.com/originals/fb/c4/1a/fbc41ad7a84bf6788e0e9ba69140dddd.jpg",1200,"Artesanos de Hidalgo"));
- productos.push(new Producto("Mantel de Oaxaca","Cojín bordado por artesanos de Oaxaca","https://oaxacaxamor.com/cdn/shop/products/Mantel_AzulDorado_Tlalixtac_9414_800x.jpg?v=1612829162",1300,"Artesanos de Oaxaca"));
- productos.push(new Producto("Servilleta bordada","Cojín bordado por artesanos de Jalisco","https://www.mexicodesconocido.com.mx/wp-content/uploads/2023/02/servilletas-bodadas-mano-2-900x861.jpg",1400,"Artesanos de Jalisco"));
- productos.push(new Producto("Carrito de juguete","Cojín bordado por artesanos de San Luis Potosi","https://http2.mlstatic.com/D_NQ_NP_845988-MLM53611700096_022023-O.webp",1500,"Artesanos de San Luis Potosi"));
- productos.push(new Producto("Cojin Tenango","Cojín bordado por artesanos de Hermosillo","./src/img/productos/cojinTenango.png",1600,"Artesanos de Hermosillo"));
+ //productos.push(new Producto("Mantel de Oaxaca","Cojín bordado por artesanos de Oaxaca","https://oaxacaxamor.com/cdn/shop/products/Mantel_AzulDorado_Tlalixtac_9414_800x.jpg?v=1612829162",1300,"Artesanos de Oaxaca"));
+ //productos.push(new Producto("Servilleta bordada","Cojín bordado por artesanos de Jalisco","https://www.mexicodesconocido.com.mx/wp-content/uploads/2023/02/servilletas-bodadas-mano-2-900x861.jpg",1400,"Artesanos de Jalisco"));
+ //productos.push(new Producto("Carrito de juguete","Cojín bordado por artesanos de San Luis Potosi","https://http2.mlstatic.com/D_NQ_NP_845988-MLM53611700096_022023-O.webp",1500,"Artesanos de San Luis Potosi"));
+ //productos.push(new Producto("Cojin Tenango","Cojín bordado por artesanos de Hermosillo","./src/img/productos/cojinTenango.png",1600,"Artesanos de Hermosillo"));
  
 function addProducto(producto,index){
     contenedorProdutos.insertAdjacentHTML("beforeend", `
