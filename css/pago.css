@@ -1,0 +1,412 @@
+/*Header banner*/
+#Banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 293px;
+    width: 100%;
+    padding: 0 100px;
+    /* margin: 100px 0 0 0; */
+    background-image: url("../src/img/bannerFondo.png");
+    background-size: 100% 100%;
+}
+
+#Banner h1 {
+    font-size: var(--titulo-banner);
+    font-weight: var(--bold);
+    color: var(--blanco);
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-shadow: 3px 3px 2px var(--bordes);
+}
+
+#Banner .breadcrumb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#Banner .breadcrumb nav {
+    --bs-breadcrumb-divider: ">";
+    --breadcrumb-divider-color: var(--blanco);
+    --bs-breadcrumb-divider-color: var(--blanco);
+    color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-shadow: 1px 1px 2px var(--bordes);
+    --bs-breadcrumb-divider-color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item a {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-decoration: none;
+    text-shadow: 2px 1px 2px var(--bordes);
+}
+
+#Banner .breadcrumb .breadcrumb-item:hover {
+    pointer-events: auto;
+}
+
+/*Header banner*/
+/*Garantias*/
+.garantias {
+    height: 270px;
+    background-color: var(--color-base);
+    padding: 0;
+    margin: 0;
+}
+.garantias .garantiasContenedor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.garantias .garantiasContenedor .garantiasItem {
+    justify-content: center;
+    align-items: center;
+    color: var(--azul-talavera);
+}
+
+.garantias .garantiasContenedor .garantiasItem .texto {
+    padding-left: 5px;
+}
+
+.garantias .garantiasContenedor .garantiasItem h3 {
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    margin: 0;
+}
+
+.garantias .garantiasContenedor .garantiasItem span {
+    font-size: var(--texto-general);
+    font-weight: var(--regular);
+}
+/*Garantias*/
+
+/*Garantias*/
+
+/* Main */
+
+.contenedorPago {
+    margin-inline: 10rem;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-block: 10rem;
+}
+.formularioDatos {
+    background-color: var(--color-base);
+    max-width: 40rem;
+    padding: 3rem;
+    height: max-content;
+    box-shadow: 0 18px 28px #091e424b;
+    border-radius: 1rem;
+}
+
+.formData {
+    margin-bottom: 2rem;
+}
+
+.form-control {
+    height: 5rem;
+    font-size: var(--texto-general);
+    color: #333333;
+    border-radius: 1rem;
+}
+
+.groupedData {
+    display: flex;
+    justify-content: space-between;
+}
+
+.groupedData .estadoEnvio {
+    flex-grow: 1;
+    max-width: 20rem;
+}
+
+.groupedData .cpEnvio {
+    text-align: center;
+    max-width: 10rem;
+}
+
+.ladaTel {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+.ladaTelSelect {
+    max-width: 5.5rem;
+    background-color: #f4f5f7;
+}
+
+.telInput {
+    max-width: 20rem;
+}
+
+.datosDeContacto {
+    margin-top: 5rem;
+}
+
+.resumenPedido {
+    max-width: 40rem;
+    padding: 5rem;
+    height: max-content;
+    box-shadow: 0 18px 28px #091e424b;
+    border: solid var(--rosa-mexicano) 2px;
+    border-radius: 1rem;
+}
+
+.titulosRosas {
+    margin-top: 0;
+    margin-bottom: 3rem;
+    font-size: var(--titulo-rosa-h2);
+    font-weight: bold;
+    color: var(--rosa-mexicano);
+}
+
+.table {
+    font-size: 1.8rem;
+    border: solid transparent 0px;
+}
+
+.tablaCantidades {
+    text-align: end;
+}
+
+.cantidadTotal {
+    color: var(--rosa-mexicano);
+    font-weight: bold;
+}
+
+.selectorDePago {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-block: 1.5rem;
+    transition: all 0.1s ease;
+}
+
+input[type="radio"] {
+    /* box-sizing: border-box; */
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    padding: 0;
+    border: 1px solid #9f9f9f;
+    border-radius: 50%;
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+    transition: transform 0.3s ease;
+}
+
+input[type="radio"]:checked {
+    border-width: 1px;
+    border-color: var(--rosa-mexicano);
+    background-color: var(--rosa-mexicano);
+    background-clip: content-box;
+    padding: 2px;
+}
+
+input[type="radio"]:disabled {
+    background-color: gray;
+}
+
+input[type="radio"]:hover {
+    transform: scale(1.15);
+}
+
+.botonRealizarPago {
+    color: var(--blanco);
+    background-color: var(--rosa-mexicano);
+    border: var(--rosa-mexicano);
+    border-radius: 10px;
+    width: 29rem;
+    height: 5rem;
+    font-size: var(--texto-general);
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-block: 2.5rem;
+    margin-inline: auto;
+}
+
+.tdc {
+    margin-bottom: 2rem;
+}
+
+.despliegueTdc {
+    margin-left: 0;
+    margin-bottom: 0;
+    max-width: 35rem;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.opcionPagoTdc {
+    height: auto;
+}
+
+.opcionPagoTdc:focus-within .despliegueTdc {
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+    height: auto;
+}
+
+.reversoTarjeta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vencimiento {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 20rem;
+}
+
+.vencimientoFecha {
+    display: flex;
+    width: 16rem;
+    justify-content: space-evenly;
+}
+
+/* .cvvInput {
+    appearance: none;
+    -webkit-appearance: ;
+} */
+
+.cvvInput,
+.vencimientoMonth {
+    width: 6rem;
+}
+
+.vencimientoYear {
+    width: 9rem;
+}
+
+.cvvElement {
+    display: flex;
+}
+
+input:focus {
+    border: var(--rosa-mexicano);
+}
+
+/* Main */
+
+@media (max-width: 575.98px) {
+    /*Banner*/
+    #Banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        padding: 0 50px;
+    }
+
+    #Banner h1 {
+        font-size: var(--titulos-h3-rutas);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-shadow: 3px 3px 2px var(--bordes);
+        line-height: 40px;
+    }
+
+    #Banner .breadcrumb {
+        line-height: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    /* #Banner .breadcrumb nav ol li { */
+    #Banner .breadcrumb .breadcrumb-item {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    /* #Banner .breadcrumb nav ol li a { */
+    #Banner .breadcrumb .breadcrumb-item a {
+        font-size: 12px;
+        font-weight: var(--bold);
+        text-decoration: none;
+        text-shadow: 2px 1px 2px var(--bordes);
+    }
+    /*Banner*/
+
+    /*Garantias*/
+
+    /* Main */
+    .garantias {
+        height: 600px;
+        width: 100%;
+    }
+    .garantias .garantiasContenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 50px;
+    }
+
+    .garantias .garantiasContenedor .garantiasItem {
+        width: 100%;
+    }
+
+    .contenedorPago {
+        margin-inline: 2rem;
+    }
+
+    .row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-block: 2rem;
+    }
+
+    .formularioDatos {
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0rem;
+    }
+
+    .resumenPedido {
+        padding: 0;
+        margin-bottom: 5rem;
+        box-shadow: none;
+        border: solid var(--rosa-mexicano) 0px;
+        border-radius: 1rem;
+    }
+
+    .form-control {
+        border: solid var(--rosa-mexicano) 1px;
+    }
+
+    .datosDeContacto {
+        margin-block: 5rem;
+    }
+
+    /* Main */
+}
