@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publica tu producto</title>
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"/>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--Styles-->
-    <link rel="stylesheet" href="./css/estilosGlobales.css">
     <link rel="stylesheet" href="./css/publicaProducto.css">
+    <link rel="stylesheet" href="./css/estilosGlobales.css">
 </head>
 <body>
   <!--Navbar-->
@@ -83,7 +87,7 @@
             <div class="offcanvas-body" id="offcanvas-body">
             </div>
             </div>
-        </aside>
+  </aside>
   <!--Formulario-->
   <main>
     <h2 class="titulosRosas">Ingresa la información del producto</h2>
@@ -91,45 +95,55 @@
       <form>
         <div class="mb-3">
           <label for="nombreProducto" class="form-label">Nombre del producto</label>
-          <input type="email" class="form-control" id="nombreProducto" aria-describedby="emailHelp" placeholder="Ej. Camisa bordada" required>
+          <input type="text" class="form-control" id="nombreProducto" placeholder="Ej. Camisa bordada" required>
         </div>
         <div class="mb-3">
           <label for="descripcion" class="form-label">Agrega una descripción</label>
-          <input type="email" class="form-control" id="descripcion" aria-describedby="emailHelp" placeholder="Ej.  Playera con bordado de colibríes en tallas  mediana, chica y grande." required>
+          <input type="text" class="form-control textArea" id="descripcion" placeholder="Ej.  Playera con bordado de colibríes en tallas  mediana, chica y grande." required>
         </div>
         <!-- Contenedor para precio, categoría y fotos -->
         <div class="container contenedorFormulario">
           <div class="row">
-          <div class=" col contenedorCategorias">
+          <div class="col-lg-6 contenedorCategorias">
             <!-- Precio -->
             <div class="mb-3">
-              <label for="precio" class="form-label">Precio (en pesos)</label>
-              <input type="email" class="form-control" id="precio" aria-describedby="emailHelp" placeholder="$300" required>
+              <label for="precio" class="form-label">Precio (MXN)</label>
+              <input type="text" class="form-control" id="precio" placeholder="$300" required>
             </div>
             <!-- Categoría -->
             <div class="mb-3">
               <label for="categoria" class="form-label">Categoría</label>
-              <input type="email" class="form-control" id="categoria" aria-describedby="emailHelp" placeholder="Ropa" required>
+              <select name="categoria" class="form-select form-select-lg" id="categoria" required>
+                <option value="" disabled selected hidden>Selecciona una categoría</option>
+                <option value="accesorio">Accesorios para el hogar</option>
+                <option value="alimentos">Alimentos no perecederos</option>
+                <option value="ropa">Ropa</option>
+              </select>
             </div>
             <!--Etiquetas-->
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Etiquetas</label>
-              <input type="email" class="form-control" id="etiquetas" aria-describedby="emailHelp" placeholder="Separadas por comas" required>
+              <label for="etiquetas" class="form-label">Etiquetas</label>
+              <input type="text" class="form-control" id="etiquetas" placeholder="Ej. ropa, bordado" required>
             </div>
           </div>
             <!-- Fotos -->
-            <div class="col contenedorFotos">
+            <div class="col-lg-6 hechoConLagrimas">
+              <div class="contenedorFotos">
                <h3>¡Sube tu foto!</h3>
                  <p>Te recomendamos subirla en la mejor calidad posible.</p>
+                 <br>
                  <div class="mb-3">
-                 <label for="imagenProducto" class="form-label"></label>
-              <!-- <input type="file" accept="image/*" class="form-control" id="imagenProducto"> -->
+                    <!--<label for="imagenProducto" class="form-label"></label>
+                    <input type="file" accept="image/*" class="form-control" id="imagenProducto">-->
+                    <button type="submit" class="boton-blanco">Seleccionar</button>
                  </div>
-             <button type="submit" class="boton-blanco">Seleccionar</button>
+              </div>
             </div>
           </div>
         </div>
-        <button type="submit" class="boton">Enviar</button>
+        <div class="contenedorBoton">
+          <button type="submit" class="boton">Enviar</button>
+        </div>
       </form>
     </div>
   </main>

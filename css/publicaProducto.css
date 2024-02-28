@@ -80,14 +80,47 @@ main{
     font-size: var(--texto-general);
 }
 
+.textArea{
+    height: 100px;
+}
+
 .contenedorCategorias{
     padding-left: 0;
+}
+
+label {
+    font-size: var(--texto-general);
+    font-family: var(--barlow);
+}
+
+input, select {
+    height: 50px;
+}
+
+select {
+    font-family: var(--barlow);
+    font-size: var(--texto-general);
+}
+
+.form-control, .form-select{
+    border: solid 1px var(--rosa-mexicano);
+    border-radius: 10px;
+}
+
+.form-control::placeholder{
+    font-size: var(--texto-general);
+    font-family: var(--barlow);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
 }
 
 .boton-blanco {
     width: 137px;
     height: 55px;
-    border-width: 0.5px;
+    border: 0.5px solid #e1456c;
     background-color: #ffffff;
     border-color: #e1456c;
     border-radius: 10px;
@@ -103,10 +136,8 @@ main{
     border-color: #e1456c;
 }
 
-
-.form-control{
-    border: solid 1px var(--rosa-mexicano);
-    border-radius: 10px;
+.contenedorBoton{
+    margin-top: 20px;
 }
 
 .contenedorFotos{
@@ -114,29 +145,84 @@ main{
     background-color: var(--color-base);
     padding: 20px 18px;
     height: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    font-family: var(--barlow);
+    font-size: var(--texto-general);
 }
 
-#nombreProducto{
-    width: 450px;
-    height: 50px;
+/* Margen responsivos pequeños*/
+@media (max-width: 425px) {
+    main  {
+        margin: 20px;
+    }
+    .formulario {
+        padding: 20px;
+    }
+    .contenedorBoton{
+        display: flex;
+        justify-content: center;
+    }
 }
 
-#descripcion{
-    height: 198px;
+@media (max-width: 992px) {
+    .contenedorFotos{
+        margin-left: 0;
+    }
+    .contenedorCategorias{
+        padding: 0;
+    }
+    .hechoConLagrimas{
+        padding: 0;
+    }
+    .contenedorBoton{
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
 }
 
-#precio{
-    width: 150px;
-    height: 50px;
-}
+/*Banner responsivo pequeño*/
+@media (max-width: 575.98px) {
+    /*Banner*/
+    #Banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        padding: 0 50px;
+    }
 
-#categoria{
-    width: 175px;
-    height: 50px;
-}
+    #Banner h1 {
+        font-size: var(--titulos-h3-rutas);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-shadow: 3px 3px 2px var(--bordes);
+        line-height: 40px;
+    }
 
-#etiquetas{
-    width: 450px;
-    height: 75px;
-}
+    #Banner .breadcrumb {
+        line-height: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    /* #Banner .breadcrumb nav ol li { */
+    #Banner .breadcrumb .breadcrumb-item {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0;
+    }
 
+    /* #Banner .breadcrumb nav ol li a { */
+    #Banner .breadcrumb .breadcrumb-item a {
+        font-size: 12px;
+        font-weight: var(--bold);
+        text-decoration: none;
+        text-shadow: 2px 1px 2px var(--bordes);
+    }
+    /*Banner*/
+}
