@@ -1,0 +1,164 @@
+#Banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 293px;
+    width: 100%;
+    padding: 0 100px;
+    /* margin: 100px 0 0 0; */
+    background-image: url("../src/img/bannerFondo.png");
+    background-size: 100% 100%;
+}
+
+#Banner h1 {
+    font-size: var(--titulo-banner);
+    font-weight: var(--bold);
+    color: var(--blanco);
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-shadow: 3px 3px 2px var(--bordes);
+}
+
+#Banner .breadcrumb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#Banner .breadcrumb nav {
+    --bs-breadcrumb-divider: ">";
+    --breadcrumb-divider-color: var(--blanco);
+    --bs-breadcrumb-divider-color: var(--blanco);
+    color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-shadow: 1px 1px 2px var(--bordes);
+    --bs-breadcrumb-divider-color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item a {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-decoration: none;
+    text-shadow: 2px 1px 2px var(--bordes);
+}
+
+#Banner .breadcrumb .breadcrumb-item:hover {
+    pointer-events: auto;
+}
+.datosPerfil{
+    /* background-color: #963; */
+    margin-top: 3rem;
+}
+.contenedorDatos{
+    display: flex;
+    justify-content: space-between;
+}
+.infoUsuario{
+    flex-basis: 50%;
+    padding: 5rem;
+    background-color:var(--blanco);
+    border: var(--rosa-mexicano) 2px solid;
+    border-radius: 1rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.infoPerfil .imagenPerfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titulosRosas{
+    text-align: center;
+    color: var(--rosa-mexicano);
+    font-weight: bold;
+    font-size: var(--titulo-rosa-h2);
+}
+.infoPerfil img{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+.imagenPerfil .form-control{
+    width: 45%;
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+}
+
+.datosPersonales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--texto-general);
+}
+.datosPersonales > div{
+    width: 80%;
+    margin: .5rem 0;
+}
+.datosPersonales input{
+    padding-top: .5rem;
+    border: none;
+    border-bottom: solid var(--rosa-mexicano) 2px;
+    border-radius: 0.5rem;
+    display: flex;
+    font-size: 16px;
+}
+.ciudadCodPostal{
+    display: flex;
+    justify-content: space-between;
+}
+.ciudad{
+    flex-basis: 45%;
+}
+.codPostal{
+    flex-basis: 45%;
+}
+.botonDonar{
+    display: flex;
+    justify-content: center;
+}
+.botonDonar button{
+    margin-top: 3rem;
+}
+.datosPago{
+    flex-basis: 45%;
+    padding: 4rem;
+    background-color:var(--blanco);
+    border: var(--rosa-mexicano) 2px solid;
+    border-radius: 1rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    height: fit-content;
+}
+.datosPago .opcionesPago h2{
+    text-align: left;
+    margin-top: 0;
+}
+.opcionPago{
+    display: flex;
+    align-items: center;
+    border: solid 2px var(--rosa-mexicano);
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 80%;
+    margin-bottom: 2.5rem;
+    background-color: var(--blanco);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.opcionPago > input, label, p{
+    margin: 0 1rem;
+}
+.agregarMetodoPago{
+    justify-content: start;
+}
+.agregarMetodoPago button{
+    margin: 0;
+}
