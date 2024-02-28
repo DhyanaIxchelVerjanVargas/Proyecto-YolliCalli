@@ -52,8 +52,18 @@ if (window.matchMedia("(max-width: 425px)").matches) {
 
 /* btnCancelarBusqueda.addEventListener("click", function (event) {
     divBusqueda.style.width = "0px";
+
+    divBusqueda.style.marginRight = "1px"
+    txtBusqueda.style.width = "0px";
+    txtBusqueda.value = txtBusqueda.value.trim();
+    txtBusqueda.value = "";
+    
+})
+/*Secion de la barra de navegacion */
+/* 
     divBusqueda.style.marginRight = "1px";
     txtBusqueda.value = txtBusqueda.value.trim();
     txtBusqueda.value = "";
-}); */
+*/
 /*Secion de la barra de navegacion */
+
