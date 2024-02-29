@@ -90,7 +90,7 @@
   </aside>
   <!--Formulario-->
   <main>
-    <h2 class="titulosRosas">Ingresa la información del producto</h2>
+    <h2 class="titulosRosas"><strong>Ingresa la información del producto</strong></h2>
     <div class="formulario">
       <form>
         <div class="mb-3">
@@ -99,7 +99,7 @@
         </div>
         <div class="mb-3">
           <label for="descripcion" class="form-label">Agrega una descripción</label>
-          <input type="text" class="form-control textArea" id="descripcion" placeholder="Ej.  Playera con bordado de colibríes en tallas  mediana, chica y grande." required>
+          <textarea   class="form-control" id="descripcion" placeholder="Ej.  Playera con bordado de colibríes en tallas mediana, chica y grande." required></textarea>
         </div>
         <!-- Contenedor para precio, categoría y fotos -->
         <div class="container contenedorFormulario">
@@ -113,11 +113,11 @@
             <!-- Categoría -->
             <div class="mb-3">
               <label for="categoria" class="form-label">Categoría</label>
-              <select name="categoria" class="form-select form-select-lg" id="categoria" required>
-                <option value="" disabled selected hidden>Selecciona una categoría</option>
-                <option value="accesorio">Accesorios para el hogar</option>
-                <option value="alimentos">Alimentos no perecederos</option>
-                <option value="ropa">Ropa</option>
+              <select name="categoria" class="form-select form-select-lg opciones" id="categoria" required>
+                <option class="opciones" value="" disabled selected hidden>Selecciona una categoría</option>
+                <option class="opciones" value="accesorio">Accesorios para el hogar</option>
+                <option class="opciones" value="alimentos">Alimentos no perecederos</option>
+                <option class="opciones" value="ropa">Ropa</option>
               </select>
             </div>
             <!--Etiquetas-->
@@ -127,14 +127,14 @@
             </div>
           </div>
             <!-- Fotos -->
-            <div class="col-lg-6 hechoConLagrimas">
+            <div class="col-lg-6 subeFoto">
               <div class="contenedorFotos">
-               <h3>¡Sube tu foto!</h3>
-                 <p>Te recomendamos subirla en la mejor calidad posible.</p>
+               <h3 id="titulosSubeFoto"> <strong>¡Sube tu foto!</strong></h3>
+                 <p id="recomendacionFoto">Te recomendamos subirla en la mejor calidad posible.</p>
                  <br>
                  <div class="mb-3">
-                    <!--<label for="imagenProducto" class="form-label"></label>
-                    <input type="file" accept="image/*" class="form-control" id="imagenProducto">-->
+                   <!--<label for="imagenProducto" class="form-label"></label>
+                    <input type="file" accept="image/*" class="form-control" id="imagenProducto">--> 
                     <button type="submit" class="boton-blanco">Seleccionar</button>
                  </div>
               </div>
