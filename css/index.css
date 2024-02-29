@@ -17,10 +17,70 @@ body {
     height: auto;
 }
 
-.categories-title {
-    margin-top: 80px;
-    margin-bottom: 80px;
-    text-align: center; 
+#contenedorCategorias {
+    justify-content: start;
+    align-items: center;
+    padding: 0 100px;
+    margin: 50px 0;
+}
+
+#contenedorCategorias .cardCategorias {
+    width: 270px;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#contenedorCategorias .cardCategorias .caraPrincipal {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#contenedorCategorias .cardCategorias .caraPrincipal img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+}
+
+#contenedorCategorias .cardCategorias .caraPrincipal .card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    min-height: 30px;
+    padding: 5px 20px;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    background: var(--azul-talavera);
+    opacity: .8;
+}
+
+#contenedorCategorias .cardCategorias .caraPrincipal .card-body h5 {
+    font-family: var(--barlow);
+    font-size: 18px;
+    font-weight: var(--medium);
+    color: var(--blanco); 
+    margin: 0; 
+}
+#contenedorCategorias .cardCategorias:hover .caraPrincipal .card-body {
+    opacity: 1; 
+}
+
 
 .card-overlay {
     position: absolute;
@@ -77,29 +137,244 @@ body {
     font-size: 0.8rem; 
 }
 
+/* Estilo para el contenedor de las tarjetas */
+.container-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+}
 
-
-.container-fluid .card {
-    width: calc(33.33% - 40px); 
-    max-width: 1000px; 
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-    margin-left: auto; 
-    margin-right: auto; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
+/* Estilo para cada tarjeta */
+.cardProducto {
+    width: calc(25% - 20px); 
+    margin-bottom: 20px; 
+    padding: 10px; 
+    box-sizing: border-box; /
 }
 
 
+
+.container-fluid .card {
+    width: calc(33.33% - 40px);
+    max-width: 1000px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .banner-card {
-    width: 800px; 
-    margin-right: 100px; 
+    width: 800px;
+    margin-right: 100px;
     background-color: #FFF3E3;
     border-radius: 15px;
     padding: 20px;
     text-align: right;
     position: absolute;
-    bottom: 0; 
-    right: 100px; 
+    bottom: 0;
+    right: 100px;
+}
+
+/* Contenedor de productos */
+#contenedorProductos {
+    justify-content: start;
+    align-items: center;
+    padding: 0 100px;
+    margin: 50px 0;
+}
+
+/* Card de Producto */
+#contenedorProductos .cardProducto {
+    width: 270px; 
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px; 
+}
+
+#contenedorProductos .cardProducto .caraPrincipal {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s all ease;
+}
+
+#contenedorProductos .cardProducto .caraPrincipal img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+}
+
+#contenedorProductos .cardProducto .caraPrincipal .card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    min-height: 30px;
+    padding: 5px 20px;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    background: var(--azul-talavera);
+    opacity: .8;
+}
+
+#contenedorProductos .cardProducto .caraPrincipal .card-body h4 {
+    font-family: var(--barlow);
+    font-size: 20px;
+    font-weight: var(--bold);
+    color: var(--blanco);
+    opacity: 1;
+    text-align: center;
+}
+
+#contenedorProductos .cardProducto .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 20px 20px 50px 20px;
+    transition: .5s all ease;
+    background: var(--azul-talavera);
+    opacity: 0;
+}
+
+#contenedorProductos .cardProducto .overlay span,
+#contenedorProductos .cardProducto .overlay h4 {
+    font-family: var(--barlow);
+    color: var(--blanco);
+    font-size: 18px;
+    font-weight: var(--medium);
+}
+
+#contenedorProductos .cardProducto .overlay h4 {
+    font-size: 24px;
+    font-weight: var(--bold);
+    letter-spacing: 2px;
+}
+
+#contenedorProductos .cardProducto .overlay .productPrecio,
+#contenedorProductos .cardProducto .overlay .productMadeBy {
+    font-size: 20px;
+    font-weight: var(--medium);
+    text-align: center;
+}
+
+#contenedorProductos .cardProducto .overlay .productIconos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#contenedorProductos .cardProducto .overlay .productIconos .productoIcon {
+    color: var(--blanco);
+    font-size: 20px;
+}
+
+#contenedorProductos .cardProducto:hover .overlay {
+    opacity: .9;
+}
+
+#contenedorProductos .cardProducto:hover .caraPrincipal .card-body {
+    opacity: 0;
+}
+
+.btn-outline-danger.btn-lg {
+    padding: 20px 40px; 
+    font-size: 24px; 
+}
+
+
+/*Contenedor Categorías*/
+
+#contenedorCategorias {
+    justify-content: start;
+    align-items: center;
+    padding: 0 100px;
+    margin: 50px 0;
+}
+
+/* Card de Producto */
+#contenedorCategorias .cardCategorias {
+    width: 270px; 
+    height: 300px; 
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px; 
+}
+
+#contenedorCategorias .cardCategorias .caraPrincipal {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s all ease;
+}
+
+#contenedorCategorias .cardCategorias .caraPrincipal img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+}
+
+#contenedorCategorias .cardCategorias .caraPrincipal .card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    min-height: 30px;
+    padding: 5px 20px;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    background: var(--azul-talavera);
+    opacity: .8;
+}
+
+#contenedorProductos .cardProducto .caraPrincipal .card-body h4 {
+    font-family: var(--barlow);
+    font-size: 20px;
+    font-weight: var(--bold);
+    color: var(--blanco);
+    opacity: 1;
+    text-align: center;
+}
+
+
+#contenedorCategorias .cardCategoriashover .caraPrincipal .card-body {
+    opacity: 0;
 }
