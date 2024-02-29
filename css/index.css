@@ -4,7 +4,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Estilos para el contenedor de la página */
+
 .container {
     position: relative;
     width: 100%;
@@ -17,12 +17,10 @@ body {
     height: auto;
 }
 
-/* Estilos para el título de Categorías */
 .categories-title {
-    margin-top: 80px; /* Espacio entre el banner y el título */
+    margin-top: 80px;
     margin-bottom: 80px;
-    text-align: center; /* Centra el texto horizontalmente */
-}
+    text-align: center; 
 
 .card-overlay {
     position: absolute;
@@ -35,17 +33,17 @@ body {
 .container-fluid {
     margin-top: 2rem;
     display: flex;
-    justify-content: center; /* Centra horizontalmente el contenido */
+    justify-content: center; 
 }
 
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espacio entre las cards */
+    gap: 20px; 
 }
 
 .card-body {
-    height: auto; /* Ajusta automáticamente la altura */
+    height: auto; 
     overflow: hidden;
     background-color: #FFF3E3;
 }
@@ -71,52 +69,37 @@ body {
     object-fit: cover;
 }
 .btn-rounded {
-    border-radius: 20px; /* Ajusta el radio de borde para que el botón sea redondeado */
+    border-radius: 20px; 
 }
 
 .btn-pink {
-    background-color: pink; /* Cambia el color de fondo a rosa */
-    color: white; /* Cambia el color del texto a blanco */
-    padding: 0.5rem 1rem; /* Ajusta el relleno del botón */
-    font-size: 0.8rem; /* Reduce el tamaño del texto */
+    background-color: pink; 
+    font-size: 0.8rem; 
 }
 
 
-/* Estilos para las cards dentro de container-fluid */
+
 .container-fluid .card {
-    width: calc(33.33% - 40px); /* Ancho de las cards (33.33% del contenedor menos el espacio entre ellas) */
-    max-width: 1000px; /* Ajusta el ancho máximo para hacer las cards un poco más grandes */
-    margin-top: 10px; /* Espacio entre las cards y el borde superior */
-    margin-bottom: 10px; /* Espacio entre las cards y el borde inferior */
-    margin-left: auto; /* Centra la card a la derecha */
-    margin-right: auto; /* Centra la card a la izquierda */
-    display: flex; /* Usa flexbox para centrar el contenido verticalmente */
-    flex-direction: column; /* Dirección de los elementos flexibles */
-    justify-content: center; /* Centra verticalmente el contenido */
+    width: calc(33.33% - 40px); 
+    max-width: 1000px; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
 }
 
-/* Estilos para las cards del banner */
+
 .banner-card {
-    width: 800px; /* Ancho de las tarjetas del banner */
-    margin-right: 100px; /* Espacio entre las tarjetas */
+    width: 800px; 
+    margin-right: 100px; 
     background-color: #FFF3E3;
     border-radius: 15px;
     padding: 20px;
     text-align: right;
     position: absolute;
-    bottom: 0; /* Alinear la tarjeta en la parte inferior */
-    right: 100px; /* Margen derecho */
-}
-
-/* Ajuste para dispositivos móviles */
-@media (max-width: 768px) {
-    .banner-card {
-        width: calc(100% - 60px); /* Ancho de las tarjetas del banner en dispositivos móviles */
-        margin-right: 0; /* Elimina el margen derecho en dispositivos móviles */
-        margin-bottom: 20px; /* Espacio entre las tarjetas en dispositivos móviles */
-        text-align: center; /* Alinea el texto al centro en dispositivos móviles */
-        position: relative; /* Cambia la posición a relativa para mantener el orden de las tarjetas */
-        right: auto; /* Restaura la posición a la normal */
-        bottom: auto; /* Restaura la posición a la normal */
-    }
+    bottom: 0; 
+    right: 100px; 
 }
