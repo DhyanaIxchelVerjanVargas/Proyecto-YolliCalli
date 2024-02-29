@@ -14,8 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--Styles-->
-    <link rel="stylesheet" href="./css/publicaProducto.css">
     <link rel="stylesheet" href="./css/estilosGlobales.css">
+    <link rel="stylesheet" href="./css/publicaProducto.css">
 </head>
 <body>
   <!--Navbar-->
@@ -102,18 +102,18 @@
           <textarea   class="form-control" id="descripcion" placeholder="Ej.  Playera con bordado de colibríes en tallas mediana, chica y grande." required></textarea>
         </div>
         <!-- Contenedor para precio, categoría y fotos -->
-        <div class="container contenedorFormulario">
+        <div class="container-fluid contenedorFormulario">
           <div class="row">
           <div class="col-lg-6 contenedorCategorias">
             <!-- Precio -->
             <div class="mb-3">
               <label for="precio" class="form-label">Precio (MXN)</label>
-              <input type="text" class="form-control" id="precio" placeholder="$300" required>
+              <input type="number" class="form-control" id="precio" placeholder="300" required>
             </div>
             <!-- Categoría -->
             <div class="mb-3">
               <label for="categoria" class="form-label">Categoría</label>
-              <select name="categoria" class="form-select form-select-lg opciones" id="categoria" required>
+              <select name="categoria" class="form-select opciones" id="categoria" required>
                 <option class="opciones" value="" disabled selected hidden>Selecciona una categoría</option>
                 <option class="opciones" value="accesorio">Accesorios para el hogar</option>
                 <option class="opciones" value="alimentos">Alimentos no perecederos</option>
@@ -129,13 +129,11 @@
             <!-- Fotos -->
             <div class="col-lg-6 subeFoto">
               <div class="contenedorFotos">
-               <h3 id="titulosSubeFoto"> <strong>¡Sube tu foto!</strong></h3>
-                 <p id="recomendacionFoto">Te recomendamos subirla en la mejor calidad posible.</p>
-                 <br>
+                <label for="imagenProducto" class="form-label"><h3><strong>¡Sube tu foto!</strong></h3></label>
+                 <p>Te recomendamos subirla en la mejor calidad posible.</p>
                  <div class="mb-3">
-                   <!--<label for="imagenProducto" class="form-label"></label>
-                    <input type="file" accept="image/*" class="form-control" id="imagenProducto">--> 
-                    <button type="submit" class="boton-blanco">Seleccionar</button>
+                  <input type="file" accept="image/png, image/jpeg, image/jpg" class="form-control inputArchivo" id="imagenProducto" required>
+                    <!--<button type="submit" class="boton-blanco">Seleccionar</button>-->
                  </div>
               </div>
             </div>
