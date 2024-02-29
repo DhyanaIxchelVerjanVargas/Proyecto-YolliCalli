@@ -513,4 +513,24 @@ button:active {
     background-color: var(--color-base);
     margin: auto 0;
     transform: translate(0, -50px);
+    position: relative;
+}
+
+/* Botones de cierrre de modales emergentes*/
+.btn-close-position {
+    position: absolute;
+    right: 20px;
+    z-index: 2;
+}
+
+#boton-cerrar {
+    color: var(--blanco);
+    margin-top: 1rem;
+    background-color: var(--rosa-mexicano);
+    border: var(--rosa-mexicano);
+    border-radius: 10px;
+    width: 16rem;
+    height: 3.6rem;
+    font-size: var(--texto-general);
+    text-align: center;
 }
