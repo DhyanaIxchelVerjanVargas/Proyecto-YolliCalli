@@ -104,9 +104,11 @@
                     <p>Puedes apoyarnos haciendo un donativo a través de PayPal.</p>
                 </div>
                 <div class="botonDonar">
+                    <a href="https://www.paypal.com/paypalme/yollicalli" target="_blank">
                     <button type="button" class="boton" id="boton-donar">
                         <p><i class="bi bi-paypal"></i> Donar</p>
                     </button>
+                </a>
                 </div>
             </div>
         </section>
@@ -117,7 +119,7 @@
             </div>
             <div class="mision">
                 <!-- Cambiar div por h2 o h3 -->
-                <div class="TitulosMisionVision">Misión</div>
+                <div class="titulosRosas">Misión</div>
                 <p>
                     Proporcionamos una plataforma de comercio electrónico que conecta a los entusiastas del arte y las
                     artesanías directamente con artesanos mexicanos, mediante la promoción de artículos que muestran la
@@ -131,7 +133,7 @@
             </div>
             <div class="vision">
                 <!-- Cambiar div por h2 o h3 -->
-                <div class="TitulosMisionVision">Visión</div>
+                <div class="titulosRosas">Visión</div>
                 <p>
                     Apoyar la economía nacional y ser la principal plataforma de comercio electrónico que logre conectar
                     a los entusiastas del arte y las artesanías con los artesanos de todo México, mediante la promoción
@@ -429,7 +431,7 @@
                         </svg>
                         <div class="medioTexto">
                             <h3>Correo electrónico</h3>
-                            <p>contacto@yollicalli.com</p>
+                            <p>yollicalli.g@gmail.com</p>
                         </div>
                     </div>
                     <div class="mediosElemento">
@@ -448,8 +450,8 @@
                         <div class="medioTexto">
                             <h3>Teléfono</h3>
                             <p>
-                                Línea de atención: +(84) 546-6789 <br />
-                                Whatsapp: +(84) 456-6790
+                                Línea de atención: 55 2422 2051  <br />
+                                Whatsapp: +52 55 2422 2051
                             </p>
                         </div>
                     </div>
@@ -499,6 +501,17 @@
                             <div id="alertCorreo" style="display: none"></div>
                         </div>
                         <div class="mb-3">
+                            <label for="inputTelefono" class="form-label">Número de teléfono</label>
+                            <input
+                                type="tel"
+                                class="marcadorTexto form-control"
+                                id="inputTelefono"
+                                placeholder="Teléfono a 10 dígitos"
+                                required
+                            />
+                            <div id="alertTelefono" style="display: none"></div>
+                        </div>
+                        <div class="mb-3">
                             <label for="inputAsunto" class="form-label">Asunto</label>
                             <input
                                 type="text"
@@ -511,13 +524,14 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputMensaje" class="form-label">Mensaje</label>
-                            <input
+                            <textarea
                                 type="text"
                                 class="marcadorTexto form-control"
                                 id="inputMensaje"
                                 placeholder="Escribe tu texto aquí"
+                                rows="3"
                                 required
-                            />
+                            ></textarea>
                             <div id="alertMensaje" style="display: none"></div>
                         </div>
                         <div class="mb-3 form-check">
@@ -644,7 +658,7 @@
                     </svg>
                     <div class="texto col-8">
                         <h3>Causa Social</h3>
-                        <span>Impulsamos la economia local mexicana</span>
+                        <span>Impulsamos la economía local mexicana</span>
                     </div>
                 </div>
                 <div class="garantiasItem d-flex col-3">
@@ -694,12 +708,11 @@
                     <h4>Ayuda</h4>
                     <ul>
                         <li>
-                            <a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank"
-                                >Donar</a
-                            >
+                            <a href="https://www.paypal.com/paypalme/yollicalli" target="_blank"
+                                >Donar</a >
                         </li>
                         <li><a href="./nosotros.html#contacto">Contacto</a></li>
-                        <li><a href="./politicas.html">Politicas de privacidad</a></li>
+                        <li><a href="./politicas.html">Políticas de privacidad</a></li>
                     </ul>
                 </div>
             </div>
