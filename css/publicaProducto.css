@@ -80,8 +80,8 @@ main{
     font-size: var(--texto-general);
 }
 
-.textArea{
-    height: 100px;
+textarea{
+    font-size: 18px;
 }
 
 .contenedorCategorias{
@@ -110,11 +110,6 @@ select {
 .form-control::placeholder{
     font-size: var(--texto-general);
     font-family: var(--barlow);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
 }
 
 .boton-blanco {
@@ -152,6 +147,24 @@ select {
     font-size: var(--texto-general);
 }
 
+.opciones{
+    font-size: 1.8rem;
+}
+
+#descripcion{
+    min-height: 150px;
+    font-size: 18px;
+}
+
+#titulosSubeFoto{
+    margin-bottom: 20px;
+}
+
+#recomendacionFoto{
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
 /* Margen responsivos pequeños*/
 @media (max-width: 425px) {
     main  {
@@ -164,6 +177,16 @@ select {
         display: flex;
         justify-content: center;
     }
+
+    #tiutloSubeFoto{
+        margin-bottom: 5px;
+    }
+
+    #recomdacionFoto{
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+
 }
 
 @media (max-width: 992px) {
@@ -173,7 +196,7 @@ select {
     .contenedorCategorias{
         padding: 0;
     }
-    .hechoConLagrimas{
+    .subeFoto{
         padding: 0;
     }
     .contenedorBoton{
