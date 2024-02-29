@@ -1,59 +1,5 @@
-#Banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 293px;
-    width: 100%;
-    padding: 0 100px;
-    /* margin: 100px 0 0 0; */
-    background-image: url("../src/img/bannerFondo.png");
-    background-size: 100% 100%;
-}
 
-#Banner h1 {
-    font-size: var(--titulo-banner);
-    font-weight: var(--bold);
-    color: var(--blanco);
-    width: 100%;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    text-shadow: 3px 3px 2px var(--bordes);
-}
-
-#Banner .breadcrumb {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#Banner .breadcrumb nav {
-    --bs-breadcrumb-divider: ">";
-    --breadcrumb-divider-color: var(--blanco);
-    --bs-breadcrumb-divider-color: var(--blanco);
-    color: var(--blanco);
-}
-
-#Banner .breadcrumb .breadcrumb-item {
-    color: var(--blanco);
-    font-size: var(--titulos-h3-rutas);
-    font-weight: var(--bold);
-    text-shadow: 1px 1px 2px var(--bordes);
-    --bs-breadcrumb-divider-color: var(--blanco);
-}
-
-#Banner .breadcrumb .breadcrumb-item a {
-    color: var(--blanco);
-    font-size: var(--titulos-h3-rutas);
-    font-weight: var(--bold);
-    text-decoration: none;
-    text-shadow: 2px 1px 2px var(--bordes);
-}
-
-#Banner .breadcrumb .breadcrumb-item:hover {
-    pointer-events: auto;
-}
+/* Datos de perfil */
 .datosPerfil{
     /* background-color: #963; */
     margin-top: 3rem;
@@ -153,6 +99,9 @@
     background-color: var(--blanco);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+.opcionPago .form-label{
+    margin: 0;
+}
 .opcionPago > input, label, p{
     margin: 0 1rem;
 }
@@ -161,4 +110,64 @@
 }
 .agregarMetodoPago button{
     margin: 0;
+}
+/* Información de ventas */
+.informacionVentas{
+    text-align: center;
+}
+.informacionVentas .ventas h3, .ingresos h3, .ventasTotales h3{
+    font-weight: bold;
+}
+.ultimasVentas ul{
+    list-style: none;
+    padding: 0;
+}
+.titulosAzul{
+    font-weight: bold;
+    color: var(--azul-talavera);
+}
+/* Favoritos */
+.contenedorCards{
+    display: flex;
+    justify-content: space-around;
+}
+.articulosFavoritos div .card{
+    width: 25rem;
+    border: none;
+}
+.card img{
+    aspect-ratio: 1/1;
+}
+.card-body{
+    background-color: var(--color-base);
+}
+.precioIconos{
+    display: flex;
+    height: 7rem;
+}
+.precio{
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    color: var(--azul-talavera);
+    font-weight: var(--medium);
+    font-size: var(--titulos-h3-rutas);
+}
+.iconos{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.iconos svg{
+    margin: 0 .5rem;
+    transition: transform .3s linear;
+}
+.iconos svg:hover{
+    transform: scale(1.3);
+}
+.card-text{
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--medium);
+    color: var(--azul-talavera);
 }
