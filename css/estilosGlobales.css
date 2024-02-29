@@ -382,6 +382,64 @@ header {
         margin-right: calc(2 * var(--bs-offcanvas-padding-x));
     }
 }
+
+/* Banner */
+#Banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 293px;
+    width: 100%;
+    padding: 0 100px;
+    /* margin: 100px 0 0 0; */
+    background-image: url("../src/img/bannerFondo.png");
+    background-size: 100% 100%;
+}
+
+#Banner h1 {
+    font-size: var(--titulo-banner);
+    font-weight: var(--bold);
+    color: var(--blanco);
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-shadow: 3px 3px 2px var(--bordes);
+}
+
+#Banner .breadcrumb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#Banner .breadcrumb nav {
+    --bs-breadcrumb-divider: ">";
+    --breadcrumb-divider-color: var(--blanco);
+    --bs-breadcrumb-divider-color: var(--blanco);
+    color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-shadow: 1px 1px 2px var(--bordes);
+    --bs-breadcrumb-divider-color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item a {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-decoration: none;
+    text-shadow: 2px 1px 2px var(--bordes);
+}
+
+#Banner .breadcrumb .breadcrumb-item:hover {
+    pointer-events: auto;
+}
 /* 
 #Navegacion {
     height: 100px;
@@ -534,6 +592,7 @@ footer {
     background-color: var(--blanco);
     padding: 0 100px;
     margin: 0;
+    margin-top: 3rem;
     border-top: 2px solid var(--gris);
 }
 
