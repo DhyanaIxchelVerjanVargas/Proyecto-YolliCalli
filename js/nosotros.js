@@ -1,6 +1,7 @@
 /*Seccion de validacion */
 let inputNombre = document.getElementById("inputNombre");
 let inputEmail = document.getElementById("inputEmail");
+let inputTelefono=document.getElementById("inputTelefono")
 let inputAsunto = document.getElementById("inputAsunto");
 let inputMensaje = document.getElementById("inputMensaje"); 
 let checkCondicones = document.getElementById("checkContacto");
@@ -10,6 +11,7 @@ let btnEnvioEstado = document.getElementById("btnEnvioEstado");
 
 let alertNombre = document.getElementById("alertNombre");
 let alertCorreo = document.getElementById("alertCorreo");
+let alertTelefono = document.getElementById("alertTelefono");
 let alertAsunto = document.getElementById("alertAsunto");
 let alertMensaje = document.getElementById("alertMensaje");
 let alertCondiciones = document.getElementById("alertCondiciones");
@@ -17,8 +19,9 @@ let alertCondiciones = document.getElementById("alertCondiciones");
 const expresiones = {
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
     correo: /^[\w.-]+@[a-zA-Z_-]+(?:\.[a-zA-Z]{2,6})+$/,
-    texto: /^[^\/\\<>]*$/
-  
+    texto: /^[^\/\\<>]*$/,
+    telefono: /^\d{10}$/
+    
 }
 
 botonEnviar.addEventListener("click",function(event){
@@ -28,6 +31,7 @@ botonEnviar.addEventListener("click",function(event){
     //Se reinicia los alerts para que no aparezcan
     alertNombre.innerHTML = "";
     alertCorreo.innerHTML = "";
+    alertTelefono.innerHTML = "";
     alertAsunto.innerHTML = "";
     alertMensaje.innerHTML = "";
     alertCondiciones.innerHTML = "";
@@ -44,6 +48,8 @@ botonEnviar.addEventListener("click",function(event){
     inputNombre.style.removeProperty("box-shadow");
     inputEmail.style.border = "solid var(--azul-talavera) thin";
     inputEmail.style.removeProperty("box-shadow");
+    inputTelefono.style.removeProperty("border");
+    inputTelefono.style.removeProperty("box-shadow");
     inputAsunto.style.border = "solid var(--azul-talavera) thin";
     inputAsunto.style.removeProperty("box-shadow");
     inputMensaje.style.border = "solid var(--azul-talavera) thin";
@@ -52,6 +58,7 @@ botonEnviar.addEventListener("click",function(event){
     //Se quitan los espacios de las entradas 
     inputNombre.value = inputNombre.value.trim();
     inputEmail.value = inputEmail.value.trim();
+    inputTelefono.value = inputTelefono.value.trim();
     inputAsunto.value = inputAsunto.value.trim();
     inputMensaje.value = inputMensaje.value.trim();
     isValido = true;
@@ -59,7 +66,7 @@ botonEnviar.addEventListener("click",function(event){
     //Las validaciones se comienzan desde el ultimo input para que el focus se quede en el primer input que no este validado
     if(!checkCondicones.checked){
         alertCondiciones.style.display = "inline";
-        alertCondiciones.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Debe aceptar las condicones.</span>`);
+        alertCondiciones.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Debe marcar la casilla para continuar.</span>`);
         alertCondiciones.style.display= "inline";
         checkCondicones.focus(); 
         checkCondicones.style.border = "solid #ff0909 thin";
@@ -136,7 +143,23 @@ botonEnviar.addEventListener("click",function(event){
         inputEmail.style.boxShadow = "0 0 5px #ff0909"
         isValido = false;
     }
-
+    if (inputTelefono.value.length == 0) {
+        alertTelefono.style.display = "inline";
+        alertTelefono.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un número de teléfono.</span>`);
+        alertTelefono.style.display= "inline";
+        inputTelefono.focus();
+        inputTelefono.style.border = "solid #ff0909 thin";
+        inputTelefono.style.boxShadow = "0 0 5px #ff0909"
+        isValido = false;
+    } else if (!expresiones.telefono.test(inputTelefono.value)) {
+        alertTelefono.style.display = "inline";
+        alertTelefono.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Número de teléfono inválido.</span>`);
+        alertTelefono.style.display= "inline";
+        inputTelefono.focus();
+        inputTelefono.style.border = "solid #ff0909 thin";
+        inputTelefono.style.boxShadow = "0 0 5px #ff0909"
+        isValido = false;
+    }    
     if (inputNombre.value.length == 0){
         alertNombre.style.display = "inline";
         alertNombre.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un nombre.</span>`);
