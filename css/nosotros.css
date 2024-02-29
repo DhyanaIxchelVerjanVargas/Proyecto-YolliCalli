@@ -534,3 +534,7 @@ button:active {
     font-size: var(--texto-general);
     text-align: center;
 }
+
+.modal-title {
+    letter-spacing: 1px;
+}
