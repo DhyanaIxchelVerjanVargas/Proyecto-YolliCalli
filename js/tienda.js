@@ -38,20 +38,22 @@ let productosBuscados = new Array();
  class Producto {
     nombre="";
     descripcion="";
-    imagen =""
     precio = 0;
-    elaboradoPor ="";
+    categorias=""
+    etiquetas="";
+    imagen =""
+    //elaboradoPor ="";
     id="";
-    calificacion=0;
     static total=0;
 
-    constructor(nombre,descripcion,imagen,precio,elaboradoPor){
+    constructor(nombre,descripcion,precio,categorias, etiquedas,imagen){
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.imagen = imagen
         this.precio = precio;
-        this.elaboradoPor = elaboradoPor;
-
+        //this.elaboradoPor = elaboradoPor;
+        this.categorias = categorias;
+        this.etiquetas = etiquedas;
+        this.imagen = imagen
         Producto.total +=1;
         this.id= "CP" + Producto.total;
     }
@@ -90,7 +92,7 @@ function addProducto(producto,index){
                     <h4>${producto.nombre}</h4>
                     <span class="productPrecio">$ ${producto.precio.toFixed(2)}</span>
                     <span>por</span>
-                    <span class="productMadeBy">${producto.elaboradoPor}</span>
+                    <span class="productMadeBy">Artesanos de México</span>
                     <div class="productIconos">
                         <a  class="productoIcon"><i class="bi bi-heart"></i></a>
                         <a  class="productoIcon"><i class="bi bi-share-fill"></i></a>
@@ -179,23 +181,23 @@ function busquedaProducto(productoBuscar){
     if (this.localStorage.getItem("productos") == null){
         crearPropuctos();
 
-        if(this.localStorage.getItem("nuevosProductos") != null){
-            nuevosProductos = JSON.parse(this.localStorage.getItem("nuevosProductos"));
+        if(this.localStorage.getItem("productosNuevos") != null){
+            nuevosProductos = JSON.parse(this.localStorage.getItem("productosNuevos"));
             nuevosProductos.forEach((nuevoProducto)=>{
                 productos.push(nuevoProducto);
             })
         }
         localStorage.setItem("productos",JSON.stringify(productos));
-        localStorage.removeItem("nuevosProductos");
+        localStorage.removeItem("productosNuevos");
     }else{
         productos = JSON.parse(this.localStorage.getItem("productos"));
-        if(this.localStorage.getItem("nuevosProductos") != null){
-            nuevosProductos = JSON.parse(this.localStorage.getItem("nuevosProductos"));
+        if(this.localStorage.getItem("productosNuevos") != null){
+            nuevosProductos = JSON.parse(this.localStorage.getItem("productosNuevos"));
             nuevosProductos.forEach((nuevoProducto)=>{
                 productos.push(nuevoProducto);
             })
             localStorage.setItem("productos",JSON.stringify(productos));
-            localStorage.removeItem("nuevosProductos");
+            localStorage.removeItem("productosNuevos");
         }
     }
 
@@ -281,3 +283,33 @@ function busquedaProducto(productoBuscar){
         }
     }
 });
+
+
+function uploadFile(file) {
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', unsignerUploadPreset);
+
+    return new Promise((resolve, reject) => {
+        fetch('https://api.cloudinary.com/v1_1/' + cloudName + '/image/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Error al cargar archivo a Cloudinary');
+        })
+        .then(data => {
+            console.log('Imagen subida exitosamente:', data);
+            var imageUrl = data.secure_url;
+            console.log('URL de la imagen:', imageUrl);
+            resolve(imageUrl);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            reject(error);
+        });
+    });
+}
