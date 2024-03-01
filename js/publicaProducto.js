@@ -93,7 +93,7 @@ class Producto {
     
     /*Aqui terminan las validaciones*/
 
-    if (this.localStorage.getItem("productosNuevos") != null){
+    if (localStorage.getItem("productosNuevos") != null){
         productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
     }else{
         productosNuevos = [];
