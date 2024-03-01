@@ -94,7 +94,7 @@
     <section class="datosPerfil container">
         <div class="contenedorDatos">
             <!--Formulario para editar información de usuario-->
-            <div class="infoUsuario">
+            <div class="infoUsuario estilosContenedores">
                 <form class="infoPerfil">
                     <!--Imgagen de perfil-->
                     <div class="imagenPerfil">
@@ -119,8 +119,8 @@
                         <!--Teléfono-->
                         <div>
                             <label for="telPerfil" class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control" maxlength="10" id="telPerfil"
-                                placeholder="Teléfono a 10 digitos">
+                            <input type="number" class="form-control" maxlength="10" id="telPerfil"
+                                placeholder="Teléfono a 10 dígitos">
                         </div>
                         <!--Dirección-->
                         <div>
@@ -136,13 +136,13 @@
                             <input type="text" class="form-control" id="estadoPerfil" placeholder="Estado">
                         </div>
                         <div class="ciudadCodPostal">
-                            <div>
+                            <div class="ciudad">
                                 <label for="ciudadPerfil" class="form-label ciudad">Ciudad</label>
                                 <input type="text" class="form-control" id="ciudadPerfil" placeholder="Ciudad">
                             </div>
-                            <div>
+                            <div class="codPostal">
                                 <label for="cpPerfil" class="form-label codPostal">Código postal</label>
-                                <input type="text" class="form-control" maxlength="5" id="cpPerfil" placeholder="#####">
+                                <input type="number" class="form-control" maxlength="5" id="cpPerfil" placeholder="#####">
                             </div>
                         </div>
                         <div class="botonDonar">
@@ -155,49 +155,60 @@
                 </form>
             </div>
             <!--Formulario para opciones de pago-->
-            <div class="datosPago">
-                <form class="opcionesPago">
-                    <!--Título de formulario-->
-                    <div>
-                        <h2 class="titulosRosas">Opción de pago predeterminada</h2>
-                    </div>
-                    <!--Selección de opción de pago-->
-                    <fieldset>
-                        <!--Opción de pago TDC-->
-                        <div class="opcionPago">
-                            <input type="radio" name="opcionPago">
-                            <label class="form-label">
-                                <svg width="29" height="23" viewBox="0 0 29 23" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.375 8.58334H27.625M7.20833 15.875H8.66667M14.5 15.875H15.9583M5.75 21.7083H23.25C25.6662 21.7083 27.625 19.7496 27.625 17.3333V5.66667C27.625 3.25043 25.6662 1.29167 23.25 1.29167H5.75C3.33375 1.29167 1.375 3.25043 1.375 5.66667V17.3333C1.375 19.7496 3.33375 21.7083 5.75 21.7083Z"
-                                        stroke="#E1456C" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </label>
-                            <p>TDC</p>
+            <div class="contenedorDatosPago">
+                <div class="datosPago estilosContenedores">
+                    <form class="opcionesPago">
+                        <!--Título de formulario-->
+                        <div>
+                            <h2 class="titulosRosas">Opción de pago predeterminada</h2>
                         </div>
-                        <!--Opción de pago Paypal-->
-                        <div class="opcionPago">
-                            <input type="radio" name="opcionPago">
-                            <label class="form-label">
-                                <svg width="35" height="25" viewBox="0 0 35 25" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M32.0833 0.833332H2.91667C1.30667 0.833332 0 2.14 0 3.75V21.25C0 22.86 1.30667 24.1667 2.91667 24.1667H32.0833C33.6933 24.1667 35 22.86 35 21.25V3.75C35 2.14 33.6933 0.833332 32.0833 0.833332ZM32.0833 20.5208C32.0833 20.9233 31.7567 21.25 31.3542 21.25H3.64583C3.24333 21.25 2.91667 20.9233 2.91667 20.5208V4.47917C2.91667 4.07667 3.24333 3.75 3.64583 3.75H31.3542C31.7567 3.75 32.0833 4.07667 32.0833 4.47917V20.5208ZM23.0898 11.4121C23.0898 11.6731 23.0577 11.9385 23.0081 12.2025C22.5969 14.3506 21.1867 15.0929 19.3871 15.0929H19.1085C18.8883 15.0929 18.7017 15.2548 18.6667 15.4765L18.2758 17.9512C18.2423 18.1715 18.0556 18.3333 17.8354 18.3333H16.5054C16.3158 18.3333 16.1715 18.1642 16.2006 17.9775L16.8744 13.6608C16.8773 13.6448 16.889 13.6331 16.905 13.6331H17.9521C20.4969 13.6331 22.0879 12.36 22.5575 9.95375C22.9513 10.3504 23.0898 10.8667 23.0898 11.4121ZM16.1802 13.4785C16.2371 13.0775 16.4033 12.9069 16.854 12.9054L17.9521 12.904C20.176 12.904 21.4506 11.8875 21.8517 9.79771C22.241 7.78812 20.8294 6.66667 18.9204 6.66667H15.3504C15.0996 6.66667 14.8852 6.85187 14.8458 7.10417C13.7258 14.3156 13.4021 16.1487 13.3685 16.7087C13.3583 16.8852 13.4998 17.0354 13.6777 17.0354H15.6173L16.1802 13.4785Z"
-                                        fill="#E1456C" />
-                                </svg>
-                            </label>
-                            <p>PayPal</p>
+                        <!--Selección de opción de pago-->
+                        <fieldset>
+                            <!--Opción de pago TDC-->
+                            <div class="opcionPago">
+                                <input type="radio" name="opcionPago">
+                                <label class="form-label">
+                                    <svg width="29" height="23" viewBox="0 0 29 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.375 8.58334H27.625M7.20833 15.875H8.66667M14.5 15.875H15.9583M5.75 21.7083H23.25C25.6662 21.7083 27.625 19.7496 27.625 17.3333V5.66667C27.625 3.25043 25.6662 1.29167 23.25 1.29167H5.75C3.33375 1.29167 1.375 3.25043 1.375 5.66667V17.3333C1.375 19.7496 3.33375 21.7083 5.75 21.7083Z"
+                                            stroke="#E1456C" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </label>
+                                <p>TDC</p>
+                            </div>
+                            <!--Opción de pago Paypal-->
+                            <div class="opcionPago estilosContenedores">
+                                <input type="radio" name="opcionPago">
+                                <label class="form-label">
+                                    <svg width="35" height="25" viewBox="0 0 35 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M32.0833 0.833332H2.91667C1.30667 0.833332 0 2.14 0 3.75V21.25C0 22.86 1.30667 24.1667 2.91667 24.1667H32.0833C33.6933 24.1667 35 22.86 35 21.25V3.75C35 2.14 33.6933 0.833332 32.0833 0.833332ZM32.0833 20.5208C32.0833 20.9233 31.7567 21.25 31.3542 21.25H3.64583C3.24333 21.25 2.91667 20.9233 2.91667 20.5208V4.47917C2.91667 4.07667 3.24333 3.75 3.64583 3.75H31.3542C31.7567 3.75 32.0833 4.07667 32.0833 4.47917V20.5208ZM23.0898 11.4121C23.0898 11.6731 23.0577 11.9385 23.0081 12.2025C22.5969 14.3506 21.1867 15.0929 19.3871 15.0929H19.1085C18.8883 15.0929 18.7017 15.2548 18.6667 15.4765L18.2758 17.9512C18.2423 18.1715 18.0556 18.3333 17.8354 18.3333H16.5054C16.3158 18.3333 16.1715 18.1642 16.2006 17.9775L16.8744 13.6608C16.8773 13.6448 16.889 13.6331 16.905 13.6331H17.9521C20.4969 13.6331 22.0879 12.36 22.5575 9.95375C22.9513 10.3504 23.0898 10.8667 23.0898 11.4121ZM16.1802 13.4785C16.2371 13.0775 16.4033 12.9069 16.854 12.9054L17.9521 12.904C20.176 12.904 21.4506 11.8875 21.8517 9.79771C22.241 7.78812 20.8294 6.66667 18.9204 6.66667H15.3504C15.0996 6.66667 14.8852 6.85187 14.8458 7.10417C13.7258 14.3156 13.4021 16.1487 13.3685 16.7087C13.3583 16.8852 13.4998 17.0354 13.6777 17.0354H15.6173L16.1802 13.4785Z"
+                                            fill="#E1456C" />
+                                    </svg>
+                                </label>
+                                <p>PayPal</p>
+                            </div>
+                        </fieldset>
+                        <!--Botón para agregar método de pago-->
+                        <div class="botonDonar agregarMetodoPago">
+                            <button type="button" class="boton" id="metodoPago">
+                                <i class="bi bi-plus-circle"></i> Agregar método de pago
+                            </button>
                         </div>
-                    </fieldset>
-                    <!--Botón para agregar método de pago-->
-                    <div class="botonDonar agregarMetodoPago">
+                    </form>
+                </div>
+                <div class="crearProducto estilosContenedores">
+                    <h2>¿Quieres comenzar a vender en YolliCalli?</h2>
+                    <p>Da click en el botón para comenzar con la creación de un producto.</p>
+                    <a href="publicaProducto.html">
                         <button type="button" class="boton" id="metodoPago">
-                            <i class="bi bi-plus-circle"></i> Agregar método de pago
+                            <i class="bi bi-plus-circle"></i> Crear producto
                         </button>
-                    </div>
-                </form>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -262,7 +273,7 @@
                             <!--Precio e iconos-->
                             <div class="precioIconos">
                                 <div class="precio">
-                                    <p>$0.00</p>
+                                    <p>$25000.00</p>
                                 </div>
                                 <div class="iconos">
                                     <svg width="18" height="17" viewBox="0 0 18 17" fill="none"
@@ -553,7 +564,7 @@
                 <span>By Generation México</span>
             </div>
             <div class="footerVinculos col-sm-4 d-flex flex-column">
-                <h4>Vinculos</h4>
+                <h4>Vínculos</h4>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="tienda.html">Tienda</a></li>
@@ -565,7 +576,7 @@
                 <ul>
                     <li><a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a></li>
                     <li><a href="./nosotros.html#contacto">Contacto</a></li>
-                    <li><a href="./politicas.html">Politicas de privacidad</a></li>
+                    <li><a href="./politicas.html">Políticas de privacidad</a></li>
                 </ul>
             </div>
         </div>

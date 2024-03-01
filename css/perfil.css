@@ -10,7 +10,9 @@
 }
 .infoUsuario{
     flex-basis: 50%;
-    padding: 5rem;
+}
+.estilosContenedores{
+    padding: 4rem;
     background-color:var(--blanco);
     border: var(--rosa-mexicano) 2px solid;
     border-radius: 1rem;
@@ -68,6 +70,38 @@
 .codPostal{
     flex-basis: 45%;
 }
+/* Datos perfil movil */
+@media (max-width: 425px) {
+    .estilosContenedores{
+        margin-bottom: 3rem;
+    }
+    .datosPerfil{
+        /* background-color: #963; */
+        margin-top: 3rem;
+    }
+    .contenedorDatos{
+        display: flex;
+        flex-direction: column;
+    }
+    .estilosContenedores{
+        padding: 1rem;
+    }
+    .imagenPerfil .form-control{
+        width: 80%;
+    }   
+    .datosPersonales > div{
+        width: 95%;
+    }
+    .ciudadCodPostal{
+        display: flex;
+    }
+    .ciudad{
+        flex-basis: 45%;
+    }
+    .codPostal{
+        flex-basis: 45%;
+    }
+}
 .botonDonar{
     display: flex;
     justify-content: center;
@@ -75,14 +109,8 @@
 .botonDonar button{
     margin-top: 3rem;
 }
-.datosPago{
+.contenedorDatosPago{
     flex-basis: 45%;
-    padding: 4rem;
-    background-color:var(--blanco);
-    border: var(--rosa-mexicano) 2px solid;
-    border-radius: 1rem;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    height: fit-content;
 }
 .datosPago .opcionesPago h2{
     text-align: left;
@@ -110,6 +138,51 @@
 }
 .agregarMetodoPago button{
     margin: 0;
+}
+/* Opciones pago movil */
+@media (max-width: 425px) {
+    .datosPago .opcionesPago h2{
+        text-align: center;
+        margin-top: 0;
+    }
+    .opcionPago{
+        width: 100%;
+    }
+    .agregarMetodoPago{
+        display: flex;
+        justify-content: center;
+    }
+}
+/* Creacion de producto */
+.crearProducto{
+    margin-top: 3rem;
+}
+.crearProducto h2{
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: var(--titulo-rosa-h2);
+    color: var(--rosa-mexicano);
+    font-weight: var(--medium);
+}
+.crearProducto p{
+    margin: 0;
+    margin-bottom: 3rem;
+}
+button a{
+    color: var(--blanco);
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+button:hover a{
+    color: var(--rosa-mexicano);
+}
+/* Creacion de producto movil */
+@media (max-width: 425px) {
+    .crearProducto{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
 }
 /* Información de ventas */
 .informacionVentas{
@@ -170,4 +243,41 @@
     font-size: var(--titulos-h3-rutas);
     font-weight: var(--medium);
     color: var(--azul-talavera);
+}
+/* Favoritos movil */
+@media (max-width: 425px) {
+    .contenedorCards{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .contenedorCards .card-body{
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    .articulosFavoritos div .card{
+        width: 48%;
+    }
+    .precioIconos{
+        height: 11rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .precio{
+        flex-basis: 45%;
+    }
+    .iconos{
+        flex-basis: 45%;
+    }
+    .iconos svg{
+        margin: 0 .7rem;
+    }
+    .iconos svg:hover{
+        transform: scale(1.3);
+    }
+    .card-text{
+        font-size: var(--titulos-h3-rutas);
+        font-weight: var(--medium);
+        color: var(--azul-talavera);
+    }
 }
