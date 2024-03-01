@@ -156,24 +156,16 @@
                 <label for="imagenProducto" class="form-label"><h3><strong>¡Sube tu foto!</strong></h3></label>
                  <p>Te recomendamos subirla en la mejor calidad posible.</p>
                  <div class="mb-3">
-                  <input 
-                  type="file" 
-                  accept="image/png, image/jpeg, image/jpg" 
-                  class="form-control inputArchivo" 
-                  id="imagenProducto" 
-                  required>
-                  <div id="alertImagenProducto" style="display: none"></div>
-                    <!--<button type="submit" class="boton-blanco">Seleccionar</button>-->
+
+                  <input style="display: none;" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control inputArchivo" id="imagenProducto" required>
+                    <button type="button" class="boton-blanco" id="imagenProductoFake">Seleccionar</button>
                  </div>
               </div>
             </div>
           </div>
         </div>
         <div class="contenedorBoton">
-          <button 
-          id="botonProducto"
-          type="submit" 
-          class="boton">Enviar</button>
+          <button type="submit" class="boton" id="botonProducto">Enviar</button>
         </div>
       </form>
     </div>
@@ -207,10 +199,16 @@
         <span>2024 YolliCalli. Todos los derechos reservados.</span>
     </div>
 </footer>
+     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!--Cloudinary-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.34.2/js/vendor/jquery.ui.widget.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.34.2/js/jquery.fileupload.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.14.0/cloudinary-core-shrinkwrap.min.js"></script>
     <!--JS-->
-    <!--<script src="./js/main.js"></script>-->
+    <script src="./js/main.js"></script>
     <script src="./js/publicaProducto.js"></script>
 </body>
 </html>

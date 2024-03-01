@@ -360,12 +360,52 @@
 }
 /*Caja de filtros*/
 
+/*Contendor de los botones de limpieza de busqueda y filtros*/
+.limpiezaBusquedaFiltros{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.limpiezaBusquedaFiltros .limpiar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--bordes);
+    background: transparent;
+    width: 100px;
+    margin: 20px 20px 0 20px;
+    padding: 5px 7px;
+    font-family: var(--barlow);
+    color: var(--azul-talavera);
+    transition: .2s all linear;
+}
+
+.limpiezaBusquedaFiltros .limpiar span{
+    line-height: 14px;
+}
+.limpiezaBusquedaFiltros .limpiar:hover{
+    background-color: var(--rosa-mexicano);
+    color: var(--blanco);
+}
+/*Contendor de los botones de limpieza de busqueda y filtros*/
+
 /*Contenedor de productos*/
 #contenedorProductos {
     justify-content: start;
     align-items: center;
     padding: 0 100px;
     margin: 50px 0;
+}
+
+#contenedorProductos .sinCoincidencias{
+    font-family: var(--barlow);
+    width: 100%;
+    text-align: center;
+    color: var(--azul-talavera);
 }
 /*Contenedor de productos*/
 
@@ -383,22 +423,25 @@
 }
 
 #contenedorProductos .cardProducto .caraPrincipal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     border-radius: 10px;
+    border: 1px solid var(--azul-talavera);
     overflow: hidden;
     transition: .5s all ease;
 }
 
 #contenedorProductos .cardProducto .caraPrincipal img{
-    height: 100%;
+    height: auto;
     width: 100%;
     margin: 0;
     padding: 0;
-    border-radius: 10px;
 }
 
 #contenedorProductos .cardProducto .caraPrincipal .card-body{
@@ -448,6 +491,7 @@
     color: var(--blanco);
     font-size: 18px;
     font-weight: var(--medium);
+    text-align: center;
 }
 
 #contenedorProductos .cardProducto .overlay h4{
@@ -655,6 +699,11 @@
     #filtro .cardFiltros .tipoFiltros .filtroPrecio div .contentTxtMinMax input[type="number"]{
         font-size: 12px;
     }
+
+    .paginacion .contnedorBtnPaginacion .btnPaginacion{
+        height: 40px;
+        width: 40px;
+    }
 }
 
 @media (max-width: 768px){
@@ -664,4 +713,8 @@
         margin: 50px 0;
     }
     /*Contenedor de productos*/
+    .paginacion .contnedorBtnPaginacion .btnPaginacion{
+        height: 50px;
+        width: 50px;
+    }
 }

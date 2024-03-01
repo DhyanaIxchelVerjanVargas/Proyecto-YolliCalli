@@ -24,7 +24,7 @@ btnBuscar.addEventListener("click", function (event) {
         txtBusqueda.value = "";
     } else {
         console.log("se mandara a buscar el producto y se ira a la pagina de tienda");
-        sessionStorage.setItem("palabraBuscada", txtBusqueda.value);
+        localStorage.setItem("productoBuscar", txtBusqueda.value);
         txtBusqueda.value = txtBusqueda.value.trim();
         txtBusqueda.value = "";
         location.href = "tienda.html";
@@ -34,7 +34,7 @@ btnBuscar.addEventListener("click", function (event) {
 txtBusqueda.addEventListener("keyup", function (event) {
     if (event.code == "Enter" && txtBusqueda.value.length != 0) {
         location.href = "tienda.html";
-        sessionStorage.setItem("palabraBuscada", txtBusqueda.value);
+        localStorage.setItem("productoBuscar", txtBusqueda.value);
     }
 });
 

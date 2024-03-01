@@ -3,17 +3,20 @@ let descripcion = document.getElementById("descripcion");
 let precio = document.getElementById("precio");
 let categoria = document.getElementById("categoria");
 let etiquetas = document.getElementById("etiquetas");
-let imagenProducto = document.getElementById("imagenProducto");
 let botonProducto = document.getElementById("botonProducto");
-
-
 let alertNombreProducto = document.getElementById("alertNombreProducto")
 let alertDescripcion = document.getElementById("alertDescripcion")
 let alertPrecio = document.getElementById("alertPrecio")
 let alertCategoria = document.getElementById("alertCategoria")
 let alertEtiquetas = document.getElementById("alertEtiquetas")
 let alertImagenProducto = document.getElementById("alertImagenProducto")
-
+let imagenProducto = document.getElementById("imagenProducto");
+let imagenProductoFake = document.getElementById("imagenProductoFake")
+let imagenUrlProducto = "";
+let archivo ="";
+let productosNuevos = new Array();
+const cloudName = "dw66wcnoo";
+const unsignedUploadPreset = "preset_YolliCalli";
 const expresiones = {
     product: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
     price: /^\d{5}$/,
@@ -21,8 +24,84 @@ const expresiones = {
     image: /\.(jpg|jpeg|png)$/
     
 }
+imagenProductoFake.addEventListener("click",function(event){
+    event.preventDefault();
+    console.log("prueba")
+    imagenProducto.click();
+})
+
+imagenProducto.addEventListener("change",function(event){
+    event.preventDefault();
+    archivo = imagenProducto.files[0];
+    // uploadFile(archivo)
+    // .then(imageUrl => {
+    //     imagenUrlProducto = imageUrl
+    // })
+    // .catch(error => {
+    //     imagenUrlProducto = "";
+    // });
+})
+
+function uploadFile(file) {
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', unsignedUploadPreset);
+
+    return new Promise((resolve, reject) => {
+        fetch('https://api.cloudinary.com/v1_1/' + cloudName + '/image/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Error al cargar archivo a Cloudinary');
+        })
+        .then(data => {
+            console.log('Imagen subida exitosamente');
+            var imageUrl = data.secure_url;
+            resolve(imageUrl);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            reject(error);
+        });
+    });
+}
+
 botonProducto.addEventListener("click", function(event) {
     event.preventDefault(); 
+    
+})
+class Producto {
+    nombre="";
+    descripcion="";
+    precio = 0;
+    categoria = "";
+    etiquetas = "";
+    imagen =""
+    // elaboradoPor ="";
+    id="";
+    static total=0;
+
+    constructor(nombre,descripcion,precio, categoria, etiquetas, imagen){
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        // this.elaboradoPor = elaboradoPor;
+        this.categoria = categoria;
+        this.etiquetas = etiquetas;
+        this.imagen = imagen;
+        Producto.total +=1;
+        this.id= "CP" + Producto.total;
+    }
+ }
+
+
+ botonProducto.addEventListener("click", function (event){
+    event.preventDefault();
+
     let isValid = true;
     
     alertNombreProducto.innerHTML = "";
@@ -59,7 +138,7 @@ botonProducto.addEventListener("click", function(event) {
      
     //validacion imagen
     //-----------------
-    if (imagenProducto.files.length == 0) {
+    if (imagenUrlProducto=="") {
         alertImagenProducto.style.display = "inline";
         alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Seleccione una imagen.</span>`);
         alertImagenProducto.style.display = "inline";
@@ -70,6 +149,23 @@ botonProducto.addEventListener("click", function(event) {
     } else if((!expresiones.image.test(imagenProducto.value.toLowerCase()))) {
         alertImagenProducto.style.display = "inline";
         alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Solo se adminten archivos .jpg .png.</span>`);
+        alertImagenProducto.style.display = "inline";
+        imagenProducto.focus();
+        imagenProducto.style.border = "solid #ff0909 thin";
+        imagenProducto.style.boxShadow = "0 0 5px #ff0909";
+        isValid = false;   
+     }else{
+        uploadFile(archivo)
+        .then(imageUrl => {
+            imagenUrlProducto = imageUrl
+        })
+        .catch(error => {
+            imagenUrlProducto = "";
+        });
+     }
+     if(imagenUrlProducto==""){
+        alertImagenProducto.style.display = "inline";
+        alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Hubo un error al subir el archivo</span>`);
         alertImagenProducto.style.display = "inline";
         imagenProducto.focus();
         imagenProducto.style.border = "solid #ff0909 thin";
@@ -218,5 +314,23 @@ botonProducto.addEventListener("click", function(event) {
         nombreProducto.style.boxShadow = "0 0 5px #ff0909"
         isValid = false;
     }
-})
+
+    /*Aqui inician las validaciones*/
+
+    /*Para validar si se subio la foto utilizar la siguiente variable imagenUrlProducto si esta vacia no se subio
+    la foto si contiene algo se subio bien la foto */
+    
+    /*Aqui terminan las validaciones*/
+
+    if (localStorage.getItem("productosNuevos") != null){
+        productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
+    }else{
+        productosNuevos = [];
+    }
+    productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, etiquetas.value, imagenUrlProducto))
+    localStorage.setItem("productosNuevos", JSON.stringify(productosNuevos));
+ })
+
+
+
 
