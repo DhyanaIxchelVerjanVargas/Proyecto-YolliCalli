@@ -140,7 +140,7 @@ class Producto {
     event.preventDefault();
     console.log("se da click en boton enviar");
     
-    
+
     alertNombreProducto.innerHTML = "";
     alertDescripcion.innerHTML = "";
     alertPrecio.innerHTML = "";
@@ -337,9 +337,20 @@ class Producto {
     }
     if(isValid){
         alertProductoAgregadoTexto.insertAdjacentHTML("beforeend",`
-        <span style="font-family: var(--barlow); font-size: var( --titulos-h3-rutas);">¡Producto agregado exitosamente! <a href="./tienda.html" style="color: #5CB85C;">Ver Tienda</a>.</span>`);
+        <span font-family: var(--barlow); font-size: var( --titulos-h3-rutas)>
+            ¡Producto agregado exitosamente! <a href="./tienda.html" class="alert-link">Ver tienda</a>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </span>`);
         alertProductoAgregado.style.display = "block";
-        alertProductoAgregado.focus();
+
+        nombreProducto.value = "";
+        descripcion.value = "";
+        precio.value = "";
+        categoria.value = "";
+        etiquetas.value = "";
+        imagenProducto.value = "";
+
+        nombreProducto.focus();
     }
 
     /*Aqui terminan las validaciones*/
@@ -356,6 +367,8 @@ class Producto {
         console.log("productos nuevos");
         localStorage.setItem("productosNuevos", JSON.stringify(productosNuevos));
     }
+
+    
  })
 
 
