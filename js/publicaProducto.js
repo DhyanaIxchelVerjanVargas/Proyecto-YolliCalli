@@ -6,6 +6,7 @@ let etiquetas = document.getElementById("etiquetas");
 let imagenProducto = document.getElementById("imagenProducto");
 let botonProducto = document.getElementById("botonProducto");
 
+
 let alertNombreProducto = document.getElementById("alertNombreProducto")
 let alertDescripcion = document.getElementById("alertDescripcion")
 let alertPrecio = document.getElementById("alertPrecio")
@@ -16,8 +17,8 @@ let alertImagenProducto = document.getElementById("alertImagenProducto")
 const expresiones = {
     product: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
     price: /^\d{5}$/,
-    tags: /^[a-zA-ZáéíóúüñÑÁÉÍÓÚÜ\s,']+$/
-  
+    tags: /^[a-zA-ZáéíóúüñÑÁÉÍÓÚÜ\s,']+$/,
+    image: /\.(jpg|jpeg|png)$/
     
 }
 botonProducto.addEventListener("click", function(event) {
@@ -55,9 +56,26 @@ botonProducto.addEventListener("click", function(event) {
     descripcion.value = descripcion.value.trim();
     etiquetas.value = etiquetas.value.trim();
     isValid= true;
-
+     
+    //validacion imagen
     //-----------------
-    // validacion imagen
+    if (imagenProducto.files.length == 0) {
+        alertImagenProducto.style.display = "inline";
+        alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Seleccione una imagen.</span>`);
+        alertImagenProducto.style.display = "inline";
+        imagenProducto.focus();
+        imagenProducto.style.border = "solid #ff0909 thin";
+        imagenProducto.style.boxShadow = "0 0 5px #ff0909";
+        isValid = false;
+    } else if((!expresiones.image.test(imagenProducto.value.toLowerCase()))) {
+        alertImagenProducto.style.display = "inline";
+        alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Solo se adminten archivos .jpg .png.</span>`);
+        alertImagenProducto.style.display = "inline";
+        imagenProducto.focus();
+        imagenProducto.style.border = "solid #ff0909 thin";
+        imagenProducto.style.boxShadow = "0 0 5px #ff0909";
+        isValid = false;   
+     }
     //------------------
 
 
