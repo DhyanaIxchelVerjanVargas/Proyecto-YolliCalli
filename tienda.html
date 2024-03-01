@@ -100,8 +100,8 @@
                     </div>
                     <div class="col navBuscar">
                     <form class="d-flex" role="search">
-                        <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn">Buscar</button>
+                        <input id="inputBusqueda" class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+                        <button id="btnBusqueda" class="btn">Buscar</button>
                     </form>
                     </div>
                 </div>
@@ -183,6 +183,11 @@
                     <button class="boton" type="button" id="btnAplicarFiltro">Aplicar</button>
                 </div>
             </div>
+        </div>
+
+        <div class="limpiezaBusquedaFiltros">
+            <button type="button" class="limpiar" id="btnLimpiarBusquda" style="display: none;"><span>Limpiar busqueda</span> <i class="bi bi-x"></i></button>
+            <button type="button" class="limpiar" id="btnLimpiarFiltros" style="display: none;"><span>Limpiar filtros</span> <i class="bi bi-x"></i></button>
         </div>
 
         <!--Contenedor de las trajetas de productos-->

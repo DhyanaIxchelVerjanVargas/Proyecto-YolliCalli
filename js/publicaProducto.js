@@ -1,7 +1,7 @@
 let imagenProducto = document.getElementById("imagenProducto");
 let imagenProductoFake = document.getElementById("imagenProductoFake")
 let imagenUrlProducto = "";
-
+let productosNuevos = new Array();
 const cloudName = "dw66wcnoo";
 const unsignedUploadPreset = "preset_YolliCalli";
 
@@ -40,9 +40,8 @@ function uploadFile(file) {
             throw new Error('Error al cargar archivo a Cloudinary');
         })
         .then(data => {
-            console.log('Imagen subida exitosamente:', data);
+            console.log('Imagen subida exitosamente');
             var imageUrl = data.secure_url;
-            console.log('URL de la imagen:', imageUrl);
             resolve(imageUrl);
         })
         .catch(error => {
@@ -87,9 +86,19 @@ class Producto {
  botonProducto.addEventListener("click", function (event){
     event.preventDefault();
 
-    let productosNuevos = new Array();
-    productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, precio.value, categoria.value, etiquetas.value, imagenUrlProducto))
+    /*Aqui inician las validaciones*/
 
+    /*Para validar si se subio la foto utilizar la siguiente variable imagenUrlProducto si esta vacia no se subio
+    la foto si contiene algo se subio bien la foto */
+    
+    /*Aqui terminan las validaciones*/
+
+    if (this.localStorage.getItem("productosNuevos") != null){
+        productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
+    }else{
+        productosNuevos = [];
+    }
+    productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, etiquetas.value, imagenUrlProducto))
     localStorage.setItem("productosNuevos", JSON.stringify(productosNuevos));
  })
 
