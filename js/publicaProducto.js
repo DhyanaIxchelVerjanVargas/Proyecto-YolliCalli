@@ -1,3 +1,4 @@
+let isValid = true;
 let nombreProducto = document.getElementById("nombreProducto");
 let descripcion = document.getElementById("descripcion");
 let precio = document.getElementById("precio");
@@ -12,6 +13,8 @@ let alertEtiquetas = document.getElementById("alertEtiquetas")
 let alertImagenProducto = document.getElementById("alertImagenProducto")
 let imagenProducto = document.getElementById("imagenProducto");
 let imagenProductoFake = document.getElementById("imagenProductoFake")
+let alertProductoAgregado = document.getElementById("alertProductoAgregado");
+let alertProductoAgregadoTexto = document.getElementById("alertProductoAgregadoTexto");
 let imagenUrlProducto = "";
 let archivo ="";
 let productosNuevos = new Array();
@@ -40,7 +43,41 @@ imagenProducto.addEventListener("change",function(event){
     // .catch(error => {
     //     imagenUrlProducto = "";
     // });
-})
+    alertImagenProducto.innerHTML = "";
+    if (archivo.type.startsWith('image/')) {
+        uploadFile(archivo)
+            .then(imageUrl => {
+                imagenUrlProducto = imageUrl;
+                alertImagenProducto.style.display = "inline";
+                alertImagenProducto.insertAdjacentHTML("beforeend", `<span style=" color: #5cb85c; font-family: var(--barlow); font-size: 11px);">El archivo se subió exitosamente.</span>
+                `);
+                alertImagenProducto.style.display = "inline";
+                imagenProducto.focus();
+                imagenProducto.style.border = "solid #ff0909 thin";
+                imagenProducto.style.boxShadow = "0 0 5px #ff0909";
+                isValid = true;   
+            })
+            .catch(error => {
+                alertImagenProducto.style.display = "inline";
+            alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:1.8rem; font-family:var(--barlow)">Hubo un error al subir el archivo</span>`);
+            alertImagenProducto.style.display = "inline";
+            imagenProducto.focus();
+            imagenProducto.style.border = "solid #ff0909 thin";
+            imagenProducto.style.boxShadow = "0 0 5px #ff0909";
+            isValid = false;  
+                imagenUrlProducto = "";
+            });
+    } else {
+        console.log('El archivo seleccionado no es una imagen');
+        alertImagenProducto.style.display = "inline";
+        alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:1.8rem; font-family:var(--barlow)">Solo se adminten archivos .jpg .png.</span>`);
+        alertImagenProducto.style.display = "inline";
+        imagenProducto.focus();
+        imagenProducto.style.border = "solid #ff0909 thin";
+        imagenProducto.style.boxShadow = "0 0 5px #ff0909";
+        isValid = false;
+    }}
+)
 
 function uploadFile(file) {
     var formData = new FormData();
@@ -101,8 +138,8 @@ class Producto {
 
  botonProducto.addEventListener("click", function (event){
     event.preventDefault();
-
-    let isValid = true;
+    console.log("se da click en boton enviar");
+    
     
     alertNombreProducto.innerHTML = "";
     alertDescripcion.innerHTML = "";
@@ -110,6 +147,7 @@ class Producto {
     alertCategoria.innerHTML = "";
     alertEtiquetas.innerHTML = "";
     alertImagenProducto.innerHTML = "";
+    alertProductoAgregadoTexto.innerHTML="";
 
     alertNombreProducto.style.display= "none";
     alertDescripcion.style.display= "none";
@@ -117,6 +155,7 @@ class Producto {
     alertCategoria.style.display= "none";
     alertEtiquetas.style.display= "none";
     alertImagenProducto.style.display= "none";
+    alertProductoAgregado.style.display="none";
 
     nombreProducto.style.border = "solid var(--rosa-mexicano) thin";
     nombreProducto.style.removeProperty("box-shadow");
@@ -134,44 +173,26 @@ class Producto {
     nombreProducto.value = nombreProducto.value.trim();
     descripcion.value = descripcion.value.trim();
     etiquetas.value = etiquetas.value.trim();
-    isValid= true;
      
     //validacion imagen
     //-----------------
-    if (imagenUrlProducto=="") {
+    if (imagenProducto.files.length === 0) {
         alertImagenProducto.style.display = "inline";
         alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Seleccione una imagen.</span>`);
         alertImagenProducto.style.display = "inline";
         imagenProducto.focus();
         imagenProducto.style.border = "solid #ff0909 thin";
         imagenProducto.style.boxShadow = "0 0 5px #ff0909";
-        isValid = false;
-    } else if((!expresiones.image.test(imagenProducto.value.toLowerCase()))) {
-        alertImagenProducto.style.display = "inline";
-        alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Solo se adminten archivos .jpg .png.</span>`);
-        alertImagenProducto.style.display = "inline";
-        imagenProducto.focus();
-        imagenProducto.style.border = "solid #ff0909 thin";
-        imagenProducto.style.boxShadow = "0 0 5px #ff0909";
-        isValid = false;   
-     }else{
-        uploadFile(archivo)
-        .then(imageUrl => {
-            imagenUrlProducto = imageUrl
-        })
-        .catch(error => {
-            imagenUrlProducto = "";
-        });
-     }
-     if(imagenUrlProducto==""){
-        alertImagenProducto.style.display = "inline";
-        alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Hubo un error al subir el archivo</span>`);
-        alertImagenProducto.style.display = "inline";
-        imagenProducto.focus();
-        imagenProducto.style.border = "solid #ff0909 thin";
-        imagenProducto.style.boxShadow = "0 0 5px #ff0909";
-        isValid = false;   
-     }
+        isValid = false;}
+    else if((!expresiones.image.test(imagenProducto.value.toLowerCase()))) {
+            alertImagenProducto.style.display = "inline";
+            alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Solo se adminten archivos .jpg .png.</span>`);
+            alertImagenProducto.style.display = "inline";
+            imagenProducto.focus();
+            imagenProducto.style.border = "solid #ff0909 thin";
+            imagenProducto.style.boxShadow = "0 0 5px #ff0909";
+            isValid = false;   
+         }
     //------------------
 
 
@@ -314,21 +335,27 @@ class Producto {
         nombreProducto.style.boxShadow = "0 0 5px #ff0909"
         isValid = false;
     }
+    if(isValid){
+        alertProductoAgregadoTexto.insertAdjacentHTML("beforeend",`
+        <span style="font-family: var(--barlow); font-size: var( --titulos-h3-rutas);">¡Producto agregado exitosamente! <a href="./tienda.html" style="color: #5CB85C;">Ver Tienda</a>.</span>`);
+        alertProductoAgregado.style.display = "block";
+        alertProductoAgregado.focus();
+    }
 
-    /*Aqui inician las validaciones*/
-
-    /*Para validar si se subio la foto utilizar la siguiente variable imagenUrlProducto si esta vacia no se subio
-    la foto si contiene algo se subio bien la foto */
-    
     /*Aqui terminan las validaciones*/
 
+
+
     if (localStorage.getItem("productosNuevos") != null){
-        productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
+        productosNuevos = JSON.parse(localStorage.getItem("productosNuevos"));
     }else{
         productosNuevos = [];
     }
-    productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, etiquetas.value, imagenUrlProducto))
-    localStorage.setItem("productosNuevos", JSON.stringify(productosNuevos));
+    if(isValid){
+        productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, etiquetas.value, imagenUrlProducto))
+        console.log("productos nuevos");
+        localStorage.setItem("productosNuevos", JSON.stringify(productosNuevos));
+    }
  })
 
 

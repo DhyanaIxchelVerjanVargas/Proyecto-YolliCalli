@@ -93,6 +93,9 @@
     <h2 class="titulosRosas"><strong>Ingresa la información del producto</strong></h2>
     <div class="formulario">
       <form>
+        <div class="alert alert-success fade show" style="display:none;" role="alert" id="alertProductoAgregado">
+          <p id="alertProductoAgregadoTexto"></p>
+      </div>
         <div class="mb-3">
           <label for="nombreProducto" class="form-label">Nombre del producto</label>
           <input 
@@ -155,6 +158,7 @@
               <div class="contenedorFotos">
                 <label for="imagenProducto" class="form-label"><h3><strong>¡Sube tu foto!</strong></h3></label>
                  <p>Te recomendamos subirla en la mejor calidad posible.</p>
+                 <div id="alertImagenProducto" style="display: none"></div>
                  <div class="mb-3">
 
                   <input style="display: none;" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control inputArchivo" id="imagenProducto" required>

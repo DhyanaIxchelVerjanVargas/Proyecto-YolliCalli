@@ -90,7 +90,7 @@ function addProducto(producto,index){
                 <div class="overlay">
                     <span class="productoSlogan">Hecho con el corazón</span>
                     <h4>${producto.nombre}</h4>
-                    <span class="productPrecio">$ ${producto.precio.toFixed(2)}</span>
+                    <span class="productPrecio">$ ${parseFloat(producto.precio).toFixed(2)}</span>
                     <span>por</span>
                     <span class="productMadeBy">Artesanos de México</span>
                     <div class="productIconos">
