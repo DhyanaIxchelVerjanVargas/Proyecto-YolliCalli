@@ -212,11 +212,11 @@ botonEnviar.addEventListener("click",function(event){
                     <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="estadoModalLabel">YolliCalli</h1>
+                        <h1 class="modal-title fs-2" id="estadoModalLabel">YolliCalli</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerral"></button>
                         </div>
                         <div class="modal-body">
-                        <p>Mensaje enviado satisfactoriamenta</p>
+                        <p class="fs-3">Mensaje enviado satisfactoriamente</p>
                         </div>
                     </div>
                 </div>
@@ -228,7 +228,7 @@ botonEnviar.addEventListener("click",function(event){
                     <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="estadoModalLabel">YolliCalli</h1>
+                        <h1 class="modal-title fs-3" id="estadoModalLabel">YolliCalli</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerral"></button>
                         </div>
                         <div class="modal-body">
