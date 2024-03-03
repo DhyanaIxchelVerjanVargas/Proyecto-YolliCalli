@@ -1,0 +1,200 @@
+main{
+    margin: 40px 100px 100px 100px;
+}
+
+main{
+    color: var(--negro);
+    font-family: var(--barlow);
+}
+
+.formulario {
+    border: solid 1px var(--rosa-mexicano);
+    border-radius: 10px;
+    box-shadow: 0px 18px 28px #091e424c;
+    margin-block: 50px;
+    padding: 50px;
+    flex: 2 1 60%;
+    /* max-width: 120 rem; */
+}
+
+.formulario div input {
+    font-size: var(--texto-general);
+}
+
+textarea{
+    font-size: var(--texto-general);
+}
+
+.contenedorCategorias{
+    padding-left: 0;
+}
+
+label {
+    font-size: var(--texto-general);
+    font-family: var(--barlow);
+}
+
+.inputArchivo{
+    height: 3.5rem;
+}
+
+input, select {
+    height: 5rem;
+}
+
+/*@-moz-document url-prefix() {
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+}*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+}
+
+select {
+    font-family: var(--barlow);
+    font-size: var(--texto-general);
+}
+
+.form-control, .form-select{
+    border: solid 1px var(--rosa-mexicano);
+    border-radius: 10px;
+}
+
+.form-control::placeholder{
+    font-size: var(--texto-general);
+    font-family: var(--barlow);
+}
+
+.boton-blanco {
+    width: 137px;
+    height: 55px;
+    border: 0.5px solid #e1456c;
+    background-color: #ffffff;
+    border-color: #e1456c;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: var(--barlow);
+    color: #e1456c;
+    transition: all 0.5s ease;
+}
+
+.boton-blanco:hover {
+    background-color: #e1456c;
+    color: #ffffff;
+    border-color: #e1456c;
+}
+
+.contenedorBoton{
+    margin-top: 2rem;
+}
+
+.contenedorFotos{
+    border-radius: 10px;
+    background-color: var(--color-base);
+    padding: 2rem 1.8rem;
+    height: 20rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+    font-family: var(--barlow);
+    font-size: var(--texto-general);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.subeFoto{
+    padding: 0;
+}
+
+.opciones{
+    font-size: 1.8rem;
+}
+
+#descripcion{
+    min-height: 15rem;
+    font-size: 1.8rem;
+}
+
+.titulosRosas{
+    font-size: var(--titulo-rosa-h2);
+    color: var(--rosa-mexicano);
+    text-align: center;
+}
+
+/* Margen responsivos pequeños*/
+@media (max-width: 575.98px) {
+    main  {
+        margin: 20px;
+    }
+    .formulario {
+        padding: 2rem;
+    }
+    .contenedorBoton{
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .contenedorFotos{
+        margin-left: 0;
+    }
+    .contenedorCategorias{
+        padding: 0;
+    }
+    .contenedorBoton{
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/*Banner responsivo pequeño*/
+@media (max-width: 575.98px) {
+    /*Banner*/
+    #Banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        padding: 0 50px;
+    }
+
+    #Banner h1 {
+        font-size: var(--titulos-h3-rutas);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-shadow: 3px 3px 2px var(--bordes);
+        line-height: 40px;
+    }
+
+    #Banner .breadcrumb {
+        line-height: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    /* #Banner .breadcrumb nav ol li { */
+    #Banner .breadcrumb .breadcrumb-item {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    /* #Banner .breadcrumb nav ol li a { */
+    #Banner .breadcrumb .breadcrumb-item a {
+        font-size: 12px;
+        font-weight: var(--bold);
+        text-decoration: none;
+        text-shadow: 2px 1px 2px var(--bordes);
+    }
+    /*Banner*/
+}

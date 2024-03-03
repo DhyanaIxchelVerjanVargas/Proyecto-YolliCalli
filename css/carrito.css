@@ -1,0 +1,196 @@
+:root {
+    /*/* Tipografia */
+    --barlow: "Barlow", sans-serif;
+
+    /* Tamaño 1rem = 10px */
+    --titulo-banner: 7rem;
+    --encabezados-h1: 5.2rem;
+    --encabezados-h2: 4rem;
+    --titulo-rosa-h2: 3.2rem;
+    --titulos-h3-rutas: 2.4rem;
+    --texto-general: 1.8rem;
+    --header-footer: 1.6rem;
+
+    /* Cuerpo */
+    --bold: 700;
+    --medium: 600;
+    --regular: 400;
+
+    /* Paleta de colores */
+    --color-base: #fff3e3;
+    --azul-talavera: #282667;
+    --rosa-mexicano: #e1456c;
+
+    /* Colores neutros */
+    --negro: #333333;
+    --blanco: #ffffff;
+    --gris: #f4f5f7;
+    --bordes: #e1456c;
+}
+/*Header banner*/
+#Banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 293px;
+    width: 100%;
+    padding: 0 100px;
+    /* margin: 100px 0 0 0; */
+    background-image: url("../src/img/bannerFondo.png");
+    background-size: 100% 100%;
+}
+
+#Banner h1 {
+    font-size: var(--titulo-banner);
+    font-weight: var(--bold);
+    color: var(--blanco);
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-shadow: 3px 3px 2px var(--bordes);
+}
+
+#Banner .breadcrumb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#Banner .breadcrumb nav {
+    --bs-breadcrumb-divider: ">";
+    --breadcrumb-divider-color: var(--blanco);
+    --bs-breadcrumb-divider-color: var(--blanco);
+    color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-shadow: 1px 1px 2px var(--bordes);
+    --bs-breadcrumb-divider-color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item a {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-decoration: none;
+    text-shadow: 2px 1px 2px var(--bordes);
+}
+
+#Banner .breadcrumb .breadcrumb-item:hover {
+    pointer-events: auto;
+}
+/*Header banner*/
+
+
+@media (max-width: 575.98px) {
+    /*Banner*/
+    #Banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        padding: 0 50px;
+    }
+
+    #Banner h1 {
+        font-size: var(--titulos-h3-rutas);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-shadow: 3px 3px 2px var(--bordes);
+        line-height: 40px;
+    }
+
+    #Banner .breadcrumb {
+        line-height: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    /* #Banner .breadcrumb nav ol li { */
+    #Banner .breadcrumb .breadcrumb-item {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    /* #Banner .breadcrumb nav ol li a { */
+    #Banner .breadcrumb .breadcrumb-item a {
+        font-size: 12px;
+        font-weight: var(--bold);
+        text-decoration: none;
+        text-shadow: 2px 1px 2px var(--bordes);
+    }
+    /*Banner*/
+}
+
+/*Main*/
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    margin: 95px 0;
+    padding: 0px 90px;
+}
+
+.container-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid 1px var(--bordes);
+    border-radius: 10px;
+    width: 300px;
+    padding: 10px 20px 20px 20px;
+
+}
+
+.container-total h2 {
+    color: var(--rosa-mexicano);
+    margin: 0 0 10px 0;
+    font-family: var(--barlow);
+    font-size: 25px;
+}
+
+.container-total-subtitulos {
+    display: flex;
+    justify-content: space-around;
+    align-content: baseline;
+}
+
+.container-total-subtitulos p {
+    font-family: var(--barlow);
+
+}
+
+.container-total-subtitulos span {
+    font-weight: bold;
+}
+.p-total {
+    color: var(--rosa-mexicano);
+}
+
+.btn { 
+    width: 140px;
+    height: 39px;
+    background-color: var(--rosa-mexicano);
+    border-color: #e1456c;
+    border-radius: 10px;
+    font-family: var(--barlow);
+    font-size: 12px;
+    border-radius: 8px;
+}
+.btn:hover {
+    background-color: #e1456c;
+    color: #ffff;
+    border-color: #e1456c;
+}
+
+
+/*Termina Main*/
