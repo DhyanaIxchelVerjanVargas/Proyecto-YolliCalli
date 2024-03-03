@@ -1,19 +1,19 @@
-
 body {
     font-family: var(--barlow);
 }
+
 label {
-    font-size: 18px;
+    font-size: 1.8rem;
 }
 
-@media screen and (min-width: 761px) {
+@media screen and (min-width: 47.6rem) {
     .inicioSesion form,
     .registro form {
         margin: 0 auto;
-        max-width: 600px;
-        border: 1px solid var(--rosa-mexicano);
-        border-radius: 10px;
-        padding: 20px;
+        max-width: 37.5rem;
+        border: 0.1rem solid var(--rosa-mexicano);
+        border-radius: 0.6rem;
+        padding: 1.3rem;
     }
 
     .logo-formulario {
@@ -21,14 +21,13 @@ label {
         height: auto;
     }
 
-    /* Estilos para los formularios en escritorio */
     input[type="text"],
     input[type="email"],
     input[type="password"],
     input[type="date"] {
-        border: 1px solid var(--rosa-mexicano);
-        border-radius: 5px;
-        padding: 10px;
+        border: 0.1rem solid var(--rosa-mexicano);
+        border-radius: 0.3rem;
+        padding: 0.6rem;
         width: 100%;
     }
 
@@ -36,29 +35,26 @@ label {
     input[type="email"]::placeholder,
     input[type="password"]::placeholder,
     input[type="date"]::placeholder {
-        font-size: 18px;
+        font-size: 1.1rem;
     }
 
-    /* Estilos para los botones */
     .boton {
-        width: 237px;
-        height: 55px;
+        width: 14.8rem;
+        height: 3.4rem;
     }
 
-    /*letras rosas escritorio*/
     .titulosRosas {
         color: var(--rosa-mexicano);
     }
 }
 
-
-@media screen and (max-width: 760px) {/* Eestilos para moviles */
+@media screen and (max-width: 47.6rem) {
     .inicioSesion form,
     .registro form {
         margin: 0;
         border: none;
         border-radius: 0;
-        padding: 20px;
+        padding: 1.3rem;
     }
 
     .logo-formulario {
@@ -66,14 +62,13 @@ label {
         height: auto;
     }
 
-    /* formularios en movil */
     input[type="text"],
     input[type="email"],
     input[type="password"],
     input[type="date"] {
-        border: 1px solid var(--rosa-mexicano);
-        border-radius: 5px;
-        padding: 10px;
+        border: 0.1rem solid var(--rosa-mexicano);
+        border-radius: 0.3rem;
+        padding: 0.6rem;
         width: 100%;
     }
 
@@ -81,17 +76,15 @@ label {
     input[type="email"]::placeholder,
     input[type="password"]::placeholder,
     input[type="date"]::placeholder {
-        font-size: 18px;
+        font-size: 1.8rem;
     }
 
-    
-    .boton {/*botones en movil */
-        width: 164px;
-        height: 38px;
+    .boton {
+        width: 10.2rem;
+        height: 2.4rem;
     }
 
-    
-    .titulosRosas {/* Letras rosas en movil */
+    .titulosRosas {
         color: var(--rosa-mexicano);
     }
 }
