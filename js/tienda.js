@@ -93,6 +93,7 @@ function addProducto(producto,index){
                     <span class="productPrecio">$ ${parseFloat(producto.precio).toFixed(2)}</span>
                     <span>por</span>
                     <span class="productMadeBy">Artesanos de México</span>
+                    <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                     <div class="productIconos">
                         <a  class="productoIcon"><i class="bi bi-heart"></i></a>
                         <a  class="productoIcon"><i class="bi bi-share-fill"></i></a>
@@ -182,12 +183,10 @@ function busquedaProducto(productoBuscar){
         crearPropuctos();
 
         if(this.localStorage.getItem("productosNuevos") != null){
-        
             
             productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
-            console.log("revisando la local store 1")
-            console.log(productosNuevos)
-            productosNuevos.forEach((nuevoProducto)=>{
+            productosNuevos.forEach((nuevoProducto,index)=>{
+                nuevoProducto.id = "CP"+(productos.length+index+1)
                 productos.push(nuevoProducto);
             })
         }
@@ -198,10 +197,9 @@ function busquedaProducto(productoBuscar){
         if(this.localStorage.getItem("productosNuevos") != null){
         
             productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
-            console.log("revisando la local store 2")
-            console.log(productosNuevos)
         
-            productosNuevos.forEach((nuevoProducto)=>{
+            productosNuevos.forEach((nuevoProducto,index)=>{
+                nuevoProducto.id = "CP"+(productos.length+index+1)
                 productos.push(nuevoProducto);
             })
             localStorage.setItem("productos",JSON.stringify(productos));
@@ -289,5 +287,15 @@ function busquedaProducto(productoBuscar){
             busquedaProducto(inputBusqueda.value);
             inputBusqueda.value="";
         }
+    }
+});
+
+contenedorProdutos.addEventListener('click', function(event) {
+    if (event.target.classList.contains('irProducto')) {
+        const idCarta = event.target.closest('.cardProducto').id;
+        console.log('ID de la carta:', idCarta);
+        localStorage.setItem("productos",JSON.stringify(productos));
+        localStorage.setItem("idCarta",JSON.stringify(idCarta));
+        window.location.href = "publicaProducto.html";
     }
 });

@@ -494,6 +494,14 @@
     text-align: center;
 }
 
+#contenedorProductos .cardProducto .overlay .verProducto a{
+    font-size: 18px;
+    font-family: var(--barlow);
+    color: var(--blanco);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 #contenedorProductos .cardProducto .overlay h4{
     font-size: 24px;
     font-weight: var(--bold);
