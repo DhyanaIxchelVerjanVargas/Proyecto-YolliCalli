@@ -93,38 +93,37 @@
 
     <main>
         <div class="container-fluid">
-            <div class="row">
+            <div class="row" id="contenedorProducto">
                 <!--Imagen del producto-->
                 <div class="col-sm-6 imagen">
                     <img 
                     id="imagenProductoIndividual"
-                    src="https://molycata.com/wp-content/uploads/Tenango_1b_900px.jpg"
+                    src=""
                     alt="Imagen de producto">
                 </div>
                 <!--Detalles del producto-->
                 <div class="col-sm-6">
                     <div class="textoProducto">
                         <!--Nombre-->
-                        <h2 class="titulosRosas" id="nombreProductoIndividual">Cojín Tenango</h2>
+                        <h2 class="titulosRosas" id="nombreProductoIndividual"></h2>
                         <!--Precio-->
-                        <h2 class="titulosAzules">$<span id="precioProductoIndividual">0.00</span></h2>
+                        <h2 class="titulosAzules">$<span id="precioProductoIndividual"></span></h2>
                         <!--Descripción-->
                         <hr class="linea">
-                        <p id="descripcionProductoIndividual">Los cojines Tenango son productos artesanales originarios
-                            de la región de Tenango de Doria, en el estado de Hidalgo, México. Estos cojines son famosos
-                            por sus diseños vibrantes y coloridos, que a menudo representan escenas de la vida
-                            cotidiana, la naturaleza y la mitología local. Material: 100% algodón. Medidas: 64
-                            centímetros de lado.</p>
+                        <p id="descripcionProductoIndividual"></p>
                         <hr class="linea">
                         <!--Categoría-->
-                        <p>Categoría: <span id="categoriaProductoIndividual">Accesorios para el hogar</span></p>
+                        <p>Categoría: <span id="categoriaProductoIndividual"></span></p>
                         <!--Etiquetas-->
-                        <p>Etiquetas: <span id="etiquetasProductoIndividual"> cojín, tenango, bordado </span></p>
+                        <p>Etiquetas: <span id="etiquetasProductoIndividual"></span></p>
                         </div>
                         <div class=" botonProductoIndividual">
                                 <button type="button" class="boton" id="botonProductoCarrito">Agregar a carrito</button>
                     </div>
                 </div>
+            </div>
+            <div class="row flex-row d-flex justify-content-center" id="noProducto" style="display: none;">
+                <h2 id="txtNoproducto" class="titulosRosas" style="text-align: center;">No se pudo mostrar el producto.</h2>
             </div>
         </div>
     </main>
