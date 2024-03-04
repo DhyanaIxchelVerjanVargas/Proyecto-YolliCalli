@@ -60,21 +60,21 @@ let productosBuscados = new Array();
  }
 
  function crearPropuctos(){
-    productos.push(new Producto("Alebrije Buho","Cojín bordado por artesanos de Tenango",200,"ropa","accesorio","https://programadestinosmexico.com/wp-content/uploads/2023/08/ARTESANIAS-OAX.jpg"));
-    productos.push(new Producto("Alebrije Ajolote","Cojín bordado por artesanos de Oaxaca",200,"ropa","accesorio","https://media.licdn.com/dms/image/D5612AQFx8phwV2yN6g/article-cover_image-shrink_720_1280/0/1697657051080?e=2147483647&v=beta&t=H57I5dr3zSXi79Rjsc5iTNgOweSYmRbCZw5eWzfAiVA"));
-    productos.push(new Producto("Cojin Tenango","Cojín bordado por artesanos de Chiapas",200,"ropa","accesorio","./src/img/productos/cojinTenango.png"));
-    productos.push(new Producto("Muñeca lele","Cojín bordado por artesanos de Guerrero",200,"ropa","accesorio","https://www.turismomexico.es/wp-content/uploads/2019/01/munecas_mexicanas.jpg"));
-    productos.push(new Producto("Florero Artesenal","Cojín bordado por artesanos de Tabasco",200,"ropa","accesorio","https://http2.mlstatic.com/D_NQ_NP_708931-MLM71088880686_082023-O.webp"));
-    productos.push(new Producto("Mezcal en olla de barro","Cojín bordado por artesanos de Merida",200,"ropa","accesorio","https://i.pinimg.com/originals/fb/c4/1a/fbc41ad7a84bf6788e0e9ba69140dddd.jpg"));
-    productos.push(new Producto("Alegria de amaranto","Cojín bordado por artesanos de los Mochis",200,"ropa","accesorio","https://biotrendies.com/wp-content/uploads/2015/07/alegria-amaranto.jpg"));
-    productos.push(new Producto("Alebrije Ajolote","Cojín bordado por artesanos de Oaxaca",200,"ropa","accesorio","https://media.licdn.com/dms/image/D5612AQFx8phwV2yN6g/article-cover_image-shrink_720_1280/0/1697657051080?e=2147483647&v=beta&t=H57I5dr3zSXi79Rjsc5iTNgOweSYmRbCZw5eWzfAiVA"));
-    productos.push(new Producto("Muñeca lele","Cojín bordado por artesanos de Veracruz",200,"ropa","accesorio","https://www.turismomexico.es/wp-content/uploads/2019/01/munecas_mexicanas.jpg"));
-    productos.push(new Producto("Florero Artesenal","Cojín bordado por artesanos de Puebla",200,"ropa","accesorio","https://http2.mlstatic.com/D_NQ_NP_708931-MLM71088880686_082023-O.webp"));
-    productos.push(new Producto("Mezcal en olla de barro","Cojín bordado por artesanos de Hidalgo",200,"ropa","accesorio","https://i.pinimg.com/originals/fb/c4/1a/fbc41ad7a84bf6788e0e9ba69140dddd.jpg"));
-    productos.push(new Producto("Mantel de Oaxaca","Cojín bordado por artesanos de Oaxaca",200,"ropa","accesorio","https://oaxacaxamor.com/cdn/shop/products/Mantel_AzulDorado_Tlalixtac_9414_800x.jpg?v=1612829162"));
-    productos.push(new Producto("Servilleta bordada","Cojín bordado por artesanos de Jalisco",200,"ropa","accesorio","https://www.mexicodesconocido.com.mx/wp-content/uploads/2023/02/servilletas-bodadas-mano-2-900x861.jpg"));
-    productos.push(new Producto("Carrito de juguete","Cojín bordado por artesanos de San Luis Potosi",200,"ropa","accesorio","https://http2.mlstatic.com/D_NQ_NP_845988-MLM53611700096_022023-O.webp"));
-    productos.push(new Producto("Cojin Tenango","Cojín bordado por artesanos de Hermosillo",200,"ropa","accesorio","./src/img/productos/cojinTenango.png"));
+    productos.push(new Producto("Alebrije Búho","Alebrije de búho elaborado con papel mache y pintado a mano, por artesanos del estado de Oaxaca.",200,"Accesorio","Alebrije, Pintado","https://programadestinosmexico.com/wp-content/uploads/2023/08/ARTESANIAS-OAX.jpg"));
+    productos.push(new Producto("Alebrije Ajolote","Alebrije de ajolote elaborado con papel mache y pintado a mano por artesanos del estado de Oxaca",200,"Accesorio","Alebrije, Pintado","https://media.licdn.com/dms/image/D5612AQFx8phwV2yN6g/article-cover_image-shrink_720_1280/0/1697657051080?e=2147483647&v=beta&t=H57I5dr3zSXi79Rjsc5iTNgOweSYmRbCZw5eWzfAiVA"));
+    productos.push(new Producto("Cojín Tenango","Cojín bordado a mano por artesanos de Tenango",200,"Accesorio","Cojín, Bordado","./src/img/productos/cojinTenango.png"));
+    productos.push(new Producto("Muñeca lele","Muñeca Lele elabora a mano por manos artesanas del estado de Queretaro, para encantar el corazón de las personas.",200,"Accesorio","Juguete, Muñeca","https://www.turismomexico.es/wp-content/uploads/2019/01/munecas_mexicanas.jpg"));
+    productos.push(new Producto("Florero Artesenal","Florero de talavera, alaborado a partir de archilla, pintado a mano hecho por artezanos del estado de Puebla",200,"Accesorio","Ceramica, Talabera","https://http2.mlstatic.com/D_NQ_NP_708931-MLM71088880686_082023-O.webp"));
+    productos.push(new Producto("Mezcal en olla de barro","Mezcal Joven 100% artesanal, elborado a partir de agave Espadin con un grado de alcohol del 45%.",200,"Alimento no perecedero","Mezcal, Oaxaca, Barro","https://i.pinimg.com/originals/fb/c4/1a/fbc41ad7a84bf6788e0e9ba69140dddd.jpg"));
+    productos.push(new Producto("Alegría de amaranto","Elaborado a partir de amaranto y miel, con productos organicos.",200,"Alimento no perecedero","Dulce, Amaranto, Miel","https://biotrendies.com/wp-content/uploads/2015/07/alegria-amaranto.jpg"));
+    productos.push(new Producto("Alebrije Ajolote","Alebrije de ajolote elaborado con papel mache y pintado a mano por artesanos del estado de Oxaca",200,"Accesorio","Alebrije, Pintado","https://media.licdn.com/dms/image/D5612AQFx8phwV2yN6g/article-cover_image-shrink_720_1280/0/1697657051080?e=2147483647&v=beta&t=H57I5dr3zSXi79Rjsc5iTNgOweSYmRbCZw5eWzfAiVA"));
+    productos.push(new Producto("Muñeca lele","Muñeca lele","Muñeca Lele elabora a mano por manos artesanas del estado de Queretaro, para encantar el corazón de las personas.",200,"Accesorio","Muñeca, Juguete","https://www.turismomexico.es/wp-content/uploads/2019/01/munecas_mexicanas.jpg"));
+    productos.push(new Producto("Florero Artesenal","Florero de talavera, alaborado a partir de archilla, pintado a mano hecho por artezanos del estado de Tlaxcala",200,"Accesorio","Ceramica, Talabera","https://http2.mlstatic.com/D_NQ_NP_708931-MLM71088880686_082023-O.webp"));
+    productos.push(new Producto("Mezcal en olla de barro","Mezcal Joven 100% artesanal, elborado a partir de agave Tobala con un grado de alcohol del 45%.",200,"Alimento no perecedero","Mezcal, Oaxaca, Barro","https://i.pinimg.com/originals/fb/c4/1a/fbc41ad7a84bf6788e0e9ba69140dddd.jpg"));
+    productos.push(new Producto("Mantel de Oaxaca","Mantel hecho en telar y pintado con colorante vejetal, por artesaños de Mitla, Oaxaca.",200,"Accesorio","Mantel, Bordado, Telar, Oaxaca","https://oaxacaxamor.com/cdn/shop/products/Mantel_AzulDorado_Tlalixtac_9414_800x.jpg?v=1612829162"));
+    productos.push(new Producto("Servilleta bordada","Servilleta bordada a mano con hilos de algodón.",200,"Accesorio","Servilleta, Bordado, Jalisco","https://www.mexicodesconocido.com.mx/wp-content/uploads/2023/02/servilletas-bodadas-mano-2-900x861.jpg"));
+    productos.push(new Producto("Carrito de juguete","Carrito de juguete elaborado de madera y pintado a mano, con madera controlada.",200,"Accesorio","Juguete, Madera, Pintado","https://http2.mlstatic.com/D_NQ_NP_845988-MLM53611700096_022023-O.webp"));
+    productos.push(new Producto("Cojín Tenango","Cojín bordado a mano por artesanos de Tenango",200,"Accesorio","Cojin, Bordado, Recamara, Sala","./src/img/productos/cojinTenango.png"));
     
  }
 
@@ -93,6 +93,7 @@ function addProducto(producto,index){
                     <span class="productPrecio">$ ${parseFloat(producto.precio).toFixed(2)}</span>
                     <span>por</span>
                     <span class="productMadeBy">Artesanos de México</span>
+                    <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                     <div class="productIconos">
                         <a  class="productoIcon"><i class="bi bi-heart"></i></a>
                         <a  class="productoIcon"><i class="bi bi-share-fill"></i></a>
@@ -182,12 +183,10 @@ function busquedaProducto(productoBuscar){
         crearPropuctos();
 
         if(this.localStorage.getItem("productosNuevos") != null){
-        
             
             productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
-            console.log("revisando la local store 1")
-            console.log(productosNuevos)
-            productosNuevos.forEach((nuevoProducto)=>{
+            productosNuevos.forEach((nuevoProducto,index)=>{
+                nuevoProducto.id = "CP"+(productos.length+index+1)
                 productos.push(nuevoProducto);
             })
         }
@@ -198,10 +197,9 @@ function busquedaProducto(productoBuscar){
         if(this.localStorage.getItem("productosNuevos") != null){
         
             productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
-            console.log("revisando la local store 2")
-            console.log(productosNuevos)
         
-            productosNuevos.forEach((nuevoProducto)=>{
+            productosNuevos.forEach((nuevoProducto,index)=>{
+                nuevoProducto.id = "CP"+(productos.length+index+1)
                 productos.push(nuevoProducto);
             })
             localStorage.setItem("productos",JSON.stringify(productos));
@@ -289,5 +287,15 @@ function busquedaProducto(productoBuscar){
             busquedaProducto(inputBusqueda.value);
             inputBusqueda.value="";
         }
+    }
+});
+
+contenedorProdutos.addEventListener('click', function(event) {
+    if (event.target.classList.contains('irProducto')) {
+        const idCarta = event.target.closest('.cardProducto').id;
+        console.log('ID de la carta:', idCarta);
+        localStorage.setItem("productos",JSON.stringify(productos));
+        localStorage.setItem("idCarta",idCarta);
+        window.location.href = "productoIndividual.html";
     }
 });
