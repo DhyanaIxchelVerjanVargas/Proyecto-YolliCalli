@@ -265,9 +265,9 @@
     text-align: center;
 }
 
-.TitulosMisionVision {
+.titulosRosas {
     color: var(--rosa-mexicano);
-    font-size: var(--encabezados-h2);
+    font-size: var(--titulo-rosa-h2);
 }
 
 .mision {
@@ -355,6 +355,10 @@ button:active {
 }
 
 .formulario div input {
+    font-size: var(--texto-general);
+}
+
+.formulario div textarea {
     font-size: var(--texto-general);
 }
 

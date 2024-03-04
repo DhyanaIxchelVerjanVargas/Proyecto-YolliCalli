@@ -71,7 +71,7 @@ h3 {
 .boton {
     width: 240px;
     height: 58px;
-    border-width: 0.5px;
+    border: 0.5px solid #e1456c;
     background-color: #e1456c;
     border-color: #e1456c;
     border-radius: 10px;
