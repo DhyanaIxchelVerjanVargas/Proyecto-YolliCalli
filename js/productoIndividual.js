@@ -6,7 +6,6 @@ let categoriaProductoIndividual = document.getElementById("categoriaProductoIndi
 let etiquetasProductoIndividual = document.getElementById("etiquetasProductoIndividual");
 let imagenProductoIndividual = document.getElementById("imagenProductoIndividual");
 let noProducto = document.getElementById("noProducto");
-let txtNoproducto = document.getElementById("txtNoproducto");
 
 let productos = new Array();
 let idCarta = "";
@@ -16,7 +15,6 @@ window.addEventListener("load",function(event){
     if(this.localStorage.getItem("idCarta") != null){
         contenedorProducto.style.display="flex";
         noProducto.style.display="none";
-        txtNoproducto.style.display="none"
         productos = JSON.parse(this.localStorage.getItem("productos"));
         idCarta = this.localStorage.getItem("idCarta");
         productos.forEach((producto)=>{
@@ -33,6 +31,5 @@ window.addEventListener("load",function(event){
     } else{
         contenedorProducto.style.display="none";
         noProducto.style.display="flex";
-        txtNoproducto.style.display="flex"
     }
 });

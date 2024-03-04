@@ -92,14 +92,11 @@
     </aside>
 
     <main>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row" id="contenedorProducto">
                 <!--Imagen del producto-->
                 <div class="col-sm-6 imagen">
-                    <img 
-                    id="imagenProductoIndividual"
-                    src=""
-                    alt="Imagen de producto">
+                    <img id="imagenProductoIndividual" src="#" alt="Imagen de producto">
                 </div>
                 <!--Detalles del producto-->
                 <div class="col-sm-6">
@@ -116,15 +113,16 @@
                         <p>Categoría: <span id="categoriaProductoIndividual"></span></p>
                         <!--Etiquetas-->
                         <p>Etiquetas: <span id="etiquetasProductoIndividual"></span></p>
-                        </div>
-                        <div class=" botonProductoIndividual">
-                                <button type="button" class="boton" id="botonProductoCarrito">Agregar a carrito</button>
+                    </div>
+                    <div class=" botonProductoIndividual">
+                        <button type="button" class="boton" id="botonProductoCarrito">Agregar a carrito</button>
                     </div>
                 </div>
             </div>
-            <div class="row flex-row d-flex justify-content-center" id="noProducto" style="display: none;">
-                <h2 id="txtNoproducto" class="titulosRosas" style="text-align: center;">No se pudo mostrar el producto.</h2>
-            </div>
+        </div>
+        <div class="container contenedorNoProducto" id="noProducto" style="display: none;">
+            <h2 class="titulosRosas">No se puede mostrar el producto.</h2>
+            <p><a href="./nosotros.html#contacto">Por favor, haga clic aquí para ponerse en contacto con nuestro equipo técnico.</a></p>
         </div>
     </main>
 
