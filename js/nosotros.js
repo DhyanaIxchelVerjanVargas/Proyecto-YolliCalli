@@ -186,6 +186,8 @@ botonEnviar.addEventListener("click",function(event){
             <br/>
             <strong>Email: </strong>${inputEmail.value}
             <br/>
+            <strong>Telefono: </strong>${inputTelefono.value}
+            <br/>
             <strong>Asunto: </strong>${inputAsunto.value}
             <br/>
             <strong>Mensaje: </strong>${inputMensaje.value}
@@ -234,7 +236,7 @@ botonEnviar.addEventListener("click",function(event){
                         <div class="modal-body">
                         <p>Error en el envío</p>
                         </div>
-                    <   /div>
+                    </div>
                     </div>
                     `);
                     
