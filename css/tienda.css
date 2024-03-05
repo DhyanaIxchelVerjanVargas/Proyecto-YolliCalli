@@ -1,68 +1,8 @@
-/*Header banner*/
-#Banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 293px;
-    width: 100%;
-    padding: 0 100px;
-    margin: 100px 0 0 0;
-    background-image: url("../src/img/bannerFondo.png");
-    background-size: 100% 100%;
-}
-
-#Banner h1 {
-    font-size: var(--titulo-banner);
-    font-weight: var(--bold);
-    color: var(--blanco);
-    width: 100%;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    text-shadow: 3px 3px 2px var(--bordes);
-}
-
-#Banner .breadcrumb {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#Banner .breadcrumb nav {
-    --bs-breadcrumb-divider: ">";
-    --breadcrumb-divider-color: var(--blanco);
-    --bs-breadcrumb-divider-color: var(--blanco);
-    color: var(--blanco);
-}
-
-#Banner .breadcrumb .breadcrumb-item {
-    color: var(--blanco);
-    font-size: var(--titulos-h3-rutas);
-    font-weight: var(--bold);
-    text-shadow: 1px 1px 2px var(--bordes);
-    --bs-breadcrumb-divider-color: var(--blanco);
-}
-
-#Banner .breadcrumb .breadcrumb-item a {
-    color: var(--blanco);
-    font-size: var(--titulos-h3-rutas);
-    font-weight: var(--bold);
-    text-decoration: none;
-    text-shadow: 2px 1px 2px var(--bordes);
-}
-
-#Banner .breadcrumb .breadcrumb-item:hover {
-    pointer-events: auto;
-}
-
-/*Header banner*/
-
 /*Barra de busqueda y filtrado de la tienda*/
 .navTienda {
     height: 100px;
     width: 100%;
-    margin: 0;
+    margin-top: 100px;
     padding: 0 100px;
     background-color: var(--color-base);
 }
@@ -87,7 +27,7 @@
     width: 100%;
 }
 
-.navTienda .container div .navFiltrar{
+.navTienda .container div .navFiltrar {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,14 +36,14 @@
     padding: 0;
 }
 
-.navTienda .container div .navFiltrar button{
+.navTienda .container div .navFiltrar button {
     color: var(--azul-talavera);
     font-family: var(--barlow);
     font-size: 20px;
     font-weight: var(--bold);
 }
 
-.navTienda .container div .navBuscar{
+.navTienda .container div .navBuscar {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,14 +62,14 @@
     font-weight: var(--medium);
 }
 
-.navTienda .container div .navBuscar form input::placeholder{
+.navTienda .container div .navBuscar form input::placeholder {
     font-family: var(--barlow);
     font-size: 18px;
     font-weight: var(--regular);
     color: var(--azul-talavera);
 }
 
-.navTienda .container div .navBuscar form button{
+.navTienda .container div .navBuscar form button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,18 +83,18 @@
 
 .navTienda .container div .navBuscar form button:hover {
     border: none;
-    text-decoration:underline var(--azul-talavera);
+    text-decoration: underline var(--azul-talavera);
 }
 /*Barra de busqueda y filtrado de la tienda*/
 
 /*Caja de filtros*/
-#filtro{
+#filtro {
     justify-content: start;
     width: 100%;
     padding: 0 100px;
 }
 
-#filtro .cardFiltros{
+#filtro .cardFiltros {
     width: 400px;
     background-color: var(--color-base);
     padding: 0 20px;
@@ -164,7 +104,7 @@
     border-radius: 0px 0px 10px 10px;
 }
 
-#filtro .cardFiltros .tituloFiltro{
+#filtro .cardFiltros .tituloFiltro {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -176,39 +116,39 @@
     border-bottom: 2px solid var(--azul-talavera);
 }
 
-#filtro .cardFiltros .tituloFiltro h4{
+#filtro .cardFiltros .tituloFiltro h4 {
     font-family: var(--barlow);
     font-size: 20px;
     font-weight: var(--bold);
     color: var(--azul-talavera);
 }
 
-#filtro .cardFiltros .tipoFiltros h5{
+#filtro .cardFiltros .tipoFiltros h5 {
     font-family: var(--barlow);
     font-size: 18px;
     font-weight: var(--medium);
     color: var(--azul-talavera);
 }
 
-#filtro .cardFiltros .tipoFiltros span{
+#filtro .cardFiltros .tipoFiltros span {
     font-family: var(--barlow);
     font-size: 16px;
     font-weight: var(--medium);
     color: var(--azul-talavera);
 }
 
-#filtro .cardFiltros .tipoFiltros label{
+#filtro .cardFiltros .tipoFiltros label {
     font-family: var(--barlow);
     font-size: 14px;
     font-weight: var(--medium);
     color: var(--azul-talavera);
 }
 
-#filtro .cardFiltros .tipoFiltros .contenedorTipoFiltros{
+#filtro .cardFiltros .tipoFiltros .contenedorTipoFiltros {
     padding: 0 20px;
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroPrecio div{
+#filtro .cardFiltros .tipoFiltros .filtroPrecio div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -216,13 +156,13 @@
     width: 100%;
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroPrecio div .contentTxtMinMax{
+#filtro .cardFiltros .tipoFiltros .filtroPrecio div .contentTxtMinMax {
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroPrecio div .contentTxtMinMax input[type="number"]{
+#filtro .cardFiltros .tipoFiltros .filtroPrecio div .contentTxtMinMax input[type="number"] {
     border: none;
     background-color: transparent;
     font-family: var(--barlow);
@@ -231,7 +171,7 @@
     color: var(--azul-talavera);
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider{
+#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -246,7 +186,7 @@
     padding: 0;
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider .progres{
+#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider .progres {
     left: 0%;
     right: 0%;
     height: 100%;
@@ -256,7 +196,7 @@
     position: absolute;
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider input[type="range"]{
+#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider input[type="range"] {
     position: absolute;
     width: 100%;
     margin: 0;
@@ -267,7 +207,7 @@
     outline: none;
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider input[type="range"]::-webkit-slider-thumb{
+#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider input[type="range"]::-webkit-slider-thumb {
     pointer-events: auto;
     -webkit-appearance: none;
     width: 16px;
@@ -277,7 +217,7 @@
     border: 5px solid var(--rosa-mexicano);
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider input[type="range"]::-moz-range-thumb{
+#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider input[type="range"]::-moz-range-thumb {
     pointer-events: auto;
     width: 16px;
     height: 16px;
@@ -286,7 +226,7 @@
     border: 5px solid var(--rosa-mexicano);
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroCategorias div div label{
+#filtro .cardFiltros .tipoFiltros .filtroCategorias div div label {
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -302,7 +242,7 @@
     margin-right: 3px;
 }
 
-#filtro .cardFiltros .tipoFiltros .filtroCategorias .checkCategorias:checked{
+#filtro .cardFiltros .tipoFiltros .filtroCategorias .checkCategorias:checked {
     border: 3px double var(--rosa-mexicano);
     box-shadow: inset 6px 6px 6px 6px var(--rosa-mexicano);
     padding: 0;
@@ -320,7 +260,7 @@
     justify-content: space-around;
 }
 
-#filtro .cardFiltros .tipoFiltros .ordenNombre div{
+#filtro .cardFiltros .tipoFiltros .ordenNombre div {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -328,7 +268,7 @@
 }
 
 #filtro .cardFiltros .tipoFiltros .ordenPrecio div input,
-#filtro .cardFiltros .tipoFiltros .ordenNombre div input{
+#filtro .cardFiltros .tipoFiltros .ordenNombre div input {
     appearance: none;
     height: 12px;
     width: 12px;
@@ -339,7 +279,7 @@
 }
 
 #filtro .cardFiltros .tipoFiltros .ordenPrecio div input:checked,
-#filtro .cardFiltros .tipoFiltros .ordenNombre div input:checked{
+#filtro .cardFiltros .tipoFiltros .ordenNombre div input:checked {
     border: 3px double var(--rosa-mexicano);
     box-shadow: inset 6px 6px 6px 6px var(--rosa-mexicano);
     padding: 0;
@@ -354,20 +294,20 @@
     height: 40px;
 }
 
-#filtro .cardFiltros .filtroBoton #btnAplicarFiltro{
+#filtro .cardFiltros .filtroBoton #btnAplicarFiltro {
     width: 100px;
     height: 30px;
 }
 /*Caja de filtros*/
 
 /*Contendor de los botones de limpieza de busqueda y filtros*/
-.limpiezaBusquedaFiltros{
+.limpiezaBusquedaFiltros {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.limpiezaBusquedaFiltros .limpiar{
+.limpiezaBusquedaFiltros .limpiar {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -381,13 +321,13 @@
     padding: 5px 7px;
     font-family: var(--barlow);
     color: var(--azul-talavera);
-    transition: .2s all linear;
+    transition: 0.2s all linear;
 }
 
-.limpiezaBusquedaFiltros .limpiar span{
+.limpiezaBusquedaFiltros .limpiar span {
     line-height: 14px;
 }
-.limpiezaBusquedaFiltros .limpiar:hover{
+.limpiezaBusquedaFiltros .limpiar:hover {
     background-color: var(--rosa-mexicano);
     color: var(--blanco);
 }
@@ -398,10 +338,10 @@
     justify-content: start;
     align-items: center;
     padding: 0 100px;
-    margin: 50px 0;
+    margin: 100px 0 0 0;
 }
 
-#contenedorProductos .sinCoincidencias{
+#contenedorProductos .sinCoincidencias {
     font-family: var(--barlow);
     width: 100%;
     text-align: center;
@@ -410,7 +350,7 @@
 /*Contenedor de productos*/
 
 /*Card de Producto*/
-#contenedorProductos .cardProducto{
+#contenedorProductos .cardProducto {
     width: 290px;
     height: 400px;
     border: none;
@@ -422,7 +362,7 @@
     margin-bottom: 20px;
 }
 
-#contenedorProductos .cardProducto .caraPrincipal{
+#contenedorProductos .cardProducto .caraPrincipal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -434,17 +374,17 @@
     border-radius: 10px;
     border: 1px solid var(--azul-talavera);
     overflow: hidden;
-    transition: .5s all ease;
+    transition: 0.5s all ease;
 }
 
-#contenedorProductos .cardProducto .caraPrincipal img{
+#contenedorProductos .cardProducto .caraPrincipal img {
     height: auto;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-#contenedorProductos .cardProducto .caraPrincipal .card-body{
+#contenedorProductos .cardProducto .caraPrincipal .card-body {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -457,10 +397,10 @@
     bottom: 0;
     left: 0;
     background: var(--azul-talavera);
-    opacity: .8;
+    opacity: 0.8;
 }
 
-#contenedorProductos .cardProducto .caraPrincipal .card-body h4{
+#contenedorProductos .cardProducto .caraPrincipal .card-body h4 {
     font-family: var(--barlow);
     font-size: 20px;
     font-weight: var(--bold);
@@ -469,7 +409,7 @@
     text-align: center;
 }
 
-#contenedorProductos .cardProducto .overlay{
+#contenedorProductos .cardProducto .overlay {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -480,13 +420,13 @@
     height: 100%;
     width: 100%;
     padding: 20px 20px 50px 20px;
-    transition: .5s all ease;
+    transition: 0.5s all ease;
     background: var(--azul-talavera);
     opacity: 0;
 }
 
 #contenedorProductos .cardProducto .overlay span,
-#contenedorProductos .cardProducto .overlay h4{
+#contenedorProductos .cardProducto .overlay h4 {
     font-family: var(--barlow);
     color: var(--blanco);
     font-size: 18px;
@@ -494,7 +434,7 @@
     text-align: center;
 }
 
-#contenedorProductos .cardProducto .overlay .verProducto a{
+#contenedorProductos .cardProducto .overlay .verProducto a {
     font-size: 18px;
     font-family: var(--barlow);
     color: var(--blanco);
@@ -502,20 +442,20 @@
     cursor: pointer;
 }
 
-#contenedorProductos .cardProducto .overlay h4{
+#contenedorProductos .cardProducto .overlay h4 {
     font-size: 24px;
     font-weight: var(--bold);
     letter-spacing: 2px;
 }
 
 #contenedorProductos .cardProducto .overlay .productPrecio,
-#contenedorProductos .cardProducto .overlay .productMadeBy{
+#contenedorProductos .cardProducto .overlay .productMadeBy {
     font-size: 20px;
     font-weight: var(--medium);
     text-align: center;
 }
 
-#contenedorProductos .cardProducto .overlay .productIconos{
+#contenedorProductos .cardProducto .overlay .productIconos {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -523,13 +463,13 @@
     width: 100%;
 }
 
-#contenedorProductos .cardProducto .overlay .productIconos .productoIcon{
+#contenedorProductos .cardProducto .overlay .productIconos .productoIcon {
     color: var(--blanco);
     font-size: 20px;
 }
 
-#contenedorProductos .cardProducto:hover .overlay{
-    opacity: .9;
+#contenedorProductos .cardProducto:hover .overlay {
+    opacity: 0.9;
 }
 
 #contenedorProductos .cardProducto:hover .caraPrincipal .card-body {
@@ -537,7 +477,7 @@
 }
 /*Card de Producto*/
 
-.paginacion{
+.paginacion {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -545,48 +485,48 @@
     margin: 20px 0;
 }
 
-.paginacion .contnedorBtnPaginacion{
+.paginacion .contnedorBtnPaginacion {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.paginacion .contnedorBtnPaginacion .btnPaginacion{
+.paginacion .contnedorBtnPaginacion .btnPaginacion {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
     width: 60px;
     border-radius: 10px;
-    border: 1px solid var(--bordes); 
+    border: 1px solid var(--bordes);
     margin: 10px;
     background: var(--color-base);
     font-family: var(--barlow);
     font-size: 20px;
     font-weight: var(--medium);
     color: var(--rosa-mexicano);
-    transition: .4s all linear;
+    transition: 0.4s all linear;
 }
 
-.paginacion .contnedorBtnPaginacion .btnPaginacion:hover{
+.paginacion .contnedorBtnPaginacion .btnPaginacion:hover {
     background: var(--rosa-mexicano);
     color: var(--color-base);
 }
 
-.paginacion .contnedorBtnPaginacion .btnSiguienteAtras{
+.paginacion .contnedorBtnPaginacion .btnSiguienteAtras {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
     width: 60px;
     border-radius: 10px;
-    border: 1px solid var(--bordes); 
+    border: 1px solid var(--bordes);
     margin: 10px;
     background: var(--color-base);
     font-size: 40px;
     color: var(--rosa-mexicano);
-    transition: .4s all linear;
+    transition: 0.4s all linear;
 }
 
 .paginacion .contnedorBtnPaginacion .btnSiguienteAtras:hover {
@@ -594,54 +534,12 @@
     color: var(--color-base);
 }
 
-.paginacion .contnedorBtnPaginacion .btnSelected{
+.paginacion .contnedorBtnPaginacion .btnSelected {
     background: var(--rosa-mexicano);
     color: var(--color-base);
 }
 
 @media (max-width: 575.98px) {
-    /*Banner*/
-    #Banner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-        width: 100%;
-        padding: 0 50px;
-        margin: 100px 0 0 0;
-    }
-
-    #Banner h1 {
-        font-size: var(--titulos-h3-rutas);
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        text-shadow: 3px 3px 2px var(--bordes);
-        line-height: 40px;
-    }
-
-    #Banner .breadcrumb {
-        line-height: 12px;
-        padding: 0;
-        margin: 0;
-    }
-    /* #Banner .breadcrumb nav ol li { */
-    #Banner .breadcrumb .breadcrumb-item {
-        font-size: 12px;
-        line-height: 12px;
-        margin: 0;
-    }
-
-    /* #Banner .breadcrumb nav ol li a { */
-    #Banner .breadcrumb .breadcrumb-item a {
-        font-size: 12px;
-        font-weight: var(--bold);
-        text-decoration: none;
-        text-shadow: 2px 1px 2px var(--bordes);
-    }
-    /*Banner*/
     /*Barra de navegacion de la tienda*/
     .navTienda {
         height: 70px;
@@ -651,77 +549,77 @@
     .navTienda .container div {
         flex-wrap: nowrap;
     }
-    
-    .navTienda .container div .navFiltrar button{
+
+    .navTienda .container div .navFiltrar button {
         font-size: 16px;
     }
-    
+
     .navTienda .container div .navBuscar form input {
         width: 150px;
         height: 26px;
         font-size: 14px;
     }
-    
-    .navTienda .container div .navBuscar form input::placeholder{
+
+    .navTienda .container div .navBuscar form input::placeholder {
         font-size: 14px;
     }
-    
-    .navTienda .container div .navBuscar form button{
+
+    .navTienda .container div .navBuscar form button {
         height: 26px;
         font-size: 16px;
     }
     /*Barra de navegacion de la tienda*/
 
     /*Caja de filtros*/
-    #filtro{
+    #filtro {
         justify-content: center;
         width: 100%;
         padding: 0 20px;
     }
 
-    #filtro .cardFiltros{
+    #filtro .cardFiltros {
         width: 100%;
         padding: 0 15px;
     }
 
-    #filtro .cardFiltros .tituloFiltro{
+    #filtro .cardFiltros .tituloFiltro {
         height: 35px;
     }
 
-    #filtro .cardFiltros .tituloFiltro h4{
+    #filtro .cardFiltros .tituloFiltro h4 {
         font-size: 18px;
     }
 
-    #filtro .cardFiltros .tipoFiltros h5{
+    #filtro .cardFiltros .tipoFiltros h5 {
         font-size: 16px;
     }
 
-    #filtro .cardFiltros .tipoFiltros span{
+    #filtro .cardFiltros .tipoFiltros span {
         font-size: 14px;
     }
 
-    #filtro .cardFiltros .tipoFiltros label{
+    #filtro .cardFiltros .tipoFiltros label {
         font-size: 12px;
     }
 
-    #filtro .cardFiltros .tipoFiltros .filtroPrecio div .contentTxtMinMax input[type="number"]{
+    #filtro .cardFiltros .tipoFiltros .filtroPrecio div .contentTxtMinMax input[type="number"] {
         font-size: 12px;
     }
 
-    .paginacion .contnedorBtnPaginacion .btnPaginacion{
+    .paginacion .contnedorBtnPaginacion .btnPaginacion {
         height: 40px;
         width: 40px;
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     /*Caja de filtros*/
     #contenedorProductos {
         padding: 0 50px;
-        margin: 50px 0;
+        margin: 100px 0;
     }
     /*Contenedor de productos*/
-    .paginacion .contnedorBtnPaginacion .btnPaginacion{
+    .paginacion .contnedorBtnPaginacion .btnPaginacion {
         height: 50px;
         width: 50px;
     }
