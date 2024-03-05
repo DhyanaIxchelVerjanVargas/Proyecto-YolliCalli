@@ -1,62 +1,3 @@
-/*Header banner*/
-#Banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 293px;
-    width: 100%;
-    padding: 0 100px;
-    /* margin: 100px 0 0 0; */
-    background-image: url("../src/img/bannerFondo.png");
-    background-size: 100% 100%;
-}
-
-#Banner h1 {
-    font-size: var(--titulo-banner);
-    font-weight: var(--bold);
-    color: var(--blanco);
-    width: 100%;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    text-shadow: 3px 3px 2px var(--bordes);
-}
-
-#Banner .breadcrumb {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#Banner .breadcrumb nav {
-    --bs-breadcrumb-divider: ">";
-    --breadcrumb-divider-color: var(--blanco);
-    --bs-breadcrumb-divider-color: var(--blanco);
-    color: var(--blanco);
-}
-
-#Banner .breadcrumb .breadcrumb-item {
-    color: var(--blanco);
-    font-size: var(--titulos-h3-rutas);
-    font-weight: var(--bold);
-    text-shadow: 1px 1px 2px var(--bordes);
-    --bs-breadcrumb-divider-color: var(--blanco);
-}
-
-#Banner .breadcrumb .breadcrumb-item a {
-    color: var(--blanco);
-    font-size: var(--titulos-h3-rutas);
-    font-weight: var(--bold);
-    text-decoration: none;
-    text-shadow: 2px 1px 2px var(--bordes);
-}
-
-#Banner .breadcrumb .breadcrumb-item:hover {
-    pointer-events: auto;
-}
-
-/*Header banner*/
 /*Garantias*/
 .garantias {
     height: 270px;
@@ -92,15 +33,13 @@
 }
 /*Garantias*/
 
-/*Garantias*/
-
 /* Main */
 
 .contenedorPago {
     margin-inline: 10rem;
 }
 
-.row {
+.contenedorPago .row {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -261,7 +200,7 @@ input[type="radio"]:hover {
 }
 
 .opcionPagoTdc {
-    height: auto;
+    height: 3.5rem;
 }
 
 .opcionPagoTdc:focus-within .despliegueTdc {
@@ -288,11 +227,6 @@ input[type="radio"]:hover {
     justify-content: space-evenly;
 }
 
-/* .cvvInput {
-    appearance: none;
-    -webkit-appearance: ;
-} */
-
 .cvvInput,
 .vencimientoMonth {
     width: 6rem;
@@ -313,51 +247,7 @@ input:focus {
 /* Main */
 
 @media (max-width: 575.98px) {
-    /*Banner*/
-    #Banner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-        width: 100%;
-        padding: 0 50px;
-    }
-
-    #Banner h1 {
-        font-size: var(--titulos-h3-rutas);
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        text-shadow: 3px 3px 2px var(--bordes);
-        line-height: 40px;
-    }
-
-    #Banner .breadcrumb {
-        line-height: 12px;
-        padding: 0;
-        margin: 0;
-    }
-    /* #Banner .breadcrumb nav ol li { */
-    #Banner .breadcrumb .breadcrumb-item {
-        font-size: 12px;
-        line-height: 12px;
-        margin: 0;
-    }
-
-    /* #Banner .breadcrumb nav ol li a { */
-    #Banner .breadcrumb .breadcrumb-item a {
-        font-size: 12px;
-        font-weight: var(--bold);
-        text-decoration: none;
-        text-shadow: 2px 1px 2px var(--bordes);
-    }
-    /*Banner*/
-
     /*Garantias*/
-
-    /* Main */
     .garantias {
         height: 600px;
         width: 100%;
@@ -372,12 +262,14 @@ input:focus {
     .garantias .garantiasContenedor .garantiasItem {
         width: 100%;
     }
+    /*Garantias*/
 
+    /* Main */
     .contenedorPago {
         margin-inline: 2rem;
     }
 
-    .row {
+    .contenedorPago .row {
         width: 100%;
         display: flex;
         flex-direction: column;

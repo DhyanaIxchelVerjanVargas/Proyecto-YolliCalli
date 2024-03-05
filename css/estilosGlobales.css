@@ -100,7 +100,12 @@ header {
     height: 10rem;
     margin: 0;
     padding: 0;
+    background-color: white;
     display: flex;
+    position: fixed;
+    top: 0;
+    box-shadow: 0.5rem 0 1rem #333333;
+    z-index: 1;
 }
 
 .navbarContainer {
@@ -117,7 +122,6 @@ header {
 
 .navbarContainer.navMenu ul {
     font-family: var(--barlow);
-    color: var(--azul-talavera);
     height: 100%;
     list-style: none;
     margin: 0;
@@ -142,6 +146,8 @@ header {
 
 .navbarContainer a {
     text-decoration-line: none;
+    color: var(--azul-talavera);
+    font-weight: 600;
 }
 
 .navLogo {
@@ -166,6 +172,10 @@ header {
     flex: 1 0 40%;
 }
 
+.navMenu i {
+    font-size: 0;
+}
+
 .navIcons {
     display: flex;
     justify-content: flex-end;
@@ -185,9 +195,14 @@ header {
     align-items: center;
 }
 
+.navIcons p {
+    color: transparent;
+}
+
 .navIconsItems {
     height: 2.7rem;
     width: 2.7rem;
+    overflow: hidden;
 }
 
 .bi-heart,
@@ -266,12 +281,8 @@ header {
         padding: 2rem;
     }
     .navbarContainer {
-        width: auto;
-        display: flex;
-        flex-direction: column;
+        height: auto;
         font-size: var(--texto-general);
-        padding-inline: 2rem;
-        padding: 0;
     }
 
     .navbarContainer ul li {
@@ -296,6 +307,10 @@ header {
         font-size: var(--texto-general);
     }
 
+    .navIcons p {
+        color: var(--azul-talavera);
+    }
+
     .vacio {
         width: 4.6rem;
         height: 100%;
@@ -306,45 +321,61 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-
         padding: 0;
     }
 
-    .navMenu ul {
-        gap: 1.5rem;
-        padding: 0;
-        display: flex;
+    .navbarContainer.navMenu ul {
+        width: 100%;
+        height: 20rem;
         flex-direction: column;
-        /* justify-content: flex-end; */
+    }
+
+    .navbarContainer.navIcons ul {
+        height: auto;
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+
+    .navbarContainer li {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: 4rem;
+    }
+
+    .navMenu i {
+        font-size: 2.2rem;
+        color: var(--rosa-mexicano);
+    }
+
+    .navbarContainer a {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: 2rem;
+        align-items: center;
+        gap: 2.5rem;
     }
 
     .navbarContainer.navIcons {
         height: auto;
     }
 
-    .navbarContainer.navIcons ul {
-        height: 8rem;
-        width: 100%;
-        padding: 0;
-        display: flex;
-        justify-content: space-evenly;
-        gap: 0;
+    .navIcons i {
+        font-size: 2.2rem;
+        color: var(--rosa-mexicano);
     }
 
-    .navIcons li {
-        align-items: center;
+    .navIconsItems {
+        height: 2.7rem;
+        width: auto;
     }
 
-    .navIcons a {
-        height: auto;
-    }
-
-    .navIcons .navIconsItems {
-        width: 8rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+    .navIconsItems.btnBuscar {
+        height: 2.7rem;
+        width: 2.7rem;
     }
 
     .searchField {
@@ -352,8 +383,7 @@ header {
         display: flex;
         align-items: center;
         margin-inline: auto;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-block: 1.5rem;
         padding-inline: 1px;
         border: solid var(--rosa-mexicano) 1px;
         border-radius: 3rem;
@@ -381,150 +411,70 @@ header {
     .offcanvas-header .btn-close {
         margin-right: calc(2 * var(--bs-offcanvas-padding-x));
     }
+
+    .offcanvas.offcanvas-end {
+        width: 30rem;
+    }
 }
-/* 
-#Navegacion {
-    height: 100px;
+
+/*Header banner*/
+#Banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 293px;
     width: 100%;
     padding: 0 100px;
-    margin: 0;
-    background-color: var(--blanco);
+    margin: 100px 0 0 0;
+    background-image: url("../src/img/bannerFondo.png");
+    background-size: 100% 100%;
 }
 
-#Navegacion > div {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-#Navegacion > div .contenedorLogo .logoRosa {
-    width: 168px;
-    height: 84px;
-}
-offcanvas-header{
-    display: flex;
-    justify-content: space-between;
-}
-.offcanvas-header img{
-    width: 18rem;
-}
-.offcanvas-header .imgVacia{
-    width: 1.6rem;
-}
-.bi-search{
-    font-size: 2rem;
-}
-#Navegacion > div .offcanvas .offcanvas-body{
-    display: flex;
-    justify-content: space-between;
-}
-
-#Navegacion > div .offcanvas .offcanvas-body ul {
-    display: flex;
-    justify-content: space-between;
-}
-#Navegacion > div .offcanvas .offcanvas-body ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#Navegacion > div .offcanvas .offcanvas-body ul li a{
-    font-family: var(--barlow);
-    font-size: 18px;
+#Banner h1 {
+    font-size: var(--titulo-banner);
     font-weight: var(--bold);
-    color: var(--azul-talavera);
-    padding: 0;
-    margin: 2px;
-}
-
-#Navegacion > div .offcanvas .offcanvas-body .navbarIcons {
-    display: flex;
-    justify-content: space-around;
-}
-#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .itemIcons {
-    min-width: 28px;
-}
-
-#Navegacion > div .offcanvas .offcanvas-body .navbarIcons .navIconsItems{
-    font-size: 28px;
-    color: var(--azul-talavera);
-}
-.contenedorBusqueda {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-}
-
-.contenedorBusqueda  .subContenedorBusqueda {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-    min-width: 28px;
-}
-
-.contenedorBusqueda .divBusqueda{ 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-    box-sizing: border-box;
-    height: 28px;
-    width: 0;
-    transition: all .7s ease;
-    padding: 0;
-    margin-right: 1px;
-
-}
-.contenedorBusqueda .divBusqueda input {
-    outline: none;
-    box-sizing: border-box;
-    height: 100%;
+    color: var(--blanco);
     width: 100%;
-    color: var(--azul-talavera);
-    font-family: var(--Fuente-primaria);
-    font-size: 18px;
-    border-radius: 10px;
-    border: 1px solid var(--rosa-mexicano);
-    transition: all .7s ease;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-shadow: 3px 3px 2px var(--bordes);
 }
 
-.contenedorBusqueda .divBusqueda .cancelarBusqueda{
+#Banner .breadcrumb {
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: var(--rosa-mexicano);
-    border-radius: 50%;
-    height: 28px;
-    position:absolute;
-    cursor: pointer;
 }
 
-.contenedorBusqueda input::placeholder {
-    color: var(--rosa-mexicano);
+#Banner .breadcrumb nav {
+    --bs-breadcrumb-divider: ">";
+    --breadcrumb-divider-color: var(--blanco);
+    --bs-breadcrumb-divider-color: var(--blanco);
+    color: var(--blanco);
 }
 
-.contenedorBusqueda .navIconsItems {
-    position: absolute;
-    background-color: var(--blanco);
-    cursor: pointer;
+#Banner .breadcrumb .breadcrumb-item {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-shadow: 1px 1px 2px var(--bordes);
+    --bs-breadcrumb-divider-color: var(--blanco);
 }
 
-#Navegacion .navbar-toggler {
-    padding: 0;
-    border: none;
+#Banner .breadcrumb .breadcrumb-item a {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-decoration: none;
+    text-shadow: 2px 1px 2px var(--bordes);
 }
 
-#Navegacion .navbar-toggler .btnIconCollapse {
-    color: var(--azul-talavera);
-    font-size: 45px;
-} */
+#Banner .breadcrumb .breadcrumb-item:hover {
+    pointer-events: auto;
+}
+/*Header banner*/
 
 /*Footer*/
 footer {
@@ -617,77 +567,49 @@ footer .footerDerechos span {
 }
 /*Footer*/
 
-@media (max-width: 991.98px) {
-    /*Barra de navegacion*/
-    #Navegacion {
+@media (max-width: 575.98px) {
+    /*Banner*/
+    #Banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         height: 100px;
         width: 100%;
+        margin-top: 194px;
         padding: 0 50px;
+    }
+
+    #Banner h1 {
+        font-size: var(--titulos-h3-rutas);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-shadow: 3px 3px 2px var(--bordes);
+        line-height: 40px;
+    }
+
+    #Banner .breadcrumb {
+        line-height: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    /* #Banner .breadcrumb nav ol li { */
+    #Banner .breadcrumb .breadcrumb-item {
+        font-size: 12px;
+        line-height: 12px;
         margin: 0;
     }
 
-    #Navegacion > div .contenedorLogo .logoRosa {
-        width: 97.42px;
-        height: 44px;
+    /* #Banner .breadcrumb nav ol li a { */
+    #Banner .breadcrumb .breadcrumb-item a {
+        font-size: 12px;
+        font-weight: var(--bold);
+        text-decoration: none;
+        text-shadow: 2px 1px 2px var(--bordes);
     }
-
-    #Navegacion > div .offcanvas .offcanvas-header {
-        justify-content: space-between;
-    }
-
-    #Navegacion > div .offcanvas .offcanvas-header h3 {
-        position: absolute;
-        left: 40%;
-    }
-
-    #Navegacion > div .offcanvas .offcanvas-header button {
-        background-color: transparent;
-        border: none;
-        padding: 0;
-        color: var(--azul-talavera);
-    }
-
-    #Navegacion > div .offcanvas .offcanvas-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    #Navegacion > div .offcanvas .offcanvas-body ul {
-        width: 100%;
-    }
-    #Navegacion > div .offcanvas .offcanvas-body li {
-        width: 100%;
-        text-align: center;
-    }
-
-    #Navegacion > div .offcanvas .offcanvas-body .navbarIcons {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    #Navegacion > div .offcanvas .offcanvas-body .navbarIcons .itemIcons {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 25%;
-    }
-    #Navegacion > div .offcanvas .offcanvas-body ul li {
-        margin-bottom: 2rem;
-    }
-    #Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda {
-        width: 100%;
-    }
-
-    #Navegacion > div .offcanvas .offcanvas-body .navbarIcons .contenedorBusqueda .navIconsItems {
-        position: absolute;
-    }
-
-    /*Barra de navegacion*/
+    /*Banner*/
 }
 
 @media (max-width: 767.98px) {

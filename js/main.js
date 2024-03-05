@@ -15,20 +15,12 @@ let header = document.getElementById("header");
 btnBuscar.addEventListener("click", function (event) {
     anchoPantalla = window.innerWidth;
     txtBusqueda.value = txtBusqueda.value.trim();
-    if (txtBusqueda.value.length == 0 && txtBusqueda.clientWidth <= 10) {
-        divBusqueda.style.width = "200px";
-        divBusqueda.style.marginRight = "29px";
-    } else if (txtBusqueda.value.length == 0 && txtBusqueda.clientWidth >= 190) {
-        divBusqueda.style.width = "0px";
-        divBusqueda.style.marginRight = "1px";
-        txtBusqueda.value = "";
-    } else {
-        console.log("se mandara a buscar el producto y se ira a la pagina de tienda");
-        sessionStorage.setItem("palabraBuscada", txtBusqueda.value);
-        txtBusqueda.value = txtBusqueda.value.trim();
-        txtBusqueda.value = "";
-        location.href = "tienda.html";
-    }
+
+    console.log("se mandara a buscar el producto y se ira a la pagina de tienda");
+    sessionStorage.setItem("palabraBuscada", txtBusqueda.value);
+    txtBusqueda.value = txtBusqueda.value.trim();
+    txtBusqueda.value = "";
+    location.href = "tienda.html";
 });
 
 txtBusqueda.addEventListener("keyup", function (event) {
@@ -41,8 +33,8 @@ txtBusqueda.addEventListener("keyup", function (event) {
 if (window.matchMedia("(max-width: 425px)").matches) {
     navbar.appendChild(searchField);
     navbar.insertBefore(searchField, navbar.children[1]);
-    offcanvasbody.appendChild(navIcons);
     offcanvasbody.appendChild(navMenu);
+    offcanvasbody.appendChild(navIcons);
 } else {
     navIcons.appendChild(searchField);
     navIcons.insertBefore(searchField, navIcons.children[0]);
