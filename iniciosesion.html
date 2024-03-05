@@ -100,28 +100,68 @@
                     <form>
                         <h2 class="titulosRosas">Registrarse</h2>
                         <div class="mb-3">
-                            <label for="nombreCompleto" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" id="nombreCompleto" placeholder="Escribe nombre y apellidos" name="nombreCompleto" required>
+                            <label for="inputNombreCompletoRegistro" class="form-label">Nombre Completo</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="inputNombreCompletoRegistro" 
+                                placeholder="Escribe nombre y apellidos" 
+                                name="nombreCompleto" 
+                                required>
+                            <div id="alertNombreCompleto" style="display: none"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" name="email" required>
+                            <label for="inputEmailRegistro" class="form-label">Correo Electrónico</label>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="inputEmailRegistro" 
+                                placeholder="Ingresa tu correo electrónico" 
+                                name="email" 
+                                required>
+                            <div id="alertEmailRegistro" style="display: none"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="telefono" class="form-label">Número Telefónico</label>
-                            <input type="text" class="form-control" id="telefono" placeholder="Ingresa tu número telefónico" name="telefono" required>
+                            <label for="inputTelefonoRegistro" class="form-label">Número Telefónico</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="inputTelefonoRegistro" 
+                                placeholder="Ingresa tu número telefónico a 10 digitos" 
+                                name="telefono" 
+                                required>
+                            <div id="alertTelefonoRegistro" style="display: none"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="nuevaContraseña" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="nuevaContraseña" placeholder="Crea una contraseña" name="nuevaContraseña" required>
+                            <label for="inputContrasenaRegistro" class="form-label">Contraseña</label>
+                            <input 
+                                type="password" 
+                                class="form-control" 
+                                id="nuevaContraseñaRegistro" 
+                                placeholder="Crea una contraseña" 
+                                name="inputContrasenaRegistro" 
+                                required>
+                            <div id="alertContrasena" style="display: none"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="confirmarContraseña" class="form-label">Confirmar Contraseña</label>
-                            <input type="password" class="form-control" id="confirmarContraseña" placeholder="Confirma tu contraseña" name="confirmarContraseña" required>
+                            <label for="inputConfirmarContrasena" class="form-label">Confirmar Contraseña</label>
+                            <input 
+                                type="password" 
+                                class="form-control" 
+                                id="inputConfirmarContrasena" 
+                                placeholder="Confirma tu contraseña"
+                                name="confirmarContraseña" 
+                                required>
+                            <div id="alertConfirmarContrasena" style="display: none"></div>
                         </div>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="terms" required>
-                            <label class="form-check-label" for="terms">Acepto los términos y condiciones</label>
+                            <input 
+                                type="checkbox" 
+                                class="form-check-input" 
+                                id="terms" 
+                                required>
+                            <div id="alertCondicionesRegistro" style="display: none"></div>
+                            <label class="form-check-label" for="terms">Acepto política de privacidad</label>
                         </div>
                         <div class="botonRegistrar">
                             <button type="submit" class="boton" id="boton-registrar">
@@ -130,8 +170,6 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
     </div>
     <footer class="col-12 flex-column d-flex">
         <div class="footerContent row d-flex">
@@ -166,5 +204,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/iniciosesion.js"></script>
 </body>
 </html>
