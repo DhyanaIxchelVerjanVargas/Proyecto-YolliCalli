@@ -7,15 +7,17 @@
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Caudex:wght@400;700display=swap"
-        rel="stylesheet" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--Hojas de estilo-->
     <link rel="stylesheet" href="./css/estilosGlobales.css" />
-    <link rel="stylesheet" href="#" />
+    <link rel="stylesheet" href="./css/pago.css" />
     <title>Pago</title>
 </head>
 
@@ -31,10 +33,10 @@
                 </div>
                 <div class="navbarContainer navMenu" id="navMenu">
                     <ul>
-                        <li><a href="./index.html" class="menuLink">Inicio</a></li>
-                        <li><a href="./tienda.html" class="menuLink">Tienda</a></li>
-                        <li><a href="./nosotros.html" class="menuLink">Nosotros</a></li>
-                        <li><a href="./nosotros.html#contacto" class="menuLink">Contacto</a></li>
+                        <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
+                        <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
+                        <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
+                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
@@ -50,23 +52,11 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="./perfil.html#fav" class="navIconsItems"><i class="bi bi-heart"></i><h4>Favoritos</h4></a>
-                        </li>
-                        <li>
-                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><h4>Carrito</h4></a>
-                        </li>
-                        <li>
-                            <a href="./perfil.html" class="navIconsItems"><i class="bi bi-person"></i><h4>Perfil</h4></a>
+                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
                         </li>
                     </ul>
                 </div>
             </nav>
-        <!--Br temporales mientras se agregan hojas de estilo-->
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <!--Banner-->
         <div id="Banner" class="banner">
             <div>
@@ -85,6 +75,7 @@
             </div>
         </div>
     </header>
+    <!--Menu hamburguesa-->
     <aside>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
@@ -96,43 +87,44 @@
             </div>
             </div>
         </aside>
+
     <!--Formularios-->
-    <div class="container">
+    <div class="contenedorPago">
         <div class="row">
             <!--Datos de Envío-->
-            <div class="col">
+            <div class="formularioDatos col-xs-12">
                 <form class="datosEnvio">
                     <!--Título de formulario-->
                     <div class="mb-3">
                         <h2 class="titulosRosas">Datos de envío</h2>
                     </div>
                     <!--Nombre-->
-                    <div class="mb-3">
+                    <div class="formData nombreEnvio">
                         <label for="nombreEnvio" class="form-label">Nombre(s)</label>
                         <input type="text" class="form-control" id="nombreEnvio" placeholder="Nombre(s)" required>
                     </div>
                     <!--Apellidos-->
-                    <div class="mb-3">
+                    <div class="formData apellidoEnvio">
                         <label for="apellidoEnvio" class="form-label">Apellidos</label>
                         <input type="text" class="form-control" id="apellidoEnvio" placeholder="Apellidos" required>
                     </div>
                     <!--Dirección-->
-                    <div class="mb-3">
+                    <div class="formData direccionLinea1">
                         <label for="direccionLinea1" class="form-label">Dirección 1</label>
                         <input type="text" class="form-control" id="direccionLinea1" placeholder="Calle y número" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="formData direccionLinea2">
                         <label for="direccionLinea2" class="form-label">Dirección 2</label>
                         <input type="text" class="form-control" id="direccionLinea2" placeholder="Colonia" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="localidadEnvio" class="form-label">Ciudad/Localidad</label>
+                    <div class="formData localidadEnvio">
+                        <label for="localidadEnvio" class="form-label">Ciudad / Localidad</label>
                         <input type="text" class="form-control" id="localidadEnvio" placeholder="Ciudad" required>
                     </div>
-                    <div class="mb-3">
-                        <div class="mb-3">
+                    <div class="formData groupedData">
+                        <div class="estadoEnvio">
                             <label for="estadoEnvio" class="form-label">Estado</label>
-                            <select name="#" class="form-control" id="estadoEnvio" required>
+                            <select name="#" class="form-control seleccionarEstado" id="estadoEnvio" required>
                                 <option value="#">Aguascalientes</option>
                                 <option value="#">Baja California Norte</option>
                                 <option value="#">Baja California Sur</option>
@@ -167,23 +159,25 @@
                                 <option value="#">Zacatecas</option>
                             </select>
                         </div>
-                        <div class="mb-3">
+                        <div class="cpEnvio">
                             <label for="cpEnvio" class="form-label">Código postal</label>
-                            <input type="text" class="form-control" maxlength="5" id="cpEnvio" placeholder="#####" required>
+                            <input type="number" class="form-control cpEnvio" maxlength="5" id="cpEnvio" placeholder="#####" required>
                         </div>
                     </div>
                     <!--Título de formulario-->
-                    <div class="mb-3">
+                    <div class="datosDeContacto">
                         <h2 class="titulosRosas">Datos de contacto</h2>
-                        <div class="mb-3">
+                        <div class="ladaTel">
+                            <div class="ladaTelGroup">
                             <label for="telEnvio" class="form-label">Teléfono</label>
-                            <select name="#" class="form-control" id="telEnvio">
+                            <select name="#" class="form-control ladaTelSelect" id="ladaTel">
                                 <option value="#">+52</option>
                             </select>
-                            <input type="tel" class="form-control" maxlength="10" id="telEnvio"
-                            placeholder="Teléfono a 10 digitos" required>
+                            </div>
+                            <input type="tel" class="form-control telInput" maxlength="10" id="telEnvio"
+                            placeholder="Teléfono a 10 dígitos" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="">
                             <label for="correoEnvio" class="form-label">Correo electrónico</label>
                             <input type="email" class="form-control" id="correoEnvio"
                                 placeholder="ejemplo@correo.com" required>
@@ -192,7 +186,7 @@
                 </form>
             </div>
             <!--Resumen del pedido-->
-            <div class="col">
+            <div class="resumenPedido col-xs-12">
                 <!--Título de formulario-->
                 <h2 class="titulosRosas">Resumen del pedido</h2>
                 <!--Tabla Resumen del pedido-->
@@ -201,71 +195,96 @@
                         <tr>
                             <th><p><strong>Producto</strong></p></th>
                             <th><p>1</p></th>
-                            <th><p>$1,800.00</p></th>
+                            <th><p class="tablaCantidades">$1,800.00</p></th>
                         </tr>
                         <tr>
                             <th><p><strong>Subtotal</strong></p></th>
                             <th></th>
-                            <th><p>$1,800.00</p></th>
+                            <th><p class="tablaCantidades">$1,800.00</p></th>
                         </tr>
                         <tr>
                             <th><p><strong>Envío</strong></p></th>
                             <th></th>
-                            <th><p>$180.00</p></th>
+                            <th><p class="tablaCantidades">$180.00</p></th>
                         </tr>
                         <tr>
-                            <th><p><h2>Total (IVA incluido)</h2></th>
+                            <th><p><strong>Total (IVA incluido)</strong></p></th>
                             <th></th>
-                            <th><h2 class="titulosRosas">$1,980.00</h2></th>
+                            <th><h3 class="cantidadTotal tablaCantidades">$1,980.00</h3></th>
                         </tr>
                     </tbody>
                 </table>
                 <br>
+                <hr>
+                <br>
                 <!--Formulario Pago/Resumen del pedido-->
+                <h2 class="titulosRosas">Opciones de pago</h2>
                 <form class="opcionPagoPedido">
                     <!--Selección de selección de pago-->
                     <fieldset>
                         <!--Opción de pago TDC-->
-                        <div class="mb-3">
-                            <div>
+                        <div class="opcionPagoTdc">
+                            <div class="selectorDePago">
                                 <input type="radio" name="opcionPedido">
-                                <label class="form-label">
-                                    <svg width="29" height="23" viewBox="0 0 29 23" fill="none"
+                                <svg width="35" height="35" viewBox="0 0 29 23" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M1.375 8.58334H27.625M7.20833 15.875H8.66667M14.5 15.875H15.9583M5.75 21.7083H23.25C25.6662 21.7083 27.625 19.7496 27.625 17.3333V5.66667C27.625 3.25043 25.6662 1.29167 23.25 1.29167H5.75C3.33375 1.29167 1.375 3.25043 1.375 5.66667V17.3333C1.375 19.7496 3.33375 21.7083 5.75 21.7083Z"
                                             stroke="#E1456C" stroke-width="2" stroke-linecap="round"
                                             stroke-linejoin="round" />
                                     </svg>
+                                <label class="form-label">
                                     <p>Tarjeta de crédito/débito</p>
                                 </label>
                             </div>
-                            <form class="tdc">
+                            <div class="despliegueTdc">
+                                <form class="tdcForm">
                                 <!--Nombre-->
-                                <div class="mb-3">
+                                <div class="tdc nombreTarjeta">
                                     <label for="nombreTarjeta" class="form-label">Nombre en la tarjeta</label>
                                     <input type="text" class="form-control" id="nombreTarjeta" required>
                                 </div>
                                 <!--Número-->
-                                <div class="mb-3">
+                                <div class="tdc numeroTarjeta">
                                     <label for="numeroTarjeta" class="form-label">Número de tarjeta</label>
                                     <input type="text" class="form-control" id="numeroTarjeta" required>
                                 </div>
                                 <!--Fecha de vencimiento y CVC-->
-                                <div class="mb-3">
+                                
+                                <div class="tdc reversoTarjeta">
                                     <div class="vencimiento">
-                                        <label for="vencimiento" class="form-label">Fecha de vencimiento</label>
-                                        <select name="#" class="form-control" id="vencimiento" required>
-                                            <option value="#">01</option>
-                                        </select>
-                                        <select name="#" class="form-control" id="vencimiento" required>
-                                            <option value="#">2024</option>
-                                        </select>
+                                        <div class="vencimientoTitulo">
+                                            <p>Fecha de vencimiento</p>
+                                        </div>
+                                        <div class="vencimientoFecha">
+                                            <label for="vencimientoYear" class="form-label"></label>
+                                            <select name="#" class="form-control vencimientoMonth" id="vencimientoMonth" required>
+                                                <option value="#">01</option>
+                                                <option value="#">02</option>
+                                                <option value="#">03</option>
+                                                <option value="#">04</option>
+                                                <option value="#">05</option>
+                                                <option value="#">06</option>
+                                                <option value="#">07</option>
+                                                <option value="#">08</option>
+                                                <option value="#">09</option>
+                                                <option value="#">10</option>
+                                                <option value="#">11</option>
+                                                <option value="#">12</option>
+                                            </select>
+                                            <select name="#" class="form-control vencimientoYear" id="vencimientoYear" required>
+                                                <option value="#">2024</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="cvc">
-                                        <label for="cvc" class="form-label">Número de tarjeta</label>
-                                        <input type="password" class="form-control" id="cvc" maxlength="3" required>
+                                    <div class="cvv">
+                                        <p>CVV</p>
+                                    <div class="cvvElement">
+                                        <label for="cvvInput" class="form-label"></label>
+                                        <input type="password" class="form-control cvvInput" id="cvvInput" maxlength="3" required placeholder="CVV">
                                     </div>
+                                    </div>
+                                    
                                 </div>
                             </form>
                             <div>
@@ -289,35 +308,36 @@
                                     </defs>
                                 </svg>
                             </div>
+                            </div>
+                            
                         </div>
                         <!--Opción de pago Paypal-->
-                        <div class="mb-3">
+                        <div class="selectorDePago">
                             <input type="radio" name="opcionPedido">
-                            <label class="form-label">
-                                <svg width="35" height="25" viewBox="0 0 35 25" fill="none"
+                            <svg width="35" height="25" viewBox="0 0 35 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M32.0833 0.833332H2.91667C1.30667 0.833332 0 2.14 0 3.75V21.25C0 22.86 1.30667 24.1667 2.91667 24.1667H32.0833C33.6933 24.1667 35 22.86 35 21.25V3.75C35 2.14 33.6933 0.833332 32.0833 0.833332ZM32.0833 20.5208C32.0833 20.9233 31.7567 21.25 31.3542 21.25H3.64583C3.24333 21.25 2.91667 20.9233 2.91667 20.5208V4.47917C2.91667 4.07667 3.24333 3.75 3.64583 3.75H31.3542C31.7567 3.75 32.0833 4.07667 32.0833 4.47917V20.5208ZM23.0898 11.4121C23.0898 11.6731 23.0577 11.9385 23.0081 12.2025C22.5969 14.3506 21.1867 15.0929 19.3871 15.0929H19.1085C18.8883 15.0929 18.7017 15.2548 18.6667 15.4765L18.2758 17.9512C18.2423 18.1715 18.0556 18.3333 17.8354 18.3333H16.5054C16.3158 18.3333 16.1715 18.1642 16.2006 17.9775L16.8744 13.6608C16.8773 13.6448 16.889 13.6331 16.905 13.6331H17.9521C20.4969 13.6331 22.0879 12.36 22.5575 9.95375C22.9513 10.3504 23.0898 10.8667 23.0898 11.4121ZM16.1802 13.4785C16.2371 13.0775 16.4033 12.9069 16.854 12.9054L17.9521 12.904C20.176 12.904 21.4506 11.8875 21.8517 9.79771C22.241 7.78812 20.8294 6.66667 18.9204 6.66667H15.3504C15.0996 6.66667 14.8852 6.85187 14.8458 7.10417C13.7258 14.3156 13.4021 16.1487 13.3685 16.7087C13.3583 16.8852 13.4998 17.0354 13.6777 17.0354H15.6173L16.1802 13.4785Z"
                                         fill="#E1456C" />
                                 </svg>
+                            <label class="form-label">
                                 <p>PayPal</p>
                             </label>
                         </div>
                         <!--Opción de pago Oxxo-->
-                        <div class="mb-3">
+                        <div class="selectorDePago">
                             <input type="radio" name="opcionPedido">
-                            <label class="form-label">
-                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14.4944 6.10352e-05L13.125 7.24944V8.85069C13.125 10.4053 11.7644 11.6667 10.2083 11.6667C8.65229 11.6667 7.29167 10.4053 7.29167 8.84923V7.24944L11.6608 6.10352e-05H14.4944ZM10.0435 6.10352e-05L5.83333 7.24944V8.85069C5.83333 10.4053 4.47271 11.6667 2.91667 11.6667C1.36063 11.6667 0 10.4053 0 8.84923V7.24944L7.10792 6.10352e-05H10.0435ZM35 8.84923C35 10.4053 33.6394 11.6667 32.0833 11.6667C30.5273 11.6667 29.1667 10.3061 29.1667 8.75006V7.14881L24.9565 6.10352e-05H27.8935L35 7.24944V8.84923ZM20.4167 7.14589V8.74714C20.4167 10.3017 19.056 11.6667 17.5 11.6667C15.944 11.6667 14.5833 10.3061 14.5833 8.75006V7.14881L16.1102 6.10352e-05H18.8883L20.4167 7.14589ZM23.3392 6.10352e-05L27.704 7.29464V8.89589C27.7054 10.4519 26.3477 11.6667 24.7917 11.6667C23.2356 11.6667 21.875 10.3061 21.875 8.75006V7.14881L20.5056 6.10352e-05L23.3392 6.10352e-05ZM1.45833 14.5834V35.0001H16.0417V32.0834H4.375V17.5001H30.625V35.0001H33.5417V14.5834H1.45833ZM27.7083 20.4167H18.9583V35.0001H27.7083V20.4167Z" fill="#E1456C"/>
                                 </svg>
+                            <label class="form-label">
+                                
                                 <p>Pago en tienda Oxxo</p>
                             </label>
                         </div>
                     </fieldset>
                     <!--Botón Realizar pedido-->
-                    <div class="botonDonar">
-                        <button type="button" class="boton" id="metodoPago">Realizar pedido</button>
-                    </div>
+                    <button type="button" class="botonDonar botonRealizarPago" id="botonRealizarPago">Realizar pedido</button>
                 </form>
                 <p>Sus datos personales serán utilizados para mejorar su experiencia en el sitio web, para administrar el acceso a su cuenta, y para otros propósitos descritos en nuestra política de privacidad.</p>
             </div>
@@ -394,7 +414,7 @@
                 </svg>
                 <div class="texto col-8">
                     <h3>Causa Social</h3>
-                    <span>Impulsamos la economia local mexicana</span>
+                    <span>Impulsamos la economía local mexicana</span>
                 </div>
             </div>
             <div class="garantiasItem d-flex col-3">
@@ -427,33 +447,37 @@
     </section>
 
     <footer class="col-12 flex-column d-flex">
-        <div class="footerContent row d-flex">
-            <div class="footerLogo col-sm-4 d-flex flex-column align-items-center">
-                <img class="logoRosa" src="./src/img/logorosa.png" alt="">
-                <span>By Generation México</span>
+            <div class="footerContent row d-flex">
+                <div class="footerLogo col-sm-4 d-flex flex-column align-items-center">
+                    <img class="logoRosa" src="./src/img/logorosa.png" alt="" />
+                    <span>By Generation México</span>
+                </div>
+                <div class="footerVinculos col-sm-4 d-flex flex-column">
+                    <h4>Vinculos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="tienda.html">Tienda</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footerAyuda col-sm-4 d-flex flex-column">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li>
+                            <a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank"
+                                >Donar</a
+                            >
+                        </li>
+                        <li><a href="./nosotros.html#contacto">Contacto</a></li>
+                        <li><a href="./politicas.html">Politicas de privacidad</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footerVinculos col-sm-4 d-flex flex-column">
-                <h4>Vinculos</h4>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="tienda.html">Tienda</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                </ul>
+            <hr />
+            <div class="footerDerechos row d-flex">
+                <span>2024 YolliCalli. Todos los derechos reservados.</span>
             </div>
-            <div class="footerAyuda col-sm-4 d-flex flex-column">
-                <h4>Ayuda</h4>
-                <ul>
-                    <li><a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a></li>
-                    <li><a href="./nosotros.html#contacto">Contacto</a></li>
-                    <li><a href="./politicas.html">Politicas de privacidad</a></li>
-                </ul>
-            </div>
-        </div>
-        <hr>
-        <div class="footerDerechos row d-flex">
-            <span>2024 YolliCalli. Todos los derechos reservados.</span>
-        </div>
-    </footer>
+        </footer>
 
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
