@@ -132,6 +132,21 @@
         padding: 10px 20px;
     }
 }
+/*Codigo para el amrgen del banner cuando esta en movil y no aparezca debajo del navbar*/
+@media (max-width: 425px) {
+
+    .fondoContenedor {
+        width: 100%, !important;
+        background-image: url(../src/img/talavera.png);
+        background-size:cover;
+        background-position: center;
+        height: 60rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 195px;
+      }
+}
 
 /* Estilos Categorías*/
 .container {

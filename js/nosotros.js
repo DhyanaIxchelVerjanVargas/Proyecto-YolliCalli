@@ -20,7 +20,7 @@ const expresiones = {
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
     correo: /^[\w.-]+@[a-zA-Z_-]+(?:\.[a-zA-Z]{2,6})+$/,
     texto: /^[^\/\\<>]*$/,
-    telefono: /^\d{10}$/
+    telefono: /^(?!0{10})\d{10}$/
     
 }
 
