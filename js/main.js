@@ -41,8 +41,8 @@ txtBusqueda.addEventListener("keyup", function (event) {
 if (window.matchMedia("(max-width: 425px)").matches) {
     navbar.appendChild(searchField);
     navbar.insertBefore(searchField, navbar.children[1]);
-    offcanvasbody.appendChild(navIcons);
     offcanvasbody.appendChild(navMenu);
+    offcanvasbody.appendChild(navIcons);
 } else {
     navIcons.appendChild(searchField);
     navIcons.insertBefore(searchField, navIcons.children[0]);
@@ -66,4 +66,3 @@ if (window.matchMedia("(max-width: 425px)").matches) {
     txtBusqueda.value = "";
 */
 /*Secion de la barra de navegacion */
-

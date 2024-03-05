@@ -335,7 +335,21 @@ class Producto {
         nombreProducto.style.boxShadow = "0 0 5px #ff0909"
         isValid = false;
     }
+
+    /*Aqui terminan las validaciones*/
+
+
+
+    if (localStorage.getItem("productosNuevos") != null){
+        productosNuevos = JSON.parse(localStorage.getItem("productosNuevos"));
+    }else{
+        productosNuevos = [];
+    }
     if(isValid){
+        productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, etiquetas.value, imagenUrlProducto))
+        console.log("productos nuevos");
+        localStorage.setItem("productosNuevos", JSON.stringify(productosNuevos));
+
         alertProductoAgregadoTexto.insertAdjacentHTML("beforeend",`
         <span font-family: var(--barlow); font-size: var( --titulos-h3-rutas)>
             ¡Producto agregado exitosamente! <a href="./tienda.html" class="alert-link">Ver tienda</a>
@@ -351,21 +365,6 @@ class Producto {
         imagenProducto.value = "";
 
         nombreProducto.focus();
-    }
-
-    /*Aqui terminan las validaciones*/
-
-
-
-    if (localStorage.getItem("productosNuevos") != null){
-        productosNuevos = JSON.parse(localStorage.getItem("productosNuevos"));
-    }else{
-        productosNuevos = [];
-    }
-    if(isValid){
-        productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, etiquetas.value, imagenUrlProducto))
-        console.log("productos nuevos");
-        localStorage.setItem("productosNuevos", JSON.stringify(productosNuevos));
     }
 
     

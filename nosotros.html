@@ -21,12 +21,13 @@
         />
         <!-- <link rel="stylesheet" href="./css/normalize.css" /> -->
         <link rel="stylesheet" href="./css/estilosGlobales.css" />
-        <link rel="stylesheet" href="./css/nosotros.css" />
+        <link rel="stylesheet" href="./css/nosotros.css"/>
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <title>Nosotros</title>
     </head>
     <body>
         <header id="header">
+            <!--Navegación-->
             <nav class="navbar" id="navbar">
                 <div class="navbarContainer navLogo" id="navLogo">
                     <div class="vacio"></div>
@@ -36,14 +37,14 @@
                 </div>
                 <div class="navbarContainer navMenu" id="navMenu">
                     <ul>
-                        <li><a href="./index.html" class="menuLink">Inicio</a></li>
-                        <li><a href="./tienda.html" class="menuLink">Tienda</a></li>
-                        <li><a href="./nosotros.html" class="menuLink">Nosotros</a></li>
-                        <li><a href="./nosotros.html#contacto" class="menuLink">Contacto</a></li>
+                        <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
+                        <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
+                        <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
+                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
-                    <div class="searchField" role="search" id="searchField">
+                    <div class="searchField" id="searchField">
                         <input
                             class="searchBox searchInput"
                             type="search"
@@ -55,17 +56,12 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="./perfil.html#fav" class="navIconsItems"><i class="bi bi-heart"></i><h4>Favoritos</h4></a>
-                        </li>
-                        <li>
-                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><h4>Carrito</h4></a>
-                        </li>
-                        <li>
-                            <a href="./perfil.html" class="navIconsItems"><i class="bi bi-person"></i><h4>Perfil</h4></a>
+                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
                         </li>
                     </ul>
                 </div>
             </nav>
+            <!--Banner-->
             <div id="Banner" class="banner">
                 <div>
                     <h1>Nosotros</h1>
@@ -83,6 +79,7 @@
                 </div>
             </div>
         </header>
+        <!--Menu hamburguesa-->
         <aside>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
@@ -115,11 +112,11 @@
         <section class="misionVision">
             <div class="tituloMision">
                 <br />
-                <h2>Acerca de YolliCalli</h2>
+                <h2 class="tituloAcerca">Acerca de YolliCalli</h2>
             </div>
             <div class="mision">
                 <!-- Cambiar div por h2 o h3 -->
-                <div class="titulosRosas">Misión</div>
+                <h2 class="titulosRosas">Misión</h2>
                 <p>
                     Proporcionamos una plataforma de comercio electrónico que conecta a los entusiastas del arte y las
                     artesanías directamente con artesanos mexicanos, mediante la promoción de artículos que muestran la
@@ -133,7 +130,7 @@
             </div>
             <div class="vision">
                 <!-- Cambiar div por h2 o h3 -->
-                <div class="titulosRosas">Visión</div>
+                <h2 class="titulosRosas">Visión</h2>
                 <p>
                     Apoyar la economía nacional y ser la principal plataforma de comercio electrónico que logre conectar
                     a los entusiastas del arte y las artesanías con los artesanos de todo México, mediante la promoción
@@ -180,7 +177,7 @@
                         </div>
                         <div class="persona" data-toggle="modal" data-target="#EstefaníaModal">
                             <img src="src/img/Photoroom-20240213_140538_8.png" alt="Estefanía" />
-                            <p>Estefanía</p>
+                            <p>Nadia</p>
                             <a href="http://linkedin.com/in/nadiaemg/" target="_blank">LinkedIn</a>
                         </div>
                         <div class="persona" data-toggle="modal" data-target="#UlisesModal">
@@ -348,7 +345,7 @@
                                 alt="Imagen de Estefanía"
                                 class="img-fluid rounded-circle mb-2"
                             />
-                            <p class="nombreModal">Estefanía</p>
+                            <p class="nombreModal">Nadia</p>
                             <p>
                                 Geocientífica y Desarrolladora Java Full Stack en el proyecto de comercio electrónico
                                 YolliCalli
@@ -425,7 +422,7 @@
                     Para más información acerca de nuestros productos y servicios, por favor envíanos un correo
                     electrónico.
                     <br />
-                    Nuestro equipo siempre estará para atenderte.
+                    Nuestro equipo siempre estará listo para atenderte.
                 </p>
             </div>
             <!--Medios de contacto y formulario-->
@@ -713,7 +710,7 @@
                     <span>By Generation México</span>
                 </div>
                 <div class="footerVinculos col-sm-4 d-flex flex-column">
-                    <h4>Vinculos</h4>
+                    <h4>Vínculos</h4>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="tienda.html">Tienda</a></li>

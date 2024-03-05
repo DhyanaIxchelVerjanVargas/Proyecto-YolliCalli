@@ -86,7 +86,6 @@
 }
 /*Header banner*/
 
-
 @media (max-width: 575.98px) {
     /*Banner*/
     #Banner {
@@ -148,7 +147,6 @@
     border-radius: 10px;
     width: 300px;
     padding: 10px 20px 20px 20px;
-
 }
 
 .container-total h2 {
@@ -166,7 +164,6 @@
 
 .container-total-subtitulos p {
     font-family: var(--barlow);
-
 }
 
 .container-total-subtitulos span {
@@ -176,7 +173,7 @@
     color: var(--rosa-mexicano);
 }
 
-.btn { 
+.btn {
     width: 140px;
     height: 39px;
     background-color: var(--rosa-mexicano);
@@ -191,6 +188,5 @@
     color: #ffff;
     border-color: #e1456c;
 }
-
 
 /*Termina Main*/
