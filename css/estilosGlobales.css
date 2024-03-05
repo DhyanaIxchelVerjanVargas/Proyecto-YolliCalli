@@ -10,7 +10,6 @@
     --titulos-h3-rutas: 2.4rem;
     --texto-general: 1.8rem;
     --header-footer: 1.6rem;
-
     /* Cuerpo */
     --bold: 700;
     --medium: 600;
@@ -27,7 +26,6 @@
     --gris: #f4f5f7;
     --bordes: #e1456c;
 }
-
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -439,6 +437,49 @@ header {
 
 #Banner .breadcrumb .breadcrumb-item:hover {
     pointer-events: auto;
+}
+
+@media (max-width: 575.98px) {
+    /*Banner*/
+    #Banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        padding: 0 50px;
+    }
+
+    #Banner h1 {
+        font-size: var(--titulos-h3-rutas);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-shadow: 3px 3px 2px var(--bordes);
+        line-height: 40px;
+    }
+
+    #Banner .breadcrumb {
+        line-height: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    /* #Banner .breadcrumb nav ol li { */
+    #Banner .breadcrumb .breadcrumb-item {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    /* #Banner .breadcrumb nav ol li a { */
+    #Banner .breadcrumb .breadcrumb-item a {
+        font-size: 12px;
+        font-weight: var(--bold);
+        text-decoration: none;
+        text-shadow: 2px 1px 2px var(--bordes);
+    }
 }
 /* 
 #Navegacion {
