@@ -1,3 +1,4 @@
+//Se inicializan las variables
 let isValid = true;
 let nombreProducto = document.getElementById("nombreProducto");
 let descripcion = document.getElementById("descripcion");
@@ -26,6 +27,7 @@ const expresiones = {
     tags: /^[a-zA-ZáéíóúüñÑÁÉÍÓÚÜ\s,']+$/,
     image: /\.(jpg|jpeg|png)$/
     
+//Este es un evento "click" que imprime el mensaje "prueba" y activa el input imagenProducto
 }
 imagenProductoFake.addEventListener("click",function(event){
     event.preventDefault();
@@ -33,21 +35,18 @@ imagenProductoFake.addEventListener("click",function(event){
     imagenProducto.click();
 })
 
+//Este es un evento "change", que determina si el archivo seleccionado es una imagen o no. Si es una imagen, el archivo se sube y se lanza la alerta con el mensaje "El archivo se subió exitosamente"
+
+//Cuando hay una falla al subir la imagen, se lanza una alerta con el mensaje "Hubo un error al subir el archivo"
+
+//Si no es una imagen, el archivo no se sube y se lanza la alerta con el mensaje "Solo se adminten archivos .jpg .png"
 imagenProducto.addEventListener("change",function(event){
     event.preventDefault();
     archivo = imagenProducto.files[0];
-    // uploadFile(archivo)
-    // .then(imageUrl => {
-    //     imagenUrlProducto = imageUrl
-    // })
-    // .catch(error => {
-    //     imagenUrlProducto = "";
-    // });
     alertImagenProducto.innerHTML = "";
     if (archivo.type.startsWith('image/')) {
         uploadFile(archivo)
             .then(imageUrl => {
-                imagenUrlProducto = imageUrl;
                 alertImagenProducto.style.display = "inline";
                 alertImagenProducto.insertAdjacentHTML("beforeend", `<span style=" color: #5cb85c; font-family: var(--barlow); font-size: 11px);">El archivo se subió exitosamente.</span>
                 `);
@@ -56,6 +55,7 @@ imagenProducto.addEventListener("change",function(event){
                 imagenProducto.style.border = "solid #ff0909 thin";
                 imagenProducto.style.boxShadow = "0 0 5px #ff0909";
                 isValid = true;   
+                imagenUrlProducto = imageUrl;
             })
             .catch(error => {
                 alertImagenProducto.style.display = "inline";
@@ -79,6 +79,7 @@ imagenProducto.addEventListener("change",function(event){
     }}
 )
 
+//La función uuploadFile permite que la imagen subida se envié a un repositorio de Cloudinary
 function uploadFile(file) {
     var formData = new FormData();
     formData.append('file', file);
@@ -107,10 +108,7 @@ function uploadFile(file) {
     });
 }
 
-botonProducto.addEventListener("click", function(event) {
-    event.preventDefault(); 
-    
-})
+//Creación del objeto Producto, que almacena la información enviada a través del formulario
 class Producto {
     nombre="";
     descripcion="";
@@ -146,7 +144,6 @@ class Producto {
     alertPrecio.innerHTML = "";
     alertCategoria.innerHTML = "";
     alertEtiquetas.innerHTML = "";
-    alertImagenProducto.innerHTML = "";
     alertProductoAgregadoTexto.innerHTML="";
 
     alertNombreProducto.style.display= "none";
@@ -154,7 +151,7 @@ class Producto {
     alertPrecio.style.display= "none";
     alertCategoria.style.display= "none";
     alertEtiquetas.style.display= "none";
-    alertImagenProducto.style.display= "none";
+  
     alertProductoAgregado.style.display="none";
 
     nombreProducto.style.border = "solid var(--rosa-mexicano) thin";
@@ -174,9 +171,9 @@ class Producto {
     descripcion.value = descripcion.value.trim();
     etiquetas.value = etiquetas.value.trim();
      
-    //validacion imagen
-    //-----------------
-    if (imagenProducto.files.length === 0) {
+    //validación imagen
+    if (imagenUrlProducto.length == 0) {
+        alertImagenProducto.innerHTML = "";
         alertImagenProducto.style.display = "inline";
         alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Seleccione una imagen.</span>`);
         alertImagenProducto.style.display = "inline";
@@ -185,6 +182,7 @@ class Producto {
         imagenProducto.style.boxShadow = "0 0 5px #ff0909";
         isValid = false;}
     else if((!expresiones.image.test(imagenProducto.value.toLowerCase()))) {
+            alertImagenProducto.innerHTML = "";
             alertImagenProducto.style.display = "inline";
             alertImagenProducto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Solo se adminten archivos .jpg .png.</span>`);
             alertImagenProducto.style.display = "inline";
@@ -192,11 +190,11 @@ class Producto {
             imagenProducto.style.border = "solid #ff0909 thin";
             imagenProducto.style.boxShadow = "0 0 5px #ff0909";
             isValid = false;   
+         } else {
+            isValid = true;
          }
-    //------------------
 
-
-    //Validacion campo etiquetas
+    //Validación campo etiquetas
     if(etiquetas.value.length ==0){
         alertEtiquetas.style.display = "inline";
         alertEtiquetas.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese una etiqueta.</span>`);
@@ -224,7 +222,8 @@ class Producto {
         etiquetas.style.boxShadow = "0 0 5px #ff0909"
         isValid = false;
     }
-    //Validacion categoria
+
+    //Validación categoria
     if(categoria.value ===""){
         alertCategoria.style.display = "inline";
         alertCategoria.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Seleccione una categoría.</span>`);
@@ -234,7 +233,8 @@ class Producto {
         categoria.style.boxShadow = "0 0 5px #ff0909"
         isValid = false;
     }
-    //Validacion precio
+
+    //Validación precio
     if(precio.value.length ==0){
         alertPrecio.style.display = "inline";
         alertPrecio.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un precio.</span>`);
@@ -273,6 +273,8 @@ class Producto {
         isValid = false;
 
     }
+
+    //Validación descripción
     if(descripcion.value.length ==0){
         alertDescripcion.style.display = "inline";
         alertDescripcion.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese una descripción.</span>`);
@@ -300,7 +302,8 @@ class Producto {
         descripcion.style.boxShadow = "0 0 5px #ff0909"
         isValid = false;
     }
-    //validacion Nombre Producto
+
+    //validación nombre producto
     if(nombreProducto.value.length ==0){
         alertNombreProducto.style.display = "inline";
         alertNombreProducto.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese el nombre de su producto.</span>`);
@@ -338,13 +341,14 @@ class Producto {
 
     /*Aqui terminan las validaciones*/
 
-
-
+    //Este condicional indica que si no hay productos nuevos en local Storage, entonces se extrae la información del objeto JSON
     if (localStorage.getItem("productosNuevos") != null){
         productosNuevos = JSON.parse(localStorage.getItem("productosNuevos"));
     }else{
         productosNuevos = [];
     }
+
+    //Este condicional indica que, cuando hay productos nuevos en local storage, la información se publica en una tarjeta de la tienda
     if(isValid){
         productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, etiquetas.value, imagenUrlProducto))
         console.log("productos nuevos");
@@ -365,9 +369,11 @@ class Producto {
         imagenProducto.value = "";
 
         nombreProducto.focus();
+        alertImagenProducto.innerHTML = "";
+        alertImagenProducto.style.display="none";
+    } else {
+        isValid = true;
     }
-
-    
  })
 
 
