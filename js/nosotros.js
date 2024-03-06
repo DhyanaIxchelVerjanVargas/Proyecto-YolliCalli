@@ -20,7 +20,7 @@ const expresiones = {
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
     correo: /^[\w.-]+@[a-zA-Z_-]+(?:\.[a-zA-Z]{2,6})+$/,
     texto: /^[^\/\\<>]*$/,
-    telefono: /^\d{10}$/
+    telefono: /^(?!0{10})\d{10}$/
     
 }
 
@@ -48,8 +48,9 @@ botonEnviar.addEventListener("click",function(event){
     inputNombre.style.removeProperty("box-shadow");
     inputEmail.style.border = "solid var(--azul-talavera) thin";
     inputEmail.style.removeProperty("box-shadow");
-    inputTelefono.style.removeProperty("border");
+    //inputTelefono.style.removeProperty("border");
     inputTelefono.style.removeProperty("box-shadow");
+    inputTelefono.style.border = "solid var(--azul-talavera) thin";
     inputAsunto.style.border = "solid var(--azul-talavera) thin";
     inputAsunto.style.removeProperty("box-shadow");
     inputMensaje.style.border = "solid var(--azul-talavera) thin";
@@ -186,6 +187,8 @@ botonEnviar.addEventListener("click",function(event){
             <br/>
             <strong>Email: </strong>${inputEmail.value}
             <br/>
+            <strong>Telefono: </strong>${inputTelefono.value}
+            <br/>
             <strong>Asunto: </strong>${inputAsunto.value}
             <br/>
             <strong>Mensaje: </strong>${inputMensaje.value}
@@ -205,6 +208,7 @@ botonEnviar.addEventListener("click",function(event){
                     /*No se si seria buena idea ponerlas despues de que se alla enviado el correo exitosamente */
                     inputNombre.value = "";
                     inputEmail.value = "";
+                    inputTelefono.value="";
                     inputAsunto.value = "";
                     inputMensaje.value = "";
                     checkCondicones.checked = false;
@@ -234,7 +238,7 @@ botonEnviar.addEventListener("click",function(event){
                         <div class="modal-body">
                         <p>Error en el envío</p>
                         </div>
-                    <   /div>
+                    </div>
                     </div>
                     `);
                     

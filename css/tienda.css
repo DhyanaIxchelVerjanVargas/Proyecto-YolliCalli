@@ -2,7 +2,6 @@
 .navTienda {
     height: 100px;
     width: 100%;
-    margin-top: 100px;
     padding: 0 100px;
     background-color: var(--color-base);
 }
