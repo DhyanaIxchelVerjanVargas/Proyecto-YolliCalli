@@ -185,11 +185,11 @@ botonRegistrar.addEventListener("click", function(event) {
         localStorage.setItem("personaNueva", JSON.stringify(personaNueva));
    
         alertRegistroUsuarioTexto.insertAdjacentHTML("beforeend",`
-        <span font-family: var(--barlow); font-size: var( --titulos-h3-rutas)>
-            ¡Registro exitoso! <a href="./perfil.html" class="alert-link">Perfil</a>
+        <span style="font-family: var(--barlow); font-size: var( --titulos-h3-rutas);">
+            ¡Registro exitoso!
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </span>`);
-        alertRegistroUsuario.style.display = "block";   
+        alertRegistroUsuario.style.display = "flex";  
         inputNombreCompletoRegistro.value = "";
         inputEmailRegistro.value = "";
         inputTelefonoRegistro.value = "";
