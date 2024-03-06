@@ -1,17 +1,17 @@
 .fondoContenedor {
-    width: 100% !important;
-    background-image: url(../src/img/talavera.png);
-    background-size: cover;
-    background-position: center;
-    height: 60rem;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+  width: 100%, !important;
+  background-image: url(../src/img/a013b960-d9e9-4c7f-b268-124bd66098af.png);
+  background-size:cover;
+  background-position: center;
+  height: 60rem;
+  display:flex;
+  justify-content: end;
+  align-items: center;
 }
 
 .card-body {
     max-width: 500px;
-    border-radius: 10px 0 10px 0px;
+    border-radius: 10px 10px 10px 10px;
     border: none;
     background-color: #fff3e3;
     margin-right: 10rem;
@@ -61,9 +61,9 @@
 /* Media Query para dispositivos de pantalla de hasta 768px */
 @media (max-width: 768px) {
     .fondoContenedor {
-        width: 100% !important;
-        background-image: url(../src/img/talavera.png);
-        background-size: cover;
+        width: 100%, !important;
+        background-image: url(../src/img/a013b960-d9e9-4c7f-b268-124bd66098af.png);
+        background-size:cover;
         background-position: center;
         height: 60rem;
         display: flex;
@@ -449,7 +449,13 @@
         justify-items: left;
         flex-wrap: wrap;
     }
-}
+        .carousel-inner .carousel-item .row {
+            display: block; }
+        .carousel-inner .carousel-item .row .tarjetaCategoria {
+            display: block;
+        }
+    }
+
 /* Card de Producto */
 #contenedorCategorias .cardCategorias {
     width: 25rem;
