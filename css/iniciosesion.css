@@ -5,6 +5,10 @@ body {
 label {
     font-size: 1.8rem;
 }
+.alerta{
+    display: flex;
+    justify-content: center;
+}
 
 @media screen and (min-width: 47.6rem) {
     .inicioSesion form,
@@ -35,7 +39,7 @@ label {
     input[type="email"]::placeholder,
     input[type="password"]::placeholder,
     input[type="date"]::placeholder {
-        font-size: 1.1rem;
+        font-size: 1.8rem;
     }
 
     .boton {

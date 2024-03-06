@@ -14,6 +14,10 @@ let alertTelefonoRegistro = document.getElementById("alertTelefonoRegistro");
 let alertContrasena = document.getElementById("alertContrasena");
 let alertConfirmarContrasena = document.getElementById("alertConfirmarContrasena");
 let alertCondicionesRegistro = document.getElementById("alertCondicionesRegistro");
+let alertRegistroUsuarioTexto =document.getElementById("alertRegistroUsuarioTexto")
+let alertRegistroUsuario = document.getElementById("alertRegistroUsuario")
+let personaNueva = new Array();
+
 
 const expresiones = {
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
@@ -22,10 +26,25 @@ const expresiones = {
     contrasena: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
 };
 
+class  Persona{
+    nombreRegistro="";
+    emailRegistro="";
+    telefonoRegistro="";
+    contrasenaRegistro="";
+   // id="";
+    //static total=0;
+
+    constructor(nombreRegistro, emailRegistro, telefonoRegistro,contrasenaRegistro ){
+        this.nombreRegistro= nombreRegistro;
+        this.emailRegistro= emailRegistro;
+        this.telefonoRegistro= telefonoRegistro;
+        this.contrasenaRegistro= contrasenaRegistro;
+    }
+}
 botonRegistrar.addEventListener("click", function(event) {
     event.preventDefault();
     let isCorrect = true;
-
+    alertRegistroUsuarioTexto.innerHTML="";
     alertNombreCompleto.innerHTML = "";
     alertEmailRegistro.innerHTML = "";
     alertTelefonoRegistro.innerHTML = "";
@@ -33,6 +52,7 @@ botonRegistrar.addEventListener("click", function(event) {
     alertConfirmarContrasena.innerHTML = "";
     alertCondicionesRegistro.innerHTML = "";
 
+    alertRegistroUsuario.style.display= "none";
     alertNombreCompleto.style.display = "none";
     alertEmailRegistro.style.display = "none";
     alertTelefonoRegistro.style.display = "none";
@@ -40,17 +60,18 @@ botonRegistrar.addEventListener("click", function(event) {
     alertConfirmarContrasena.style.display = "none";
     alertCondicionesRegistro.style.display = "none";
 
-    checkCondicionesRegistro.style.border = "solid var(--azul-talavera) thin";
+    checkCondicionesRegistro.style.border = "solid var(--rosa-mexicano) thin";
     checkCondicionesRegistro.style.removeProperty("box-shadow");
-    inputNombreCompletoRegistro.style.border = "solid var(--azul-talavera) thin";
+    inputNombreCompletoRegistro.style.border = "solid var(--rosa-mexicano) thin";
     inputNombreCompletoRegistro.style.removeProperty("box-shadow");
-    inputEmailRegistro.style.border = "solid var(--azul-talavera) thin";
+    inputEmailRegistro.style.border = "solid var(--rosa-mexicano) thin";
     inputEmailRegistro.style.removeProperty("box-shadow");
     inputTelefonoRegistro.style.removeProperty("border");
     inputTelefonoRegistro.style.removeProperty("box-shadow");
-    inputContrasenaRegistro.style.border = "solid var(--azul-talavera) thin";
+    inputTelefonoRegistro.style.border = "solid var(--rosa-mexicano) thin";
+    inputContrasenaRegistro.style.border = "solid var(--rosa-mexicano) thin";
     inputContrasenaRegistro.style.removeProperty("box-shadow");
-    inputConfirmarContrasena.style.border = "solid var(--azul-talavera) thin";
+    inputConfirmarContrasena.style.border = "solid var(--rosa-mexicano) thin";
     inputConfirmarContrasena.style.removeProperty("box-shadow");
 
     inputNombreCompletoRegistro.value = inputNombreCompletoRegistro.value.trim();
@@ -124,6 +145,14 @@ botonRegistrar.addEventListener("click", function(event) {
         inputTelefonoRegistro.style.border = "solid #ff0909 thin";
         inputTelefonoRegistro.style.boxShadow = "0 0 5px #ff0909";
         isCorrect = false;
+    }else if (inputTelefonoRegistro.value == 0) {
+        alertTelefonoRegistro.style.display = "inline";
+        alertTelefonoRegistro.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un número de teléfono válido.</span>`);
+        alertTelefonoRegistro.style.display = "inline";
+        inputTelefonoRegistro.focus();
+        inputTelefonoRegistro.style.border = "solid #ff0909 thin";
+        inputTelefonoRegistro.style.boxShadow = "0 0 5px #ff0909";
+        isCorrect = false;
     }
     //validacion nombre completo
     if (inputNombreCompletoRegistro.value.length == 0) {
@@ -143,4 +172,34 @@ botonRegistrar.addEventListener("click", function(event) {
         inputNombreCompletoRegistro.style.boxShadow = "0 0 5px #ff0909";
         isCorrect = false;
     }
+    //Fin de las validaciones
+    //amonos 
+
+    // if(localStorage.getItem("personaNueva") !=null){
+    //     personaNueva = JSON.parse(localStorage.getItem("personaNueva"));
+    // }else{
+    //     personaNueva=[];
+    // }
+    if(isCorrect){
+        personaNueva.push(new Persona(inputNombreCompletoRegistro.value,inputEmailRegistro.value, inputTelefonoRegistro.value,inputContrasenaRegistro.value  ));
+        localStorage.setItem("personaNueva", JSON.stringify(personaNueva));
+   
+        alertRegistroUsuarioTexto.insertAdjacentHTML("beforeend",`
+        <span style="font-family: var(--barlow); font-size: var( --titulos-h3-rutas);">
+            ¡Registro exitoso!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </span>`);
+        alertRegistroUsuario.style.display = "flex";  
+        inputNombreCompletoRegistro.value = "";
+        inputEmailRegistro.value = "";
+        inputTelefonoRegistro.value = "";
+        inputContrasenaRegistro.value = "";
+        inputConfirmarContrasena.value = "";
+        checkCondicionesRegistro.value = "";
+        setTimeout(function() {
+            location.href = "index.html";
+        }, 2000);
+    }
+
 });
+
