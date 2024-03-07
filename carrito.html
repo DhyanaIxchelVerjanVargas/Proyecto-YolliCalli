@@ -87,30 +87,31 @@
   <!--Main-->
   <!-- Tabla tomada de Bootstrap #Table group dividers-->
   <main class="main">
+    <h2 class="titulo-cart-movil">Productos</h2>
   <div class="container-table">
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Imagen</th>
+          <th scope="col"></th>
           <th scope="col">Producto</th>
           <th scope="col">Precio</th>
           <th scope="col">Cantidad</th>
-          <th scope="col">Icono</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody class="table-group-divider">
         <tr>
-          <th scope="row"><img src="src/img/cojin.png" alt="cojín"></th>
-          <td>Asgaard cojín</td>
+          <td><img src="src/img/cojin.png" alt="cojín"></td>
+          <td>Asgaard cojín mas texto</td>
           <td>$1,800</td>
-          <td>1</td>
+          <td><div class="div-cantidad">1</div></td>
           <td><i class="bi bi-trash3-fill"></i></td>
         </tr>
         <tr>
-          <th scope="row"><img src="src/img/cojin.png" alt="cojín"></th>
+          <td><img src="src/img/cojin.png" alt="cojín"></td>
           <td>Asgaard cojín</td>
           <td>$1,800</td>
-          <td>1</td>
+          <td><div class="div-cantidad">1</div></td>
           <td><i class="bi bi-trash3-fill"></i></td>
         </tr>
       </tbody>
@@ -118,9 +119,9 @@
   </div>
   <div class="container-total">
     <div><h2><strong>Total del Carrito</strong></h2></div>
-    <div class="container-total-subtitulos"><p><span>Subtotal</span></p><p>$1,800.00</p></div>
-    <div class="container-total-subtitulos"><p><span>Envío</span></p><p>$180.00</p></div>
-    <div class="container-total-subtitulos"><p><span>Total</span></p><p class="p-total"><span>$1,980.00</span></p></div>
+    <div class="container-total-subtitulos sub-subtotal"><p><span>Subtotal</span></p><p class="p-right">$1,800.00</p></div>
+    <div class="container-total-subtitulos sub-envio"><p><span>Envío</span></p><p class="p-right">$180.00</p></div>
+    <div class="container-total-subtitulos sub-total"><p><span>Total</span></p><p class="p-total p-right"><span>$1,980.00</span></p></div>
     <div class="row flex-row d-flex justify-content-center"><button type="submit" class="btn btn-primary btn-total ">Proceder al pago</button></div>
   </div>
   </main>
