@@ -86,7 +86,7 @@
         <div id="contenedorCategorias" class="container text-center">
             <h2><strong>Categorías</strong></h2>
                     <!-- Carrusel -->
-                    <div id="carouselExample" class="carousel slide">
+                    <div id="carouselCategorias" class="carousel slide">
                         <div class="carousel-inner">
                             <!-- Primer slide con las 3 tarjetas -->
                             <div class="carousel-item active">
@@ -163,11 +163,17 @@
                             </div>
                         </div>
                         <!-- Botones de control del carrusel -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-slide="prev">
                             <i class="bi bi-caret-left-fill"></i>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-slide="next">
                             <i class="bi bi-caret-right-fill"></i>
+                        </button>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCategorias" data-bs-slide="prev" id="siguienteItem" style="display: none;"> 
+                            
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselCategorias" data-bs-slide="next" id="anteriorItem" style="display: none;">
+                            
                         </button>
                     </div>
                 </div>
