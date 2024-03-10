@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var intervalId;
 
     function ajustarTarjetasVisibles() {
-        if (window.innerWidth <= 425) {
+        if (window.innerWidth <= 580) {
             tarjetas.forEach(function(tarjeta, index) {
                 tarjeta.style.display = index === currentIndex ? 'block' : 'none';
             });
