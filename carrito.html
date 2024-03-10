@@ -4,17 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrito de compras</title>
+  <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
   <!--Bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!--Styles-->
   <link rel="stylesheet" href="./css/estilosGlobales.css">
+  <link rel="stylesheet" href="./css/carrito.css" />
 </head>
 <body>
-  <!-- navBar-->
-  <header>
-    <nav class="navbar" id="navbar">
+  <!--Navegación-->
+  <header id="header">
+            <nav class="navbar" id="navbar">
                 <div class="navbarContainer navLogo" id="navLogo">
                     <div class="vacio"></div>
                     <img src="./src/img/logorosa.png" alt="Logo" />
@@ -23,10 +31,10 @@
                 </div>
                 <div class="navbarContainer navMenu" id="navMenu">
                     <ul>
-                        <li><a href="./index.html" class="menuLink">Inicio</a></li>
-                        <li><a href="./tienda.html" class="menuLink">Tienda</a></li>
-                        <li><a href="./nosotros.html" class="menuLink">Nosotros</a></li>
-                        <li><a href="./nosotros.html#contacto" class="menuLink">Contacto</a></li>
+                        <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
+                        <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
+                        <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
+                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
@@ -42,38 +50,28 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="./perfil.html#fav" class="navIconsItems"><i class="bi bi-heart"></i><h4>Favoritos</h4></a>
-                        </li>
-                        <li>
-                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><h4>Carrito</h4></a>
-                        </li>
-                        <li>
-                            <a href="./perfil.html" class="navIconsItems"><i class="bi bi-person"></i><h4>Perfil</h4></a>
+                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
                         </li>
                     </ul>
                 </div>
             </nav>
-    <br>
-    <br>
-    <br>
-    <br>
    <!-- Banner -->
     <div id="Banner" class="banner">
-      <div>
-        <h1>Carrito</h1>
-          </div>
-            <div class="breadcrumb">
-              <nav aria-labelledby="breadcrumb">
-                  <ol class="breadcrumb">
+        <div>
+            <h1>Carrito</h1>
+        </div>
+        <div class="breadcrumb">
+            <nav aria-labelledby="breadcrumb">
+                <ol class="breadcrumb">
                     <li class="breadcrumb-item" aria-current="page">
                         <!-- link cambiado a index -->
                         <a href="./index.html">Inicio</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Publicación de producto</li>
-                  </ol>
-              </nav>
-            </div>
-         </div>
+                    <li class="breadcrumb-item active" aria-current="page">Carrito</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
   </header>
   <aside>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -86,83 +84,56 @@
             </div>
             </div>
         </aside>
-  <div class="container">
-    <!--Lista de productos - Tabla-->
-    <div class="row">
-      <div class="col">
-         <!--Textos de encabezado - Tabla-->
-        <table class="table caption-top">
-        <thead>
-          <tr>
-            <th scope="col">Producto</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="" alt="">Aquí va una imagen</td>
-            <td>$1800</td>
-            <td>1</td>
-            <td>$1800</td>
-          </tr>
-          <tr>
-            <td><img src="" alt="">Aquí va una imagen</td>
-            <td>$1800</td>
-            <td>1</td>
-            <td>$1800</td>
-          </tr>
-          <tr>
-            <td><img src="" alt="">Aquí va una imagen</td>
-            <td>$1800</td>
-            <td>1</td>
-            <td>$1800</td>
-          </tr>
-        </tbody>
-        </table>
-        </div>
-        <!--Total Carrito-->
-        <div class="col">
-          <div>
-            <h2 class="titulosRosas">Total carrito</h2>
-            <div class="row">
-              <div class="col">
-                <p>Subtotal</p>
-              </div>
-              <div class="col">
-               <p>$1800</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <p>Envío</p>
-              </div>
-              <div class="col">
-                <p>$180</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <p>Total</p>
-              </div>
-              <div class="col">
-                <p>$1980</p>
-              </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Proceder al pago</button>
-        </div>
-      </div>
-    </div>
+  <!--Main-->
+  <!-- Tabla tomada de Bootstrap #Table group dividers-->
+  <main class="main">
+  <div class="container-table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Imagen</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Icono</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr>
+          <th scope="row"><img src="src/img/cojin.png" alt="cojín"></th>
+          <td>Asgaard cojín</td>
+          <td>$1,800</td>
+          <td>1</td>
+          <td><i class="bi bi-trash3-fill"></i></td>
+        </tr>
+        <tr>
+          <th scope="row"><img src="src/img/cojin.png" alt="cojín"></th>
+          <td>Asgaard cojín</td>
+          <td>$1,800</td>
+          <td>1</td>
+          <td><i class="bi bi-trash3-fill"></i></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+  <div class="container-total">
+    <div><h2><strong>Total del Carrito</strong></h2></div>
+    <div class="container-total-subtitulos"><p><span>Subtotal</span></p><p>$1,800.00</p></div>
+    <div class="container-total-subtitulos"><p><span>Envío</span></p><p>$180.00</p></div>
+    <div class="container-total-subtitulos"><p><span>Total</span></p><p class="p-total"><span>$1,980.00</span></p></div>
+    <div class="row flex-row d-flex justify-content-center"><button type="submit" class="btn btn-primary btn-total ">Proceder al pago</button></div>
+  </div>
+  </main>
+  <!--Termina Main-->
+  <!--Footer-->
   <footer class="col-12 flex-column d-flex">
     <div class="footerContent row d-flex">
         <div class="footerLogo col-sm-4 d-flex flex-column align-items-center">
-            <img class="logoRosa" src="./src/img/logorosa.png" alt="">
+            <img class="logoRosa" src="./src/img/logorosa.png" alt="" />
             <span>By Generation México</span>
         </div>
         <div class="footerVinculos col-sm-4 d-flex flex-column">
-            <h4>Vinculos</h4>
+            <h4>Vínculos</h4>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="tienda.html">Tienda</a></li>
@@ -172,17 +143,22 @@
         <div class="footerAyuda col-sm-4 d-flex flex-column">
             <h4>Ayuda</h4>
             <ul>
-                <li><a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a></li>
+                <li>
+                    <a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank"
+                        >Donar</a
+                    >
+                </li>
                 <li><a href="./nosotros.html#contacto">Contacto</a></li>
-                <li><a href="./politicas.html" target="_blank">Politicas de privacidad</a></li>
+                <li><a href="./politicas.html">Políticas de privacidad</a></li>
             </ul>
         </div>
     </div>
-    <hr>
+    <hr />
     <div class="footerDerechos row d-flex">
         <span>2024 YolliCalli. Todos los derechos reservados.</span>
     </div>
 </footer>
+  <!--Termina Footer-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <!--JS-->

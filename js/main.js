@@ -24,7 +24,7 @@ btnBuscar.addEventListener("click", function (event) {
         txtBusqueda.value = "";
     } else {
         console.log("se mandara a buscar el producto y se ira a la pagina de tienda");
-        sessionStorage.setItem("palabraBuscada", txtBusqueda.value);
+        localStorage.setItem("productoBuscar", txtBusqueda.value);
         txtBusqueda.value = txtBusqueda.value.trim();
         txtBusqueda.value = "";
         location.href = "tienda.html";
@@ -34,15 +34,15 @@ btnBuscar.addEventListener("click", function (event) {
 txtBusqueda.addEventListener("keyup", function (event) {
     if (event.code == "Enter" && txtBusqueda.value.length != 0) {
         location.href = "tienda.html";
-        sessionStorage.setItem("palabraBuscada", txtBusqueda.value);
+        localStorage.setItem("productoBuscar", txtBusqueda.value);
     }
 });
 
 if (window.matchMedia("(max-width: 425px)").matches) {
     navbar.appendChild(searchField);
     navbar.insertBefore(searchField, navbar.children[1]);
-    offcanvasbody.appendChild(navIcons);
     offcanvasbody.appendChild(navMenu);
+    offcanvasbody.appendChild(navIcons);
 } else {
     navIcons.appendChild(searchField);
     navIcons.insertBefore(searchField, navIcons.children[0]);
@@ -52,8 +52,17 @@ if (window.matchMedia("(max-width: 425px)").matches) {
 
 /* btnCancelarBusqueda.addEventListener("click", function (event) {
     divBusqueda.style.width = "0px";
+
+    divBusqueda.style.marginRight = "1px"
+    txtBusqueda.style.width = "0px";
+    txtBusqueda.value = txtBusqueda.value.trim();
+    txtBusqueda.value = "";
+    
+})
+/*Secion de la barra de navegacion */
+/* 
     divBusqueda.style.marginRight = "1px";
     txtBusqueda.value = txtBusqueda.value.trim();
     txtBusqueda.value = "";
-}); */
+*/
 /*Secion de la barra de navegacion */
