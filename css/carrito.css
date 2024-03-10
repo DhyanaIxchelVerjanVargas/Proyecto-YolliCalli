@@ -145,6 +145,23 @@
 
 /*Tabla*/
 
+.container-table {
+    display: none;
+}
+
+.claseAlerta {
+    display: none;
+    margin-top: 10px;
+    height: fit-content;
+    width: fit-content;
+    font-size: 30px;
+    background-color: #fff3e3;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--barlow);
+    text-align: center;
+}
+
 .titulo-cart-movil {
     display: none;
 }
@@ -183,6 +200,7 @@ td > i {
 
 td > img {
     width: 95px;
+    border-radius: 10px;
 }
 
 .div-cantidad {
@@ -197,9 +215,9 @@ td > img {
     flex-direction: column;
     border: solid 1px var(--bordes);
     border-radius: 10px;
-    width: 300px;
+    width: 350px;
     height: 290px;
-    padding: 10px 40px 20px;
+    padding: 10px 20px 20px;
     margin-left: 20px;
 }
 
@@ -221,6 +239,7 @@ td > img {
 
 .container-total-subtitulos span {
     font-weight: bold;
+    padding-right: 15px;
 }
 
 .p-right {
@@ -265,6 +284,11 @@ td > img {
     }
     
     /*Tabla*/
+
+    .claseAlerta {
+        font-size: 20px;
+    }
+
     .titulo-cart-movil {
         display: block;
         font-family: var(--barlow);
@@ -310,6 +334,7 @@ td > img {
     /*Container Total*/
     /*Aquí me quedé*/
     .container-total {
+        width: 300px;
         height: 260px;
         margin: 20px 0;
         padding-bottom: 0;
