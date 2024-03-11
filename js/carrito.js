@@ -7,6 +7,7 @@ let alertaCarritoVacio = document.getElementById("alertaCarritoVacio");
 let mostrarTabla = document.getElementById("mostrarTabla");
 let main = document.getElementById("main");
 let borrarElemento = document.getElementById("borrarElemento");
+let botonVaciarCarrito = document.getElementById("botonVaciarCarrito");
 let tablaCarrito = document.querySelector("#tablaCarrito");
 let productosCarrito = new Array();
 let subtotal = 0;
@@ -20,7 +21,13 @@ function addProducto(producto){
             <td><img src="${producto.imagen}" alt="${producto.nombre}"></td>
             <td>${producto.nombre}</td>
             <td>$${producto.precio}</td>
-            <td><div class="div-cantidad">${producto.cantidad}</div></td>
+            <td><div class="div-cantidad-global"><div class="div-cantidad">${producto.cantidad}</div>
+                <div class="div-signos">
+                <i class="bi bi-dash"></i>
+                <i class="bi bi-plus"></i>
+                </div>
+                </div>
+            </td>
             <td><i class="bi bi-trash3-fill borrarProducto" data-id="${producto.id}" ></i></td>
         </tr>
     `)
@@ -30,6 +37,7 @@ cargarEventListeners();
 function cargarEventListeners(){
     // Elimina Producto del carrito
     tablaCarrito.addEventListener('click', eliminarProducto);
+    botonVaciarCarrito.addEventListener("click",vaciarCarrito);
 }
 
 function traerProductos(){
@@ -44,6 +52,11 @@ function precioPorProducto(producto){
     let precio = producto.precio;
     let cantidad = producto.cantidad;
     return precio * cantidad;
+}
+
+function vaciarCarrito(){
+    productosCarrito = [];
+    actualizarPagina();
 }
 
 function actualizarPagina(){

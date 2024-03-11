@@ -204,9 +204,42 @@ td > img {
 }
 
 .div-cantidad {
-    display: inline;
     padding: 6px 15px;
     border: solid 1px var(--bordes);
+    width: fit-content;
+}
+
+.div-cantidad-global{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-signos{
+    display: flex;
+    justify-content: center;
+}
+
+.bi-dash {
+    padding-right: 2px;
+    font-size: large;
+}
+
+.bi-plus {
+    padding-left: 2px;
+    font-size: large;
+}
+
+.bi-dash:hover {
+    cursor: pointer;
+}
+
+.bi-plus:hover  {
+    cursor: pointer;
+}
+
+.bi-trash3-fill:hover  {
+    cursor: pointer;
 }
 
 /*Container Total*/
@@ -263,13 +296,25 @@ td > img {
     font-family: var(--barlow);
     font-size: 15px;
     border-radius: 8px;
+}
+
+.btn-total {
     margin-top:4rem;
 }
+
+.btn:active {
+    background-color: #e1456c;
+    color: #ffff;
+    border-color: #e1456c;
+}
+
 .btn:hover {
     background-color: #e1456c;
     color: #ffff;
     border-color: #e1456c;
 }
+
+
 
 /* Termina Main*/
 
@@ -351,17 +396,12 @@ td > img {
         margin-top: 2rem;
     }
     
-    .btn {
+    .btn-total {
         width: 215px;
         height: 45px;
         font-size: 16px;
         border-radius: 8px;
         margin-top:2rem;
-    }
-    .btn:hover {
-        background-color: #e1456c;
-        color: #ffff;
-        border-color: #e1456c;
     }
 
 }
