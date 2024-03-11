@@ -18,6 +18,7 @@ let alertRegistroUsuarioTexto =document.getElementById("alertRegistroUsuarioText
 let alertRegistroUsuario = document.getElementById("alertRegistroUsuario")
 let alertInicioSesion = document.getElementById("alertInicioSesion");
 let alertInicioSesionTexto = document.getElementById("alertInicioSesionTexto");
+let isLogged = false;
 let personaNueva = new Array();
 
 
@@ -209,17 +210,16 @@ let alertEmailInicioSesion = document.getElementById("alertEmailInicioSesion");
 let alertContrasenaInicioSesion = document.getElementById("alertContrasenaInicioSesion");
 
 
-
 botonIniciarSesion.addEventListener("click", function(event) {
     event.preventDefault();
-    let isCorrect = true;
     alertEmailInicioSesion.innerHTML = "";
     alertContrasenaInicioSesion.innerHTML = "";
     alertInicioSesionTexto.innerHTML= "";
     alertEmailInicioSesion.style.display = "none";
-    alertInicioSesion.style.display ="none"
+    alertInicioSesion.style.display ="none";
     alertContrasenaInicioSesion.style.display = "none";
-
+    alertRegistroUsuarioTexto.innerHTML="";
+    alertRegistroUsuario.style.display="none";
     inputEmailInicioSesion.style.border = "solid var(--rosa-mexicano) thin";
     inputEmailInicioSesion.style.removeProperty("box-shadow");
     inputContrasenaInicioSesion.style.border = "solid var(--rosa-mexicano) thin";
@@ -230,12 +230,13 @@ botonIniciarSesion.addEventListener("click", function(event) {
     //(usuario => usuario.emailRegistro === inputEmailInicioSesion.value);
     let usuarioEncontrado = usuariosGuardados.find(usuario => usuario.emailRegistro === inputEmailInicioSesion.value);
     let contrasenaEncontrada = usuariosGuardados.find(usuario => usuario.contrasenaRegistro === inputContrasenaInicioSesion.value);
+    console.log(usuarioEncontrado);
     
     
-    if (!usuarioEncontrado || (inputContrasenaInicioSesion.value !== usuarioEncontrado.contrasenaRegistro)) {
+    if (!usuarioEncontrado || !contrasenaEncontrada) {
         alertInicioSesionTexto.insertAdjacentHTML("beforeend",`
         <span style="font-family: var(--barlow); font-size: var( --titulos-h3-rutas);">
-            Usuario o contraseña incorrectos
+            Usuario o contraseña incorrectos.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </span>`);
         alertInicioSesion.style.display = "flex";
@@ -244,9 +245,21 @@ botonIniciarSesion.addEventListener("click", function(event) {
         inputEmailInicioSesion.style.boxShadow = "0 0 5px #ff0909";
         inputContrasenaInicioSesion.style.border = "solid #ff0909 thin";
         inputContrasenaInicioSesion.style.boxShadow = "0 0 5px #ff0909";
-        isCorrect = false;
-    } 
-      
+        isLogged = false;
+    } else{
+        isLogged = true;
+        sessionStorage.setItem("isLogged", isLogged);
+        alertRegistroUsuarioTexto.insertAdjacentHTML("beforeend",`
+        <span style="font-family: var(--barlow); font-size: var( --titulos-h3-rutas);">
+            Iniciando sesión...
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </span>`);
+        alertRegistroUsuario.style.display = "flex";
+        setTimeout(function() {
+            location.href = "index.html";
+        }, 2000);
+    }
+    
         
     
     })
