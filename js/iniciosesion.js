@@ -16,6 +16,9 @@ let alertConfirmarContrasena = document.getElementById("alertConfirmarContrasena
 let alertCondicionesRegistro = document.getElementById("alertCondicionesRegistro");
 let alertRegistroUsuarioTexto =document.getElementById("alertRegistroUsuarioTexto")
 let alertRegistroUsuario = document.getElementById("alertRegistroUsuario")
+let alertInicioSesion = document.getElementById("alertInicioSesion");
+let alertInicioSesionTexto = document.getElementById("alertInicioSesionTexto");
+let isLogged = false;
 let personaNueva = new Array();
 
 
@@ -80,11 +83,20 @@ botonRegistrar.addEventListener("click", function(event) {
     inputContrasenaRegistro.value = inputContrasenaRegistro.value.trim();
     inputConfirmarContrasena.value = inputConfirmarContrasena.value.trim();
     isCorrect = true;
-    //validacion politicas
+    //usuario ya registrado
+    let usuariosGuardados = JSON.parse(localStorage.getItem("personaNueva")) || [];
+    if (usuariosGuardados.some(usuario => usuario.emailRegistro === inputEmailRegistro.value)) {
+        alertEmailRegistro.style.display = "inline";
+        alertEmailRegistro.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Este correo electrónico ya está registrado.</span>`);
+        inputEmailRegistro.focus();
+        inputEmailRegistro.style.border = "solid #ff0909 thin";
+        inputEmailRegistro.style.boxShadow = "0 0 5px #ff0909";
+        isCorrect = false;
+    }
+     //validacion politicas
     if (!checkCondicionesRegistro.checked) {
         alertCondicionesRegistro.style.display = "inline";
         alertCondicionesRegistro.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Debe aceptar política de privacidad.</span>`);
-        alertCondicionesRegistro.style.display = "inline";
         checkCondicionesRegistro.focus();
         checkCondicionesRegistro.style.border = "solid #ff0909 thin";
         checkCondicionesRegistro.style.boxShadow = "0 0 5px #ff0909";
@@ -94,7 +106,6 @@ botonRegistrar.addEventListener("click", function(event) {
     if (inputConfirmarContrasena.value !== inputContrasenaRegistro.value) {
         alertConfirmarContrasena.style.display = "inline";
         alertConfirmarContrasena.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Las contraseñas no coinciden.</span>`);
-        alertConfirmarContrasena.style.display = "inline";
         inputConfirmarContrasena.focus();
         inputConfirmarContrasena.style.border = "solid #ff0909 thin";
         inputConfirmarContrasena.style.boxShadow = "0 0 5px #ff0909";
@@ -104,7 +115,6 @@ botonRegistrar.addEventListener("click", function(event) {
     if (inputContrasenaRegistro.value.length < 8) {
         alertContrasena.style.display = "inline";
         alertContrasena.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">La contraseña debe tener al menos 8 caracteres.</span>`);
-        alertContrasena.style.display = "inline";
         inputContrasenaRegistro.focus();
         inputContrasenaRegistro.style.border = "solid #ff0909 thin";
         inputContrasenaRegistro.style.boxShadow = "0 0 5px #ff0909";
@@ -114,7 +124,6 @@ botonRegistrar.addEventListener("click", function(event) {
     if (inputEmailRegistro.value.length == 0) {
         alertEmailRegistro.style.display = "inline";
         alertEmailRegistro.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un correo.</span>`);
-        alertEmailRegistro.style.display = "inline";
         inputEmailRegistro.focus();
         inputEmailRegistro.style.border = "solid #ff0909 thin";
         inputEmailRegistro.style.boxShadow = "0 0 5px #ff0909";
@@ -122,7 +131,6 @@ botonRegistrar.addEventListener("click", function(event) {
     } else if (!expresiones.correo.test(inputEmailRegistro.value) || inputEmailRegistro.value.length <= 5) {
         alertEmailRegistro.style.display = "inline";
         alertEmailRegistro.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Correo inválido.</span>`);
-        alertEmailRegistro.style.display = "inline";
         inputEmailRegistro.focus();
         inputEmailRegistro.style.border = "solid #ff0909 thin";
         inputEmailRegistro.style.boxShadow = "0 0 5px #ff0909";
@@ -132,7 +140,6 @@ botonRegistrar.addEventListener("click", function(event) {
     if (inputTelefonoRegistro.value.length == 0) {
         alertTelefonoRegistro.style.display = "inline";
         alertTelefonoRegistro.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un número de teléfono.</span>`);
-        alertTelefonoRegistro.style.display = "inline";
         inputTelefonoRegistro.focus();
         inputTelefonoRegistro.style.border = "solid #ff0909 thin";
         inputTelefonoRegistro.style.boxShadow = "0 0 5px #ff0909";
@@ -140,7 +147,6 @@ botonRegistrar.addEventListener("click", function(event) {
     } else if (!expresiones.telefono.test(inputTelefonoRegistro.value)) {
         alertTelefonoRegistro.style.display = "inline";
         alertTelefonoRegistro.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Número de teléfono inválido.</span>`);
-        alertTelefonoRegistro.style.display = "inline";
         inputTelefonoRegistro.focus();
         inputTelefonoRegistro.style.border = "solid #ff0909 thin";
         inputTelefonoRegistro.style.boxShadow = "0 0 5px #ff0909";
@@ -148,7 +154,6 @@ botonRegistrar.addEventListener("click", function(event) {
     }else if (inputTelefonoRegistro.value == 0) {
         alertTelefonoRegistro.style.display = "inline";
         alertTelefonoRegistro.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese un número de teléfono válido.</span>`);
-        alertTelefonoRegistro.style.display = "inline";
         inputTelefonoRegistro.focus();
         inputTelefonoRegistro.style.border = "solid #ff0909 thin";
         inputTelefonoRegistro.style.boxShadow = "0 0 5px #ff0909";
@@ -158,7 +163,6 @@ botonRegistrar.addEventListener("click", function(event) {
     if (inputNombreCompletoRegistro.value.length == 0) {
         alertNombreCompleto.style.display = "inline";
         alertNombreCompleto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese su nombre completo.</span>`);
-        alertNombreCompleto.style.display = "inline";
         inputNombreCompletoRegistro.focus();
         inputNombreCompletoRegistro.style.border = "solid #ff0909 thin";
         inputNombreCompletoRegistro.style.boxShadow = "0 0 5px #ff0909";
@@ -166,7 +170,6 @@ botonRegistrar.addEventListener("click", function(event) {
     }else if (inputNombreCompletoRegistro.value.length <=10) {
         alertNombreCompleto.style.display = "inline";
         alertNombreCompleto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">El nombre es muy corto.</span>`);
-        alertNombreCompleto.style.display = "inline";
         inputNombreCompletoRegistro.focus();
         inputNombreCompletoRegistro.style.border = "solid #ff0909 thin";
         inputNombreCompletoRegistro.style.boxShadow = "0 0 5px #ff0909";
@@ -196,10 +199,67 @@ botonRegistrar.addEventListener("click", function(event) {
         inputContrasenaRegistro.value = "";
         inputConfirmarContrasena.value = "";
         checkCondicionesRegistro.value = "";
+    }
+
+});
+let inputEmailInicioSesion = document.getElementById("inputEmailInicioSesion");
+let inputContrasenaInicioSesion = document.getElementById("inputContrasenaInicioSesion");
+let botonIniciarSesion = document.getElementById("boton-iniciar-sesion");
+
+let alertEmailInicioSesion = document.getElementById("alertEmailInicioSesion");
+let alertContrasenaInicioSesion = document.getElementById("alertContrasenaInicioSesion");
+
+
+botonIniciarSesion.addEventListener("click", function(event) {
+    event.preventDefault();
+    alertEmailInicioSesion.innerHTML = "";
+    alertContrasenaInicioSesion.innerHTML = "";
+    alertInicioSesionTexto.innerHTML= "";
+    alertEmailInicioSesion.style.display = "none";
+    alertInicioSesion.style.display ="none";
+    alertContrasenaInicioSesion.style.display = "none";
+    alertRegistroUsuarioTexto.innerHTML="";
+    alertRegistroUsuario.style.display="none";
+    inputEmailInicioSesion.style.border = "solid var(--rosa-mexicano) thin";
+    inputEmailInicioSesion.style.removeProperty("box-shadow");
+    inputContrasenaInicioSesion.style.border = "solid var(--rosa-mexicano) thin";
+    inputContrasenaInicioSesion.style.removeProperty("box-shadow");
+
+    //variable que recupera la informacion de localstoraege
+    let usuariosGuardados = JSON.parse(localStorage.getItem("personaNueva")) || [];
+    //(usuario => usuario.emailRegistro === inputEmailInicioSesion.value);
+    let usuarioEncontrado = usuariosGuardados.find(usuario => usuario.emailRegistro === inputEmailInicioSesion.value);
+    let contrasenaEncontrada = usuariosGuardados.find(usuario => usuario.contrasenaRegistro === inputContrasenaInicioSesion.value);
+    console.log(usuarioEncontrado);
+    
+    
+    if (!usuarioEncontrado || !contrasenaEncontrada) {
+        alertInicioSesionTexto.insertAdjacentHTML("beforeend",`
+        <span style="font-family: var(--barlow); font-size: var( --titulos-h3-rutas);">
+            Usuario o contraseña incorrectos.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </span>`);
+        alertInicioSesion.style.display = "flex";
+        inputEmailInicioSesion.focus();
+        inputEmailInicioSesion.style.border = "solid #ff0909 thin";
+        inputEmailInicioSesion.style.boxShadow = "0 0 5px #ff0909";
+        inputContrasenaInicioSesion.style.border = "solid #ff0909 thin";
+        inputContrasenaInicioSesion.style.boxShadow = "0 0 5px #ff0909";
+        isLogged = false;
+    } else{
+        isLogged = true;
+        sessionStorage.setItem("isLogged", isLogged);
+        alertRegistroUsuarioTexto.insertAdjacentHTML("beforeend",`
+        <span style="font-family: var(--barlow); font-size: var( --titulos-h3-rutas);">
+            Iniciando sesión...
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </span>`);
+        alertRegistroUsuario.style.display = "flex";
         setTimeout(function() {
             location.href = "index.html";
         }, 2000);
     }
-
-});
-
+    
+        
+    
+    })

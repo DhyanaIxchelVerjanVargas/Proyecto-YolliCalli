@@ -75,6 +75,9 @@
     <div class="alert alert-success alert-dismissible mx-5 fade show alerta"  role="alert" id="alertRegistroUsuario" style="display: none;">
         <p id="alertRegistroUsuarioTexto"></p>
     </div>
+    <div class="alert alert-danger alert-dismissible mx-5 fade show alerta"  role="alert" id="alertInicioSesion" style="display: none;">
+        <p id="alertInicioSesionTexto"></p>
+    </div>
     <!--Aqui inicia formulario inicio de sesion-->
     <div class="container">
         <div class="row">
@@ -83,36 +86,37 @@
                     <form>
                         <h2 class="titulosRosas">Iniciar Sesión</h2>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <label for="inputEmailInicioSesion" class="form-label">Correo Electrónico</label>
                             <input 
-                            type="email" 
-                            class="form-control form-control-lg" 
-                            id="email" 
-                            placeholder="Ingresa tu correo electrónico" 
-                            aria-describedby="emailHelp" 
-                            autocomplete="off";
-                            required>
+                                type="email" 
+                                class="form-control form-control-lg" 
+                                id="inputEmailInicioSesion" 
+                                placeholder="Ingresa tu correo electrónico" 
+                                aria-describedby="emailHelp" 
+                                autocomplete="email"
+                                required>
+                            <div id="alertEmailInicioSesion" style="display:none"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="contrasena" class="form-label">Contraseña</label>
+                            <label for="inputContrasenaInicioSesion" class="form-label">Contraseña</label>
                             <input 
-                            type="password" 
-                            class="form-control form-control-lg" 
-                            id="contrasena" 
-                            placeholder="Ingresa tu contraseña" 
-                            required>
+                                type="password" 
+                                class="form-control form-control-lg" 
+                                id="inputContrasenaInicioSesion" 
+                                placeholder="Ingresa tu contraseña" 
+                                required>
+                            <div id="alertContrasenaInicioSesion" style="display:none"></div>
                         </div>
-                        <a href="#" class="mb-3 d-block">Recuperar contraseña</a>
                         <div class="botonIniciar">
-                            <button type="submit" class="boton" id="boton-iniciar">
+                            <button type="submit" class="boton" id="boton-iniciar-sesion">
                                 <p>Iniciar sesión</p>
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
+            <!--Formulario registro-->
             <div class="col-md-6">
-                <!--Aqui inicia formulario registro-->
                 <div class="registro"> 
                     <form>
                         <h2 class="titulosRosas">Registrarse</h2>
@@ -137,7 +141,7 @@
                                 id="inputEmailRegistro" 
                                 placeholder="Ingresa tu correo electrónico" 
                                 name="email" 
-                                autocomplete="off";
+                                autocomplete="current-password";
                                 required>
                             <div id="alertEmailRegistro" style="display: none"></div>
                         </div>
@@ -148,7 +152,7 @@
                                 class="form-control" 
                                 style="font-size: 18px;"
                                 id="inputTelefonoRegistro" 
-                                placeholder="Ingresa tu número telefónico a 10 digitos" 
+                                placeholder="Ingresa tu número telefónico a 10 dígitos" 
                                 name="telefono" 
                                 required>
                             <div id="alertTelefonoRegistro" style="display: none"></div>
@@ -193,6 +197,8 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
     </div>
     <footer class="col-12 flex-column d-flex">
         <div class="footerContent row d-flex">
