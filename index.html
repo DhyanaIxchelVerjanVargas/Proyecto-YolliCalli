@@ -21,75 +21,77 @@
 
         <title>YolliCalli</title>
     </head>
-<body>
-    <header>
-        <!--Navegación-->
-            <nav class="navbar" id="navbar">
-                <div class="navbarContainer navLogo" id="navLogo">
-                    <div class="vacio"></div>
-                    <img src="./src/img/logorosa.png" alt="Logo" />
-                    <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
-                        <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
-                </div>
-                <div class="navbarContainer navMenu" id="navMenu">
-                    <ul>
-                        <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
-                        <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
-                        <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
-                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
-                    </ul>
-                </div>
-                <div class="navbarContainer navIcons" id="navIcons">
-                    <div class="searchField" role="search" id="searchField">
-                        <input
-                            class="searchBox searchInput"
-                            type="search"
-                            placeholder="Buscar"
-                            aria-label="Search"
-                            id="txtBusqueda"
-                        />
-                        <a class="navIconsItems btnBuscar" id="btnBuscar"><i class="bi bi-search"></i></a>
-                    </div>
-                    <ul>
-                        <li>
-                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-    </header>
-    <!--Menu hamburguesa-->
-        <aside>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                    <div class="vacio"></div>
-                    <img src="./src/img/logorosa.png" alt="Logo" />
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body" id="offcanvas-body"></div>
+    <body>
+        <header>
+      <!--Navegación-->
+      <nav class="navbar" id="navbar">
+        <div class="navbarContainer navLogo" id="navLogo">
+            <div class="vacio"></div>
+            <img src="./src/img/logorosa.png" alt="Logo" />
+            <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
+                <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
+        </div>
+        <div class="navbarContainer navMenu" id="navMenu">
+            <ul>
+                <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
+                <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
+                <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
+                <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
+            </ul>
+        </div>
+        <div class="navbarContainer navIcons" id="navIcons">
+            <div class="searchField" role="search" id="searchField">
+                <input
+                    class="searchBox searchInput"
+                    type="search"
+                    placeholder="Buscar"
+                    aria-label="Search"
+                    id="txtBusqueda"
+                />
+                <a class="navIconsItems btnBuscar" id="btnBuscar"><i class="bi bi-search"></i></a>
             </div>
-        </aside>
+            <ul>
+                <li>
+                    <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!--Menu hamburguesa-->
+<aside>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <div class="vacio"></div>
+            <img src="./src/img/logorosa.png" alt="Logo" />
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="offcanvas-body"></div>
+    </div>
+</aside>
     <!-----------------Banner nuevos productos-------------------------------------------------------------------->
     
     <div class="fondoContenedor">
-            <div class="card-body">
-                <h2 class="card-title"><strong>Nuevos productos</strong></h2>
-                    <h3 class="card-subtitle text-danger"><strong>¡Conoce nuestra nueva colección!</strong></h3>
-                    <p class="card-text small">Explora las últimas incorporaciones a nuestra selección de productos artesanales en YolliCalli. Descubre la autenticidad y el talento detrás de cada artículo mientras apoyas a nuestros artesanos mexicanos.</p>
-                    <div class="ver-mas">
+        <div class="card-body">
+            <h2 class="card-title"><strong>Nuevos productos</strong></h2>
+            <h3 class="card-subtitle text-danger"><strong>¡Conoce nuestra nueva colección!</strong></h3>
+            <p class="card-text small">Explora las últimas incorporaciones a nuestra selección de productos artesanales en YolliCalli. Descubre la autenticidad y el talento detrás de cada artículo mientras apoyas a nuestros artesanos mexicanos.</p>
+            <div class="ver-mas">
+                <a href="./tienda.html">
                     <button type="button" class="btn btn-pink btn-rounded" data-bs-dismiss="offcanvas" aria-label="Ver más">Ver más</button>
-                    </div>
+                </a>
             </div>
         </div>
-
+    </div>
+    
         <!------------------------Contenedor Categorías------------------------------------>
         <div id="contenedorCategorias" class="container text-center">
             <h2><strong>Categorías</strong></h2>
                     <!-- Carrusel -->
-                    <div id="carouselCategorias" class="carousel slide">
+                    <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner">
                             <!-- Primer slide con las 3 tarjetas -->
-                            <div class="carousel-item active">
+                            <div class="carousel-item active" id="CI-1">
                                 <div class="row justify-content-center align-items-center">
                                     <!-- Tarjeta de Categoría 1 -->
                                     <div class="col-sm-4 tarjetaCategoria">
@@ -104,9 +106,9 @@
                                     </div>
                                     <!-- Tarjeta de Categoría 2 -->
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CATEGORIA_CP2">
+                                        <div class="card cardCategorias" id="CP2">
                                             <div class="caraPrincipal">
-                                                <img src="src/img/2.png" class="card-img-top" alt="Alimentos no perecederos">
+                                                <img src="src/img/2.png" class="card-img-top" alt="ropa">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Ropa</h5>
                                                 </div>
@@ -115,7 +117,7 @@
                                     </div>
                                     <!-- Tarjeta de Categoría 3 -->
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CATEGORIA_CP3">
+                                        <div class="card cardCategorias" id="CP3">
                                             <div class="caraPrincipal">
                                                 <img src="src/img/1.png" class="card-img-top" alt="Alimentos no perecederos">
                                                 <div class="card-body">
@@ -127,34 +129,34 @@
                                 </div>
                             </div>
                             <!-- Segundo slide con las mismas tarjetas -->
-                            <div class="carousel-item">
+                            <div class="carousel-item" id="CI-2">
                                 <div class="row">
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CP1">
+                                        <div class="card cardCategorias" id="CP4">
                                             <div class="caraPrincipal">
                                                 <img src="src/img/3.png" class="card-img-top" alt="Cojín Tenango">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Accesorios para el hogar</h5>
+                                                    <h5 class="card-title">Joyeria y Bisuteria</h5>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CATEGORIA_CP2">
+                                        <div class="card cardCategorias" id="CP5">
                                             <div class="caraPrincipal">
                                                 <img src="src/img/2.png" class="card-img-top" alt="Alimentos no perecederos">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Ropa</h5>
+                                                    <h5 class="card-title">Arte y Pintura</h5>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CATEGORIA_CP3">
+                                        <div class="card cardCategorias" id="CP6">
                                             <div class="caraPrincipal">
                                                 <img src="src/img/1.png" class="card-img-top" alt="Alimentos no perecederos">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Alimentos no perecederos</h5>
+                                                    <h5 class="card-title">Accesorios</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -169,12 +171,8 @@
                         <button class="carousel-control-next" type="button" data-bs-slide="next">
                             <i class="bi bi-caret-right-fill"></i>
                         </button>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCategorias" data-bs-slide="prev" id="siguienteItem" style="display: none;"> 
-                            
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselCategorias" data-bs-slide="next" id="anteriorItem" style="display: none;">
-                            
-                        </button>
+                        <button id="siguienteItem" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="display: none;"></button>
+                        <button id="anteriorItem" type="button" data-bs-target="#carouselExample" data-bs-slide="next" style="display: none;"></button>
                     </div>
                 </div>
         
@@ -198,6 +196,7 @@
                                 <span class="productPrecio">$400.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Hidalgo</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -227,6 +226,7 @@
                                 <span class="productPrecio">$300.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Chiapas</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -256,6 +256,7 @@
                                 <span class="productPrecio">$500.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Oaxaca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -285,6 +286,7 @@
                                 <span class="productPrecio">$200.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Oaxaca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a href="#" class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -314,6 +316,7 @@
                                 <span class="productPrecio">$400.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Oaxaca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -343,6 +346,7 @@
                                 <span class="productPrecio">$450.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Guerrero</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -372,6 +376,7 @@
                                 <span class="productPrecio">$250.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Oaxaca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -401,6 +406,7 @@
                                 <span class="productPrecio">$100.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Pachuca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a href="#" class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -422,13 +428,16 @@
     <!---------------------------------------------------------------------------------------------------->
     <div class="container text-center">
         <div>
-            <button type="button" class="btn btn-outline-danger btn-lg">Ver más</button>
+            <a href="./tienda.html">
+                <button type="button" class="btn btn-outline-danger btn-lg">Ver más</button>
+            </a>
         </div>
         <br>
         <p>Conoce a las familias artesanas</p>
         <br>
         <h2><strong>#ComercioJusto</strong></h2>
     </div>
+    
     <!----------------------Footer------------------------------------------------>
         <footer class="col-12 flex-column d-flex">
                     <div class="footerContent row d-flex">
@@ -466,6 +475,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
         <script src="./js/main.js"></script>
+        <script src="./js/index.js"></script>
+
     </body>
 </html>
