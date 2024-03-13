@@ -33,7 +33,7 @@
                     <div class="vacio"></div>
                     <img src="./src/img/logorosa.png" alt="Logo" />
                     <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
-                        <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
+                        <span class="btnIconCollapse"><i class="bi bi-list"></i></span></button>
                 </div>
                 <div class="navbarContainer navMenu" id="navMenu">
                     <ul>
@@ -67,7 +67,7 @@
                     <h1>Nosotros</h1>
                 </div>
                 <div class="breadcrumb">
-                    <nav aria-labelledby="breadcrumb">
+                    <nav aria-labelledby="breadcrumb" id="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item" aria-current="page">
                                 <!-- link cambiado a index -->
@@ -81,7 +81,7 @@
         </header>
         <!--Menu hamburguesa-->
         <aside>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRight">
             <div class="offcanvas-header">
                 <div class="vacio"></div>
                 <img src="./src/img/logorosa.png" alt="Logo" />
@@ -103,7 +103,7 @@
                 <div class="botonDonar">
                     <a href="https://www.paypal.com/paypalme/yollicalli" target="_blank">
                     <button type="button" class="boton" id="boton-donar">
-                        <p><i class="bi bi-paypal"></i> Donar</p>
+                        <i class="bi bi-paypal"></i> Donar
                     </button>
                 </a>
                 </div>
@@ -141,7 +141,7 @@
         </section>
         <section class="conocenos contenedor margenes">
             <!--=================================================Conócenos================================-->
-            <main class="container">
+            <div class="container">
                 <section class="conocenos">
                     <div class="texto-intro">
                         <h2>Conócenos</h2>
@@ -175,7 +175,7 @@
                             <p>Abril</p>
                             <a href="https://www.linkedin.com/in/abril-barrera1/" target="_blank">LinkedIn</a>
                         </div>
-                        <div class="persona" data-toggle="modal" data-target="#EstefaníaModal">
+                        <div class="persona" data-toggle="modal" data-target="#EstefaniaModal">
                             <img src="src/img/Photoroom-20240213_140538_8.png" alt="Estefanía" />
                             <p>Nadia</p>
                             <a href="http://linkedin.com/in/nadiaemg/" target="_blank">LinkedIn</a>
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
             <!--=====================================================================================Modales-->
             <!-- Modal Corey -->
             <div
@@ -204,7 +204,7 @@
                 id="CoreyModal"
                 tabindex="-1"
                 role="dialog"
-                aria-labelledby="CoreyModalLabel"
+                aria-labelledby="CoreyModal"
                 aria-hidden="true"
             >
                 <div class="modal-dialog modal-sm" role="document">
@@ -214,7 +214,7 @@
                             <img src="src/img/Photoroom-20240213_140537_1.png" alt="Corey" />
                             <p class="nombreModal">Corey</p>
                             <p>Corey es una persona apasionada por la tecnología, es desarrollador fullstack Jr</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton-cerrar">Aceptar</button>
+                            <button type="button" class="btn btn-primary boton-cerrar" data-dismiss="modal">Aceptar</button>
                         </div>
                     </div>
                 </div>
@@ -225,7 +225,7 @@
                 id="OllincatlModal"
                 tabindex="-1"
                 role="dialog"
-                aria-labelledby="OllincatlModalLabel"
+                aria-labelledby="OllincatlModal"
                 aria-hidden="true"
             >
                 <div class="modal-dialog modal-sm" role="document">
@@ -242,7 +242,7 @@
                                 Egresado de la licenciatura de Matemáticas Aplicadas y Computación y Desarrollador Full
                                 Stack Junior en proyecto e-commerce YolliCalli.
                             </p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton-cerrar">Aceptar</button>
+                            <button type="button" class="btn btn-primary boton-cerrar" data-dismiss="modal">Aceptar</button>
                         </div>
                     </div>
                 </div>
@@ -253,7 +253,7 @@
                 id="EdgarModal"
                 tabindex="-1"
                 role="dialog"
-                aria-labelledby="EdgarModalLabel"
+                aria-labelledby="EdgarModal"
                 aria-hidden="true"
             >
                 <div class="modal-dialog modal-sm" role="document">
@@ -270,7 +270,7 @@
                                 Desarrollador Java Full Stack en el proyecto de e-commerce “YolliCalli” e Ingeniero en
                                 Mecatrónica.
                             </p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton-cerrar">Aceptar</button>
+                            <button type="button" class="btn btn-primary boton-cerrar" data-dismiss="modal">Aceptar</button>
                         </div>
                     </div>
                 </div>
@@ -281,7 +281,7 @@
                 id="JetsaelModal"
                 tabindex="-1"
                 role="dialog"
-                aria-labelledby="JetsaelModalLabel"
+                aria-labelledby="JetsaelModal"
                 aria-hidden="true"
             >
                 <div class="modal-dialog modal-sm" role="document">
@@ -297,7 +297,7 @@
                             <p>
                                 Comunicólogo y Desarrollador Full Java Stack en el proyecto de e-commerce “YolliCalli”.
                             </p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton-cerrar">Aceptar</button>
+                            <button type="button" class="btn btn-primary boton-cerrar" data-dismiss="modal">Aceptar</button>
                         </div>
                     </div>
                 </div>
@@ -308,7 +308,7 @@
                 id="AbrilModal"
                 tabindex="-1"
                 role="dialog"
-                aria-labelledby="AbrilModalLabel"
+                aria-labelledby="AbrilModal"
                 aria-hidden="true"
             >
                 <div class="modal-dialog modal-sm modal" role="document">
@@ -322,7 +322,7 @@
                             />
                             <p class="nombreModal">Abril</p>
                             <p>Arquitecta y desarrolladora Java Full Stack Jr dentro del e-commerce YolliCalli.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton-cerrar">Aceptar</button>
+                            <button type="button" class="btn btn-primary boton-cerrar" data-dismiss="modal">Aceptar</button>
                         </div>
                     </div>
                 </div>
@@ -330,10 +330,10 @@
             <!-- Modal Estefanía-->
             <div
                 class="modal fade"
-                id="EstefaníaModal"
+                id="EstefaniaModal"
                 tabindex="-1"
                 role="dialog"
-                aria-labelledby="EstefaníaModalLabel"
+                aria-labelledby="EstefaniaModal"
                 aria-hidden="true"
             >
                 <div class="modal-dialog modal-sm" role="document">
@@ -350,7 +350,7 @@
                                 Geocientífica y Desarrolladora Java Full Stack en el proyecto de comercio electrónico
                                 YolliCalli
                             </p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton-cerrar">Aceptar</button>
+                            <button type="button" class="btn btn-primary boton-cerrar" data-dismiss="modal">Aceptar</button>
                         </div>
                     </div>
                 </div>
@@ -361,7 +361,7 @@
                 id="UlisesModal"
                 tabindex="-1"
                 role="dialog"
-                aria-labelledby="UlisesModalLabel"
+                aria-labelledby="UlisesModal"
                 aria-hidden="true"
             >
                 <div class="modal-dialog modal-sm" role="document">
@@ -378,7 +378,7 @@
                                 Ingeniero quimico metalurgico, desarrollador java full stack jr en proyecto YolliCalli,
                                 he sido valuador, gerente, analista de información y de facturación.
                             </p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton-cerrar">Aceptar</button>
+                            <button type="button" class="btn btn-primary boton-cerrar" data-dismiss="modal">Aceptar</button>
                         </div>
                     </div>
                 </div>
@@ -389,7 +389,7 @@
                 id="DhyanaModal"
                 tabindex="-1"
                 role="dialog"
-                aria-labelledby="DhyanaModalLabel"
+                aria-labelledby="DhyanaModal"
                 aria-hidden="true"
             >
                 <div class="modal-dialog modal-sm" role="document">
@@ -406,7 +406,7 @@
                                 Ingeniera en Sistemas Computacionales y Desarrolladora Full Stack Junior en proyecto
                                 YolliCalli.
                             </p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton-cerrar">Aceptar</button>
+                            <button type="button" class="btn btn-primary boton-cerrar" data-dismiss="modal">Aceptar</button>
                         </div>
                     </div>
                 </div>
@@ -507,7 +507,6 @@
                                 type="email"
                                 class="marcadorTexto form-control"
                                 id="inputEmail"
-                                aria-describedby="emailHelp"
                                 placeholder="ejemplo@correo.com"
                                 required
                             />
@@ -538,7 +537,6 @@
                         <div class="mb-3">
                             <label for="inputMensaje" class="form-label">Mensaje</label>
                             <textarea
-                                type="text"
                                 class="marcadorTexto form-control"
                                 id="inputMensaje"
                                 placeholder="Escribe tu texto aquí"
@@ -577,7 +575,7 @@
                 class="modal fade"
                 id="modalEnvioEstado"
                 tabindex="-1"
-                aria-labelledby="estadoModalLabel"
+                aria-labelledby="modalEnvioEstado"
                 aria-hidden="true"
             ></div>
             <!-- Modal de alerta de envio exitoso -->
@@ -594,12 +592,12 @@
                 class="modal fade"
                 id="modalEnvioEstado"
                 tabindex="-1"
-                aria-labelledby="estadoModalLabel"
+                aria-labelledby="modalEnvioEstado"
                 aria-hidden="true"
             ></div>
         </section>
 
-        <!--------------------------------------------------------------------------------------------------------------------------------->
+        <!--==========================================================================================-->
 
         <section class="garantias col-12 flex-row d-flex">
             <div class="garantiasContenedor">
