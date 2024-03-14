@@ -521,3 +521,34 @@
         height: auto;
     }
 }
+
+/* Agregado para carrito */
+.iconoCarrito {
+    cursor: pointer;
+}
+/* Modal para Carrito */
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.modal-content {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto 0;
+    transform: translate(0, -50px);
+    position: relative;
+}
+
+.modal-title {
+    letter-spacing: 2px;
+}
+
+.modal-body p {
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
