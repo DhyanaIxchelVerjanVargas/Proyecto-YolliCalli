@@ -154,7 +154,8 @@
     margin-top: 10px;
     height: fit-content;
     width: fit-content;
-    font-size: 30px;
+    font-size: 25px;
+    color: var(--negro);
     background-color: #fff3e3;
     border: none;
     border-radius: 10px;
@@ -287,34 +288,24 @@ td > img {
     margin-top: 3rem;
 }
 
-.btn {
+.botonCarro {
     width: 140px;
     height: 39px;
-    background-color: var(--rosa-mexicano);
+    background-color: #e1456c;
     border-color: #e1456c;
-    border-radius: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
     font-family: var(--barlow);
     font-size: 15px;
-    border-radius: 8px;
-}
-
-.btn-total {
+    color: #f4f5f7;
     margin-top:4rem;
 }
-
-.btn:active {
-    background-color: #e1456c;
-    color: #ffff;
-    border-color: #e1456c;
+/*Esta propiedad está aplicada a ambos botones*/
+button:active {
+    transform: scale(0.96);
 }
-
-.btn:hover {
-    background-color: #e1456c;
-    color: #ffff;
-    border-color: #e1456c;
-}
-
-
 
 /* Termina Main*/
 
