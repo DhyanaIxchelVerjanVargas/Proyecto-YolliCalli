@@ -287,6 +287,10 @@ td > img {
 .sub-total {
     margin-top: 3rem;
 }
+.redireccionPago {
+    text-decoration: none;
+    color: #f4f5f7;
+}
 
 .botonCarro {
     width: 140px;
