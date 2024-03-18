@@ -206,11 +206,31 @@
                     <div class="productIconos">
                         <a href="" class="productoIcon"><i class="bi bi-heart"></i></a>
                         <a href="" class="productoIcon"><i class="bi bi-share-fill"></i></a>
-                        <a href="" class="productoIcon"><i class="bi bi-cart3"></i></a>
+                        <a href="" class="productoIcon"><i class="bi bi-cart3 iconoCarrito"></i></a>
                     </div>
                 </div>
             </div>
             -->
+            <!-- Modal de alerta de envio exitoso de carrito -->
+            <!-- Button trigger modal para Carrito -->
+            <button
+                id="btnEnvioCarrito"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalEnvioCarrito"
+                style="display: none"
+            ></button>
+
+            <!-- Modal -->
+            <div
+                class="modal fade"
+                id="modalEnvioCarrito"
+                tabindex="-1"
+                aria-labelledby="estadoModalLabel"
+                aria-hidden="true"
+            ></div>
+            <!-- Fin Modal de Carrito -->
         </div>
 
         <!-- Botones para cambiar de página -->
