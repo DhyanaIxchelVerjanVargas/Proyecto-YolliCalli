@@ -1,4 +1,4 @@
-/*Secion de la barra de navegacion */
+/*Sección de la barra de navegación */
 let divBusqueda = document.getElementById("divBusqueda");
 let btnBuscar = document.getElementById("btnBuscar");
 let btnCancelarBusqueda = document.getElementById("CancelarBusqueda");
@@ -37,43 +37,57 @@ txtBusqueda.addEventListener("keyup", function (event) {
         localStorage.setItem("productoBuscar", txtBusqueda.value);
     }
 });
-/*
-if (window.matchMedia("(max-width: 425px)").matches) {
-    navbar.appendChild(searchField);
-    navbar.insertBefore(searchField, navbar.children[1]);
-    offcanvasbody.appendChild(navMenu);
-    offcanvasbody.appendChild(navIcons);
-} else {
-    navIcons.appendChild(searchField);
-    navIcons.insertBefore(searchField, navIcons.children[0]);
-    navbar.appendChild(navMenu);
-    navbar.appendChild(navIcons);
-}
-*/
-window.addEventListener("resize",function(){
-    if (window.matchMedia("(max-width: 670px)").matches) {
-        navbar.appendChild(searchField);
-        navbar.insertBefore(searchField, navbar.children[1]);
-        offcanvasbody.appendChild(navMenu);
-        offcanvasbody.appendChild(navIcons);
-    } else {
-        navIcons.appendChild(searchField);
-        navIcons.insertBefore(searchField, navIcons.children[0]);
-        navbar.appendChild(navMenu);
-        navbar.appendChild(navIcons);
-    }
-})
-window.addEventListener("load",function(){
-    if (window.matchMedia("(max-width: 670px)").matches) {
-        navbar.appendChild(searchField);
-        navbar.insertBefore(searchField, navbar.children[1]);
-        offcanvasbody.appendChild(navMenu);
-        offcanvasbody.appendChild(navIcons);
-    } else {
-        navIcons.appendChild(searchField);
-        navIcons.insertBefore(searchField, navIcons.children[0]);
-        navbar.appendChild(navMenu);
-        navbar.appendChild(navIcons);
-    }
-})
 
+window.addEventListener("resize", function () {
+    if (window.matchMedia("(max-width: 670px)").matches) {
+        navbar.appendChild(searchField);
+        navbar.insertBefore(searchField, navbar.children[1]);
+        offcanvasbody.appendChild(navMenu);
+        offcanvasbody.appendChild(navIcons);
+    } else {
+        navIcons.appendChild(searchField);
+        navIcons.insertBefore(searchField, navIcons.children[0]);
+        navbar.appendChild(navMenu);
+        navbar.appendChild(navIcons);
+    }
+});
+window.addEventListener("load", function () {
+    if (window.matchMedia("(max-width: 670px)").matches) {
+        navbar.appendChild(searchField);
+        navbar.insertBefore(searchField, navbar.children[1]);
+        offcanvasbody.appendChild(navMenu);
+        offcanvasbody.appendChild(navIcons);
+    } else {
+        navIcons.appendChild(searchField);
+        navIcons.insertBefore(searchField, navIcons.children[0]);
+        navbar.appendChild(navMenu);
+        navbar.appendChild(navIcons);
+    }
+});
+/*Sección de la barra de navegación */
+
+/*Sección de login */
+let profileButton = document.getElementById("profileButton");
+let loginButton = document.getElementById("loginButton");
+let userLogged = sessionStorage.getItem("isLogged") === "true";
+
+if (userLogged) {
+    loginButton.innerText = "Cerrar Sesión";
+} else {
+    loginButton.innerText = "Ingresar";
+}
+
+loginButton.addEventListener("click", function (event) {
+    if (userLogged) {
+        event.preventDefault();
+        sessionStorage.setItem("isLogged", "false");
+        window.location.href = "./index.html";
+    }
+});
+
+profileButton.addEventListener("click", function (event) {
+    if (!userLogged) {
+        event.preventDefault();
+        window.location.href = "./iniciosesion.html";
+    }
+});
