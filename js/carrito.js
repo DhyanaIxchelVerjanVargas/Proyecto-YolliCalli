@@ -23,8 +23,8 @@ function addProducto(producto){
             <td>$${producto.precio}</td>
             <td><div class="div-cantidad-global"><div class="div-cantidad">${producto.cantidad}</div>
                 <div class="div-signos">
-                <i class="bi bi-dash"></i>
-                <i class="bi bi-plus"></i>
+                <i class="bi bi-dash decrementarCantidad" data-id="${producto.id}"></i>
+                <i class="bi bi-plus aumentarCantidad" data-id="${producto.id}"></i>
                 </div>
                 </div>
             </td>
@@ -92,13 +92,48 @@ function limpiarTabla(){
 function eliminarProducto(e){
     if(e.target.classList.contains('borrarProducto')){
        prodId = e.target.getAttribute("data-id");
-       
-    }
-    traerProductos();
-    productosCarrito = productosCarrito.filter(producto => producto.id !== prodId);
-    localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
-    actualizarPagina();
+       //console.log('boton eliminar');
+       traerProductos();
+       productosCarrito = productosCarrito.filter(producto => producto.id !== prodId);
+       localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+       actualizarPagina();
     //console.log(productosCarrito);
+    }// Eliminar producto
+    else if(e.target.classList.contains('decrementarCantidad')){
+        let id = null;
+        prodId = e.target.getAttribute("data-id");
+        //console.log('boton decremento');
+        traerProductos();
+        productosCarrito.forEach((productoEnCarrito, index)=>{
+            if(productoEnCarrito.id == prodId){
+                if(productoEnCarrito.cantidad >= 1){
+                    productoEnCarrito.cantidad--;
+                }
+                if(productoEnCarrito.cantidad == 0){
+                    id = productoEnCarrito.id;
+                }
+            }
+        })
+        if(id != null){
+            productosCarrito = productosCarrito.filter(producto => producto.id !== id);
+        }
+        localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+        actualizarPagina();
+    }// Decrementar cantidad
+    else if(e.target.classList.contains('aumentarCantidad')){
+        prodId = e.target.getAttribute("data-id");
+        console.log('boton aumentar');
+        traerProductos();
+        productosCarrito.forEach((productoEnCarrito, index)=>{
+            if(productoEnCarrito.id == prodId){
+                if(productoEnCarrito.cantidad >= 1){
+                    productoEnCarrito.cantidad++;
+                }
+            }
+        })
+        localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
+        actualizarPagina();
+    }// Aumentar cantidad
 }
 
 window.addEventListener("load",function(event){

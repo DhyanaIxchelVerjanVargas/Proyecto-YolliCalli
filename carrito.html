@@ -25,7 +25,7 @@
             <nav class="navbar" id="navbar">
                 <div class="navbarContainer navLogo" id="navLogo">
                     <div class="vacio"></div>
-                    <img src="./src/img/logorosa.png" alt="Logo" />
+                    <a href="./index.html"><img src="./src/img/logorosa.png" alt="Logo" /></a>
                     <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
                         <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
                 </div>
@@ -34,7 +34,9 @@
                         <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
                         <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
                         <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
-                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
+                        <li>
+                            <a href="./perfil.html" class="menuLink"><i class="bi bi-person-circle"></i><button class="profileButton" id="profileButton">Perfil</button></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
@@ -51,6 +53,11 @@
                     <ul>
                         <li>
                             <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
+                        </li>
+                        <li>
+                            <a href="./iniciosesion.html" class="loginLink" id="loginLink"
+                                ><button class="loginButton" id="loginButton"><i class="bi bi-person-fill-x"></i></button
+                            ></a>
                         </li>
                     </ul>
                 </div>
@@ -127,14 +134,14 @@
         -->
       </tbody>
     </table>
-    <div class="row flex-row d-flex justify-content-center" id="botonVaciarCarrito"><button type="submit" class="btn btn-primary">Vaciar carrito</button></div>
+    <div class="row flex-row d-flex justify-content-center" id="botonVaciarCarrito"><button type="submit" class="botonCarro">Vaciar carrito</button></div>
   </div>
   <div class="container-total">
     <div><h2><strong>Total del Carrito</strong></h2></div>
     <div class="container-total-subtitulos sub-subtotal"><p><span>Subtotal</span></p><p class="p-right" id="idSubtotal">$ 0.00</p></div>
     <div class="container-total-subtitulos sub-envio"><p><span>Envío</span></p><p class="p-right" id="idEnvio">$ 0.00</p></div>
     <div class="container-total-subtitulos sub-total"><p><span>Total</span></p><p class="p-total p-right" id="idTotal"><span>$ 0.00</span></p></div>
-    <div class="row flex-row d-flex justify-content-center"><button type="submit" class="btn btn-primary btn-total" id="botonCarrito">Proceder al pago</button></div>
+    <div class="row flex-row d-flex justify-content-center"><button type="submit" class="botonCarro btn-total" id="botonCarrito"><a href="./pago.html" class="redireccionPago">Proceder al pago</a></button></div>
   </div>
   </main>
   <!--Termina Main-->

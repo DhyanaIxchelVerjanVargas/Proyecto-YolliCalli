@@ -428,7 +428,7 @@ button:active {
     z-index: 2;
 }
 
-#boton-cerrar {
+.boton-cerrar {
     color: var(--blanco);
     margin-top: 1rem;
     background-color: var(--rosa-mexicano);

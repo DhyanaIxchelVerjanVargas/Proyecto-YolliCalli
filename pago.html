@@ -1,452 +1,451 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <!--Bootstrap-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
         />
-    <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!--Hojas de estilo-->
-    <link rel="stylesheet" href="./css/estilosGlobales.css" />
-    <link rel="stylesheet" href="./css/pago.css" />
-    <title>Pago</title>
-</head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+        <!--Hojas de estilo-->
+        <link rel="stylesheet" href="./css/estilosGlobales.css" />
+        <link rel="stylesheet" href="./css/pago.css" />
+        <title>Pago</title>
+    </head>
 
-<body>
-    <header>
-        <!--Navegación-->
-        <nav class="navbar" id="navbar">
+    <body>
+        <header>
+            <!--Navegación-->
+            <nav class="navbar" id="navbar">
                 <div class="navbarContainer navLogo" id="navLogo">
                     <div class="vacio"></div>
-                    <img src="./src/img/logorosa.png" alt="Logo" />
+                    <a href="./index.html"><img src="./src/img/logorosa.png" alt="Logo" /></a>
                     <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
                         <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
+                    </button>
                 </div>
                 <div class="navbarContainer navMenu" id="navMenu">
                     <ul>
-                        <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
-                        <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
-                        <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
-                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
+                        <li>
+                            <a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a>
+                        </li>
+                        <li>
+                            <a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a>
+                        </li>
+                        <li>
+                            <a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a>
+                        </li>
+                        <li>
+                            <a href="./perfil.html" class="menuLink"><i class="bi bi-person-circle"></i><button class="profileButton" id="profileButton">Perfil</button></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
                     <div class="searchField" role="search" id="searchField">
-                        <input
-                            class="searchBox searchInput"
-                            type="search"
-                            placeholder="Buscar"
-                            aria-label="Search"
-                            id="txtBusqueda"
-                        />
+                        <input class="searchBox searchInput" type="search" placeholder="Buscar" aria-label="Search" id="txtBusqueda" />
                         <a class="navIconsItems btnBuscar" id="btnBuscar"><i class="bi bi-search"></i></a>
                     </div>
                     <ul>
                         <li>
-                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
+                            <a href="./carrito.html" class="navIconsItems"
+                                ><i class="bi bi-cart3"></i>
+                                <p>Carrito</p></a
+                            >
+                        </li>
+                        <li>
+                            <a href="./iniciosesion.html" class="loginLink" id="loginLink"
+                                ><button class="loginButton" id="loginButton"><i class="bi bi-person-fill-x"></i></button
+                            ></a>
                         </li>
                     </ul>
                 </div>
             </nav>
-        <!--Banner-->
-        <div id="Banner" class="banner">
-            <div>
-                <h1>Pago</h1>
+            <!--Banner-->
+            <div id="Banner" class="banner">
+                <div>
+                    <h1>Pago</h1>
+                </div>
+                <div class="breadcrumb">
+                    <nav aria-labelledby="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item" aria-current="page">
+                                <!-- link cambiado a index -->
+                                <a href="./index.html">Inicio</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Pago</li>
+                        </ol>
+                    </nav>
+                </div>
             </div>
-            <div class="breadcrumb">
-                <nav aria-labelledby="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item" aria-current="page">
-                            <!-- link cambiado a index -->
-                            <a href="./index.html">Inicio</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Pago</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <!--Menu hamburguesa-->
-    <aside>
+        </header>
+        <!--Menu hamburguesa-->
+        <aside>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <div class="vacio"></div>
-                <img src="./src/img/logorosa.png" alt="Logo" />
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body" id="offcanvas-body">
-            </div>
+                <div class="offcanvas-header">
+                    <div class="vacio"></div>
+                    <img src="./src/img/logorosa.png" alt="Logo" />
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" id="offcanvas-body"></div>
             </div>
         </aside>
 
-    <!--Formularios-->
-    <div class="contenedorPago">
-        <div class="row">
-            <!--Datos de Envío-->
-            <div class="formularioDatos col-xs-12">
-                <form class="datosEnvio">
-                    <!--Título de formulario-->
-                    <div class="mb-3">
-                        <h2 class="titulosRosas">Datos de envío</h2>
-                    </div>
-                    <!--Nombre-->
-                    <div class="formData nombreEnvio">
-                        <label for="nombreEnvio" class="form-label">Nombre(s)</label>
-                        <input type="text" class="form-control" id="nombreEnvio" placeholder="Nombre(s)" required>
-                    </div>
-                    <!--Apellidos-->
-                    <div class="formData apellidoEnvio">
-                        <label for="apellidoEnvio" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="apellidoEnvio" placeholder="Apellidos" required>
-                    </div>
-                    <!--Dirección-->
-                    <div class="formData direccionLinea1">
-                        <label for="direccionLinea1" class="form-label">Dirección 1</label>
-                        <input type="text" class="form-control" id="direccionLinea1" placeholder="Calle y número" required>
-                    </div>
-                    <div class="formData direccionLinea2">
-                        <label for="direccionLinea2" class="form-label">Dirección 2</label>
-                        <input type="text" class="form-control" id="direccionLinea2" placeholder="Colonia" required>
-                    </div>
-                    <div class="formData localidadEnvio">
-                        <label for="localidadEnvio" class="form-label">Ciudad / Localidad</label>
-                        <input type="text" class="form-control" id="localidadEnvio" placeholder="Ciudad" required>
-                    </div>
-                    <div class="formData groupedData">
-                        <div class="estadoEnvio">
-                            <label for="estadoEnvio" class="form-label">Estado</label>
-                            <select name="#" class="form-control seleccionarEstado" id="estadoEnvio" required>
-                                <option value="#">Aguascalientes</option>
-                                <option value="#">Baja California Norte</option>
-                                <option value="#">Baja California Sur</option>
-                                <option value="#">Campeche</option>
-                                <option value="#">Chiapas</option>
-                                <option value="#">Chihuahua</option>
-                                <option value="#">Ciudad de México</option>
-                                <option value="#">Coahuila</option>
-                                <option value="#">Colima</option>
-                                <option value="#">Durango</option>
-                                <option value="#">Estado de México</option>
-                                <option value="#">Guanajuato</option>
-                                <option value="#">Guerrero</option>
-                                <option value="#">Hidalgo</option>
-                                <option value="#">Jalisco</option>
-                                <option value="#">Michoacán</option>
-                                <option value="#">Morelos</option>
-                                <option value="#">Nayarit</option>
-                                <option value="#">Nuevo León</option>
-                                <option value="#">Oaxaca</option>
-                                <option value="#">Puebla</option>
-                                <option value="#">Querétaro</option>
-                                <option value="#">Quintana Roo</option>
-                                <option value="#">San Luis Potosí</option>
-                                <option value="#">Sinaloa</option>
-                                <option value="#">Sonora</option>
-                                <option value="#">Tabasco</option>
-                                <option value="#">Tamaulipas</option>
-                                <option value="#">Tlaxcala</option>
-                                <option value="#">Veracruz</option>
-                                <option value="#">Yucatán</option>
-                                <option value="#">Zacatecas</option>
-                            </select>
+        <!--Formularios-->
+        <div class="contenedorPago">
+            <div class="row">
+                <!--Datos de Envío-->
+                <div class="formularioDatos col-xs-12">
+                    <form class="datosEnvio">
+                        <!--Título de formulario-->
+                        <div class="mb-3">
+                            <h2 class="titulosRosas">Datos de envío</h2>
                         </div>
-                        <div class="cpEnvio">
-                            <label for="cpEnvio" class="form-label">Código postal</label>
-                            <input type="number" class="form-control cpEnvio" maxlength="5" id="cpEnvio" placeholder="#####" required>
+                        <!--Nombre-->
+                        <div class="formData nombreEnvio">
+                            <label for="nombreEnvio" class="form-label">Nombre(s)</label>
+                            <input type="text" class="form-control" id="nombreEnvio" placeholder="Nombre(s)" required />
                         </div>
-                    </div>
-                    <!--Título de formulario-->
-                    <div class="datosDeContacto">
-                        <h2 class="titulosRosas">Datos de contacto</h2>
-                        <div class="ladaTel">
-                            <div class="ladaTelGroup">
-                            <label for="telEnvio" class="form-label">Teléfono</label>
-                            <select name="#" class="form-control ladaTelSelect" id="ladaTel">
-                                <option value="#">+52</option>
-                            </select>
+                        <!--Apellidos-->
+                        <div class="formData apellidoEnvio">
+                            <label for="apellidoEnvio" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidoEnvio" placeholder="Apellidos" required />
+                        </div>
+                        <!--Dirección-->
+                        <div class="formData direccionLinea1">
+                            <label for="direccionLinea1" class="form-label">Dirección 1</label>
+                            <input type="text" class="form-control" id="direccionLinea1" placeholder="Calle y número" required />
+                        </div>
+                        <div class="formData direccionLinea2">
+                            <label for="direccionLinea2" class="form-label">Dirección 2</label>
+                            <input type="text" class="form-control" id="direccionLinea2" placeholder="Colonia" required />
+                        </div>
+                        <div class="formData localidadEnvio">
+                            <label for="localidadEnvio" class="form-label">Ciudad / Localidad</label>
+                            <input type="text" class="form-control" id="localidadEnvio" placeholder="Ciudad" required />
+                        </div>
+                        <div class="formData groupedData">
+                            <div class="estadoEnvio">
+                                <label for="estadoEnvio" class="form-label">Estado</label>
+                                <select name="#" class="form-control seleccionarEstado" id="estadoEnvio" required>
+                                    <option value="#">Aguascalientes</option>
+                                    <option value="#">Baja California Norte</option>
+                                    <option value="#">Baja California Sur</option>
+                                    <option value="#">Campeche</option>
+                                    <option value="#">Chiapas</option>
+                                    <option value="#">Chihuahua</option>
+                                    <option value="#">Ciudad de México</option>
+                                    <option value="#">Coahuila</option>
+                                    <option value="#">Colima</option>
+                                    <option value="#">Durango</option>
+                                    <option value="#">Estado de México</option>
+                                    <option value="#">Guanajuato</option>
+                                    <option value="#">Guerrero</option>
+                                    <option value="#">Hidalgo</option>
+                                    <option value="#">Jalisco</option>
+                                    <option value="#">Michoacán</option>
+                                    <option value="#">Morelos</option>
+                                    <option value="#">Nayarit</option>
+                                    <option value="#">Nuevo León</option>
+                                    <option value="#">Oaxaca</option>
+                                    <option value="#">Puebla</option>
+                                    <option value="#">Querétaro</option>
+                                    <option value="#">Quintana Roo</option>
+                                    <option value="#">San Luis Potosí</option>
+                                    <option value="#">Sinaloa</option>
+                                    <option value="#">Sonora</option>
+                                    <option value="#">Tabasco</option>
+                                    <option value="#">Tamaulipas</option>
+                                    <option value="#">Tlaxcala</option>
+                                    <option value="#">Veracruz</option>
+                                    <option value="#">Yucatán</option>
+                                    <option value="#">Zacatecas</option>
+                                </select>
                             </div>
-                            <input type="tel" class="form-control telInput" maxlength="10" id="telEnvio"
-                            placeholder="Teléfono a 10 dígitos" required>
+                            <div class="cpEnvio">
+                                <label for="cpEnvio" class="form-label">Código postal</label>
+                                <input type="number" class="form-control cpEnvio" maxlength="5" id="cpEnvio" placeholder="#####" required />
+                            </div>
                         </div>
-                        <div class="">
-                            <label for="correoEnvio" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="correoEnvio"
-                                placeholder="ejemplo@correo.com" required>
+                        <!--Título de formulario-->
+                        <div class="datosDeContacto">
+                            <h2 class="titulosRosas">Datos de contacto</h2>
+                            <div class="ladaTel">
+                                <div class="ladaTelGroup">
+                                    <label for="telEnvio" class="form-label">Teléfono</label>
+                                    <select name="#" class="form-control ladaTelSelect" id="ladaTel">
+                                        <option value="#">+52</option>
+                                    </select>
+                                </div>
+                                <input type="tel" class="form-control telInput" maxlength="10" id="telEnvio" placeholder="Teléfono a 10 dígitos" required />
+                            </div>
+                            <div class="">
+                                <label for="correoEnvio" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="correoEnvio" placeholder="ejemplo@correo.com" required />
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
-            <!--Resumen del pedido-->
-            <div class="resumenPedido col-xs-12">
-                <!--Título de formulario-->
-                <h2 class="titulosRosas">Resumen del pedido</h2>
-                <!--Tabla Resumen del pedido-->
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th><p><strong>Producto</strong></p></th>
-                            <th><p>1</p></th>
-                            <th><p class="tablaCantidades">$1,800.00</p></th>
-                        </tr>
-                        <tr>
-                            <th><p><strong>Subtotal</strong></p></th>
-                            <th></th>
-                            <th><p class="tablaCantidades">$1,800.00</p></th>
-                        </tr>
-                        <tr>
-                            <th><p><strong>Envío</strong></p></th>
-                            <th></th>
-                            <th><p class="tablaCantidades">$180.00</p></th>
-                        </tr>
-                        <tr>
-                            <th><p><strong>Total (IVA incluido)</strong></p></th>
-                            <th></th>
-                            <th><h3 class="cantidadTotal tablaCantidades">$1,980.00</h3></th>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <hr>
-                <br>
-                <!--Formulario Pago/Resumen del pedido-->
-                <h2 class="titulosRosas">Opciones de pago</h2>
-                <form class="opcionPagoPedido">
-                    <!--Selección de selección de pago-->
-                    <fieldset>
-                        <!--Opción de pago TDC-->
-                        <div class="opcionPagoTdc">
-                            <div class="selectorDePago">
-                                <input type="radio" name="opcionPedido">
-                                <svg width="35" height="35" viewBox="0 0 29 23" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
+                    </form>
+                </div>
+                <!--Resumen del pedido-->
+                <div class="resumenPedido col-xs-12">
+                    <!--Título de formulario-->
+                    <h2 class="titulosRosas">Resumen del pedido</h2>
+                    <!--Tabla Resumen del pedido-->
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <p><strong>Producto</strong></p>
+                                </th>
+                                <th><p>1</p></th>
+                                <th><p class="tablaCantidades">$1,800.00</p></th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p><strong>Subtotal</strong></p>
+                                </th>
+                                <th></th>
+                                <th><p class="tablaCantidades">$1,800.00</p></th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p><strong>Envío</strong></p>
+                                </th>
+                                <th></th>
+                                <th><p class="tablaCantidades">$180.00</p></th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p><strong>Total (IVA incluido)</strong></p>
+                                </th>
+                                <th></th>
+                                <th><h3 class="cantidadTotal tablaCantidades">$1,980.00</h3></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <hr />
+                    <br />
+                    <!--Formulario Pago/Resumen del pedido-->
+                    <h2 class="titulosRosas">Opciones de pago</h2>
+                    <form class="opcionPagoPedido">
+                        <!--Selección de selección de pago-->
+                        <fieldset>
+                            <!--Opción de pago TDC-->
+                            <div class="opcionPagoTdc">
+                                <div class="selectorDePago">
+                                    <input type="radio" name="opcionPedido" />
+                                    <svg width="35" height="35" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M1.375 8.58334H27.625M7.20833 15.875H8.66667M14.5 15.875H15.9583M5.75 21.7083H23.25C25.6662 21.7083 27.625 19.7496 27.625 17.3333V5.66667C27.625 3.25043 25.6662 1.29167 23.25 1.29167H5.75C3.33375 1.29167 1.375 3.25043 1.375 5.66667V17.3333C1.375 19.7496 3.33375 21.7083 5.75 21.7083Z"
-                                            stroke="#E1456C" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
+                                            stroke="#E1456C"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
                                     </svg>
-                                <label class="form-label">
-                                    <p>Tarjeta de crédito/débito</p>
-                                </label>
-                            </div>
-                            <div class="despliegueTdc">
-                                <form class="tdcForm">
-                                <!--Nombre-->
-                                <div class="tdc nombreTarjeta">
-                                    <label for="nombreTarjeta" class="form-label">Nombre en la tarjeta</label>
-                                    <input type="text" class="form-control" id="nombreTarjeta" required>
+                                    <label class="form-label">
+                                        <p>Tarjeta de crédito/débito</p>
+                                    </label>
                                 </div>
-                                <!--Número-->
-                                <div class="tdc numeroTarjeta">
-                                    <label for="numeroTarjeta" class="form-label">Número de tarjeta</label>
-                                    <input type="text" class="form-control" id="numeroTarjeta" required>
-                                </div>
-                                <!--Fecha de vencimiento y CVC-->
-                                
-                                <div class="tdc reversoTarjeta">
-                                    <div class="vencimiento">
-                                        <div class="vencimientoTitulo">
-                                            <p>Fecha de vencimiento</p>
+                                <div class="despliegueTdc">
+                                    <form class="tdcForm">
+                                        <!--Nombre-->
+                                        <div class="tdc nombreTarjeta">
+                                            <label for="nombreTarjeta" class="form-label">Nombre en la tarjeta</label>
+                                            <input type="text" class="form-control" id="nombreTarjeta" required />
                                         </div>
-                                        <div class="vencimientoFecha">
-                                            <label for="vencimientoYear" class="form-label"></label>
-                                            <select name="#" class="form-control vencimientoMonth" id="vencimientoMonth" required>
-                                                <option value="#">01</option>
-                                                <option value="#">02</option>
-                                                <option value="#">03</option>
-                                                <option value="#">04</option>
-                                                <option value="#">05</option>
-                                                <option value="#">06</option>
-                                                <option value="#">07</option>
-                                                <option value="#">08</option>
-                                                <option value="#">09</option>
-                                                <option value="#">10</option>
-                                                <option value="#">11</option>
-                                                <option value="#">12</option>
-                                            </select>
-                                            <select name="#" class="form-control vencimientoYear" id="vencimientoYear" required>
-                                                <option value="#">2024</option>
-                                            </select>
+                                        <!--Número-->
+                                        <div class="tdc numeroTarjeta">
+                                            <label for="numeroTarjeta" class="form-label">Número de tarjeta</label>
+                                            <input type="text" class="form-control" id="numeroTarjeta" required />
                                         </div>
+                                        <!--Fecha de vencimiento y CVC-->
+
+                                        <div class="tdc reversoTarjeta">
+                                            <div class="vencimiento">
+                                                <div class="vencimientoTitulo">
+                                                    <p>Fecha de vencimiento</p>
+                                                </div>
+                                                <div class="vencimientoFecha">
+                                                    <label for="vencimientoYear" class="form-label"></label>
+                                                    <select name="#" class="form-control vencimientoMonth" id="vencimientoMonth" required>
+                                                        <option value="#">01</option>
+                                                        <option value="#">02</option>
+                                                        <option value="#">03</option>
+                                                        <option value="#">04</option>
+                                                        <option value="#">05</option>
+                                                        <option value="#">06</option>
+                                                        <option value="#">07</option>
+                                                        <option value="#">08</option>
+                                                        <option value="#">09</option>
+                                                        <option value="#">10</option>
+                                                        <option value="#">11</option>
+                                                        <option value="#">12</option>
+                                                    </select>
+                                                    <select name="#" class="form-control vencimientoYear" id="vencimientoYear" required>
+                                                        <option value="#">2024</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="cvv">
+                                                <p>CVV</p>
+                                                <div class="cvvElement">
+                                                    <label for="cvvInput" class="form-label"></label>
+                                                    <input type="password" class="form-control cvvInput" id="cvvInput" maxlength="3" required placeholder="CVV" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div>
+                                        <svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M31.3542 3.00926C31.7567 3.00926 32.0833 3.3463 32.0833 3.76157V20.3125C32.0833 20.7278 31.7567 21.0648 31.3542 21.0648H3.64583C3.24333 21.0648 2.91667 20.7278 2.91667 20.3125V3.76157C2.91667 3.3463 3.24333 3.00926 3.64583 3.00926H31.3542ZM35 3.00926C35 1.34815 33.6933 0 32.0833 0H2.91667C1.30521 0 0 1.34815 0 3.00926V21.0648C0 22.7259 1.30521 24.0741 2.91667 24.0741H32.0833C33.6933 24.0741 35 22.7259 35 21.0648V3.00926ZM25.0308 10.8153C25.0308 13.4649 22.9498 15.612 20.3817 15.612C17.8135 15.612 15.7325 13.4649 15.7325 10.8153C15.7325 8.16562 17.815 6.01852 20.3831 6.01852C22.9512 6.01852 25.0308 8.16562 25.0308 10.8153ZM15.2162 10.8153C15.2162 9.17975 15.9352 7.71424 17.0625 6.73623C16.3523 6.28183 15.5152 6.01852 14.6169 6.01852C12.0487 6.01852 9.96771 8.16562 9.96771 10.8153C9.96771 13.4649 12.0487 15.612 14.6169 15.612C15.5137 15.612 16.3523 15.3487 17.0625 14.8943C15.9352 13.9163 15.2162 12.4508 15.2162 10.8153ZM12.705 18.024V17.225C12.705 16.9241 12.5198 16.721 12.2194 16.7194C12.0619 16.7164 11.8985 16.7676 11.7862 16.9466C11.7017 16.8052 11.566 16.7194 11.3779 16.7194C11.2467 16.7194 11.1169 16.7601 11.0162 16.909V16.7525H10.7479V18.0255H11.0192V17.3198C11.0192 17.0986 11.1373 16.9812 11.321 16.9812C11.499 16.9812 11.5894 17.1016 11.5894 17.3168V18.0255H11.8606V17.3198C11.8606 17.0986 11.9846 16.9812 12.1625 16.9812C12.3462 16.9812 12.4337 17.1016 12.4337 17.3168V18.0255L12.705 18.024ZM16.7183 16.7495H16.2794V16.3628H16.0081V16.7495H15.7573V17.0023H16.0081V17.5831C16.0081 17.8795 16.119 18.054 16.4369 18.054C16.5535 18.054 16.6877 18.0164 16.7723 17.9547L16.695 17.717L16.4573 17.7892C16.3231 17.7892 16.2794 17.7035 16.2794 17.5756V17.0008H16.7183V16.7495ZM19.0079 16.7179C18.8533 16.7179 18.7527 16.7932 18.6827 16.9045V16.7495H18.4173V18.0225H18.6856V17.3078C18.6856 17.0971 18.7731 16.9797 18.9496 16.9797L19.1173 17.0113L19.2004 16.7495L19.0079 16.7179ZM15.5458 16.8519C15.416 16.7646 15.2381 16.7179 15.0427 16.7179C14.7306 16.7179 14.5294 16.8729 14.5294 17.1257C14.5294 17.3333 14.6796 17.4612 14.9552 17.5019L15.0821 17.5199C15.2294 17.541 15.2994 17.5816 15.2994 17.6538C15.2994 17.7531 15.2017 17.8088 15.0179 17.8088C14.8327 17.8088 14.6971 17.7471 14.6067 17.6749L14.4783 17.89C14.6256 18.0014 14.8108 18.0556 15.0135 18.0556C15.3694 18.0556 15.5765 17.8825 15.5765 17.6403C15.5765 17.4161 15.4131 17.2987 15.1448 17.2596L15.0179 17.2416C14.9012 17.225 14.8094 17.2009 14.8094 17.1167C14.8094 17.0234 14.8969 16.9677 15.0442 16.9677C15.2017 16.9677 15.3533 17.0294 15.4292 17.0775L15.5458 16.8519ZM22.7398 16.7179C22.5852 16.7179 22.4846 16.7932 22.4146 16.9045V16.7495H22.1492V18.0225H22.4175V17.3078C22.4175 17.0971 22.505 16.9797 22.6815 16.9797L22.8492 17.0113L22.9323 16.7495L22.7398 16.7179ZM19.2792 17.3875C19.2792 17.7742 19.5402 18.0556 19.9383 18.0556C20.1235 18.0556 20.2475 18.0134 20.3831 17.9036L20.2533 17.6794C20.1527 17.7546 20.0462 17.7937 19.931 17.7937C19.7167 17.7907 19.5592 17.6312 19.5592 17.386C19.5592 17.1407 19.7167 16.9812 19.931 16.9782C20.0477 16.9782 20.1527 17.0189 20.2533 17.0926L20.3831 16.8684C20.249 16.7586 20.125 16.7164 19.9383 16.7164C19.5402 16.7179 19.2792 17.0008 19.2792 17.3875ZM21.7948 17.3875V16.751H21.5265V16.906C21.4419 16.7917 21.3121 16.7194 21.1371 16.7194C20.7915 16.7194 20.5202 16.9993 20.5202 17.3875C20.5202 17.7772 20.7915 18.0556 21.1371 18.0556C21.3121 18.0556 21.4419 17.9833 21.5265 17.869V18.024H21.7948V17.3875ZM20.7958 17.3875C20.7958 17.1633 20.9373 16.9797 21.1706 16.9797C21.3923 16.9797 21.5425 17.1558 21.5425 17.3875C21.5425 17.6192 21.3923 17.7953 21.1706 17.7953C20.9373 17.7937 20.7958 17.6102 20.7958 17.3875ZM17.5554 16.7179C17.1938 16.7179 16.9415 16.9903 16.9415 17.386C16.9415 17.7907 17.2054 18.054 17.5744 18.054C17.7596 18.054 17.9302 18.0059 18.0804 17.875L17.9492 17.6704C17.8456 17.7561 17.7144 17.8043 17.5904 17.8043C17.4169 17.8043 17.2594 17.7215 17.2215 17.4928H18.1387L18.1446 17.386C18.1388 16.9903 17.901 16.7179 17.5554 16.7179ZM17.5496 16.9662C17.7231 16.9662 17.834 17.0775 17.8617 17.2747H17.2215C17.2506 17.0911 17.3585 16.9662 17.5496 16.9662ZM24.2871 17.3875V16.2395H24.0187V16.906C23.9342 16.7917 23.8044 16.7194 23.6294 16.7194C23.2837 16.7194 23.0125 16.9993 23.0125 17.3875C23.0125 17.7772 23.2837 18.0556 23.6294 18.0556C23.8044 18.0556 23.9342 17.9833 24.0187 17.869V18.024H24.2871V17.3875ZM23.2881 17.3875C23.2881 17.1633 23.4296 16.9797 23.6629 16.9797C23.8846 16.9797 24.0348 17.1558 24.0348 17.3875C24.0348 17.6192 23.8846 17.7953 23.6629 17.7953C23.4296 17.7937 23.2881 17.6102 23.2881 17.3875ZM14.2187 17.3875V16.751H13.949V16.906C13.8644 16.7917 13.7346 16.7194 13.5596 16.7194C13.214 16.7194 12.9427 16.9993 12.9427 17.3875C12.9427 17.7757 13.214 18.0556 13.5596 18.0556C13.7346 18.0556 13.8644 17.9833 13.949 17.869V18.024H14.2187V17.3875ZM13.2183 17.3875C13.2183 17.1633 13.3598 16.9797 13.5931 16.9797C13.8148 16.9797 13.965 17.1558 13.965 17.3875C13.965 17.6192 13.8148 17.7953 13.5931 17.7953C13.3612 17.7937 13.2183 17.6102 13.2183 17.3875Z"
+                                                fill="url(#paint0_linear_599_2802)"
+                                            />
+                                            <defs>
+                                                <linearGradient id="paint0_linear_599_2802" x1="22.0039" y1="10.4894" x2="13.0039" y2="10.4894" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#F79E1B" />
+                                                    <stop offset="0.493024" stop-color="#FF5F00" />
+                                                    <stop offset="1" stop-color="#EB001B" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                        <svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M31.3542 3.75001C31.7567 3.75001 32.0833 4.07668 32.0833 4.47918V20.5208C32.0833 20.9233 31.7567 21.25 31.3542 21.25H3.64583C3.24333 21.25 2.91667 20.9233 2.91667 20.5208V4.47918C2.91667 4.07668 3.24333 3.75001 3.64583 3.75001H31.3542ZM35 3.75001C35 2.14001 33.6933 0.833344 32.0833 0.833344H2.91667C1.30521 0.833344 0 2.14001 0 3.75001V21.25C0 22.86 1.30521 24.1667 2.91667 24.1667H32.0833C33.6933 24.1667 35 22.86 35 21.25V3.75001ZM15.2352 9.04376H17.1238L15.9425 15.9752H14.054L15.2352 9.04376ZM20.9329 11.8263C20.2723 11.5054 19.8683 11.2911 19.8727 10.9673C19.8727 10.6786 20.2154 10.3708 20.9548 10.3708C21.5731 10.3606 22.0194 10.4963 22.3694 10.6363L22.5385 10.7165L22.7952 9.21439C22.4204 9.07438 21.8342 8.92272 21.1021 8.92272C19.2354 8.92272 17.92 9.86334 17.9098 11.2094C17.8996 12.2054 18.849 12.7611 19.565 13.0921C20.3 13.4319 20.5479 13.6477 20.5435 13.9525C20.5392 14.4163 19.9558 14.6292 19.4133 14.6292C18.6579 14.6292 18.2554 14.5242 17.6356 14.2661L17.3921 14.1552L17.1267 15.7069C17.5685 15.9008 18.3838 16.0686 19.231 16.0773C21.2173 16.0773 22.5065 15.1483 22.521 13.709C22.5254 12.92 22.0223 12.3206 20.9329 11.8263ZM29.1667 15.9767H27.4138L27.1833 14.9383L24.764 14.9354L24.3658 15.9767H22.3825L25.1883 9.62564C25.3867 9.17501 25.725 9.05105 26.1771 9.05105H27.6369L29.1667 15.9767ZM26.8756 13.5179L26.4381 11.5171L26.3098 10.9192L26.059 11.5813L25.3065 13.5179H26.8756ZM12.4688 9.04814L10.6196 13.7746L10.4227 12.8136L9.76062 9.62855C9.64542 9.19105 9.31437 9.0598 8.90312 9.04376H5.85667L5.83333 9.18814C6.57417 9.36751 7.23625 9.62564 7.81813 9.94793L9.49813 15.9679L11.4975 15.965L14.471 9.04814H12.4688Z"
+                                                fill="url(#paint0_linear_599_2801)"
+                                            />
+                                            <defs>
+                                                <linearGradient id="paint0_linear_599_2801" x1="18" y1="12" x2="18" y2="24" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#2636C5" />
+                                                    <stop offset="1" stop-color="#2C2C2C" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
                                     </div>
-                                    <div class="cvv">
-                                        <p>CVV</p>
-                                    <div class="cvvElement">
-                                        <label for="cvvInput" class="form-label"></label>
-                                        <input type="password" class="form-control cvvInput" id="cvvInput" maxlength="3" required placeholder="CVV">
-                                    </div>
-                                    </div>
-                                    
                                 </div>
-                            </form>
-                            <div>
-                                <svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M31.3542 3.00926C31.7567 3.00926 32.0833 3.3463 32.0833 3.76157V20.3125C32.0833 20.7278 31.7567 21.0648 31.3542 21.0648H3.64583C3.24333 21.0648 2.91667 20.7278 2.91667 20.3125V3.76157C2.91667 3.3463 3.24333 3.00926 3.64583 3.00926H31.3542ZM35 3.00926C35 1.34815 33.6933 0 32.0833 0H2.91667C1.30521 0 0 1.34815 0 3.00926V21.0648C0 22.7259 1.30521 24.0741 2.91667 24.0741H32.0833C33.6933 24.0741 35 22.7259 35 21.0648V3.00926ZM25.0308 10.8153C25.0308 13.4649 22.9498 15.612 20.3817 15.612C17.8135 15.612 15.7325 13.4649 15.7325 10.8153C15.7325 8.16562 17.815 6.01852 20.3831 6.01852C22.9512 6.01852 25.0308 8.16562 25.0308 10.8153ZM15.2162 10.8153C15.2162 9.17975 15.9352 7.71424 17.0625 6.73623C16.3523 6.28183 15.5152 6.01852 14.6169 6.01852C12.0487 6.01852 9.96771 8.16562 9.96771 10.8153C9.96771 13.4649 12.0487 15.612 14.6169 15.612C15.5137 15.612 16.3523 15.3487 17.0625 14.8943C15.9352 13.9163 15.2162 12.4508 15.2162 10.8153ZM12.705 18.024V17.225C12.705 16.9241 12.5198 16.721 12.2194 16.7194C12.0619 16.7164 11.8985 16.7676 11.7862 16.9466C11.7017 16.8052 11.566 16.7194 11.3779 16.7194C11.2467 16.7194 11.1169 16.7601 11.0162 16.909V16.7525H10.7479V18.0255H11.0192V17.3198C11.0192 17.0986 11.1373 16.9812 11.321 16.9812C11.499 16.9812 11.5894 17.1016 11.5894 17.3168V18.0255H11.8606V17.3198C11.8606 17.0986 11.9846 16.9812 12.1625 16.9812C12.3462 16.9812 12.4337 17.1016 12.4337 17.3168V18.0255L12.705 18.024ZM16.7183 16.7495H16.2794V16.3628H16.0081V16.7495H15.7573V17.0023H16.0081V17.5831C16.0081 17.8795 16.119 18.054 16.4369 18.054C16.5535 18.054 16.6877 18.0164 16.7723 17.9547L16.695 17.717L16.4573 17.7892C16.3231 17.7892 16.2794 17.7035 16.2794 17.5756V17.0008H16.7183V16.7495ZM19.0079 16.7179C18.8533 16.7179 18.7527 16.7932 18.6827 16.9045V16.7495H18.4173V18.0225H18.6856V17.3078C18.6856 17.0971 18.7731 16.9797 18.9496 16.9797L19.1173 17.0113L19.2004 16.7495L19.0079 16.7179ZM15.5458 16.8519C15.416 16.7646 15.2381 16.7179 15.0427 16.7179C14.7306 16.7179 14.5294 16.8729 14.5294 17.1257C14.5294 17.3333 14.6796 17.4612 14.9552 17.5019L15.0821 17.5199C15.2294 17.541 15.2994 17.5816 15.2994 17.6538C15.2994 17.7531 15.2017 17.8088 15.0179 17.8088C14.8327 17.8088 14.6971 17.7471 14.6067 17.6749L14.4783 17.89C14.6256 18.0014 14.8108 18.0556 15.0135 18.0556C15.3694 18.0556 15.5765 17.8825 15.5765 17.6403C15.5765 17.4161 15.4131 17.2987 15.1448 17.2596L15.0179 17.2416C14.9012 17.225 14.8094 17.2009 14.8094 17.1167C14.8094 17.0234 14.8969 16.9677 15.0442 16.9677C15.2017 16.9677 15.3533 17.0294 15.4292 17.0775L15.5458 16.8519ZM22.7398 16.7179C22.5852 16.7179 22.4846 16.7932 22.4146 16.9045V16.7495H22.1492V18.0225H22.4175V17.3078C22.4175 17.0971 22.505 16.9797 22.6815 16.9797L22.8492 17.0113L22.9323 16.7495L22.7398 16.7179ZM19.2792 17.3875C19.2792 17.7742 19.5402 18.0556 19.9383 18.0556C20.1235 18.0556 20.2475 18.0134 20.3831 17.9036L20.2533 17.6794C20.1527 17.7546 20.0462 17.7937 19.931 17.7937C19.7167 17.7907 19.5592 17.6312 19.5592 17.386C19.5592 17.1407 19.7167 16.9812 19.931 16.9782C20.0477 16.9782 20.1527 17.0189 20.2533 17.0926L20.3831 16.8684C20.249 16.7586 20.125 16.7164 19.9383 16.7164C19.5402 16.7179 19.2792 17.0008 19.2792 17.3875ZM21.7948 17.3875V16.751H21.5265V16.906C21.4419 16.7917 21.3121 16.7194 21.1371 16.7194C20.7915 16.7194 20.5202 16.9993 20.5202 17.3875C20.5202 17.7772 20.7915 18.0556 21.1371 18.0556C21.3121 18.0556 21.4419 17.9833 21.5265 17.869V18.024H21.7948V17.3875ZM20.7958 17.3875C20.7958 17.1633 20.9373 16.9797 21.1706 16.9797C21.3923 16.9797 21.5425 17.1558 21.5425 17.3875C21.5425 17.6192 21.3923 17.7953 21.1706 17.7953C20.9373 17.7937 20.7958 17.6102 20.7958 17.3875ZM17.5554 16.7179C17.1938 16.7179 16.9415 16.9903 16.9415 17.386C16.9415 17.7907 17.2054 18.054 17.5744 18.054C17.7596 18.054 17.9302 18.0059 18.0804 17.875L17.9492 17.6704C17.8456 17.7561 17.7144 17.8043 17.5904 17.8043C17.4169 17.8043 17.2594 17.7215 17.2215 17.4928H18.1387L18.1446 17.386C18.1388 16.9903 17.901 16.7179 17.5554 16.7179ZM17.5496 16.9662C17.7231 16.9662 17.834 17.0775 17.8617 17.2747H17.2215C17.2506 17.0911 17.3585 16.9662 17.5496 16.9662ZM24.2871 17.3875V16.2395H24.0187V16.906C23.9342 16.7917 23.8044 16.7194 23.6294 16.7194C23.2837 16.7194 23.0125 16.9993 23.0125 17.3875C23.0125 17.7772 23.2837 18.0556 23.6294 18.0556C23.8044 18.0556 23.9342 17.9833 24.0187 17.869V18.024H24.2871V17.3875ZM23.2881 17.3875C23.2881 17.1633 23.4296 16.9797 23.6629 16.9797C23.8846 16.9797 24.0348 17.1558 24.0348 17.3875C24.0348 17.6192 23.8846 17.7953 23.6629 17.7953C23.4296 17.7937 23.2881 17.6102 23.2881 17.3875ZM14.2187 17.3875V16.751H13.949V16.906C13.8644 16.7917 13.7346 16.7194 13.5596 16.7194C13.214 16.7194 12.9427 16.9993 12.9427 17.3875C12.9427 17.7757 13.214 18.0556 13.5596 18.0556C13.7346 18.0556 13.8644 17.9833 13.949 17.869V18.024H14.2187V17.3875ZM13.2183 17.3875C13.2183 17.1633 13.3598 16.9797 13.5931 16.9797C13.8148 16.9797 13.965 17.1558 13.965 17.3875C13.965 17.6192 13.8148 17.7953 13.5931 17.7953C13.3612 17.7937 13.2183 17.6102 13.2183 17.3875Z" fill="url(#paint0_linear_599_2802)"/>
-                                    <defs>
-                                    <linearGradient id="paint0_linear_599_2802" x1="22.0039" y1="10.4894" x2="13.0039" y2="10.4894" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#F79E1B"/>
-                                    <stop offset="0.493024" stop-color="#FF5F00"/>
-                                    <stop offset="1" stop-color="#EB001B"/>
-                                    </linearGradient>
-                                    </defs>
-                                </svg>
-                                <svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M31.3542 3.75001C31.7567 3.75001 32.0833 4.07668 32.0833 4.47918V20.5208C32.0833 20.9233 31.7567 21.25 31.3542 21.25H3.64583C3.24333 21.25 2.91667 20.9233 2.91667 20.5208V4.47918C2.91667 4.07668 3.24333 3.75001 3.64583 3.75001H31.3542ZM35 3.75001C35 2.14001 33.6933 0.833344 32.0833 0.833344H2.91667C1.30521 0.833344 0 2.14001 0 3.75001V21.25C0 22.86 1.30521 24.1667 2.91667 24.1667H32.0833C33.6933 24.1667 35 22.86 35 21.25V3.75001ZM15.2352 9.04376H17.1238L15.9425 15.9752H14.054L15.2352 9.04376ZM20.9329 11.8263C20.2723 11.5054 19.8683 11.2911 19.8727 10.9673C19.8727 10.6786 20.2154 10.3708 20.9548 10.3708C21.5731 10.3606 22.0194 10.4963 22.3694 10.6363L22.5385 10.7165L22.7952 9.21439C22.4204 9.07438 21.8342 8.92272 21.1021 8.92272C19.2354 8.92272 17.92 9.86334 17.9098 11.2094C17.8996 12.2054 18.849 12.7611 19.565 13.0921C20.3 13.4319 20.5479 13.6477 20.5435 13.9525C20.5392 14.4163 19.9558 14.6292 19.4133 14.6292C18.6579 14.6292 18.2554 14.5242 17.6356 14.2661L17.3921 14.1552L17.1267 15.7069C17.5685 15.9008 18.3838 16.0686 19.231 16.0773C21.2173 16.0773 22.5065 15.1483 22.521 13.709C22.5254 12.92 22.0223 12.3206 20.9329 11.8263ZM29.1667 15.9767H27.4138L27.1833 14.9383L24.764 14.9354L24.3658 15.9767H22.3825L25.1883 9.62564C25.3867 9.17501 25.725 9.05105 26.1771 9.05105H27.6369L29.1667 15.9767ZM26.8756 13.5179L26.4381 11.5171L26.3098 10.9192L26.059 11.5813L25.3065 13.5179H26.8756ZM12.4688 9.04814L10.6196 13.7746L10.4227 12.8136L9.76062 9.62855C9.64542 9.19105 9.31437 9.0598 8.90312 9.04376H5.85667L5.83333 9.18814C6.57417 9.36751 7.23625 9.62564 7.81813 9.94793L9.49813 15.9679L11.4975 15.965L14.471 9.04814H12.4688Z" fill="url(#paint0_linear_599_2801)"/>
-                                    <defs>
-                                    <linearGradient id="paint0_linear_599_2801" x1="18" y1="12" x2="18" y2="24" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#2636C5"/>
-                                    <stop offset="1" stop-color="#2C2C2C"/>
-                                    </linearGradient>
-                                    </defs>
-                                </svg>
                             </div>
-                            </div>
-                            
-                        </div>
-                        <!--Opción de pago Paypal-->
-                        <div class="selectorDePago">
-                            <input type="radio" name="opcionPedido">
-                            <svg width="35" height="25" viewBox="0 0 35 25" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                            <!--Opción de pago Paypal-->
+                            <div class="selectorDePago">
+                                <input type="radio" name="opcionPedido" />
+                                <svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M32.0833 0.833332H2.91667C1.30667 0.833332 0 2.14 0 3.75V21.25C0 22.86 1.30667 24.1667 2.91667 24.1667H32.0833C33.6933 24.1667 35 22.86 35 21.25V3.75C35 2.14 33.6933 0.833332 32.0833 0.833332ZM32.0833 20.5208C32.0833 20.9233 31.7567 21.25 31.3542 21.25H3.64583C3.24333 21.25 2.91667 20.9233 2.91667 20.5208V4.47917C2.91667 4.07667 3.24333 3.75 3.64583 3.75H31.3542C31.7567 3.75 32.0833 4.07667 32.0833 4.47917V20.5208ZM23.0898 11.4121C23.0898 11.6731 23.0577 11.9385 23.0081 12.2025C22.5969 14.3506 21.1867 15.0929 19.3871 15.0929H19.1085C18.8883 15.0929 18.7017 15.2548 18.6667 15.4765L18.2758 17.9512C18.2423 18.1715 18.0556 18.3333 17.8354 18.3333H16.5054C16.3158 18.3333 16.1715 18.1642 16.2006 17.9775L16.8744 13.6608C16.8773 13.6448 16.889 13.6331 16.905 13.6331H17.9521C20.4969 13.6331 22.0879 12.36 22.5575 9.95375C22.9513 10.3504 23.0898 10.8667 23.0898 11.4121ZM16.1802 13.4785C16.2371 13.0775 16.4033 12.9069 16.854 12.9054L17.9521 12.904C20.176 12.904 21.4506 11.8875 21.8517 9.79771C22.241 7.78812 20.8294 6.66667 18.9204 6.66667H15.3504C15.0996 6.66667 14.8852 6.85187 14.8458 7.10417C13.7258 14.3156 13.4021 16.1487 13.3685 16.7087C13.3583 16.8852 13.4998 17.0354 13.6777 17.0354H15.6173L16.1802 13.4785Z"
-                                        fill="#E1456C" />
+                                        fill="#E1456C"
+                                    />
                                 </svg>
-                            <label class="form-label">
-                                <p>PayPal</p>
-                            </label>
-                        </div>
-                        <!--Opción de pago Oxxo-->
-                        <div class="selectorDePago">
-                            <input type="radio" name="opcionPedido">
-                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.4944 6.10352e-05L13.125 7.24944V8.85069C13.125 10.4053 11.7644 11.6667 10.2083 11.6667C8.65229 11.6667 7.29167 10.4053 7.29167 8.84923V7.24944L11.6608 6.10352e-05H14.4944ZM10.0435 6.10352e-05L5.83333 7.24944V8.85069C5.83333 10.4053 4.47271 11.6667 2.91667 11.6667C1.36063 11.6667 0 10.4053 0 8.84923V7.24944L7.10792 6.10352e-05H10.0435ZM35 8.84923C35 10.4053 33.6394 11.6667 32.0833 11.6667C30.5273 11.6667 29.1667 10.3061 29.1667 8.75006V7.14881L24.9565 6.10352e-05H27.8935L35 7.24944V8.84923ZM20.4167 7.14589V8.74714C20.4167 10.3017 19.056 11.6667 17.5 11.6667C15.944 11.6667 14.5833 10.3061 14.5833 8.75006V7.14881L16.1102 6.10352e-05H18.8883L20.4167 7.14589ZM23.3392 6.10352e-05L27.704 7.29464V8.89589C27.7054 10.4519 26.3477 11.6667 24.7917 11.6667C23.2356 11.6667 21.875 10.3061 21.875 8.75006V7.14881L20.5056 6.10352e-05L23.3392 6.10352e-05ZM1.45833 14.5834V35.0001H16.0417V32.0834H4.375V17.5001H30.625V35.0001H33.5417V14.5834H1.45833ZM27.7083 20.4167H18.9583V35.0001H27.7083V20.4167Z" fill="#E1456C"/>
+                                <label class="form-label">
+                                    <p>PayPal</p>
+                                </label>
+                            </div>
+                            <!--Opción de pago Oxxo-->
+                            <div class="selectorDePago">
+                                <input type="radio" name="opcionPedido" />
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.4944 6.10352e-05L13.125 7.24944V8.85069C13.125 10.4053 11.7644 11.6667 10.2083 11.6667C8.65229 11.6667 7.29167 10.4053 7.29167 8.84923V7.24944L11.6608 6.10352e-05H14.4944ZM10.0435 6.10352e-05L5.83333 7.24944V8.85069C5.83333 10.4053 4.47271 11.6667 2.91667 11.6667C1.36063 11.6667 0 10.4053 0 8.84923V7.24944L7.10792 6.10352e-05H10.0435ZM35 8.84923C35 10.4053 33.6394 11.6667 32.0833 11.6667C30.5273 11.6667 29.1667 10.3061 29.1667 8.75006V7.14881L24.9565 6.10352e-05H27.8935L35 7.24944V8.84923ZM20.4167 7.14589V8.74714C20.4167 10.3017 19.056 11.6667 17.5 11.6667C15.944 11.6667 14.5833 10.3061 14.5833 8.75006V7.14881L16.1102 6.10352e-05H18.8883L20.4167 7.14589ZM23.3392 6.10352e-05L27.704 7.29464V8.89589C27.7054 10.4519 26.3477 11.6667 24.7917 11.6667C23.2356 11.6667 21.875 10.3061 21.875 8.75006V7.14881L20.5056 6.10352e-05L23.3392 6.10352e-05ZM1.45833 14.5834V35.0001H16.0417V32.0834H4.375V17.5001H30.625V35.0001H33.5417V14.5834H1.45833ZM27.7083 20.4167H18.9583V35.0001H27.7083V20.4167Z"
+                                        fill="#E1456C"
+                                    />
                                 </svg>
-                            <label class="form-label">
-                                
-                                <p>Pago en tienda Oxxo</p>
-                            </label>
-                        </div>
-                    </fieldset>
-                    <!--Botón Realizar pedido-->
-                    <button type="button" class="botonDonar botonRealizarPago" id="botonRealizarPago">Realizar pedido</button>
-                </form>
-                <p>Sus datos personales serán utilizados para mejorar su experiencia en el sitio web, para administrar el acceso a su cuenta, y para otros propósitos descritos en nuestra política de privacidad.</p>
-            </div>
-        </div>
-    </div>
-
-    <section class="garantias col-12 flex-row d-flex">
-        <div class="garantiasContenedor">
-            <div class="garantiasItem d-flex col-3">
-                <svg
-                    class="garantiasIcon"
-                    width="60"
-                    height="60"
-                    viewBox="0 0 60 60"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M49.3547 3.51562C48.0744 3.51562 46.8741 3.86121 45.839 4.46156V1.75781C45.839 0.787031 45.052 0 44.0812 0H15.9562C14.9853 0 14.1983 0.787031 14.1983 1.75781V4.48301C13.155 3.8693 11.941 3.51562 10.6455 3.51562C6.76848 3.51562 3.61426 6.66984 3.61426 10.5469C3.61426 13.5041 4.49059 16.3615 6.14844 18.8102C8.97078 22.9789 12.4511 24.0607 15.331 25.2127C16.9916 29.348 20.3496 32.6252 24.5384 34.1769L23.2422 42.4219H22.9875C20.0797 42.4219 17.714 44.7875 17.714 47.6953V56.4844H15.9562C14.9854 56.4844 14.1984 57.2714 14.1984 58.2422C14.1984 59.213 14.9854 60 15.9562 60H44.0812C45.052 60 45.839 59.213 45.839 58.2422C45.839 57.2714 45.052 56.4844 44.0812 56.4844H42.3234V47.6953C42.3234 44.7875 39.9577 42.4219 37.05 42.4219H36.7952L35.4991 34.177C39.6941 32.623 43.0558 29.3386 44.7139 25.1948C47.4344 24.1066 51.0005 23.0217 53.8518 18.8102C55.5097 16.3615 56.386 13.504 56.386 10.5469C56.3859 6.66984 53.2317 3.51562 49.3547 3.51562ZM14.1853 20.968C9.89926 19.2536 7.12988 15.1631 7.12988 10.5469C7.12988 8.60836 8.70699 7.03125 10.6455 7.03125C12.584 7.03125 14.1611 8.60836 14.1611 10.5469C14.1611 10.6705 14.1741 10.791 14.1984 10.9073V19.3359C14.1984 19.9009 14.2288 20.4588 14.2869 21.0087L14.1853 20.968ZM38.8078 56.4844H21.2296V52.9688H38.8078V56.4844ZM37.05 45.9375C38.0192 45.9375 38.8078 46.7261 38.8078 47.6953V49.4531H21.2296V47.6953C21.2296 46.7261 22.0182 45.9375 22.9875 45.9375C23.9411 45.9375 34.8134 45.9375 37.05 45.9375ZM26.801 42.4219L27.9642 35.023C28.6368 35.1107 29.3225 35.1562 30.0187 35.1562C30.7149 35.1562 31.4006 35.1105 32.0732 35.023L33.2364 42.4219H26.801ZM42.3234 19.3359C42.3234 26.1207 36.8035 31.6406 30.0187 31.6406C23.2339 31.6406 17.714 26.1207 17.714 19.3359V10.5469H42.3234V19.3359ZM42.3234 7.03125H17.714V3.51562H42.3234V7.03125ZM45.8148 20.968L45.7523 20.993C45.8093 20.4483 45.8389 19.8955 45.8389 19.3359V10.5469C45.839 8.60836 47.4161 7.03125 49.3547 7.03125C51.2932 7.03125 52.8703 8.60836 52.8703 10.5469C52.8703 15.1631 50.1009 19.2537 45.8148 20.968Z"
-                        fill="#282667"
-                    />
-                </svg>
-                <div class="texto col-8">
-                    <h3>Alta Calidad</h3>
-                    <span>Materiales sustentables</span>
-                </div>
-            </div>
-            <div class="garantiasItem d-flex col-3">
-                <svg
-                    class="garantiasIcon"
-                    width="61"
-                    height="60"
-                    viewBox="0 0 61 60"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <g clip-path="url(#clip0_117_3296)">
-                        <path
-                            d="M57.4525 21.2612C56.6608 18.8097 56.9983 15.1296 54.9405 12.2882C52.8665 9.42438 49.2594 8.61039 47.2225 7.1207C45.2071 5.64672 43.3321 2.43918 39.942 1.33293C36.6475 0.257852 33.2786 1.71672 30.6665 1.71672C28.0547 1.71672 24.6861 0.2575 21.391 1.33281C18.0015 2.43883 16.1249 5.64707 14.1108 7.12035C12.0762 8.60828 8.46639 9.42449 6.39275 12.2879C4.3367 15.127 4.6708 18.8154 3.88049 21.2611C3.12838 23.5888 0.666504 26.3825 0.666504 30.0003C0.666504 33.6203 3.12557 36.4032 3.88049 38.7393C4.67221 41.1909 4.33471 44.8709 6.39252 47.7123C8.46639 50.5763 12.0734 51.3902 14.1105 52.88C16.1255 54.3537 18.0009 57.5615 21.391 58.6676C24.6833 59.742 28.0574 58.2838 30.6665 58.2838C33.2719 58.2838 36.654 59.7405 39.942 58.6677C43.3317 57.5617 45.207 54.3542 47.2222 52.8802C49.2568 51.3923 52.8666 50.5761 54.9403 47.7127C56.9964 44.8735 56.6621 41.1854 57.4525 38.7394C58.2046 36.4116 60.6665 33.618 60.6665 30.0003C60.6665 26.3805 58.208 23.5984 57.4525 21.2612ZM52.9922 37.298C52.0694 40.1545 52.3112 43.3512 51.144 44.963C49.9611 46.5962 46.8534 47.3423 44.4554 49.0963C42.0836 50.8308 40.4213 53.5804 38.4879 54.2112C36.6589 54.8082 33.6781 53.5961 30.6666 53.5961C27.6331 53.5961 24.683 54.8107 22.8452 54.2112C20.9121 53.5804 19.2521 50.8327 16.8778 49.0962C14.4939 47.3528 11.3685 46.5914 10.189 44.9628C9.02561 43.3564 9.25822 40.1375 8.341 37.2981C7.44193 34.5162 5.354 32.1074 5.354 30.0003C5.354 27.891 7.44006 25.4905 8.34076 22.7025C9.26361 19.8462 9.02186 16.6492 10.189 15.0375C11.3712 13.4054 14.4813 12.6569 16.8778 10.9042C19.257 9.1641 20.9089 6.42109 22.8449 5.78934C24.6725 5.19309 27.663 6.40445 30.6664 6.40445C33.7054 6.40445 36.6481 5.18898 38.4878 5.78934C40.4207 6.42004 42.0821 9.16879 44.4554 10.9043C46.8388 12.6477 49.9645 13.4091 51.144 15.0377C52.3076 16.6444 52.0737 19.86 52.992 22.7023V22.7024C53.8911 25.4843 55.979 27.8931 55.979 30.0003C55.979 32.1095 53.8929 34.51 52.9922 37.298ZM41.4645 22.4774C42.3799 23.3928 42.3799 24.8767 41.4645 25.792L29.7333 37.5231C28.818 38.4385 27.3339 38.4384 26.4187 37.5231L19.8686 30.973C18.9533 30.0577 18.9531 28.5737 19.8685 27.6585C20.7838 26.7433 22.268 26.7432 23.183 27.6585L28.076 32.5513L38.1497 22.4775C39.0651 21.5622 40.5492 21.5622 41.4645 22.4774Z"
-                            fill="#282667"
-                        />
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_117_3296">
-                            <rect width="60" height="60" fill="white" transform="translate(0.666504)" />
-                        </clipPath>
-                    </defs>
-                </svg>
-                <div class="texto col-8">
-                    <h3>100% Garantizado</h3>
-                    <span>Productos artesanales</span>
-                </div>
-            </div>
-            <div class="garantiasItem d-flex col-3">
-                <svg
-                    class="garantiasIcon"
-                    width="61"
-                    height="60"
-                    viewBox="0 0 61 60"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <g clip-path="url(#clip0_117_3304)">
-                        <path
-                            d="M55.6814 31.1019V3.77964C55.6814 2.80489 54.8912 2.01465 53.9164 2.01465H6.62861C5.65386 2.01465 4.86362 2.80489 4.86362 3.77964V33.28C4.01218 33.404 3.17982 33.7346 2.44346 34.2812C0.122148 35.9273 -0.426882 39.6109 1.51755 41.8827L9.46742 51.5204C14.3884 57.2798 19.616 57.9854 27.3874 57.9854C34.0563 57.9854 37.0378 58.0148 42.85 56.6905L48.5095 55.3369C49.4271 56.6184 50.884 57.4485 52.5218 57.4485H55.3097C58.0798 57.4485 60.3335 55.0744 60.3335 52.1561V36.3784C60.3336 33.592 58.2784 31.3031 55.6814 31.1019ZM47.7482 34.7326L45.3965 33.5382C41.5299 31.5865 37.0594 31.5142 33.1317 33.3403C32.0601 33.7618 29.7229 35.1759 28.5106 35.1286H20.3502C17.6434 35.1286 15.4412 37.3307 15.4412 40.0376V41.3247C15.426 41.3087 15.4101 41.2936 15.3952 41.2773L9.56778 34.9519C9.21514 34.5692 8.81896 34.2489 8.39371 33.9919V16.481H22.8376V22.951C22.8376 23.9257 23.6278 24.7159 24.6026 24.7159H35.7398C36.7145 24.7159 37.5047 23.9257 37.5047 22.951V16.481H52.1516V31.1018C50.0894 31.2611 48.3698 32.7364 47.7482 34.7326ZM26.3674 16.481H33.9747V21.186H26.3674V16.481ZM52.1515 12.951H37.5047V5.54463H52.1516V12.951H52.1515ZM33.9748 5.54463V12.9511H26.3675V5.54463H33.9748ZM22.8374 5.54463V12.9511H8.3936V5.54463H22.8374ZM42.0308 53.2568C36.6617 54.4865 33.4281 54.4367 27.4507 54.4367C20.1554 54.4367 16.6304 54.3188 12.1907 49.274L4.24081 39.6363C2.858 37.8357 5.36264 35.7101 6.9716 37.3435L12.799 43.669C14.3391 45.2941 16.2772 46.1885 18.666 46.2411H34.8224C35.7972 46.2411 36.5874 45.4508 36.5874 44.4761C36.5874 43.5013 35.7972 42.7111 34.8224 42.7111H18.9711V40.0373C18.9711 39.277 19.5896 38.6583 20.3501 38.6583H28.5105C30.3489 38.79 33.0024 37.2549 34.6198 36.541C37.5615 35.1733 40.9098 35.2274 43.8019 36.6872L47.4982 38.5646V51.9489L42.0308 53.2568ZM56.8036 52.156C56.8036 53.1278 56.1335 53.9184 55.3098 53.9184H52.5219C51.6982 53.9184 51.0282 53.1278 51.0282 52.156V36.3784C51.0282 35.4066 51.6983 34.6159 52.5219 34.6159H55.3098C56.1335 34.6159 56.8036 35.4065 56.8036 36.3784V52.156Z"
-                            fill="#282667"
-                        />
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_117_3304">
-                            <rect width="60" height="60" fill="white" transform="translate(0.333496)" />
-                        </clipPath>
-                    </defs>
-                </svg>
-                <div class="texto col-8">
-                    <h3>Causa Social</h3>
-                    <span>Impulsamos la economía local mexicana</span>
-                </div>
-            </div>
-            <div class="garantiasItem d-flex col-3">
-                <svg
-                    class="garantiasIcon"
-                    width="60"
-                    height="60"
-                    viewBox="0 0 60 60"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <g clip-path="url(#clip0_117_3310)">
-                        <path
-                            d="M54.6935 23.9628C54.2992 10.6825 43.3741 0 29.9999 0C16.6257 0 5.70059 10.6825 5.30612 23.9628L3.5293 25.7396V37.7898L5.294 39.5545V47.7647C5.294 52.5652 9.19941 56.4706 13.9999 56.4706H16.1858C16.9142 58.5246 18.8758 60 21.1764 60H24.7058C27.0079 60 28.9705 58.5225 29.6978 56.4664C29.7986 56.4681 29.8997 56.4706 29.9999 56.4706C38.522 56.4706 45.6526 50.3981 47.2921 42.3529H51.9073L56.4705 37.7898V25.7396L54.6935 23.9628ZM29.9999 3.52941C40.4741 3.52941 49.1953 11.174 50.8806 21.1765H47.2921C45.6526 13.1313 38.522 7.05882 29.9999 7.05882C21.4778 7.05882 14.3472 13.1313 12.7077 21.1765H9.11918C10.8045 11.174 19.5257 3.52941 29.9999 3.52941ZM43.6708 21.1765C37.9662 21.1594 33.9368 21.5068 30.6147 16.6506L29.0015 14.2926L27.6152 16.7907C25.5952 20.4306 22.8748 21.1765 19.4117 21.1765H16.3289C17.9001 15.0944 23.4337 10.5882 29.9999 10.5882C36.5661 10.5882 42.0997 15.0944 43.6708 21.1765ZM12.3528 38.8235H9.55436L7.05871 36.3279V27.2015L9.55436 24.7059H12.3528V38.8235ZM8.82341 47.7647V42.3529H12.7042C13.3686 45.6441 14.9581 48.6652 17.3129 51.0916C16.8193 51.6191 16.4321 52.2467 16.1858 52.9412H13.9999C11.1455 52.9412 8.82341 50.6191 8.82341 47.7647ZM24.7058 56.4706H21.1764C20.2032 56.4706 19.4117 55.6791 19.4117 54.7059C19.4117 53.7328 20.2032 52.9412 21.1764 52.9412H24.7058C25.6788 52.9412 26.4705 53.7328 26.4705 54.7059C26.4705 55.6791 25.6788 56.4706 24.7058 56.4706ZM44.1175 38.8235C44.1175 46.608 37.7844 52.9412 29.9999 52.9412C29.8987 52.9412 29.7967 52.9392 29.6948 52.9368C28.9652 50.8851 27.0047 49.4118 24.7058 49.4118C21.0822 49.4198 21.14 49.3936 20.6884 49.4352C17.6246 46.7498 15.8822 42.9248 15.8822 38.8235V24.7059H19.4117C22.5348 24.7059 26.3384 24.1909 29.2826 20.6076C33.1673 24.6786 37.9146 24.7059 42.1761 24.7059H44.1175V38.8235ZM52.9411 36.3279L50.4454 38.8235H47.6469V24.7059H50.4454L52.9411 27.2015V36.3279Z"
-                            fill="#282667"
-                        />
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_117_3310">
-                            <rect width="60" height="60" fill="white" />
-                        </clipPath>
-                    </defs>
-                </svg>
-                <div class="texto col-8">
-                    <h3>Soporte Técnico</h3>
-                    <span>Atención a la medida de tus necesidades</span>
+                                <label class="form-label">
+                                    <p>Pago en tienda Oxxo</p>
+                                </label>
+                            </div>
+                        </fieldset>
+                        <!--Botón Realizar pedido-->
+                        <button type="button" class="botonDonar botonRealizarPago" id="botonRealizarPago">Realizar pedido</button>
+                    </form>
+                    <p>
+                        Sus datos personales serán utilizados para mejorar su experiencia en el sitio web, para administrar el acceso a su cuenta, y para otros propósitos descritos en nuestra política
+                        de privacidad.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <footer class="col-12 flex-column d-flex">
+        <section class="garantias col-12 flex-row d-flex">
+            <div class="garantiasContenedor">
+                <div class="garantiasItem d-flex col-3">
+                    <svg class="garantiasIcon" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M49.3547 3.51562C48.0744 3.51562 46.8741 3.86121 45.839 4.46156V1.75781C45.839 0.787031 45.052 0 44.0812 0H15.9562C14.9853 0 14.1983 0.787031 14.1983 1.75781V4.48301C13.155 3.8693 11.941 3.51562 10.6455 3.51562C6.76848 3.51562 3.61426 6.66984 3.61426 10.5469C3.61426 13.5041 4.49059 16.3615 6.14844 18.8102C8.97078 22.9789 12.4511 24.0607 15.331 25.2127C16.9916 29.348 20.3496 32.6252 24.5384 34.1769L23.2422 42.4219H22.9875C20.0797 42.4219 17.714 44.7875 17.714 47.6953V56.4844H15.9562C14.9854 56.4844 14.1984 57.2714 14.1984 58.2422C14.1984 59.213 14.9854 60 15.9562 60H44.0812C45.052 60 45.839 59.213 45.839 58.2422C45.839 57.2714 45.052 56.4844 44.0812 56.4844H42.3234V47.6953C42.3234 44.7875 39.9577 42.4219 37.05 42.4219H36.7952L35.4991 34.177C39.6941 32.623 43.0558 29.3386 44.7139 25.1948C47.4344 24.1066 51.0005 23.0217 53.8518 18.8102C55.5097 16.3615 56.386 13.504 56.386 10.5469C56.3859 6.66984 53.2317 3.51562 49.3547 3.51562ZM14.1853 20.968C9.89926 19.2536 7.12988 15.1631 7.12988 10.5469C7.12988 8.60836 8.70699 7.03125 10.6455 7.03125C12.584 7.03125 14.1611 8.60836 14.1611 10.5469C14.1611 10.6705 14.1741 10.791 14.1984 10.9073V19.3359C14.1984 19.9009 14.2288 20.4588 14.2869 21.0087L14.1853 20.968ZM38.8078 56.4844H21.2296V52.9688H38.8078V56.4844ZM37.05 45.9375C38.0192 45.9375 38.8078 46.7261 38.8078 47.6953V49.4531H21.2296V47.6953C21.2296 46.7261 22.0182 45.9375 22.9875 45.9375C23.9411 45.9375 34.8134 45.9375 37.05 45.9375ZM26.801 42.4219L27.9642 35.023C28.6368 35.1107 29.3225 35.1562 30.0187 35.1562C30.7149 35.1562 31.4006 35.1105 32.0732 35.023L33.2364 42.4219H26.801ZM42.3234 19.3359C42.3234 26.1207 36.8035 31.6406 30.0187 31.6406C23.2339 31.6406 17.714 26.1207 17.714 19.3359V10.5469H42.3234V19.3359ZM42.3234 7.03125H17.714V3.51562H42.3234V7.03125ZM45.8148 20.968L45.7523 20.993C45.8093 20.4483 45.8389 19.8955 45.8389 19.3359V10.5469C45.839 8.60836 47.4161 7.03125 49.3547 7.03125C51.2932 7.03125 52.8703 8.60836 52.8703 10.5469C52.8703 15.1631 50.1009 19.2537 45.8148 20.968Z"
+                            fill="#282667"
+                        />
+                    </svg>
+                    <div class="texto col-8">
+                        <h3>Alta Calidad</h3>
+                        <span>Materiales sustentables</span>
+                    </div>
+                </div>
+                <div class="garantiasItem d-flex col-3">
+                    <svg class="garantiasIcon" width="61" height="60" viewBox="0 0 61 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_117_3296)">
+                            <path
+                                d="M57.4525 21.2612C56.6608 18.8097 56.9983 15.1296 54.9405 12.2882C52.8665 9.42438 49.2594 8.61039 47.2225 7.1207C45.2071 5.64672 43.3321 2.43918 39.942 1.33293C36.6475 0.257852 33.2786 1.71672 30.6665 1.71672C28.0547 1.71672 24.6861 0.2575 21.391 1.33281C18.0015 2.43883 16.1249 5.64707 14.1108 7.12035C12.0762 8.60828 8.46639 9.42449 6.39275 12.2879C4.3367 15.127 4.6708 18.8154 3.88049 21.2611C3.12838 23.5888 0.666504 26.3825 0.666504 30.0003C0.666504 33.6203 3.12557 36.4032 3.88049 38.7393C4.67221 41.1909 4.33471 44.8709 6.39252 47.7123C8.46639 50.5763 12.0734 51.3902 14.1105 52.88C16.1255 54.3537 18.0009 57.5615 21.391 58.6676C24.6833 59.742 28.0574 58.2838 30.6665 58.2838C33.2719 58.2838 36.654 59.7405 39.942 58.6677C43.3317 57.5617 45.207 54.3542 47.2222 52.8802C49.2568 51.3923 52.8666 50.5761 54.9403 47.7127C56.9964 44.8735 56.6621 41.1854 57.4525 38.7394C58.2046 36.4116 60.6665 33.618 60.6665 30.0003C60.6665 26.3805 58.208 23.5984 57.4525 21.2612ZM52.9922 37.298C52.0694 40.1545 52.3112 43.3512 51.144 44.963C49.9611 46.5962 46.8534 47.3423 44.4554 49.0963C42.0836 50.8308 40.4213 53.5804 38.4879 54.2112C36.6589 54.8082 33.6781 53.5961 30.6666 53.5961C27.6331 53.5961 24.683 54.8107 22.8452 54.2112C20.9121 53.5804 19.2521 50.8327 16.8778 49.0962C14.4939 47.3528 11.3685 46.5914 10.189 44.9628C9.02561 43.3564 9.25822 40.1375 8.341 37.2981C7.44193 34.5162 5.354 32.1074 5.354 30.0003C5.354 27.891 7.44006 25.4905 8.34076 22.7025C9.26361 19.8462 9.02186 16.6492 10.189 15.0375C11.3712 13.4054 14.4813 12.6569 16.8778 10.9042C19.257 9.1641 20.9089 6.42109 22.8449 5.78934C24.6725 5.19309 27.663 6.40445 30.6664 6.40445C33.7054 6.40445 36.6481 5.18898 38.4878 5.78934C40.4207 6.42004 42.0821 9.16879 44.4554 10.9043C46.8388 12.6477 49.9645 13.4091 51.144 15.0377C52.3076 16.6444 52.0737 19.86 52.992 22.7023V22.7024C53.8911 25.4843 55.979 27.8931 55.979 30.0003C55.979 32.1095 53.8929 34.51 52.9922 37.298ZM41.4645 22.4774C42.3799 23.3928 42.3799 24.8767 41.4645 25.792L29.7333 37.5231C28.818 38.4385 27.3339 38.4384 26.4187 37.5231L19.8686 30.973C18.9533 30.0577 18.9531 28.5737 19.8685 27.6585C20.7838 26.7433 22.268 26.7432 23.183 27.6585L28.076 32.5513L38.1497 22.4775C39.0651 21.5622 40.5492 21.5622 41.4645 22.4774Z"
+                                fill="#282667"
+                            />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_117_3296">
+                                <rect width="60" height="60" fill="white" transform="translate(0.666504)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="texto col-8">
+                        <h3>100% Garantizado</h3>
+                        <span>Productos artesanales</span>
+                    </div>
+                </div>
+                <div class="garantiasItem d-flex col-3">
+                    <svg class="garantiasIcon" width="61" height="60" viewBox="0 0 61 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_117_3304)">
+                            <path
+                                d="M55.6814 31.1019V3.77964C55.6814 2.80489 54.8912 2.01465 53.9164 2.01465H6.62861C5.65386 2.01465 4.86362 2.80489 4.86362 3.77964V33.28C4.01218 33.404 3.17982 33.7346 2.44346 34.2812C0.122148 35.9273 -0.426882 39.6109 1.51755 41.8827L9.46742 51.5204C14.3884 57.2798 19.616 57.9854 27.3874 57.9854C34.0563 57.9854 37.0378 58.0148 42.85 56.6905L48.5095 55.3369C49.4271 56.6184 50.884 57.4485 52.5218 57.4485H55.3097C58.0798 57.4485 60.3335 55.0744 60.3335 52.1561V36.3784C60.3336 33.592 58.2784 31.3031 55.6814 31.1019ZM47.7482 34.7326L45.3965 33.5382C41.5299 31.5865 37.0594 31.5142 33.1317 33.3403C32.0601 33.7618 29.7229 35.1759 28.5106 35.1286H20.3502C17.6434 35.1286 15.4412 37.3307 15.4412 40.0376V41.3247C15.426 41.3087 15.4101 41.2936 15.3952 41.2773L9.56778 34.9519C9.21514 34.5692 8.81896 34.2489 8.39371 33.9919V16.481H22.8376V22.951C22.8376 23.9257 23.6278 24.7159 24.6026 24.7159H35.7398C36.7145 24.7159 37.5047 23.9257 37.5047 22.951V16.481H52.1516V31.1018C50.0894 31.2611 48.3698 32.7364 47.7482 34.7326ZM26.3674 16.481H33.9747V21.186H26.3674V16.481ZM52.1515 12.951H37.5047V5.54463H52.1516V12.951H52.1515ZM33.9748 5.54463V12.9511H26.3675V5.54463H33.9748ZM22.8374 5.54463V12.9511H8.3936V5.54463H22.8374ZM42.0308 53.2568C36.6617 54.4865 33.4281 54.4367 27.4507 54.4367C20.1554 54.4367 16.6304 54.3188 12.1907 49.274L4.24081 39.6363C2.858 37.8357 5.36264 35.7101 6.9716 37.3435L12.799 43.669C14.3391 45.2941 16.2772 46.1885 18.666 46.2411H34.8224C35.7972 46.2411 36.5874 45.4508 36.5874 44.4761C36.5874 43.5013 35.7972 42.7111 34.8224 42.7111H18.9711V40.0373C18.9711 39.277 19.5896 38.6583 20.3501 38.6583H28.5105C30.3489 38.79 33.0024 37.2549 34.6198 36.541C37.5615 35.1733 40.9098 35.2274 43.8019 36.6872L47.4982 38.5646V51.9489L42.0308 53.2568ZM56.8036 52.156C56.8036 53.1278 56.1335 53.9184 55.3098 53.9184H52.5219C51.6982 53.9184 51.0282 53.1278 51.0282 52.156V36.3784C51.0282 35.4066 51.6983 34.6159 52.5219 34.6159H55.3098C56.1335 34.6159 56.8036 35.4065 56.8036 36.3784V52.156Z"
+                                fill="#282667"
+                            />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_117_3304">
+                                <rect width="60" height="60" fill="white" transform="translate(0.333496)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="texto col-8">
+                        <h3>Causa Social</h3>
+                        <span>Impulsamos la economía local mexicana</span>
+                    </div>
+                </div>
+                <div class="garantiasItem d-flex col-3">
+                    <svg class="garantiasIcon" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_117_3310)">
+                            <path
+                                d="M54.6935 23.9628C54.2992 10.6825 43.3741 0 29.9999 0C16.6257 0 5.70059 10.6825 5.30612 23.9628L3.5293 25.7396V37.7898L5.294 39.5545V47.7647C5.294 52.5652 9.19941 56.4706 13.9999 56.4706H16.1858C16.9142 58.5246 18.8758 60 21.1764 60H24.7058C27.0079 60 28.9705 58.5225 29.6978 56.4664C29.7986 56.4681 29.8997 56.4706 29.9999 56.4706C38.522 56.4706 45.6526 50.3981 47.2921 42.3529H51.9073L56.4705 37.7898V25.7396L54.6935 23.9628ZM29.9999 3.52941C40.4741 3.52941 49.1953 11.174 50.8806 21.1765H47.2921C45.6526 13.1313 38.522 7.05882 29.9999 7.05882C21.4778 7.05882 14.3472 13.1313 12.7077 21.1765H9.11918C10.8045 11.174 19.5257 3.52941 29.9999 3.52941ZM43.6708 21.1765C37.9662 21.1594 33.9368 21.5068 30.6147 16.6506L29.0015 14.2926L27.6152 16.7907C25.5952 20.4306 22.8748 21.1765 19.4117 21.1765H16.3289C17.9001 15.0944 23.4337 10.5882 29.9999 10.5882C36.5661 10.5882 42.0997 15.0944 43.6708 21.1765ZM12.3528 38.8235H9.55436L7.05871 36.3279V27.2015L9.55436 24.7059H12.3528V38.8235ZM8.82341 47.7647V42.3529H12.7042C13.3686 45.6441 14.9581 48.6652 17.3129 51.0916C16.8193 51.6191 16.4321 52.2467 16.1858 52.9412H13.9999C11.1455 52.9412 8.82341 50.6191 8.82341 47.7647ZM24.7058 56.4706H21.1764C20.2032 56.4706 19.4117 55.6791 19.4117 54.7059C19.4117 53.7328 20.2032 52.9412 21.1764 52.9412H24.7058C25.6788 52.9412 26.4705 53.7328 26.4705 54.7059C26.4705 55.6791 25.6788 56.4706 24.7058 56.4706ZM44.1175 38.8235C44.1175 46.608 37.7844 52.9412 29.9999 52.9412C29.8987 52.9412 29.7967 52.9392 29.6948 52.9368C28.9652 50.8851 27.0047 49.4118 24.7058 49.4118C21.0822 49.4198 21.14 49.3936 20.6884 49.4352C17.6246 46.7498 15.8822 42.9248 15.8822 38.8235V24.7059H19.4117C22.5348 24.7059 26.3384 24.1909 29.2826 20.6076C33.1673 24.6786 37.9146 24.7059 42.1761 24.7059H44.1175V38.8235ZM52.9411 36.3279L50.4454 38.8235H47.6469V24.7059H50.4454L52.9411 27.2015V36.3279Z"
+                                fill="#282667"
+                            />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_117_3310">
+                                <rect width="60" height="60" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="texto col-8">
+                        <h3>Soporte Técnico</h3>
+                        <span>Atención a la medida de tus necesidades</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="col-12 flex-column d-flex">
             <div class="footerContent row d-flex">
                 <div class="footerLogo col-sm-4 d-flex flex-column align-items-center">
                     <img class="logoRosa" src="./src/img/logorosa.png" alt="" />
@@ -464,9 +463,7 @@
                     <h4>Ayuda</h4>
                     <ul>
                         <li>
-                            <a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank"
-                                >Donar</a
-                            >
+                            <a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a>
                         </li>
                         <li><a href="./nosotros.html#contacto">Contacto</a></li>
                         <li><a href="./politicas.html">Politicas de privacidad</a></li>
@@ -479,17 +476,19 @@
             </div>
         </footer>
 
-    <!--Bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!--Script nuestro-->
-    <script src="./js/main.js"></script>
-
-</body>
-
+        <!--Bootstrap-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <!--Scripts-->
+        <script src="./js/main.js"></script>
+    </body>
 </html>
