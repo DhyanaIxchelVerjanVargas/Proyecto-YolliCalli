@@ -3,7 +3,9 @@ let nombreProductoIndividual = document.getElementById("nombreProductoIndividual
 let precioProductoIndividual = document.getElementById("precioProductoIndividual");
 let descripcionProductoIndividual = document.getElementById("descripcionProductoIndividual");
 let categoriaProductoIndividual = document.getElementById("categoriaProductoIndividual");
-let etiquetasProductoIndividual = document.getElementById("etiquetasProductoIndividual");
+//let etiquetasProductoIndividual = document.getElementById("etiquetasProductoIndividual");
+let tallas = document.querySelectorAll('input[name="radioTallas"]');
+let tallaProductoIndividual = document.getElementById("tallaProductoIndividual")
 let imagenProductoIndividual = document.getElementById("imagenProductoIndividual");
 let noProducto = document.getElementById("noProducto");
 //Agregado para carrito
@@ -49,8 +51,22 @@ window.addEventListener("load",function(event){
                 precioProductoIndividual.innerHTML = producto.precio.toFixed(2);
                 descripcionProductoIndividual.innerHTML = producto.descripcion;
                 categoriaProductoIndividual.innerHTML = producto.categoria;
-                etiquetasProductoIndividual.innerHTML = producto.etiquetas;
+                //etiquetasProductoIndividual.innerHTML = producto.etiquetas;
                 imagenProductoIndividual.src = producto.imagen;
+
+                let tallasDisponibles = producto.talla
+                console.log(tallasDisponibles);
+
+                if(producto.categoria.toLowerCase() == "ropa"){
+                    tallas.forEach(opcionTalla => {
+                        let valor = opcionTalla.value;
+                        if (!tallasDisponibles.includes(valor)) {
+                            opcionTalla.disabled = true;
+                        }
+                    });
+                    tallaProductoIndividual.style.display = "block";
+                }
+
                 //Agregado para carrito
                 nombreProd = producto.nombre;
                 precioProd = producto.precio.toFixed(2);
