@@ -29,9 +29,18 @@ textarea{
     padding-left: 0;
 }
 
-label {
+label, legend {
     font-size: var(--texto-general);
     font-family: var(--barlow);
+}
+
+.tallas{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.talla{
+    margin: 0.5rem 1.5rem 0.5rem 0;
 }
 
 .inputArchivo{
@@ -59,7 +68,7 @@ select {
     font-size: var(--texto-general);
 }
 
-.form-control, .form-select{
+.form-control, .form-select, .form-check-input{
     border: solid 1px var(--rosa-mexicano);
     border-radius: 10px;
 }

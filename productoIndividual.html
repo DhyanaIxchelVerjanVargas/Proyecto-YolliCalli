@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./src/img/yc.ico" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -111,11 +112,26 @@
                             <!--Descripción-->
                             <hr class="linea" />
                             <p id="descripcionProductoIndividual"></p>
+                            <br>
+                            <!--Tallas-->
+                            <div class="tallasProductoIndividual" style="display: none;" id="tallaProductoIndividual">
+                                <p>Seleccione talla:</p>
+                                <div class="btn-group" role="group" aria-label="Botones agrupados para tallas de ropa">
+                                    <input type="radio" class="btn-check " name="radioTallas" id="tallaGrandeProducto" autocomplete="off" value="grande">
+                                    <label class="btn tallasLabel" for="tallaGrandeProducto">Grande (G)</label>
+                                
+                                    <input type="radio" class="btn-check" name="radioTallas" id="tallaMedianaProducto" autocomplete="off" value="mediana">
+                                    <label class="btn tallasLabel" for="tallaMedianaProducto">Mediana (M)</label>
+                                
+                                    <input type="radio" class="btn-check" name="radioTallas" id="tallaChicaProducto" autocomplete="off" value="chica">
+                                    <label class="btn tallasLabel" for="tallaChicaProducto">Chica (CH)</label>
+                                </div>
+                            </div>
                             <hr class="linea" />
                             <!--Categoría-->
                             <p>Categoría: <span id="categoriaProductoIndividual"></span></p>
-                            <!--Etiquetas-->
-                            <p>Etiquetas: <span id="etiquetasProductoIndividual"></span></p>
+                            <!--Etiquetas
+                            <p>Etiquetas: <span id="etiquetasProductoIndividual"></span></p>-->
                         </div>
                         <div class="botonProductoIndividual">
                             <button type="button" class="boton" id="botonProductoCarrito">Agregar a carrito</button>
@@ -130,6 +146,7 @@
             <!-- Modal -->
             <div class="modal fade" id="modalEnvioCarrito" tabindex="-1" aria-labelledby="modalEnvioCarrito" aria-hidden="true"></div>
             <!-- Fin Modal de Carrito -->
+            <!--Contenedor cuando no hay producto-->
             <div class="container contenedorNoProducto" id="noProducto" style="display: none">
                 <h2 class="titulosRosas">No se puede mostrar el producto.</h2>
                 <p>
