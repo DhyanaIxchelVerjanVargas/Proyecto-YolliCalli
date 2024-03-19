@@ -2,6 +2,10 @@ main{
     margin: 6rem 10rem 10rem 10rem;
 }
 
+p{
+    font-size: var(--texto-general);
+}
+
 .imagen{
     display: flex;
     align-items: flex-start;
@@ -49,6 +53,27 @@ img{
     text-align: center;
 }
 
+.tallasLabel{
+    font-size: var(--texto-general);
+    border: 1px solid var(--rosa-mexicano);
+    color: var(--negro);
+}
+
+.btn-group input.btn-check:checked + label {
+    background-color: var(--rosa-mexicano);
+    border: 1px solid var(--rosa-mexicano);
+    color: #fff;
+}
+
+.btn-group input.btn-check:hover + label {
+    border: 1px solid var(--rosa-mexicano);
+    background-color: #e1456ccc;
+}
+
+.btn-group input.btn-check:disabled + label {
+    border: 1px solid #33333380;
+}
+
 @media (max-width: 992px) {
     main  {
         margin-left: 2rem;
@@ -74,47 +99,29 @@ img{
     
 }
 
-/*Banner responsivo pequeño*/
-@media (max-width: 575.98px) {
-    /*Banner*/
-    #Banner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-        width: 100%;
-        padding: 0 50px;
-    }
+/* Modal para Carrito */
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    #Banner h1 {
-        font-size: var(--titulos-h3-rutas);
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        text-shadow: 3px 3px 2px var(--bordes);
-        line-height: 40px;
-    }
+.modal-content {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto 0;
+    transform: translate(0, -50px);
+    position: relative;
+}
 
-    #Banner .breadcrumb {
-        line-height: 12px;
-        padding: 0;
-        margin: 0;
-    }
-    /* #Banner .breadcrumb nav ol li { */
-    #Banner .breadcrumb .breadcrumb-item {
-        font-size: 12px;
-        line-height: 12px;
-        margin: 0;
-    }
+.modal-title {
+    letter-spacing: 2px;
+}
 
-    /* #Banner .breadcrumb nav ol li a { */
-    #Banner .breadcrumb .breadcrumb-item a {
-        font-size: 12px;
-        font-weight: var(--bold);
-        text-decoration: none;
-        text-shadow: 2px 1px 2px var(--bordes);
-    }
-    /*Banner*/
+.modal-body p {
+    word-spacing: 1px;
+    letter-spacing: 1px;
 }

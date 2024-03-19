@@ -135,11 +135,11 @@ header .navbar {
     height: 100%;
     list-style: none;
     margin: 0;
-    padding-right: 3rem;
+    padding-inline: 1.5rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .navbarContainer a {
@@ -172,6 +172,31 @@ header .navbar {
 
 .navMenu i {
     font-size: 0;
+}
+
+.navMenu li {
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.navMenu li:hover {
+    transform: scale(1.2);
+}
+
+.navMenu li::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    height: 2px;
+    background-color: var(--bordes);
+    transform: scaleX(0);
+    transition: all 0.2s ease;
+}
+
+.navMenu li:hover::before {
+    transform: scaleX(1);
 }
 
 .navIcons {
@@ -207,6 +232,45 @@ header .navbar {
 .bi-cart3,
 .bi-person {
     font-size: 2.2rem;
+}
+
+.profileButton {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: var(--azul-talavera);
+    font-weight: 600;
+}
+
+.loginLink {
+    display: flex;
+}
+
+.loginButton {
+    box-sizing: border-box;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    background-color: var(--rosa-mexicano);
+    border: solid transparent 1px;
+    border-radius: 1rem;
+    color: var(--blanco);
+    font-weight: 600;
+    text-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+    background-color: var(--blanco);
+    color: var(--rosa-mexicano);
+    transform: scale(1.1);
+    border-color: var(--bordes);
+}
+
+.bi-person-fill-x {
+    display: flex;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
 .searchField {
@@ -270,7 +334,7 @@ header .navbar {
     z-index: 0;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 670px) {
     header .navbar {
         width: 100%;
         height: auto;
@@ -374,6 +438,24 @@ header .navbar {
     .navIconsItems.btnBuscar {
         height: 2.7rem;
         width: 2.7rem;
+    }
+
+    .loginButton {
+        width: 24rem;
+        position: absolute;
+        bottom: 2rem;
+    }
+
+    .loginLink {
+        height: auto;
+        position: absolute;
+        bottom: 2rem;
+    }
+
+    .bi-person-fill-x {
+        position: absolute;
+        bottom: 2rem;
+        color: var(--blanco);
     }
 
     .searchField {
