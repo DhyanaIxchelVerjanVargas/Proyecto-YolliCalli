@@ -5,20 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
         <!-- <link rel="stylesheet" href="./css/normalize.css" /> -->
         <link rel="stylesheet" href="./css/estilosGlobales.css" />
         <link rel="stylesheet" href="./css/productoIndividual.css" />
@@ -31,15 +25,8 @@
             <nav class="navbar" id="navbar">
                 <div class="navbarContainer navLogo" id="navLogo">
                     <div class="vacio"></div>
-                    <img src="./src/img/logorosa.png" alt="Logo" />
-                    <button
-                        class="nav-toggler"
-                        type="button"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasRight"
-                        aria-controls="offcanvasRight"
-                        aria-label="Toggle navigation"
-                    >
+                    <a href="./index.html"><img src="./src/img/logorosa.png" alt="Logo" /></a>
+                    <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
                         <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
                     </button>
                 </div>
@@ -55,19 +42,13 @@
                             <a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a>
                         </li>
                         <li>
-                            <a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a>
+                            <a href="./perfil.html" class="menuLink"><i class="bi bi-person-circle"></i><button class="profileButton" id="profileButton">Perfil</button></a>
                         </li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
                     <div class="searchField" role="search" id="searchField">
-                        <input
-                            class="searchBox searchInput"
-                            type="search"
-                            placeholder="Buscar"
-                            aria-label="Search"
-                            id="txtBusqueda"
-                        />
+                        <input class="searchBox searchInput" type="search" placeholder="Buscar" aria-label="Search" id="txtBusqueda" />
                         <a class="navIconsItems btnBuscar" id="btnBuscar"><i class="bi bi-search"></i></a>
                     </div>
                     <ul>
@@ -76,6 +57,11 @@
                                 ><i class="bi bi-cart3"></i>
                                 <p>Carrito</p>
                             </a>
+                        </li>
+                        <li>
+                            <a href="./iniciosesion.html" class="loginLink" id="loginLink"
+                                ><button class="loginButton" id="loginButton"><i class="bi bi-person-fill-x"></i></button
+                            ></a>
                         </li>
                     </ul>
                 </div>
@@ -98,12 +84,7 @@
             </div>
         </header>
         <aside>
-            <div
-                class="offcanvas offcanvas-end"
-                tabindex="-1"
-                id="offcanvasRight"
-                aria-labelledby="offcanvasRightLabel"
-            >
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <div class="vacio"></div>
                     <img src="./src/img/logorosa.png" alt="Logo" />
@@ -159,23 +140,10 @@
             </div>
             <!-- Modal de alerta de envio exitoso de carrito -->
             <!-- Button trigger modal para Carrito -->
-            <button
-                id="btnEnvioCarrito"
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#modalEnvioCarrito"
-                style="display: none"
-            ></button>
+            <button id="btnEnvioCarrito" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEnvioCarrito" style="display: none"></button>
 
             <!-- Modal -->
-            <div
-                class="modal fade"
-                id="modalEnvioCarrito"
-                tabindex="-1"
-                aria-labelledby="modalEnvioCarrito"
-                aria-hidden="true"
-            ></div>
+            <div class="modal fade" id="modalEnvioCarrito" tabindex="-1" aria-labelledby="modalEnvioCarrito" aria-hidden="true"></div>
             <!-- Fin Modal de Carrito -->
             <!--Contenedor cuando no hay producto-->
             <div class="container contenedorNoProducto" id="noProducto" style="display: none">
@@ -204,9 +172,7 @@
                     <h4>Ayuda</h4>
                     <ul>
                         <li>
-                            <a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank"
-                                >Donar</a
-                            >
+                            <a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a>
                         </li>
                         <li><a href="./nosotros.html#contacto">Contacto</a></li>
                         <li><a href="./politicas.html">Políticas de privacidad</a></li>
