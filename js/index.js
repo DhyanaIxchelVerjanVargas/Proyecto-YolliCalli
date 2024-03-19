@@ -126,14 +126,14 @@ document.querySelector('.carousel-control-prev').addEventListener('click', funct
 reiniciarMovimientoAutomatico();
 
 // Event listener para los botones "Más información"
-contenedorProductos.addEventListener('click', function(event) {
+/*contenedorProductos.addEventListener('click', function(event) {
     if (event.target.classList.contains('irProducto')) {
         const idCarta = event.target.closest('.cardProducto').id;
         localStorage.setItem("productos", JSON.stringify(productos));
         localStorage.setItem("idCarta", idCarta);
         window.location.href = "productoIndividual.html"; 
     }
-});
+});*/
 
 window.addEventListener('resize', ajustarTarjetasVisibles);
 
