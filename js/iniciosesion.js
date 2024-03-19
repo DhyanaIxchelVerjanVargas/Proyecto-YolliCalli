@@ -192,7 +192,9 @@ botonRegistrar.addEventListener("click", function(event) {
             ¡Registro exitoso!
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </span>`);
-        alertRegistroUsuario.style.display = "flex";  
+        alertRegistroUsuario.style.display = "flex";
+        alertRegistroUsuario.setAttribute("tabindex", "-1");
+        alertRegistroUsuario.focus();  
         inputNombreCompletoRegistro.value = "";
         inputEmailRegistro.value = "";
         inputTelefonoRegistro.value = "";
