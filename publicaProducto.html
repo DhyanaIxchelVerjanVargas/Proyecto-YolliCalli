@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/img/yc.ico" type="image/x-icon">
     <title>Publica tu producto</title>
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +25,7 @@
     <nav class="navbar" id="navbar">
                 <div class="navbarContainer navLogo" id="navLogo">
                     <div class="vacio"></div>
-                    <img src="./src/img/logorosa.png" alt="Logo" />
+                    <a href="./index.html"><img src="./src/img/logorosa.png" alt="Logo"/></a>
                     <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
                         <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
                 </div>
@@ -33,7 +34,9 @@
                         <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
                         <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
                         <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
-                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
+                        <li>
+                            <a href="./perfil.html" class="menuLink"><i class="bi bi-person-circle"></i><button class="profileButton" id="profileButton">Perfil</button></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
@@ -50,6 +53,11 @@
                     <ul>
                         <li>
                             <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
+                        </li>
+                        <li>
+                            <a href="./iniciosesion.html" class="loginLink" id="loginLink"
+                                ><button class="loginButton" id="loginButton"><i class="bi bi-person-fill-x"></i></button
+                            ></a>
                         </li>
                     </ul>
                 </div>
@@ -131,14 +139,38 @@
               <label for="categoria" class="form-label">Categoría</label>
               <select name="categoria" class="form-select opciones" id="categoria" required>
                 <option class="opciones" value="" disabled selected hidden>Selecciona una categoría</option>
-                <option class="opciones" value="accesorio">Accesorios para el hogar</option>
-                <option class="opciones" value="alimentos">Alimentos no perecederos</option>
-                <option class="opciones" value="ropa">Ropa</option>
+                <option class="opciones" value="Accesorios">Accesorios para el hogar</option>
+                <option class="opciones" value="Alimentos">Alimentos</option>
+                <option class="opciones" value="Cuidado personal">Cuidado personal</option>
+                <option class="opciones" value="Joyería">Joyería</option>
+                <option class="opciones" value="Muebles">Muebles</option>
+                <option class="opciones" value="Ropa">Ropa</option>
               </select>
               <div id="alertCategoria" style="display: none"></div>
             </div>
+            <!--Talla-->
+            <div class="mb-3" id="tallasRopa" style="display: none;">
+              <fieldset>
+                <legend>Selecciona tallas disponibles:</legend>
+                <div class="tallas">
+                  <div class="talla">
+                    <input class="form-check-input" type="checkbox" id="tallaGrande" value="grande">
+                    <label class="form-check-label" for="tallaGrande">Grande (G)</label>
+                  </div>
+                  <div class="talla">
+                    <input class="form-check-input " type="checkbox" id="tallaMediana" value="mediana">
+                    <label class="form-check-label" for="tallaMediana">Mediana (M)</label>
+                  </div>
+                  <div class="talla">
+                    <input class="form-check-input" type="checkbox" id="tallaChica" value="chica">
+                    <label class="form-check-label" for="tallaChica">Chica (CH)</label>
+                  </div>
+              </div>
+              </fieldset>
+              <div id="alertTalla" style="display: none;"></div>
+            </div>
             <!--Etiquetas-->
-            <div class="mb-3">
+            <!--<div class="mb-3">
               <label for="etiquetas" class="form-label">Etiquetas</label>
               <input 
               type="text" 
@@ -147,7 +179,7 @@
               placeholder="Ej. ropa, bordado" 
               required>
               <div id="alertEtiquetas" style="display: none"></div>
-            </div>
+            </div>-->
           </div>
             <!-- Fotos -->
             <div class="col-lg-6 subeFoto">

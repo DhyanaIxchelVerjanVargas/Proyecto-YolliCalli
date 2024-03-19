@@ -1,17 +1,17 @@
 .fondoContenedor {
-    width: 100% !important;
-    background-image: url(../src/img/talavera.png);
-    background-size: cover;
-    background-position: center;
-    height: 60rem;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+  width: 100%, !important;
+  background-image: url(../src/img/a013b960-d9e9-4c7f-b268-124bd66098af.png);
+  background-size:cover;
+  background-position: center;
+  height: 60rem;
+  display:flex;
+  justify-content: end;
+  align-items: center;
 }
 
 .card-body {
     max-width: 500px;
-    border-radius: 10px 0 10px 0px;
+    border-radius: 10px 10px 10px 10px;
     border: none;
     background-color: #fff3e3;
     margin-right: 10rem;
@@ -61,9 +61,9 @@
 /* Media Query para dispositivos de pantalla de hasta 768px */
 @media (max-width: 768px) {
     .fondoContenedor {
-        width: 100% !important;
-        background-image: url(../src/img/talavera.png);
-        background-size: cover;
+        width: 100%, !important;
+        background-image: url(../src/img/a013b960-d9e9-4c7f-b268-124bd66098af.png);
+        background-size:cover;
         background-position: center;
         height: 60rem;
         display: flex;
@@ -220,8 +220,8 @@
 }
 
 #contenedorProductos .cardProducto {
-    width: 270px;
-    height: 300px;
+    width: 290px;
+    height: 400px;
     border: none;
     border-radius: 10px;
     padding: 0;
@@ -232,22 +232,26 @@
 }
 
 #contenedorProductos .cardProducto .caraPrincipal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     border-radius: 10px;
+    border: 1px solid var(--azul-talavera);
     overflow: hidden;
     transition: 0.5s all ease;
 }
 
+
 #contenedorProductos .cardProducto .caraPrincipal img {
-    height: 100%;
+    height: auto;
     width: 100%;
     margin: 0;
     padding: 0;
-    border-radius: 10px;
 }
 
 #contenedorProductos .cardProducto .caraPrincipal .card-body {
@@ -297,6 +301,15 @@
     color: var(--blanco);
     font-size: 18px;
     font-weight: var(--medium);
+    text-align: center;
+}
+
+#contenedorProductos .cardProducto .overlay .verProducto a {
+    font-size: 18px;
+    font-family: var(--barlow);
+    color: var(--blanco);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #contenedorProductos .cardProducto .overlay h4 {
@@ -449,11 +462,17 @@
         justify-items: left;
         flex-wrap: wrap;
     }
-}
+        .carousel-inner .carousel-item .row {
+            display: block; }
+        .carousel-inner .carousel-item .row .tarjetaCategoria {
+            display: block;
+        }
+    }
+
 /* Card de Producto */
 #contenedorCategorias .cardCategorias {
-    width: 25rem;
-    height: 40rem;
+    width: 290px;
+    height: 400px;
     border: none;
     border-radius: 10px;
     padding: 0;
@@ -535,4 +554,35 @@
         width: 100%;
         height: auto;
     }
+}
+
+/* Agregado para carrito */
+.iconoCarrito {
+    cursor: pointer;
+}
+/* Modal para Carrito */
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.modal-content {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto 0;
+    transform: translate(0, -50px);
+    position: relative;
+}
+
+.modal-title {
+    letter-spacing: 2px;
+}
+
+.modal-body p {
+    word-spacing: 1px;
+    letter-spacing: 1px;
 }

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./src/img/yc.ico" type="image/x-icon">
   <title>Carrito de compras</title>
   <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,7 +26,7 @@
             <nav class="navbar" id="navbar">
                 <div class="navbarContainer navLogo" id="navLogo">
                     <div class="vacio"></div>
-                    <img src="./src/img/logorosa.png" alt="Logo" />
+                    <a href="./index.html"><img src="./src/img/logorosa.png" alt="Logo" /></a>
                     <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
                         <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
                 </div>
@@ -34,7 +35,9 @@
                         <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
                         <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
                         <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
-                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
+                        <li>
+                            <a href="./perfil.html" class="menuLink"><i class="bi bi-person-circle"></i><button class="profileButton" id="profileButton">Perfil</button></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
@@ -51,6 +54,11 @@
                     <ul>
                         <li>
                             <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
+                        </li>
+                        <li>
+                            <a href="./iniciosesion.html" class="loginLink" id="loginLink"
+                                ><button class="loginButton" id="loginButton"><i class="bi bi-person-fill-x"></i></button
+                            ></a>
                         </li>
                     </ul>
                 </div>
@@ -86,42 +94,55 @@
         </aside>
   <!--Main-->
   <!-- Tabla tomada de Bootstrap #Table group dividers-->
-  <main class="main">
-  <div class="container-table">
-    <table class="table">
+  <main class="main" id="main">
+    <h2 class="titulo-cart-movil">Productos</h2>
+    <div class="alert alert-warning claseAlerta" role="alert" id="alertaCarritoVacio">
+      Tu carrito se encuentra vacío.
+    </div>
+  <div class="container-table" id="mostrarTabla">
+    <table class="table" id="tablaCarrito">
       <thead>
         <tr>
-          <th scope="col">Imagen</th>
+          <th scope="col"></th>
           <th scope="col">Producto</th>
           <th scope="col">Precio</th>
           <th scope="col">Cantidad</th>
-          <th scope="col">Icono</th>
+          <th scope="col"></th>
         </tr>
       </thead>
-      <tbody class="table-group-divider">
+      <tbody class="table-group-divider" id="cuerpoTabla">
+        <!--
         <tr>
-          <th scope="row"><img src="src/img/cojin.png" alt="cojín"></th>
-          <td>Asgaard cojín</td>
-          <td>$1,800</td>
-          <td>1</td>
-          <td><i class="bi bi-trash3-fill"></i></td>
+          <td><img src="src/img/cojin.png" alt="cojín"></td>
+          <td>Asgaard cojín mas texto</td>
+          <td>$1,800.00</td>
+          <td><div class="div-cantidad-global"><div class="div-cantidad">1</div>
+            <div class="div-signos">
+            <i class="bi bi-dash"></i>
+            <i class="bi bi-plus"></i>
+            </div>
+          </div>
+          </td>
+          <td><i class="bi bi-trash3-fill" ></i></td>
         </tr>
         <tr>
-          <th scope="row"><img src="src/img/cojin.png" alt="cojín"></th>
+          <td><img src="src/img/cojin.png" alt="cojín"></td>
           <td>Asgaard cojín</td>
-          <td>$1,800</td>
-          <td>1</td>
-          <td><i class="bi bi-trash3-fill"></i></td>
+          <td>$1,800.00</td>
+          <td><div class="div-cantidad">1</div></td>
+          <td><i class="bi bi-trash3-fill" ></i></td>
         </tr>
+        -->
       </tbody>
     </table>
+    <div class="row flex-row d-flex justify-content-center" id="botonVaciarCarrito"><button type="submit" class="botonCarro">Vaciar carrito</button></div>
   </div>
   <div class="container-total">
     <div><h2><strong>Total del Carrito</strong></h2></div>
-    <div class="container-total-subtitulos"><p><span>Subtotal</span></p><p>$1,800.00</p></div>
-    <div class="container-total-subtitulos"><p><span>Envío</span></p><p>$180.00</p></div>
-    <div class="container-total-subtitulos"><p><span>Total</span></p><p class="p-total"><span>$1,980.00</span></p></div>
-    <div class="row flex-row d-flex justify-content-center"><button type="submit" class="btn btn-primary btn-total ">Proceder al pago</button></div>
+    <div class="container-total-subtitulos sub-subtotal"><p><span>Subtotal</span></p><p class="p-right" id="idSubtotal">$ 0.00</p></div>
+    <div class="container-total-subtitulos sub-envio"><p><span>Envío</span></p><p class="p-right" id="idEnvio">$ 0.00</p></div>
+    <div class="container-total-subtitulos sub-total"><p><span>Total</span></p><p class="p-total p-right" id="idTotal"><span>$ 0.00</span></p></div>
+    <div class="row flex-row d-flex justify-content-center"><button type="submit" class="botonCarro btn-total" id="botonCarrito"><a href="./pago.html" class="redireccionPago">Proceder al pago</a></button></div>
   </div>
   </main>
   <!--Termina Main-->
@@ -163,5 +184,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <!--JS-->
   <script src="./js/main.js"></script>
+  <script src="./js/carrito.js"></script>
 </body>
 </html>

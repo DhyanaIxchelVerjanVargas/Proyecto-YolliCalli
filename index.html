@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./src/img/yc.ico" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -18,6 +19,7 @@
         <link rel="stylesheet" href="./css/estilosGlobales.css" />
         <link rel="stylesheet" href="./css/index.css" />
         <script src="https://smtpjs.com/v3/smtp.js"></script>
+
         <title>YolliCalli</title>
     </head>
 <body>
@@ -26,7 +28,7 @@
             <nav class="navbar" id="navbar">
                 <div class="navbarContainer navLogo" id="navLogo">
                     <div class="vacio"></div>
-                    <img src="./src/img/logorosa.png" alt="Logo" />
+                    <a href="./index.html"><img src="./src/img/logorosa.png" alt="Logo"/></a>
                     <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
                         <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
                 </div>
@@ -35,7 +37,9 @@
                         <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
                         <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
                         <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
-                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
+                        <li>
+                            <a href="./perfil.html" class="menuLink"><i class="bi bi-person-circle"></i><button class="profileButton" id="profileButton">Perfil</button></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
@@ -53,6 +57,11 @@
                         <li>
                             <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
                         </li>
+                        <li>
+                            <a href="./iniciosesion.html" class="loginLink" id="loginLink"
+                                ><button class="loginButton" id="loginButton"><i class="bi bi-person-fill-x"></i></button
+                            ></a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -67,20 +76,40 @@
                 </div>
                 <div class="offcanvas-body" id="offcanvas-body"></div>
             </div>
-        </aside>
+            <ul>
+                <li>
+                    <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!--Menu hamburguesa-->
+<aside>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <div class="vacio"></div>
+            <img src="./src/img/logorosa.png" alt="Logo" />
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="offcanvas-body"></div>
+    </div>
+</aside>
     <!-----------------Banner nuevos productos-------------------------------------------------------------------->
     
     <div class="fondoContenedor">
-            <div class="card-body">
-                <h2 class="card-title"><strong>Nuevos productos</strong></h2>
-                    <h3 class="card-subtitle text-danger"><strong>¡Conoce nuestra nueva colección!</strong></h3>
-                    <p class="card-text small">Explora las últimas incorporaciones a nuestra selección de productos artesanales en YolliCalli. Descubre la autenticidad y el talento detrás de cada artículo mientras apoyas a nuestros artesanos mexicanos.</p>
-                    <div class="ver-mas">
+        <div class="card-body">
+            <h2 class="card-title"><strong>Nuevos productos</strong></h2>
+            <h3 class="card-subtitle text-danger"><strong>¡Conoce nuestra nueva colección!</strong></h3>
+            <p class="card-text small">Explora las últimas incorporaciones a nuestra selección de productos artesanales en YolliCalli. Descubre la autenticidad y el talento detrás de cada artículo mientras apoyas a nuestros artesanos mexicanos.</p>
+            <div class="ver-mas">
+                <a href="./tienda.html">
                     <button type="button" class="btn btn-pink btn-rounded" data-bs-dismiss="offcanvas" aria-label="Ver más">Ver más</button>
-                    </div>
+                </a>
             </div>
         </div>
-
+    </div>
+    
         <!------------------------Contenedor Categorías------------------------------------>
         <div id="contenedorCategorias" class="container text-center">
             <h2><strong>Categorías</strong></h2>
@@ -88,7 +117,7 @@
                     <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner">
                             <!-- Primer slide con las 3 tarjetas -->
-                            <div class="carousel-item active">
+                            <div class="carousel-item active" id="CI-1">
                                 <div class="row justify-content-center align-items-center">
                                     <!-- Tarjeta de Categoría 1 -->
                                     <div class="col-sm-4 tarjetaCategoria">
@@ -103,9 +132,9 @@
                                     </div>
                                     <!-- Tarjeta de Categoría 2 -->
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CATEGORIA_CP2">
+                                        <div class="card cardCategorias" id="CP2">
                                             <div class="caraPrincipal">
-                                                <img src="src/img/2.png" class="card-img-top" alt="Alimentos no perecederos">
+                                                <img src="src/img/2.png" class="card-img-top" alt="ropa">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Ropa</h5>
                                                 </div>
@@ -114,7 +143,7 @@
                                     </div>
                                     <!-- Tarjeta de Categoría 3 -->
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CATEGORIA_CP3">
+                                        <div class="card cardCategorias" id="CP3">
                                             <div class="caraPrincipal">
                                                 <img src="src/img/1.png" class="card-img-top" alt="Alimentos no perecederos">
                                                 <div class="card-body">
@@ -126,34 +155,34 @@
                                 </div>
                             </div>
                             <!-- Segundo slide con las mismas tarjetas -->
-                            <div class="carousel-item">
+                            <div class="carousel-item" id="CI-2">
                                 <div class="row">
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CP1">
+                                        <div class="card cardCategorias" id="CP4">
                                             <div class="caraPrincipal">
-                                                <img src="src/img/3.png" class="card-img-top" alt="Cojín Tenango">
+                                                <img src="src/img/joyería.jpg" class="card-img-top" alt="Joyeria y Bisutería">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Accesorios para el hogar</h5>
+                                                    <h5 class="card-title">Joyería y Bisutería</h5>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CATEGORIA_CP2">
+                                        <div class="card cardCategorias" id="CP5">
                                             <div class="caraPrincipal">
-                                                <img src="src/img/2.png" class="card-img-top" alt="Alimentos no perecederos">
+                                                <img src="src/img/pintura.jpg" class="card-img-top" alt="Arte y pintur<">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Ropa</h5>
+                                                    <h5 class="card-title">Arte y Pintura</h5>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4 tarjetaCategoria">
-                                        <div class="card cardCategorias" id="CATEGORIA_CP3">
+                                        <div class="card cardCategorias" id="CP6">
                                             <div class="caraPrincipal">
-                                                <img src="src/img/1.png" class="card-img-top" alt="Alimentos no perecederos">
+                                                <img src="src/img/accesorios.jpg" class="card-img-top" alt="Accesorios">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Alimentos no perecederos</h5>
+                                                    <h5 class="card-title">Accesorios</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,12 +191,14 @@
                             </div>
                         </div>
                         <!-- Botones de control del carrusel -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-slide="prev">
                             <i class="bi bi-caret-left-fill"></i>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-slide="next">
                             <i class="bi bi-caret-right-fill"></i>
                         </button>
+                        <button id="siguienteItem" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="display: none;"></button>
+                        <button id="anteriorItem" type="button" data-bs-target="#carouselExample" data-bs-slide="next" style="display: none;"></button>
                     </div>
                 </div>
         
@@ -178,19 +209,20 @@
                 <div class="row row-cols-sm-4">
                     <!-- Tarjeta CP1 -->
                     <div class="row row-cols-4">
-                        <div class="cardProducto" id="CP1">
+                        <div class="cardProducto" id="CP3">
                             <div class="caraPrincipal">
                                 <img src="src/img/photo_2024-02-07_15-18-15 (2).jpg" class="card-img-top" alt="Cojín Tenango">
                                 <div class="card-body">
                                     <h4 class="card-title">Cojín Tenango</h4>
                                 </div>
                             </div>
-                            <div class="overlay">
+                            <div class="overlay" data-id="CP3">
                                 <span class="productoSlogan">Hecho con el corazón</span>
                                 <h4>Cojín Tenango</h4>
-                                <span class="productPrecio">$400.00</span>
+                                <span class="productPrecio">$ 400.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Hidalgo</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -199,7 +231,7 @@
                                         <i class="bi bi-share-fill"></i>
                                     </a>
                                     <a class="productIconos">
-                                        <i class="bi bi-cart3"></i>
+                                        <i class="bi bi-cart3 iconoCarrito borrarProducto"></i>
                                     </a>
                                 </div>
                             </div>
@@ -207,19 +239,20 @@
                     </div>
                     <!-- Tarjeta CP2 -->
                     <div class="row">
-                        <div class="cardProducto" id="CP2">
+                        <div class="cardProducto" id="CP28">
                             <div class="caraPrincipal">
                                 <img src="src/img/photo_2024-02-07_15-18-17.jpg" class="card-img-top" alt="Cojines Chiapanecos">
                                 <div class="card-body">
                                     <h4 class="card-title">Cojines Chiapanecos</h4>
                                 </div>
                             </div>
-                            <div class="overlay">
+                            <div class="overlay" data-id="CP28">
                                 <span class="productoSlogan">Hecho con el corazón</span>
                                 <h4>Cojines Chiapanecos</h4>
-                                <span class="productPrecio">$300.00</span>
+                                <span class="productPrecio">$ 300.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Chiapas</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -228,7 +261,7 @@
                                         <i class="bi bi-share-fill"></i>
                                     </a>
                                     <a class="productIconos">
-                                        <i class="bi bi-cart3"></i>
+                                        <i class="bi bi-cart3 iconoCarrito borrarProducto"></i>
                                     </a>
                                 </div>
                             </div>
@@ -236,19 +269,20 @@
                     </div>
                     <!-- Tarjeta CP3 -->
                     <div class="row">
-                        <div class="cardProducto" id="CP3">
+                        <div class="cardProducto" id="CP29">
                             <div class="caraPrincipal">
                                 <img src="src/img/photo_2024-02-07_15-18-17 (2).jpg" class="card-img-top" alt="Cojines Chiapanecos">
                                 <div class="card-body">
                                     <h4 class="card-title">Camino de Mesa</h4>
                                 </div>
                             </div>
-                            <div class="overlay">
+                            <div class="overlay" data-id="CP29">
                                 <span class="productoSlogan">Hecho con el corazón</span>
                                 <h4>Camino de mesa</h4>
-                                <span class="productPrecio">$500.00</span>
+                                <span class="productPrecio">$ 500.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Oaxaca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -257,7 +291,7 @@
                                         <i class="bi bi-share-fill"></i>
                                     </a>
                                     <a class="productIconos">
-                                        <i class="bi bi-cart3"></i>
+                                        <i class="bi bi-cart3 iconoCarrito borrarProducto"></i>
                                     </a>
                                 </div>
                             </div>
@@ -265,19 +299,20 @@
                     </div>
                     <!-- Tarjeta CP4 -->
                     <div class="row">
-                        <div class="cardProducto" id="CP4">
+                        <div class="cardProducto" id="CP40">
                             <div class="caraPrincipal">
                                 <img src="src/img/photo_2024-02-07_15-18-15 (3).jpg" class="card-img-top" alt="Sagrado Corazón">
                                 <div class="card-body">
                                     <h4 class="card-title">Sagrado Corazón</h4>
                                 </div>
                             </div>
-                            <div class="overlay">
+                            <div class="overlay" data-id="CP40">
                                 <span class="productoSlogan">Hecho con el corazón</span>
                                 <h4>Sagrado Corazón</h4>
-                                <span class="productPrecio">$200.00</span>
+                                <span class="productPrecio">$ 200.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Oaxaca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a href="#" class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -286,7 +321,7 @@
                                         <i class="bi bi-share-fill"></i>
                                     </a>
                                     <a href="#" class="productIconos">
-                                        <i class="bi bi-cart3"></i>
+                                        <i class="bi bi-cart3 iconoCarrito borrarProducto"></i>
                                     </a>
                                 </div>
                             </div>
@@ -294,19 +329,20 @@
                     </div>
                     <!-- Tarjeta CP5 -->
                     <div class="row row-cols-4">
-                        <div class="cardProducto" id="CP5">
+                        <div class="cardProducto" id="CP50">
                             <div class="caraPrincipal">
                                 <img src="src/img/photo_2024-02-07_18-45-03.jpg" class="card-img-top" alt="Cojín Tenango">
                                 <div class="card-body">
                                     <h4 class="card-title">Blusa Oaxaqueña</h4>
                                 </div>
                             </div>
-                            <div class="overlay">
+                            <div class="overlay" data-id="CP50">
                                 <span class="productoSlogan">Hecho con el corazón</span>
                                 <h4>Blusa Oaxaqueña</h4>
-                                <span class="productPrecio">$400.00</span>
+                                <span class="productPrecio">$ 400.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Oaxaca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -315,7 +351,7 @@
                                         <i class="bi bi-share-fill"></i>
                                     </a>
                                     <a class="productIconos">
-                                        <i class="bi bi-cart3"></i>
+                                        <i class="bi bi-cart3 iconoCarrito borrarProducto"></i>
                                     </a>
                                 </div>
                             </div>
@@ -323,19 +359,20 @@
                     </div>
                     <!-- Tarjeta CP6 -->
                     <div class="row">
-                        <div class="cardProducto" id="CP6">
+                        <div class="cardProducto" id="CP60">
                             <div class="caraPrincipal">
                                 <img src="src/img/photo_2024-02-07_18-45-12.jpg" class="card-img-top" alt="Cojines Chiapanecos">
                                 <div class="card-body">
                                     <h4 class="card-title">Cesto Tejido</h4>
                                 </div>
                             </div>
-                            <div class="overlay">
+                            <div class="overlay" data-id="CP60">
                                 <span class="productoSlogan">Hecho con el corazón</span>
                                 <h4>Cesto Tejido</h4>
-                                <span class="productPrecio">$450.00</span>
+                                <span class="productPrecio">$ 450.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Guerrero</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -344,7 +381,7 @@
                                         <i class="bi bi-share-fill"></i>
                                     </a>
                                     <a class="productIconos">
-                                        <i class="bi bi-cart3"></i>
+                                        <i class="bi bi-cart3 iconoCarrito borrarProducto"></i>
                                     </a>
                                 </div>
                             </div>
@@ -352,19 +389,20 @@
                     </div>
                     <!-- Tarjeta CP7 -->
                     <div class="row">
-                        <div class="cardProducto" id="CP7">
+                        <div class="cardProducto" id="CP70">
                             <div class="caraPrincipal">
                                 <img src="src/img/photo_2024-02-07_18-45-20.jpg" class="card-img-top" alt="Cojines Chiapanecos">
                                 <div class="card-body">
                                     <h4 class="card-title">Alebrije</h4>
                                 </div>
                             </div>
-                            <div class="overlay">
+                            <div class="overlay" data-id="CP70">
                                 <span class="productoSlogan">Hecho con el corazón</span>
                                 <h4>Alebrije</h4>
-                                <span class="productPrecio">$250.00</span>
+                                <span class="productPrecio">$ 250.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Oaxaca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -373,7 +411,7 @@
                                         <i class="bi bi-share-fill"></i>
                                     </a>
                                     <a class="productIconos">
-                                        <i class="bi bi-cart3"></i>
+                                        <i class="bi bi-cart3 iconoCarrito borrarProducto"></i>
                                     </a>
                                 </div>
                             </div>
@@ -381,19 +419,20 @@
                     </div>
                     <!-- Tarjeta CP8 -->
                     <div class="row">
-                        <div class="cardProducto" id="CP8">
+                        <div class="cardProducto" id="CP80">
                             <div class="caraPrincipal">
                                 <img src="src/img/photo_2024-02-07_18-45-24.jpg" class="card-img-top" alt="Sagrado Corazón">
                                 <div class="card-body">
                                     <h4 class="card-title">Cazuela de barro</h4>
                                 </div>
                             </div>
-                            <div class="overlay">
+                            <div class="overlay" data-id="CP80">
                                 <span class="productoSlogan">Hecho con el corazón</span>
                                 <h4>Cazuela de barro</h4>
-                                <span class="productPrecio">$100.00</span>
+                                <span class="productPrecio">$ 100.00</span>
                                 <span>por</span>
                                 <span class="productMadeBy">Artesanos de Pachuca</span>
+                                <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
                                 <div class="productIconos">
                                     <a href="#" class="productIconos">
                                         <i class="bi bi-heart"></i>
@@ -402,7 +441,7 @@
                                         <i class="bi bi-share-fill"></i>
                                     </a>
                                     <a href="#" class="productIconos">
-                                        <i class="bi bi-cart3"></i>
+                                        <i class="bi bi-cart3 iconoCarrito borrarProducto"></i>
                                     </a>
                                 </div>
                             </div>
@@ -410,18 +449,41 @@
                     </div>
                 </div>
             </div>
+            <!-- Modal de alerta de envio exitoso de carrito -->
+            <!-- Button trigger modal para Carrito -->
+            <button
+                id="btnEnvioCarrito"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalEnvioCarrito"
+                style="display: none"
+            ></button>
+
+            <!-- Modal -->
+            <div
+                class="modal fade"
+                id="modalEnvioCarrito"
+                tabindex="-1"
+                aria-labelledby="estadoModalLabel"
+                aria-hidden="true"
+            ></div>
+            <!-- Fin Modal de Carrito -->
         </div>
     </main>
     <!---------------------------------------------------------------------------------------------------->
     <div class="container text-center">
         <div>
-            <button type="button" class="btn btn-outline-danger btn-lg">Ver más</button>
+            <a href="./tienda.html">
+                <button type="button" class="btn btn-outline-danger btn-lg">Ver más</button>
+            </a>
         </div>
         <br>
         <p>Conoce a las familias artesanas</p>
         <br>
         <h2><strong>#ComercioJusto</strong></h2>
     </div>
+    
     <!----------------------Footer------------------------------------------------>
         <footer class="col-12 flex-column d-flex">
                     <div class="footerContent row d-flex">
@@ -461,6 +523,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <script src="./js/main.js"></script>
+        <script src="./js/index.js"></script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb328540ec0c1d513795d5855f31ce5c58195e18
     </body>
 </html>

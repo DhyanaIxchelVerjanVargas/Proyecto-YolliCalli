@@ -4,21 +4,27 @@ let nombreProducto = document.getElementById("nombreProducto");
 let descripcion = document.getElementById("descripcion");
 let precio = document.getElementById("precio");
 let categoria = document.getElementById("categoria");
-let etiquetas = document.getElementById("etiquetas");
+//let etiquetas = document.getElementById("etiquetas");
 let botonProducto = document.getElementById("botonProducto");
 let alertNombreProducto = document.getElementById("alertNombreProducto")
 let alertDescripcion = document.getElementById("alertDescripcion")
 let alertPrecio = document.getElementById("alertPrecio")
 let alertCategoria = document.getElementById("alertCategoria")
-let alertEtiquetas = document.getElementById("alertEtiquetas")
+//let alertEtiquetas = document.getElementById("alertEtiquetas")
 let alertImagenProducto = document.getElementById("alertImagenProducto")
 let imagenProducto = document.getElementById("imagenProducto");
 let imagenProductoFake = document.getElementById("imagenProductoFake")
 let alertProductoAgregado = document.getElementById("alertProductoAgregado");
 let alertProductoAgregadoTexto = document.getElementById("alertProductoAgregadoTexto");
+let tallas = document.getElementById("tallasRopa");
+let tallaChica = document.getElementById("tallaChica");
+let tallaMediana = document.getElementById("tallaMediana");
+let tallaGrande = document.getElementById("tallaGrande");
+let alertTalla = document.getElementById("alertTalla");
 let imagenUrlProducto = "";
 let archivo ="";
 let productosNuevos = new Array();
+let tallasSeleccionadas = new Array();
 const cloudName = "dw66wcnoo";
 const unsignedUploadPreset = "preset_YolliCalli";
 const expresiones = {
@@ -114,27 +120,44 @@ class Producto {
     descripcion="";
     precio = 0;
     categoria = "";
-    etiquetas = "";
+    //etiquetas = "";
+    talla = [];
     imagen =""
     // elaboradoPor ="";
     id="";
     static total=0;
 
-    constructor(nombre,descripcion,precio, categoria, etiquetas, imagen){
+    constructor(nombre,descripcion,precio, categoria, talla, imagen){
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         // this.elaboradoPor = elaboradoPor;
         this.categoria = categoria;
-        this.etiquetas = etiquetas;
+        //this.etiquetas = etiquetas;
+        this.talla = talla;
         this.imagen = imagen;
         Producto.total +=1;
         this.id= "CP" + Producto.total;
     }
  }
 
+ /*Prevenir que las flechas cambien el precio*/
+precio.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        event.preventDefault();
+    }
+});
 
- botonProducto.addEventListener("click", function (event){
+ /*Display de tallas para categoria ropa*/
+categoria.addEventListener('change', function(){
+    if(categoria.value.toLowerCase() == "ropa"){
+        tallas.style.display = "block";
+    }else{
+        tallas.style.display = "none";
+    }
+})
+
+botonProducto.addEventListener("click", function (event){
     event.preventDefault();
     console.log("se da click en boton enviar");
     
@@ -143,15 +166,18 @@ class Producto {
     alertDescripcion.innerHTML = "";
     alertPrecio.innerHTML = "";
     alertCategoria.innerHTML = "";
-    alertEtiquetas.innerHTML = "";
+    //alertEtiquetas.innerHTML = "";
+    alertImagenProducto.innerHTML = "";
+    alertTalla.innerHTML="";
     alertProductoAgregadoTexto.innerHTML="";
 
     alertNombreProducto.style.display= "none";
     alertDescripcion.style.display= "none";
     alertPrecio.style.display= "none";
     alertCategoria.style.display= "none";
-    alertEtiquetas.style.display= "none";
-  
+    //alertEtiquetas.style.display= "none";
+    alertTalla.style.display= "none";
+    alertImagenProducto.style.display= "none";
     alertProductoAgregado.style.display="none";
 
     nombreProducto.style.border = "solid var(--rosa-mexicano) thin";
@@ -162,14 +188,20 @@ class Producto {
     precio.style.removeProperty("box-shadow");
     categoria.style.border = "solid var(--rosa-mexicano) thin";
     categoria.style.removeProperty("box-shadow");
-    etiquetas.style.border = "solid var(--rosa-mexicano) thin";
-    etiquetas.style.removeProperty("box-shadow");
+    //etiquetas.style.border = "solid var(--rosa-mexicano) thin";
+    //etiquetas.style.removeProperty("box-shadow");
+    tallaChica.style.border = "solid var(--rosa-mexicano) thin";
+    tallaChica.style.removeProperty("box-shadow");
+    tallaMediana.style.border = "solid var(--rosa-mexicano) thin";
+    tallaMediana.style.removeProperty("box-shadow");
+    tallaGrande.style.border = "solid var(--rosa-mexicano) thin";
+    tallaGrande.style.removeProperty("box-shadow");
     imagenProducto.style.border = "solid var(--rosa-mexicano) thin";
     imagenProducto.style.removeProperty("box-shadow");
 
     nombreProducto.value = nombreProducto.value.trim();
     descripcion.value = descripcion.value.trim();
-    etiquetas.value = etiquetas.value.trim();
+    //etiquetas.value = etiquetas.value.trim();
      
     //validación imagen
     if (imagenUrlProducto.length == 0) {
@@ -194,8 +226,9 @@ class Producto {
             isValid = true;
          }
 
-    //Validación campo etiquetas
-    if(etiquetas.value.length ==0){
+
+    //Validacion campo etiquetas
+    /*if(etiquetas.value.length ==0){
         alertEtiquetas.style.display = "inline";
         alertEtiquetas.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Ingrese una etiqueta.</span>`);
         alertEtiquetas.style.display= "inline";
@@ -221,9 +254,23 @@ class Producto {
         etiquetas.style.border = "solid #ff0909 thin";
         etiquetas.style.boxShadow = "0 0 5px #ff0909"
         isValid = false;
+    }*/
+
+    //Validacion talla
+    if(categoria.value.toLowerCase() === "ropa" && !tallaChica.checked && !tallaMediana.checked && !tallaGrande.checked){
+        alertTalla.style.display = "inline";
+        alertTalla.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Seleccione al menos una talla.</span>`);
+        tallaGrande.focus();
+        tallaGrande.style.border = "solid #ff0909 thin";
+        tallaGrande.style.boxShadow = "0 0 5px #ff0909"
+        tallaMediana.style.border = "solid #ff0909 thin";
+        tallaMediana.style.boxShadow = "0 0 5px #ff0909"
+        tallaChica.style.border = "solid #ff0909 thin";
+        tallaChica.style.boxShadow = "0 0 5px #ff0909"
+        isValid = false;
     }
 
-    //Validación categoria
+    //Validación categoría
     if(categoria.value ===""){
         alertCategoria.style.display = "inline";
         alertCategoria.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Seleccione una categoría.</span>`);
@@ -350,7 +397,19 @@ class Producto {
 
     //Este condicional indica que, cuando hay productos nuevos en local storage, la información se publica en una tarjeta de la tienda
     if(isValid){
-        productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, etiquetas.value, imagenUrlProducto))
+        if(tallaGrande.checked){
+            tallasSeleccionadas.push(tallaGrande.value);
+        }
+        if(tallaMediana.checked){
+            tallasSeleccionadas.push(tallaMediana.value);
+        }
+        if(tallaChica.checked){
+            tallasSeleccionadas.push(tallaChica.value);
+            
+        }
+        console.log(tallasSeleccionadas);
+
+        productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, tallasSeleccionadas, imagenUrlProducto))
         console.log("productos nuevos");
         localStorage.setItem("productosNuevos", JSON.stringify(productosNuevos));
 
@@ -365,9 +424,11 @@ class Producto {
         descripcion.value = "";
         precio.value = "";
         categoria.value = "";
-        etiquetas.value = "";
+        //etiquetas.value = "";
         imagenProducto.value = "";
-
+        tallaGrande.checked = false;
+        tallaMediana.checked = false;
+        tallaChica.checked = false;
         nombreProducto.focus();
         alertImagenProducto.innerHTML = "";
         alertImagenProducto.style.display="none";
