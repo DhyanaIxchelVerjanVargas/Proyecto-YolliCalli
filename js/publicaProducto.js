@@ -24,7 +24,7 @@ let imagenUrlProducto = "";
 let archivo ="";
 let productosNuevos = new Array();
 let tallasSeleccionadas = new Array();
-const cloudName = "dw66wcnoo";
+const cloudName = "dayprjvbg";
 const unsignedUploadPreset = "preset_YolliCalli";
 const expresiones = {
     product: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,

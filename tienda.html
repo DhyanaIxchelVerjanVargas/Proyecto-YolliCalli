@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="./src/img/yc.ico" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -26,7 +25,7 @@
             <nav class="navbar" id="navbar">
                 <div class="navbarContainer navLogo" id="navLogo">
                     <div class="vacio"></div>
-                    <a href="./index.html"><img src="./src/img/logorosa.png" alt="Logo"/></a>
+                    <img src="./src/img/logorosa.png" alt="Logo" />
                     <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
                         <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
                 </div>
@@ -35,9 +34,7 @@
                         <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
                         <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
                         <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
-                        <li>
-                            <a href="./perfil.html" class="menuLink"><i class="bi bi-person-circle"></i><button class="profileButton" id="profileButton">Perfil</button></a>
-                        </li>
+                        <li><a href="./perfil.html" class="menuLink"><i class="bi bi-telephone"></i>Perfil</a></li>
                     </ul>
                 </div>
                 <div class="navbarContainer navIcons" id="navIcons">
@@ -54,11 +51,6 @@
                     <ul>
                         <li>
                             <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
-                        </li>
-                        <li>
-                            <a href="./iniciosesion.html" class="loginLink" id="loginLink"
-                                ><button class="loginButton" id="loginButton"><i class="bi bi-person-fill-x"></i></button
-                            ></a>
                         </li>
                     </ul>
                 </div>
@@ -98,7 +90,7 @@
                 <div class="container">
                 <div class="row">
                     <div class="col navFiltrar">
-                    <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#filtro">
+                    <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#filtro" id="btnMuestraFiltro">
                         <span><i class="bi bi-sliders"></i></span>  Filtrar
                     </button>
                     </div>
@@ -125,31 +117,43 @@
                             <div class="flex-row d-flex contentTxtMinMax">
                                 <div class="minValue numberVal flex-row">
                                     <label for="txtMinValue">Min. $</label>
-                                    <input type="number" id="txtMinValue" min="0" max="2000" value="100" disabled>
+                                    <input type="number" id="txtMinValue" min="0" max="10000" value="0" disabled>
                                 </div>
                                 <div class="maxValue numberVal flex-row">
                                     <label for="txtMaxValue">Max. $</label>
-                                    <input type="number" id="txtMaxValue" min="0" max="2000" value="2000" disabled>
+                                    <input type="number" id="txtMaxValue" min="0" max="10000" value="10000" disabled>
                                 </div>
                             </div>
                             <div class="rangeSlider flex-row d-flex">
                                 <div class="progres"></div>
-                                <input type="range" class="rangeMin" min="0" max="10000" value="100">
-                                <input type="range" class="rangeMAx" min="0" max="10000" value="9900">
+                                <input type="range" class="rangeMin" min="0" max="10000" value="0">
+                                <input type="range" class="rangeMAx" min="0" max="10000" value="10000">
                             </div>
                         </div>
                     </div>
                     <div class="filtroCategorias">
-                        <h5>Categorias:</h5>
+                        <h5>Categorías:</h5>
                         <div class="contenedorTipoFiltros">
                             <div>
-                                <label for="checkAccesoriosHogar"><input class="checkCategorias" type="checkbox" name="categorias" id="checkAccesoriosHogar">Accesorios para el hogar</label>
+                                <label for="CAT-0"><input class="checkCategorias" type="checkbox" name="categorias" value=0 id="CAT-0" checked>Todas las categorias</label>
                             </div>
                             <div>
-                                <label for="checkRopa"><input class="checkCategorias" type="checkbox" name="categorias" id="checkRopa">Ropa</label>
+                                <label for="CAT-1"><input class="checkCategorias" type="checkbox" name="categorias" value=1 id="CAT-1">Categoria 1</label>
                             </div>
                             <div>
-                                <label for="checkAlimentosNoPerecederos"><input class="checkCategorias" type="checkbox" name="categorias" id="checkAlimentosNoPerecederos">Accesorios para el hogar</label>
+                                <label for="CAT-2"><input class="checkCategorias" type="checkbox" name="categorias" value=2 id="CAT-2">Categoria 2</label>
+                            </div>
+                            <div>
+                                <label for="CAT-3"><input class="checkCategorias" type="checkbox" name="categorias" value=3 id="CAT-3">Categoria 3</label>
+                            </div>
+                            <div>
+                                <label for="CAT-4"><input class="checkCategorias" type="checkbox" name="categorias" value=4 id="CAT-4">Categoria 4</label>
+                            </div>
+                            <div>
+                                <label for="CAT-5"><input class="checkCategorias" type="checkbox" name="categorias" value=5 id="CAT-5">Categoria 5</label>
+                            </div>
+                            <div>
+                                <label for="CAT-6"><input class="checkCategorias" type="checkbox" name="categorias" value=6 id="CAT-6">Categoria 6</label>
                             </div>
                         </div>
                     </div>
@@ -195,7 +199,7 @@
         </div>
 
         <!--Contenedor de las trajetas de productos-->
-        <div id="contenedorProductos" class="d-flex flex-wrap flex-row">
+        <div id="contenedorProductos" class="grid-fluid">
             <!--Tarjeta de prueba
             <div class="cardProducto" id="CP1">
                 <div class="caraPrincipal">
@@ -214,12 +218,14 @@
                     <div class="productIconos">
                         <a href="" class="productoIcon"><i class="bi bi-heart"></i></a>
                         <a href="" class="productoIcon"><i class="bi bi-share-fill"></i></a>
-                        <a href="" class="productoIcon"><i class="bi bi-cart3 iconoCarrito"></i></a>
+                        <a href="" class="productoIcon"><i class="bi bi-cart3"></i></a>
                     </div>
                 </div>
             </div>
             -->
-            <!-- Modal de alerta de envio exitoso de carrito -->
+        </div>
+
+        <!-- Modal de alerta de envio exitoso de carrito -->
             <!-- Button trigger modal para Carrito -->
             <button
                 id="btnEnvioCarrito"
@@ -238,18 +244,15 @@
                 aria-labelledby="estadoModalLabel"
                 aria-hidden="true"
             ></div>
-            <!-- Fin Modal de Carrito -->
-        </div>
+        <!-- Fin Modal de Carrito -->
 
         <!-- Botones para cambiar de página -->
         <div class="paginacion">
             <div id="contnedorBtnPaginacion" class="contnedorBtnPaginacion">
-                <!--
-                <button class="btnSiguienteAtras"><i class="bi bi-caret-left-fill"></i></button>
-                <button class="btnPaginacion btnSelected">1</button>
-                <button class="btnPaginacion">2</button>
-                <button class="btnSiguienteAtras"><i class="bi bi-caret-right-fill"></i></button>
-                -->
+                
+                <button class="btnSiguienteAtras" id="btnAnteriorPagina" style="display: none;"><i class="bi bi-caret-left-fill"></i></button>
+                <button class="btnSiguienteAtras" id="btnSiguientePagina" style="display: none;"><i class="bi bi-caret-right-fill"></i></button>
+
             </div>
         </div>
 
