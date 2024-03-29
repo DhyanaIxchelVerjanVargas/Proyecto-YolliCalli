@@ -314,12 +314,12 @@ function leerDatosCard(card){
         `
     promesa.then((response) => { 
         response.json().then( (data) => {
-            
+            /*
             console.log("Contenido: "+data)
             console.log("Numero de paginas: "+data.nPaginas);
             console.log("Numero de productos: "+data.nProductos)
             console.log("Lista de productos: "+data.productos)
-            
+            */
             paginasTotal = data.nPaginas;
 
             if(data.nProductos == 0 && buscando == true && filtrando==true){
