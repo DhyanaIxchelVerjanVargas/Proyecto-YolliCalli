@@ -167,7 +167,7 @@ botonRegistrar.addEventListener("click", function(event) {
         inputNombreCompletoRegistro.style.border = "solid #ff0909 thin";
         inputNombreCompletoRegistro.style.boxShadow = "0 0 5px #ff0909";
         isCorrect = false;
-    }else if (inputNombreCompletoRegistro.value.length <=10) {
+    }else if (inputNombreCompletoRegistro.value.length <=3) {
         alertNombreCompleto.style.display = "inline";
         alertNombreCompleto.insertAdjacentHTML("beforeend", `<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">El nombre es muy corto.</span>`);
         inputNombreCompletoRegistro.focus();
