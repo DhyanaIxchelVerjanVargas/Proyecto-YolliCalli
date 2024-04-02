@@ -126,6 +126,38 @@ document.querySelector('.carousel-control-prev').addEventListener('click', funct
 reiniciarMovimientoAutomatico();
 
 // Event listener para los botones "Más información"
+contenedorProductos.addEventListener('click', function(event) {
+    if (event.target.classList.contains('irProducto')) {
+        const idCarta = event.target.closest('.cardProducto').id;
+        localStorage.setItem("productos", JSON.stringify(productos));
+        localStorage.setItem("idCarta", idCarta);
+        window.location.href = "productoIndividual.html"; 
+    }
+});
+
+window.addEventListener('resize', ajustarTarjetasVisibles);
+
+document.querySelector('.carousel-control-next').addEventListener('click', function(event) {
+    event.preventDefault();
+    handleNext();
+    ajustarTarjetasVisibles();
+    if (window.innerWidth > 425) {
+        siguienteItem.click();
+    }
+});
+
+document.querySelector('.carousel-control-prev').addEventListener('click', function(event) {
+    event.preventDefault();
+    handlePrev();
+    ajustarTarjetasVisibles();
+    if (window.innerWidth > 425) {
+        anteriorItem.click();
+    }
+});
+
+reiniciarMovimientoAutomatico();
+
+// Event listener para los botones "Más información"
 /*contenedorProductos.addEventListener('click', function(event) {
     if (event.target.classList.contains('irProducto')) {
         const idCarta = event.target.closest('.cardProducto').id;
