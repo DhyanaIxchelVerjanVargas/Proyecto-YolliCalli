@@ -25,11 +25,11 @@ CREATE TABLE IF NOT EXISTS `yollicalli_db`.`direccion` (
 -- Crear tabla de usuarios:
 CREATE TABLE IF NOT EXISTS `yollicalli_db`.`usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(50) NOT NULL,
-  `apellidos` VARCHAR(100) NOT NULL,
+  `nombre_Completo` VARCHAR(50) NOT NULL,
   `contrasenia` VARCHAR(255) NOT NULL,
   `telefono` VARCHAR(10) NOT NULL,
   `correo` VARCHAR(100) NOT NULL,
+  `foto` VARCHAR(150) NOT NULL default "https://res.cloudinary.com/dhanxnsiv/image/upload/v1710969357/fotoDePerfilPorDefecto.png", 
   `idDireccion` INT NOT NULL,
   PRIMARY KEY (`idUsuario`, `idDireccion`),
   UNIQUE INDEX `correo` (`correo` ASC) VISIBLE,
@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `yollicalli_db`.`productos` (
   `descripcion` VARCHAR(500) NOT NULL,
   `precio` DECIMAL(10,2) NOT NULL,
   `imagen` VARCHAR(500) NOT NULL,
+  `talla` VARCHAR(20),
   `destacado` BIT(1) NOT NULL DEFAULT b'0',
   `cantidad` INT NOT NULL,
   PRIMARY KEY (`idProductos`, `idCategoria`),
@@ -65,7 +66,6 @@ CREATE TABLE IF NOT EXISTS `yollicalli_db`.`compra` (
   `idCompra` INT NOT NULL,
   `idDireccion` INT NOT NULL,
   `idProductos` INT NOT NULL,
-  `cantidad` INT NOT NULL,
   `subtotal` DECIMAL(10,2) NOT NULL,
   `envio` DECIMAL(10,2) NOT NULL,
   `total` DECIMAL(10,2) NOT NULL,
@@ -88,19 +88,6 @@ CREATE TABLE IF NOT EXISTS `yollicalli_db`.`compra` (
     REFERENCES `yollicalli_db`.`productos` (`idProductos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
--- Crear tabla de historial de compras:
-CREATE TABLE IF NOT EXISTS `yollicalli_db`.`comprado` (
-  `idUsuario` INT NOT NULL,
-  `idProductos` INT NOT NULL,
-  INDEX `fk_comprado_usuario` (`idUsuario` ASC) VISIBLE,
-  INDEX `fk_comprado_productos` (`idProductos` ASC) VISIBLE,
-  CONSTRAINT `fk_comprado_productos`
-    FOREIGN KEY (`idProductos`)
-    REFERENCES `yollicalli_db`.`productos` (`idProductos`),
-  CONSTRAINT `fk_comprado_usuario`
-    FOREIGN KEY (`idUsuario`)
-    REFERENCES `yollicalli_db`.`usuario` (`idUsuario`));
 
 -- Crear tabla de método de pago:
 CREATE TABLE IF NOT EXISTS `yollicalli_db`.`metodo_pago` (
