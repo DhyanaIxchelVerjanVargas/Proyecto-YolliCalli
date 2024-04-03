@@ -424,9 +424,9 @@ function leerDatosCard(card){
 
  contenedorProdutos.addEventListener('click', function(event) {
     if (event.target.classList.contains('irProducto')) {
-        const idCarta = event.target.closest('.cardProducto').id;
-        console.log('ID de la carta:', idCarta);
-        localStorage.setItem("idCarta",idCarta);
+        const idProducto = event.target.closest('.cardProducto').id;
+        console.log('ID de la carta:', idProducto);
+        localStorage.setItem("idProducto",idProducto);
         window.location.href = "productoIndividual.html?id=" + idProducto;
     }
 });
