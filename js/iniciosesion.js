@@ -270,6 +270,7 @@ botonIniciar.addEventListener("click", function (event) {
       })
       .then((result) => {
           console.log(result);
+          sessionStorage.setItem('correoUsuario', inputEmailInicioSesion.value.trim());
           alertRegistroUsuarioTexto.insertAdjacentHTML("beforeend", `
               <span style="font-family: var(--barlow); font-size: var(--titulos-h3-rutas);">
                   Iniciando sesión...
