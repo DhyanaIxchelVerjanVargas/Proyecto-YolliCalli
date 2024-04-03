@@ -136,6 +136,15 @@ function eliminarProducto(e){
     }// Aumentar cantidad
 }
 
+botonCarrito.addEventListener("click", function(event){
+    let varSubtotal = idSubtotal.innerHTML.substring(2);
+    let varEnvio = idEnvio.innerHTML.substring(2);
+    let varTotal = idTotal.innerHTML.substring(2);
+    localStorage.setItem("subtotal",varSubtotal);
+    localStorage.setItem("envio",varEnvio);
+    localStorage.setItem("total",varTotal);
+})
+
 window.addEventListener("load",function(event){
     event.preventDefault();
     if(!carritoVacio()){

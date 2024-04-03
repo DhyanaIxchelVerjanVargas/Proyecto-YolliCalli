@@ -276,6 +276,11 @@ td > img {
     padding-right: 15px;
 }
 
+#idTotal {
+    font-weight: bold;
+    padding-right: 15px;
+}
+
 .p-right {
     text-align: right;
 }
