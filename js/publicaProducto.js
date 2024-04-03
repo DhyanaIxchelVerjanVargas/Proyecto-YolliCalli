@@ -150,7 +150,7 @@ precio.addEventListener("keydown", function(event) {
 
  /*Display de tallas para categoria ropa*/
 categoria.addEventListener('change', function(){
-    if(categoria.value == 6){
+    if(categoria.value == 2){
         tallas.style.display = "block";
     }else{
         tallas.style.display = "none";
@@ -423,7 +423,7 @@ botonProducto.addEventListener("click", function (event){
             .then((result) => {
                 console.log(result);
                 if(result != null){
-                    alertProductoAgregado.innerHTML ="";
+                    alertProductoAgregadoTexto.innerHTML ="";
                     alertProductoAgregadoTexto.insertAdjacentHTML("beforeend",`
                         <span font-family: var(--barlow); font-size: var( --titulos-h3-rutas)>
                             ¡Producto agregado exitosamente! <a href="./tienda.html" class="alert-link">Ver tienda</a>
@@ -467,5 +467,7 @@ botonProducto.addEventListener("click", function (event){
                 alertProductoAgregado.style.display = "none";
                 alertProductoNoAgregado.focus();
             });
+    }else{
+        isValid=true;
     }
  })
