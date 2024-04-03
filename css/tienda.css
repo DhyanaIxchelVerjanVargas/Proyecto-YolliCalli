@@ -88,9 +88,11 @@
 
 /*Caja de filtros*/
 #filtro {
+    position: absolute;
     justify-content: start;
     width: 100%;
     padding: 0 100px;
+    z-index: 1;
 }
 
 #filtro .cardFiltros {
@@ -334,10 +336,15 @@
 
 /*Contenedor de productos*/
 #contenedorProductos {
-    justify-content: start;
-    align-items: center;
+    /*justify-content: start;
+    aign-items: center;*/
     padding: 0 100px;
     margin: 100px 0 0 0;
+}
+
+.grid-fluid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
 }
 
 #contenedorProductos .sinCoincidencias {
@@ -347,7 +354,18 @@
     color: var(--azul-talavera);
 }
 /*Contenedor de productos*/
-
+/*Spiner de carga*/
+.spinner-border {
+    --bs-spinner-width: 2rem;
+    --bs-spinner-height: 2rem;
+    --bs-spinner-vertical-align: -0.125em;
+    --bs-spinner-border-width: 0.25em;
+    --bs-spinner-animation-speed: 0.75s;
+    --bs-spinner-animation-name: spinner-border;
+    border: var(--bs-spinner-border-width) solid var(--rosa-mexicano);
+    border-right-color: transparent;
+}
+/*Spiner de carga*/
 /*Card de Producto*/
 #contenedorProductos .cardProducto {
     width: 290px;
@@ -622,6 +640,19 @@
         height: 50px;
         width: 50px;
     }
+}
+
+
+.titulosRosas{
+    font-size: var(--titulo-rosa-h2);
+    color: var(--rosa-mexicano);
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.mensajeContactoError{
+    font-family: var(--barlow);
+    color: var(--azul-talavera);
 }
 
 /* Agregado para carrito */

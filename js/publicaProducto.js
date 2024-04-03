@@ -16,6 +16,8 @@ let imagenProducto = document.getElementById("imagenProducto");
 let imagenProductoFake = document.getElementById("imagenProductoFake")
 let alertProductoAgregado = document.getElementById("alertProductoAgregado");
 let alertProductoAgregadoTexto = document.getElementById("alertProductoAgregadoTexto");
+let alertProductoNoAgregado = document.getElementById("alertProductoNoAgregado");
+let alertProductoNoAgregadoTexto = document.getElementById("alertProductoNoAgregadoTexto");
 let tallas = document.getElementById("tallasRopa");
 let tallaChica = document.getElementById("tallaChica");
 let tallaMediana = document.getElementById("tallaMediana");
@@ -23,9 +25,8 @@ let tallaGrande = document.getElementById("tallaGrande");
 let alertTalla = document.getElementById("alertTalla");
 let imagenUrlProducto = "";
 let archivo ="";
-let productosNuevos = new Array();
 let tallasSeleccionadas = new Array();
-const cloudName = "dw66wcnoo";
+const cloudName = "dayprjvbg";
 const unsignedUploadPreset = "preset_YolliCalli";
 const expresiones = {
     product: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
@@ -116,28 +117,25 @@ function uploadFile(file) {
 
 //Creación del objeto Producto, que almacena la información enviada a través del formulario
 class Producto {
-    nombre="";
+    nombreProducto="";
+    idCategoria;
     descripcion="";
     precio = 0;
-    categoria = "";
-    //etiquetas = "";
-    talla = [];
-    imagen =""
-    // elaboradoPor ="";
-    id="";
-    static total=0;
-
-    constructor(nombre,descripcion,precio, categoria, talla, imagen){
-        this.nombre = nombre;
+    imagen ="";
+    talla = "";
+    destacado=0;
+    cantidad=1;
+    talla="";
+    
+    constructor(nombreProducto, idCategoria,descripcion,precio,imagen,talla){
+        this.nombreProducto = nombreProducto;
+        this.idCategoria = idCategoria;
         this.descripcion = descripcion;
         this.precio = precio;
-        // this.elaboradoPor = elaboradoPor;
-        this.categoria = categoria;
-        //this.etiquetas = etiquetas;
-        this.talla = talla;
         this.imagen = imagen;
-        Producto.total +=1;
-        this.id= "CP" + Producto.total;
+        this.destacado = 0;
+        this.cantidad = 1;
+        this.talla = talla;
     }
  }
 
@@ -150,10 +148,15 @@ precio.addEventListener("keydown", function(event) {
 
  /*Display de tallas para categoria ropa*/
 categoria.addEventListener('change', function(){
-    if(categoria.value.toLowerCase() == "ropa"){
+    if(categoria.value == 2){
         tallas.style.display = "block";
     }else{
         tallas.style.display = "none";
+        tallaChica.checked = false;
+        tallaMediana.checked = false;
+        tallaGrande.checked = false;
+        tallasSeleccionadas = [];
+
     }
 })
 
@@ -387,15 +390,6 @@ botonProducto.addEventListener("click", function (event){
     }
 
     /*Aqui terminan las validaciones*/
-
-    //Este condicional indica que si no hay productos nuevos en local Storage, entonces se extrae la información del objeto JSON
-    if (localStorage.getItem("productosNuevos") != null){
-        productosNuevos = JSON.parse(localStorage.getItem("productosNuevos"));
-    }else{
-        productosNuevos = [];
-    }
-
-    //Este condicional indica que, cuando hay productos nuevos en local storage, la información se publica en una tarjeta de la tienda
     if(isValid){
         if(tallaGrande.checked){
             tallasSeleccionadas.push(tallaGrande.value);
@@ -407,36 +401,77 @@ botonProducto.addEventListener("click", function (event){
             tallasSeleccionadas.push(tallaChica.value);
             
         }
-        console.log(tallasSeleccionadas);
 
-        productosNuevos.push(new Producto(nombreProducto.value, descripcion.value, parseFloat(precio.value), categoria.value, tallasSeleccionadas, imagenUrlProducto))
-        console.log("productos nuevos");
-        localStorage.setItem("productosNuevos", JSON.stringify(productosNuevos));
+        let tallasAux ="";
+        if(tallasSeleccionadas.lengt == 0){
+            tallasAux = "";
+        } else{
+            tallasAux = tallasSeleccionadas.join(",");
+        }
+        //let productoNuevo =  new Producto(nombreProducto.value, parseInt(categoria.value),descripcion.value, parseFloat(precio.value),imagenUrlProducto,tallasAux);
+        let productoNuevo = JSON.stringify( new Producto(nombreProducto.value, parseInt(categoria.value),descripcion.value, parseFloat(precio.value),imagenUrlProducto,tallasAux));
+        console.log(productoNuevo);
+        //console.log(JSON.stringify(productoNuevo));
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
-        alertProductoAgregadoTexto.insertAdjacentHTML("beforeend",`
-        <span font-family: var(--barlow); font-size: var( --titulos-h3-rutas)>
-            ¡Producto agregado exitosamente! <a href="./tienda.html" class="alert-link">Ver tienda</a>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </span>`);
-        alertProductoAgregado.style.display = "block";
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: productoNuevo,
+            redirect: "follow"
+          };
+          
+          fetch("http://localhost:8080/api/products/", requestOptions)
+            .then((response) => response.text())
+            .then((result) => {
+                console.log(result);
+                if(result != null){
+                    alertProductoAgregadoTexto.innerHTML ="";
+                    alertProductoAgregadoTexto.insertAdjacentHTML("beforeend",`
+                        <span font-family: var(--barlow); font-size: var( --titulos-h3-rutas)>
+                            ¡Producto agregado exitosamente! <a href="./tienda.html" class="alert-link">Ver tienda</a>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </span>`);
+                    alertProductoAgregado.style.display = "block";
+                    alertProductoNoAgregado.style.display = "none";
 
-        nombreProducto.value = "";
-        descripcion.value = "";
-        precio.value = "";
-        categoria.value = "";
-        //etiquetas.value = "";
-        imagenProducto.value = "";
-        tallaGrande.checked = false;
-        tallaMediana.checked = false;
-        tallaChica.checked = false;
-        nombreProducto.focus();
-        alertImagenProducto.innerHTML = "";
-        alertImagenProducto.style.display="none";
-    } else {
-        isValid = true;
+                    nombreProducto.value = "";
+                    descripcion.value = "";
+                    precio.value = "";
+                    categoria.value = "";
+                    //etiquetas.value = "";
+                    imagenProducto.value = "";
+                    tallaGrande.checked = false;
+                    tallaMediana.checked = false;
+                    tallaChica.checked = false;
+                    nombreProducto.focus();
+                }else{
+                    alertProductoNoAgregadoTexto.innerHTML="";
+                    alertProductoNoAgregadoTexto.insertAdjacentHTML("beforeend",`
+                        <span font-family: var(--barlow); font-size: var( --titulos-h3-rutas)>
+                            ¡El producto no se pudo agregar!
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </span>`);
+                    alertProductoNoAgregado.style.display = "block";
+                    alertProductoAgregado.style.display = "none";
+                    alertProductoNoAgregado.focus();
+                }
+                
+            })
+            .catch((error) => {
+                console.error(error);
+                alertProductoNoAgregadoTexto.innerHTML="";
+                alertProductoNoAgregadoTexto.insertAdjacentHTML("beforeend",`
+                    <span font-family: var(--barlow); font-size: var( --titulos-h3-rutas)>
+                        ¡El producto no se pudo agregar!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </span>`);
+                alertProductoNoAgregado.style.display = "block";
+                alertProductoAgregado.style.display = "none";
+                alertProductoNoAgregado.focus();
+            });
+    }else{
+        isValid=true;
     }
  })
-
-
-
-
