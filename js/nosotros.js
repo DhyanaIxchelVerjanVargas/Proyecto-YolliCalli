@@ -245,7 +245,11 @@ botonEnviar.addEventListener("click",function(event){
                     btnEnvioEstado.click();
                 }
             })
-            
+            inputNombre.style.removeProperty("border");
+            inputEmail.style.removeProperty("border");
+            inputTelefono.style.removeProperty("border");
+            inputAsunto.style.removeProperty("border");
+            inputMensaje.style.removeProperty("border");
             /*then(function (message) {
             alert("Mensaje enviado satisfactoriamente")
             });*/
