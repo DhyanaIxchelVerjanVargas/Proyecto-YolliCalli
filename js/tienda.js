@@ -485,12 +485,11 @@ btnAnteriorPagina.addEventListener("click",function(event){
     if(localStorage.getItem("categoriaFiltroIDString") != null && localStorage.getItem("productoBuscar") == null){
         btnLimpiarFiltros.style.display = "flex";
         categoriaFiltroIDString = localStorage.getItem("categoriaFiltroIDString").toString();
-
         categoriaFiltro.forEach((cat)=>{
-            if (cat.value.toString() == categoriaFiltroIDString ) {
+            if (cat.value.toString() == categoriaFiltroIDString.toString() ) {
                 cat.checked = true;
             }else{
-                cat.checked = true;
+                cat.checked = false;
             }
         })
 
