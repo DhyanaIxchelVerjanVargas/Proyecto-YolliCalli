@@ -260,7 +260,7 @@ botonProducto.addEventListener("click", function (event){
     }*/
 
     //Validacion talla
-    if(categoria.value.toLowerCase() === "ropa" && !tallaChica.checked && !tallaMediana.checked && !tallaGrande.checked){
+    if(categoria.value == 6 && !tallaChica.checked && !tallaMediana.checked && !tallaGrande.checked){
         alertTalla.style.display = "inline";
         alertTalla.insertAdjacentHTML("beforeend",`<span style="color: #ff0909; font-size:11px; font-family:var(--barlow)">Seleccione al menos una talla.</span>`);
         tallaGrande.focus();

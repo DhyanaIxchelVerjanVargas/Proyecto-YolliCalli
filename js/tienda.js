@@ -427,7 +427,7 @@ function leerDatosCard(card){
         const idCarta = event.target.closest('.cardProducto').id;
         console.log('ID de la carta:', idCarta);
         localStorage.setItem("idCarta",idCarta);
-        window.location.href = "productoIndividual.html";
+        window.location.href = "productoIndividual.html?id=" + idProducto;
     }
 });
 
