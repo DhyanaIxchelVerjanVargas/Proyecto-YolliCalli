@@ -18,10 +18,26 @@
     border-radius: 1rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+form.infoPerfil .datosPersonales div input:disabled{
+    background-color: transparent;
+}
 .infoPerfil .imagenPerfil{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.imagenPerfil p{
+    font-weight: var(-header-footer);
+    color: var(--rosa-mexicano);
+}
+.imagenPerfil button{
+    display: inline-block;
+    background-color: var(--rosa-mexicano);
+    padding: 1rem;
+    font-size: var(--texto-general);
+    font-weight: bold;
+    margin: 1rem 0;
 }
 .titulosRosas{
     text-align: center;
@@ -69,6 +85,13 @@
 }
 .codPostal{
     flex-basis: 45%;
+}
+.infoPerfil div.botonesPerfil{
+    display: flex;
+    justify-content: space-between;
+}
+.botonesPerfil button.boton{
+    width: 20rem;
 }
 /* Datos perfil movil */
 @media (max-width: 425px) {
@@ -131,7 +154,7 @@
     margin: 0;
 }
 .opcionPago > input, label, p{
-    margin: 0 1rem;
+    margin: 0 0.7rem;
 }
 .agregarMetodoPago{
     justify-content: start;
@@ -188,8 +211,16 @@ button:hover a{
 .informacionVentas{
     text-align: center;
 }
-.informacionVentas .ventas h3, .ingresos h3, .ventasTotales h3{
+section.informacionVentas h3, section.historialCompas h3{ 
     font-weight: bold;
+    color: var(--azul-talavera);
+}
+.historialCompas h3 a{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
 }
 .ultimasVentas ul{
     list-style: none;
@@ -280,4 +311,7 @@ button:hover a{
         font-weight: var(--medium);
         color: var(--azul-talavera);
     }
+}
+div.ventas h3 a{
+    text-decoration: none;
 }
