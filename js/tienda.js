@@ -1,20 +1,37 @@
 const range = document.querySelectorAll("#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider input");
+const categoriaFiltro = document.querySelectorAll("#filtro .cardFiltros .tipoFiltros .filtroCategorias .contenedorTipoFiltros .checkCategorias");
+const ordenPrecioFiltro = document.querySelectorAll("#filtro .cardFiltros .tipoFiltros .filtroOrdenar .contenedorTipoFiltros .ordenPrecio input");
+const ordenNombreFiltro = document.querySelectorAll("#filtro .cardFiltros .tipoFiltros .filtroOrdenar .contenedorTipoFiltros .ordenNombre input");
+const filtro = document.getElementById("filtro");
 let progress = document.querySelector("#filtro .cardFiltros .tipoFiltros .filtroPrecio div .rangeSlider .progres");
 let gap=100;
 const inputValue = document.querySelectorAll("#filtro .cardFiltros .tipoFiltros .filtroPrecio div .contentTxtMinMax .numberVal input");
+const btnSiguientePagina = document.getElementById("btnSiguientePagina");
+const btnAnteriorPagina = document.getElementById("btnAnteriorPagina");
 
 let contenedorProdutos = document.getElementById("contenedorProductos");
 let contnedorBtnPaginacion = document.getElementById("contnedorBtnPaginacion");
-let botonesPaginacion= document.querySelectorAll(".btnPaginacion");
+let btnAplicarFiltro = document.getElementById("btnAplicarFiltro");
+let btnMuestraFiltro = document.getElementById("btnMuestraFiltro");
 let btnLimpiarBusquda = document.getElementById("btnLimpiarBusquda");
 let btnLimpiarFiltros = document.getElementById("btnLimpiarFiltros");
 let btnBusqueda = document.getElementById("btnBusqueda");
 let inputBusqueda = document.getElementById("inputBusqueda");
-
+let precioMayor = 0;
+let precioMenor = 0;
+let categoriaFiltroID = [];
+let categoriaFiltroIDString ="";
+let ordenNombre = "ASC";
+let ordenPrecio = "ASC";
 let productos = new Array();
 let productosNuevos = new Array();
-let auxBusqueda = new Array();
+let auxBusqueda = "";
 let productosBuscados = new Array();
+let paginaActual = 1;
+let paginasTotal = 1;
+let solicitudURL = "";
+let buscando = false;
+let filtrando = false;
 
 // Agregado para carrito
 let botonProductoCarrito = document.getElementById("botonProductoCarrito");
@@ -117,6 +134,8 @@ function leerDatosCard(card){
 }
 // Termina agregado para carrito
 
+//Animacion en la barra de navegacion para mostrar el precio menor y el precio mayor 
+//conforme se cambian los rangos
  range.forEach(input => {
     input.addEventListener("input", e => {
         let minRange = parseInt(range[0].value);
@@ -136,269 +155,350 @@ function leerDatosCard(card){
     })
  })
 
+ categoriaFiltro.forEach(cat => {
+    cat.addEventListener("change", function() {
+        if (this.id === "CAT-0" && this.checked) {
+            categoriaFiltro.forEach(cat => {
+                if (cat.id !== "CAT-0") {
+                    cat.checked = false;
+                }
+            });
+        } else if (this.id !== "CAT-0" && this.checked) {
+            document.getElementById("CAT-0").checked = false;
+        }
+    });
+});
 
- class Producto {
-    nombre="";
-    descripcion="";
-    precio = 0;
-    categoria = "";
-    etiquetas = "";
-    imagen =""
-    // elaboradoPor ="";
-    id="";
-    static total=0;
+ btnAplicarFiltro.addEventListener("click",function(event){
+    event.preventDefault();
+    categoriaFiltroID = [];
+    precioMenor = range[0].value;
+    precioMayor = range[1].value;
+    categoriaFiltro.forEach((cat)=>{
+        if (cat.checked) {
+            categoriaFiltroID.push(cat.value);
+        }
+    })
 
-    constructor(nombre,descripcion,precio, categoria, etiquetas, imagen){
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.precio = precio;
-        // this.elaboradoPor = elaboradoPor;
-        this.categoria = categoria;
-        this.etiquetas = etiquetas;
-        this.imagen = imagen;
-        Producto.total +=1;
-        this.id= "CP" + Producto.total;
+    if(ordenPrecioFiltro[0].checked){
+        ordenPrecio="ASC"
+    }else{
+        ordenPrecio="DESC"
     }
- }
 
- function crearPropuctos(){
-    productos.push(new Producto("Alebrije Búho","Alebrije de búho elaborado con papel mache y pintado a mano, por artesanos del estado de Oaxaca.",200,"Accesorio","Alebrije, Pintado","https://programadestinosmexico.com/wp-content/uploads/2023/08/ARTESANIAS-OAX.jpg"));
-    productos.push(new Producto("Alebrije Ajolote","Alebrije de ajolote elaborado con papel mache y pintado a mano por artesanos del estado de Oxaca",200,"Accesorio","Alebrije, Pintado","https://media.licdn.com/dms/image/D5612AQFx8phwV2yN6g/article-cover_image-shrink_720_1280/0/1697657051080?e=2147483647&v=beta&t=H57I5dr3zSXi79Rjsc5iTNgOweSYmRbCZw5eWzfAiVA"));
-    productos.push(new Producto("Cojín Tenango","Cojín bordado a mano por artesanos de Tenango",200,"Accesorio","Cojín, Bordado","./src/img/productos/cojinTenango.png"));
-    productos.push(new Producto("Muñeca lele","Muñeca Lele elabora a mano por manos artesanas del estado de Queretaro, para encantar el corazón de las personas.",200,"Accesorio","Juguete, Muñeca","https://www.turismomexico.es/wp-content/uploads/2019/01/munecas_mexicanas.jpg"));
-    productos.push(new Producto("Florero Artesenal","Florero de talavera, alaborado a partir de archilla, pintado a mano hecho por artezanos del estado de Puebla",200,"Accesorio","Ceramica, Talabera","https://http2.mlstatic.com/D_NQ_NP_708931-MLM71088880686_082023-O.webp"));
-    productos.push(new Producto("Mezcal en olla de barro","Mezcal Joven 100% artesanal, elborado a partir de agave Espadin con un grado de alcohol del 45%.",200,"Alimento no perecedero","Mezcal, Oaxaca, Barro","https://i.pinimg.com/originals/fb/c4/1a/fbc41ad7a84bf6788e0e9ba69140dddd.jpg"));
-    productos.push(new Producto("Alegría de amaranto","Elaborado a partir de amaranto y miel, con productos organicos.",200,"Alimento no perecedero","Dulce, Amaranto, Miel","https://biotrendies.com/wp-content/uploads/2015/07/alegria-amaranto.jpg"));
-    productos.push(new Producto("Alebrije Ajolote","Alebrije de ajolote elaborado con papel mache y pintado a mano por artesanos del estado de Oxaca",200,"Accesorio","Alebrije, Pintado","https://media.licdn.com/dms/image/D5612AQFx8phwV2yN6g/article-cover_image-shrink_720_1280/0/1697657051080?e=2147483647&v=beta&t=H57I5dr3zSXi79Rjsc5iTNgOweSYmRbCZw5eWzfAiVA"));
-    productos.push(new Producto("Muñeca lele","Muñeca Lele elabora a mano por manos artesanas del estado de Queretaro, para encantar el corazón de las personas.",200,"Accesorio","Juguete, Muñeca","https://www.turismomexico.es/wp-content/uploads/2019/01/munecas_mexicanas.jpg"));
-    productos.push(new Producto("Florero Artesenal","Florero de talavera, alaborado a partir de archilla, pintado a mano hecho por artezanos del estado de Tlaxcala",200,"Accesorio","Ceramica, Talabera","https://http2.mlstatic.com/D_NQ_NP_708931-MLM71088880686_082023-O.webp"));
-    productos.push(new Producto("Mezcal en olla de barro","Mezcal Joven 100% artesanal, elborado a partir de agave Tobala con un grado de alcohol del 45%.",200,"Alimento no perecedero","Mezcal, Oaxaca, Barro","https://i.pinimg.com/originals/fb/c4/1a/fbc41ad7a84bf6788e0e9ba69140dddd.jpg"));
-    productos.push(new Producto("Mantel de Oaxaca","Mantel hecho en telar y pintado con colorante vejetal, por artesaños de Mitla, Oaxaca.",200,"Accesorio","Mantel, Bordado, Telar, Oaxaca","https://oaxacaxamor.com/cdn/shop/products/Mantel_AzulDorado_Tlalixtac_9414_800x.jpg?v=1612829162"));
-    productos.push(new Producto("Servilleta bordada","Servilleta bordada a mano con hilos de algodón.",200,"Accesorio","Servilleta, Bordado, Jalisco","https://www.mexicodesconocido.com.mx/wp-content/uploads/2023/02/servilletas-bodadas-mano-2-900x861.jpg"));
-    productos.push(new Producto("Carrito de juguete","Carrito de juguete elaborado de madera y pintado a mano, con madera controlada.",200,"Accesorio","Juguete, Madera, Pintado","https://http2.mlstatic.com/D_NQ_NP_845988-MLM53611700096_022023-O.webp"));
-    productos.push(new Producto("Cojín Tenango","Cojín bordado a mano por artesanos de Tenango",200,"Accesorio","Cojin, Bordado, Recamara, Sala","./src/img/productos/cojinTenango.png"));
+    if(ordenNombreFiltro[0].checked){
+        ordenNombre="ASC"
+    }else{
+        ordenNombre="DESC"
+    }
+    categoriaFiltroIDString = categoriaFiltroID.join('_');
+    /*
+    console.log("Precio menor: " + precioMenor + " Precio mayor: " + precioMayor);
+    console.log(categoriaFiltroIDString)
+    console.log(ordenPrecio);
+    console.log(ordenNombre);
+    */
+    localStorage.setItem("precioMenor",precioMenor);
+    localStorage.setItem("precioMayor",precioMayor);
+    localStorage.setItem("categoriaFiltroIDString",categoriaFiltroIDString);
+    localStorage.setItem("ordenPrecio",ordenPrecio);
+    localStorage.setItem("ordenNombre",ordenNombre);
+    paginaActual=1;
+
+    if(localStorage.getItem("productoBuscar") != null){
+        btnLimpiarBusquda.style.display = "flex";
+        auxBusqueda = localStorage.getItem("productoBuscar");
+        inputBusqueda.value=auxBusqueda;
+        auxBusqueda = auxBusqueda.replace(/\s+/g, '_');
+        solicitudURL="http://localhost:8080/tienda/productos?buscar="+auxBusqueda+"&ordenPrecio="+ordenPrecio+"&ordenNombre="+ordenNombre+"&categorias="+categoriaFiltroIDString+"&precioMenor="+precioMenor+"&precioMayor="+precioMayor+"&pagina=";
+        buscando = true;
+    }else {
+        solicitudURL="http://localhost:8080/tienda/productos?"+"ordenPrecio="+ordenPrecio+"&ordenNombre="+ordenNombre+"&categorias="+categoriaFiltroIDString+"&precioMenor="+precioMenor+"&precioMayor="+precioMayor+"&pagina=";
+
+        buscando = false;
+    }
+
+    if(filtro.clientHeight > 300){
+        btnMuestraFiltro.click();
+    }
+    filtrando = true;
+    loadProductos(solicitudURL+paginaActual);
+    btnLimpiarFiltros.style.display = "flex";
     
- }
+ })
 
-function addProducto(producto,index){
-    contenedorProdutos.insertAdjacentHTML("beforeend", `
-            <div class="cardProducto" id="${producto.id}" src = "hola">
+ btnLimpiarFiltros.addEventListener("click", function(event){
+    
+    event.preventDefault();
+    categoriaFiltroID = [];
+    range[0].value = 0;
+    range[1].value = 10000;
+    categoriaFiltro.forEach((cat)=>{
+        if (cat.id == "CAT-0"){
+            cat.checked = true;
+        } else {
+            cat.checked = false;
+        }
+    })
+
+    ordenPrecioFiltro[0].checked = true;
+    ordenNombreFiltro[0].checked = true;
+
+    progress.style.left = (0 / range[0].max)*100 + "%";
+    progress.style.right = 100 - (10000 / range[1].max)*100 + "%";
+    inputValue[0].value = 0;
+    inputValue[1].value = 10000;
+    
+    btnAplicarFiltro.click()
+    btnLimpiarFiltros.style.display = "none";
+    paginaActual=1;
+    if(localStorage.getItem("productoBuscar") != null){
+        btnLimpiarBusquda.style.display = "flex";
+        auxBusqueda = localStorage.getItem("productoBuscar");
+        inputBusqueda.value=auxBusqueda;
+        auxBusqueda = auxBusqueda.replace(/\s+/g, '_');
+        solicitudURL="http://localhost:8080/tienda/productos?buscar="+auxBusqueda+"&pagina=";
+        buscando = true;
+    }else {
+        solicitudURL="http://localhost:8080/tienda/productos?pagina=";
+        buscando = false;
+    }
+    localStorage.removeItem("precioMenor");
+    localStorage.removeItem("precioMayor");
+    localStorage.removeItem("categoriaFiltroIDString");
+    localStorage.removeItem("ordenPrecio");
+    localStorage.removeItem("ordenNombre");
+    filtrando=false;
+    loadProductos(solicitudURL+paginaActual);
+ })
+
+ function createCards(prods){
+    contenedorProdutos.innerHTML="";
+    prods.forEach((producto) => {
+        let card = `
+        <div class="cardProducto" id="${producto.idProducto}">
                 <div class="caraPrincipal">
                     <img src="${producto.imagen}" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">${producto.nombre}</h4>
+                    <div class="card-body fondoAzul">
+                        <h4 class="card-title colorBlanco">${producto.nombreProducto}</h4>
                     </div>
                 </div>
-                <div class="overlay" data-id="${producto.id}">
-                    <span class="productoSlogan">Hecho con el corazón</span>
-                    <h4>${producto.nombre}</h4>
+                <div class="overlay" data-id="${producto.idProducto}">
+                    <span class="productoSlogan colorBlanco">Hecho con el corazón</span>
+                    <h4>${producto.nombreProducto}</h4>
                     <span class="productPrecio">$ ${parseFloat(producto.precio).toFixed(2)}</span>
                     <span>por</span>
-                    <span class="productMadeBy">Artesanos de México</span>
-                    <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle"></i> Información</a></div>
+                    <span class="productMadeBy">Artesanos de Tenango</span>
+                    <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle irProducto"></i> Información</a></div>
                     <div class="productIconos">
-                        <a  class="productoIcon"><i class="bi bi-heart"></i></a>
-                        <a  class="productoIcon"><i class="bi bi-share-fill"></i></a>
                         <a  class="productoIcon"><i class="bi bi-cart3 iconoCarrito borrarProducto"></i></a>
                     </div>
                 </div>
             </div>
-    `)
+        `;
 
-}
+        contenedorProdutos.insertAdjacentHTML("beforeend", card);
+    });
+};
 
-function mostrarProductos(id){
-    let auxNumPro = id -1;
-    botonesPaginacion= document.querySelectorAll(".btnPaginacion");
-    botonesPaginacion.forEach((boton)=>{
-        if(boton.id == id){
-            boton.classList.add("btnSelected");
-        }else{
-            boton.classList.remove("btnSelected");
-        }
-    })
-    contenedorProdutos.innerHTML="";
-    for(let index = (auxNumPro * 12); index < (id*12); index++){
-        if(index > (productos.length-1)){
-            break;
-        }
-        addProducto(productos[index],index);
-    }
+ //prueba corriendo datos desde springboot 
+ async function loadProductos(url){
+    //console.log("esta es la url: "+url)
+    let promesa = fetch (url, { method: "GET" });
+    contenedorProdutos.innerHTML = `
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        `
+    promesa.then((response) => { 
+        response.json().then( (data) => {
+            /*
+            console.log("Contenido: "+data)
+            console.log("Numero de paginas: "+data.nPaginas);
+            console.log("Numero de productos: "+data.nProductos)
+            console.log("Lista de productos: "+data.productos)
+            */
+            paginasTotal = data.nPaginas;
 
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-function addBtnPaginacion(numBtn){
-    let auxId = 0;
-    let auxSelected="";
-    contnedorBtnPaginacion.innerHTML="";
-    if(numBtn <= 4){
-        for(auxId=1;auxId<=numBtn;auxId++){
-            if(auxId == 1){
-                auxSelected="btnSelected";
+            if(data.nProductos == 0 && buscando == true && filtrando==true){
+                contenedorProdutos.innerHTML = `
+                    <div class="d-flex flex-column justify-content-center">
+                        <h2 class="titulosRosas">No hay productos que coincidan con su busqueda y filtrado.</h2>
+                    </div>
+                    `
+            }else if(data.nProductos == 0 && buscando == true){
+                contenedorProdutos.innerHTML = `
+                    <div class="d-flex flex-column justify-content-center">
+                        <h2 class="titulosRosas">No hay coincidencias con su busqueda.</h2>
+                    </div>
+                    `
+            }else if(data.nProductos == 0 && filtrando == true){
+                contenedorProdutos.innerHTML = `
+                    <div class="d-flex flex-column justify-content-center">
+                        <h2 class="titulosRosas">No hay productos que coincidan con su filtrado.</h2>
+                    </div>
+                    `
             }else{
-                auxSelected=""
+                createCards(data.productos)
             }
-            contnedorBtnPaginacion.insertAdjacentHTML("beforeend", `
-            <button class="btnPaginacion ${auxSelected}" id="${auxId}">${auxId}</button>
-            `)
-            document.getElementById(auxId).addEventListener('click',function(){
-                mostrarProductos(this.id);
-            } );
-        }
-    }
-}
-
-function busquedaProducto(productoBuscar){
-        btnLimpiarBusquda.style.display="flex"
-        auxBusqueda = productoBuscar.split(/\s+/);
-        console.log(auxBusqueda);
-        productosBuscados = [];
-        contenedorProdutos.innerHTML ="";
-        productos.forEach((producto)=>{
-            for(let index = 0; index < auxBusqueda.length; index++){
-                if(producto.nombre.toUpperCase().includes(auxBusqueda[index].toUpperCase())){
-                    productosBuscados.push(producto);
-                    break
-                }
-            }
+            actualizarBotonesPaginacion();
+        }).catch((err)=>{
+            console.log("Ocurrio un error en el json "+ err)
         })
-
-        if(productosBuscados.length > 0 && productosBuscados.length <= 12){
-            productosBuscados.forEach((producto, index)=> addProducto(producto, index));
-        } else if(productosBuscados.length >10){
-            for(let i=0;i < 12;i++){
-                addProducto(productosBuscados[i], i)
-            }
-        }else if(productosBuscados.length == 0){
-            contenedorProdutos.insertAdjacentHTML("beforeend",`
-            <h3 class="sinCoincidencias">No hay coincidencias con la busqueda</h3>
-            `)
-        }
-        addBtnPaginacion(Math.ceil(productosBuscados.length/12));
-}
-
- window.addEventListener("load",function(event){
-    event.preventDefault();
-    if (this.localStorage.getItem("productos") == null){
-        crearPropuctos();
-
-        if(this.localStorage.getItem("productosNuevos") != null){
-            
-            productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
-            productosNuevos.forEach((nuevoProducto,index)=>{
-                nuevoProducto.id = "CP"+(productos.length+index+1)
-                productos.push(nuevoProducto);
-            })
-        }
-        localStorage.setItem("productos",JSON.stringify(productos));
-        localStorage.removeItem("productosNuevos");
-    }else{
-        productos = JSON.parse(this.localStorage.getItem("productos"));
-        if(this.localStorage.getItem("productosNuevos") != null){
         
-            productosNuevos = JSON.parse(this.localStorage.getItem("productosNuevos"));
-        
-            productosNuevos.forEach((nuevoProducto,index)=>{
-                nuevoProducto.id = "CP"+(productos.length+index+1)
-                productos.push(nuevoProducto);
-            })
-            localStorage.setItem("productos",JSON.stringify(productos));
-            localStorage.removeItem("productosNuevos");
-        }
-    }
-
-    if(this.localStorage.getItem("productoBuscar") == null){
-        if(productos.length > 0 && productos.length <= 12){
-            productos.forEach((producto, index)=> addProducto(producto, index));
-        } else if(productos.length >10){
-            for(let i=0;i < 12;i++){
-                addProducto(productos[i], i)
-            }
-        }
-        addBtnPaginacion(Math.ceil(productos.length/12));
-    }else{
-        btnLimpiarBusquda.style.display="flex"
-        auxBusqueda = this.localStorage.getItem("productoBuscar");
-        auxBusqueda = auxBusqueda.split(/\s+/);
-        productos.forEach((producto)=>{
-            for(let index = 0; index < auxBusqueda.length; index++){
-                if(producto.nombre.toUpperCase().includes(auxBusqueda[index].toUpperCase())){
-                    productosBuscados.push(producto);
-                    break
-                }
-            }
-        })
-
-        if(productosBuscados.length > 0 && productosBuscados.length <= 12){
-            productosBuscados.forEach((producto, index)=> addProducto(producto, index));
-        } else if(productosBuscados.length >10){
-            for(let i=0;i < 12;i++){
-                addProducto(productosBuscados[i], i)
-            }
-        }else if(productosBuscados.length == 0){
-            contenedorProdutos.insertAdjacentHTML("beforeend",`
-            <h3 class="sinCoincidencias">No hay coincidencias con la busqueda</h3>
-            `)
-        }
-        addBtnPaginacion(Math.ceil(productosBuscados.length/12));
-    }
-    
-
- })
-
+    })
+    .catch((err) => {
+        console.log("Ocurrio un error en la solicitud",err)
+        contenedorProdutos.innerHTML = `
+        <div class="d-flex flex-column justify-content-center">
+            <h2 class="titulosRosas">Hubo un problema al cargar los productos.</h2>
+            <p class="mensajeContactoError">
+                Por favor,haga <a href="./nosotros.html#contacto">click aquí</a> para ponerse en contacto con nuestro equipo técnico.
+            </p>
+        </div>
+        `
+    })
+ }
 
  btnLimpiarBusquda.addEventListener("click",function(event){
     event.preventDefault();
-    contenedorProdutos.innerHTML="";
-    productos = JSON.parse(localStorage.getItem("productos"));
-    
-    if(productos.length > 0 && productos.length <= 12){
-        productos.forEach((producto, index)=> addProducto(producto, index));
-    } else if(productos.length >10){
-        for(let i=0;i < 12;i++){
-            addProducto(productos[i], i)
-        }
-    }else if(productosBuscados.length == 0){
-        contenedorProdutos.insertAdjacentHTML("beforeend",`
-        <h3 class="sinCoincidencias">No hay productos</h3>
-        `)
+    paginaActual=1;
+    if(filtrando == true){
+        precioMenor = localStorage.getItem("precioMenor");
+        precioMayor = localStorage.getItem("precioMayor");
+        categoriaFiltroIDString = localStorage.getItem("categoriaFiltroIDString");
+        ordenPrecio = localStorage.getItem("ordenPrecio");
+        ordenNombre = localStorage.getItem("ordenNombre");
+        solicitudURL="http://localhost:8080/tienda/productos?"+"ordenPrecio="+ordenPrecio+"&ordenNombre="+ordenNombre+"&categorias="+categoriaFiltroIDString+"&precioMenor="+precioMenor+"&precioMayor="+precioMayor+"&pagina=";
+    }else{
+        solicitudURL="http://localhost:8080/tienda/productos?pagina="
     }
-    addBtnPaginacion(Math.ceil(productos.length/12));
-    localStorage.removeItem("productoBuscar");
+    loadProductos(solicitudURL+paginaActual);
     btnLimpiarBusquda.style.display = "none";
+    inputBusqueda.value="";
+    localStorage.removeItem("productoBuscar");
+    buscando=false;
  })
 
  btnBusqueda.addEventListener("click",function(event){
+    let busqueda="";
     event.preventDefault();
     inputBusqueda.value = inputBusqueda.value.trim();
     localStorage.setItem("productoBuscar", inputBusqueda.value);
-    if(inputBusqueda.value.length > 3){
-        busquedaProducto(inputBusqueda.value);
+    busqueda = inputBusqueda.value.replace(/\s+/g, '_');
+    if(inputBusqueda.value.length > 2){
+        paginaActual=1;
+        solicitudURL="http://localhost:8080/tienda/productos?buscar="+busqueda+"&pagina=";
+        buscando=true;
+        btnLimpiarBusquda.style.display = "flex";
+        loadProductos(solicitudURL+paginaActual);
     }
-    inputBusqueda.value="";
  })
 
  inputBusqueda.addEventListener("keyup", function (event) {
+    let busqueda="";
     event.preventDefault();
     if (event.code == "Enter") {
         inputBusqueda.value = inputBusqueda.value.trim();
+        localStorage.setItem("productoBuscar", inputBusqueda.value);
+        busqueda = inputBusqueda.value.replace(/\s+/g, '_');
         if(inputBusqueda.value.length > 3){
-            localStorage.setItem("productoBuscar", inputBusqueda.value);
-            busquedaProducto(inputBusqueda.value);
-            inputBusqueda.value="";
+            paginaActual=1;
+            solicitudURL="http://localhost:8080/tienda/productos?buscar="+busqueda+"&pagina=";
+            buscando=true;
+            btnLimpiarBusquda.style.display = "flex";
+            loadProductos(solicitudURL+paginaActual);
         }
     }
-});
+ });
 
-contenedorProdutos.addEventListener('click', function(event) {
-    if (event.target.classList.contains('irProducto')) {
-        const idCarta = event.target.closest('.cardProducto').id;
-        console.log('ID de la carta:', idCarta);
-        localStorage.setItem("productos",JSON.stringify(productos));
-        localStorage.setItem("idCarta",idCarta);
-        window.location.href = "productoIndividual.html";
+ inputBusqueda.addEventListener("search", function(event) {
+    if (inputBusqueda.value === "") {
+        console.log("Se limpió el campo de búsqueda");
+        btnLimpiarBusquda.click();
+        inputBusqueda.blur();
     }
 });
 
+ contenedorProdutos.addEventListener('click', function(event) {
+    if (event.target.classList.contains('irProducto')) {
+        const idProducto = event.target.closest('.cardProducto').id;
+        console.log('ID de la carta:', idProducto);
+        localStorage.setItem("idProducto",idProducto);
+        window.location.href = "productoIndividual.html?id=" + idProducto;
+    }
+});
+
+function actualizarBotonesPaginacion() {
+
+    if (paginaActual === 1) {
+        btnAnteriorPagina.style.display = 'none';
+    } else {
+        btnAnteriorPagina.style.display = 'flex';
+    }
+
+    if (paginaActual === paginasTotal) {
+        btnSiguientePagina.style.display = 'none';
+    } else {
+        btnSiguientePagina.style.display = 'flex';
+    }
+
+    if (paginasTotal === 0){
+        btnSiguientePagina.style.display = 'none';
+        btnAnteriorPagina.style.display = 'none';
+    }
+  }
+
+btnSiguientePagina.addEventListener("click",function(event){
+    event.preventDefault();
+    if(paginaActual < paginasTotal){
+        paginaActual++;
+    }
+    loadProductos(solicitudURL+paginaActual)
+})
+
+btnAnteriorPagina.addEventListener("click",function(event){
+    event.preventDefault();
+    if(paginaActual > 1){
+        paginaActual--;
+    }
+    loadProductos(solicitudURL+paginaActual)
+})
+
+ document.addEventListener("DOMContentLoaded", function(event){
+    event.preventDefault();
+    paginaActual=1;
+    solicitudURL="http://localhost:8080/tienda/productos?pagina=";
+    if(localStorage.getItem("productoBuscar") != null && localStorage.getItem("categoriaFiltroIDString") == null){
+        btnLimpiarBusquda.style.display = "flex";
+        auxBusqueda = localStorage.getItem("productoBuscar");
+        inputBusqueda.value=auxBusqueda;
+        auxBusqueda = auxBusqueda.replace(/\s+/g, '_');
+        solicitudURL="http://localhost:8080/tienda/productos?buscar="+auxBusqueda+"&pagina=";
+        buscando = true;
+    }else { 
+        buscando = false;
+    }
+
+    if(localStorage.getItem("categoriaFiltroIDString") != null && localStorage.getItem("productoBuscar") == null){
+        btnLimpiarFiltros.style.display = "flex";
+        categoriaFiltroIDString = localStorage.getItem("categoriaFiltroIDString").toString();
+
+        categoriaFiltro.forEach((cat)=>{
+            if (cat.value.toString() == categoriaFiltroIDString ) {
+                cat.checked = true;
+            }else{
+                cat.checked = true;
+            }
+        })
+
+        solicitudURL="http://localhost:8080/tienda/productos?categorias="+categoriaFiltroIDString+"&pagina=";
+        filtrando = true;
+    }else {
+        filtrando = false;
+    }
+
+    loadProductos(solicitudURL+paginaActual);
+ })
