@@ -315,3 +315,7 @@ section.informacionVentas h3, section.historialCompas h3{
 div.ventas h3 a{
     text-decoration: none;
 }
+.mensajeError{
+    font-size: 1.4rem;
+    color: red;
+}
