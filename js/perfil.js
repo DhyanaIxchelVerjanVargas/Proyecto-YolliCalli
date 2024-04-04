@@ -5,16 +5,27 @@ let nombrePerfil = document.getElementById("nombrePerfil");
 let telPerfil = document.getElementById("telPerfil");
 let callePerfil = document.getElementById("callePerfil");
 let localidadPerfil = document.getElementById("localidadPerfil");
-let estadoPerfil = document.getElementById("estadoPerfil");
-let ciudadPerfil = document.getElementById("ciudadPerfil");
-let cpPerfil = document.getElementById("cpPerfil");
 let editarPerfil = document.getElementById("editarPerfil");
 let guardarPerfil = document.getElementById("guardarPerfil");
+let calleError = document.getElementById("calleError");
+let localidadError = document.getElementById("localidadError");
+let cpPerfil = document.getElementById("cpPerfil");
+let cpError = document.getElementById("cpError");
 
+let estadoPerfil = document.getElementById("estadoPerfil");
+let estadoError = document.getElementById("estadoError");
+let ciudadPerfil = document.getElementById("ciudadPerfil");
+let ciudadError = document.getElementById("ciudadError");
 const cloudName = "dayprjvbg";
 const unsignedUploadPreset = "preset_YolliCalli";
 let imagenUrlPerfil = "";
 let fotografia = "";
+
+/* Agregado para Modal Pago */
+let metodoPago = document.getElementById("metodoPago");
+let modalPago = document.getElementById("modalPago");
+let btnEnvioBotonPago = document.getElementById("btnEnvioBotonPago");
+/* Fin agregado para Modal Pago */
 
 const expresiones = {
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
@@ -22,6 +33,91 @@ const expresiones = {
     calle: /[a-zA-Z0-9áéíóúüÁÉÍÓÚÜñÑ#]+$/,
     cp: /^\d{5}$/,
 };
+
+callePerfil.addEventListener("blur", e=>{
+    e.preventDefault;
+    if(callePerfil.value.length >=3){
+
+        if(/[a-zA-Z0-9áéíóúüÁÉÍÓÚÜñÑ#]+$/.test(callePerfil.value)){
+            calleError.classList.remove("mensajeError");
+            calleError.innerText="";
+        } else{
+            calleError.classList.add("mensajeError");
+            calleError.innerText="No cumple con el formato"
+        }
+    }else{
+        calleError.classList.add("mensajeError");
+        calleError.innerText="Nombre de la calle muy corto";   
+    }
+});
+
+
+localidadPerfil.addEventListener("blur", e=>{
+    e.preventDefault;
+    if(localidadPerfil.value.length >=4){
+
+        if(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(localidadPerfil.value)){
+            localidadError.classList.remove("mensajeError");
+            localidadError.innerText="";
+        } else{
+            localidadError.classList.add("mensajeError");
+            localidadError.innerText="No cumple con el formato"
+        }
+    }else{
+        localidadError.classList.add("mensajeError");
+        localidadError.innerText="Nombre muy corto";   
+    }
+});
+
+estadoPerfil.addEventListener("blur", e=>{
+    e.preventDefault;
+    if(estadoPerfil.value.length >=4){
+
+        if(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(estadoPerfil.value)){
+            estadoError.classList.remove("mensajeError");
+            estadoError.innerText="";
+        } else{
+            estadoError.classList.add("mensajeError");
+            estadoError.innerText="No cumple con el formato"
+        }
+    }else{
+        estadoError.classList.add("mensajeError");
+        estadoError.innerText="Nombre muy corto";   
+    }
+});
+
+ciudadPerfil.addEventListener("blur", e=>{
+    e.preventDefault;
+    if(ciudadPerfil.value.length >=4){
+
+        if(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(ciudadPerfil.value)){
+            ciudadError.classList.remove("mensajeError");
+            ciudadError.innerText="";
+        } else{
+            ciudadError.classList.add("mensajeError");
+            ciudadError.innerText="No cumple con el formato"
+        }
+    }else{
+        ciudadError.classList.add("mensajeError");
+        ciudadError.innerText="Nombre muy corto";   
+    }
+});
+
+cpPerfil.addEventListener("blur", e=>{
+    e.preventDefault;
+    if(cpPerfil.value.length >4){
+        if(/^\d{5}$/.test(cpPerfil.value)){
+            cpError.classList.remove("mensajeError");
+            cpError.innerText="";
+        } else{
+            cpError.classList.add("mensajeError");
+            cpError.innerText="No cumple con el formato"
+        }
+    }else{
+        cpError.classList.add("mensajeError");
+        cpError.innerText="Código postal muy corto";   
+    }
+});
 
 //Usuario de prueba temporal
 let usuario = {
@@ -89,9 +185,39 @@ imagenPerfilInput.addEventListener("change",function(event){
 )
 //Fin de foto de perfil
 
+function cargarInformacionUsuario() {
+    // Obtener el correo electrónico del usuario que inició sesión desde sessionStorage
+    const correoUsuario = sessionStorage.getItem('correoUsuario');
+    if (correoUsuario) {
+        // Realizar una solicitud GET para obtener la información del usuario correspondiente al correo electrónico
+        fetch(`http://localhost:8080/api/usuarios/?correo=${correoUsuario}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error("Error al obtener la información del usuario");
+            })
+            .then(data => {
+                // Suponiendo que la respuesta de la API contiene la información del usuario
+                // Buscar el usuario que coincide con el correo electrónico del usuario actual
+                const usuarioRegistrado = data.find(usuario => usuario.correo === correoUsuario);
+                if (usuarioRegistrado) {
+                    // Mostrar la información del usuario en los campos correspondientes del perfil
+                    nombrePerfil.value = usuarioRegistrado.nombre;
+                    telPerfil.value = usuarioRegistrado.telefono;
+                    // Resto de los campos
+                    console.log("Información del usuario cargada:", usuarioRegistrado);
+                } else {
+                    console.log("No se encontró ningún usuario con el correo electrónico proporcionado.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    }
+}
+
 function habilitarEdicion() {
-    nombrePerfil.disabled = false;
-    telPerfil.disabled = false;
     callePerfil.disabled = false;
     localidadPerfil.disabled = false;
     estadoPerfil.disabled = false;
@@ -102,8 +228,6 @@ function habilitarEdicion() {
 }
 
 function deshabilitarEdicion() {
-    nombrePerfil.value = usuario.nombre;
-    telPerfil.value = usuario.telefono;
     callePerfil.value = usuario.calle;
     localidadPerfil.value = usuario.localidad;
     estadoPerfil.value = usuario.estado;
@@ -153,5 +277,31 @@ guardarPerfil.addEventListener("click", function(event) {
 
 window.addEventListener("load", function(event){
     deshabilitarEdicion();
+    cargarInformacionUsuario();
 });
 
+/* Agregado para Modal Pago */
+metodoPago.addEventListener("click", function(event){
+    event.preventDefault();
+    
+    modalPago.innerHTML=""
+    //Modal para envío exitoso a Carrito
+    modalPago.insertAdjacentHTML("beforeend", `
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title fs-2" id="estadoModalLabel">YolliCalli</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerral"></button>
+        </div>
+        <div class="modal-body">
+        <p class="fs-3">Estamos trabajando en ello ...</p>
+        </div>
+    </div>
+    </div>
+    `);
+    
+    btnEnvioBotonPago.click();
+    
+   //console.log("Se hizo click en boton perfil");
+})
+/* Fin Modal Pago */

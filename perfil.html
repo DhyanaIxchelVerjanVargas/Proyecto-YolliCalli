@@ -102,9 +102,10 @@
                 <form class="infoPerfil">
                     <!--Imgagen de perfil-->
                     <div class="imagenPerfil">
-                        <img src="https://res.cloudinary.com/dayprjvbg/image/upload/v1712112724/img_perfil-01_hq450o.png" alt="Foto de perfil">
-                        <input type="file" accept="image/png, image/jpeg, image/jpg" class="form-control" id="imagenPerfil" style="display: none;">
-                        <button type="button" class="btn" id="imagenPerfilFake">Cambiar</button>
+                        <img src="https://res.cloudinary.com/dayprjvbg/image/upload/v1712112724/img_perfil-01_hq450o.png    " alt="Foto de perfil" id="imagenPerfilMostrada">
+                        <input type="file" accept="image/png, image/jpeg, image/jpg" class="form-control" id="imagenPerfilInput" style="display: none;">
+                        <button type="button" class="boton" id="imagenPerfilFake">Cambiar</button>
+                        <p>Sugerimos utilizar imágenes cuadradas para evitar la deformación de la imagen</p>
                     </div>
                     <!--Título de formulario-->
                     <div>
@@ -119,35 +120,43 @@
                         <!--Teléfono-->
                         <div>
                             <label for="telPerfil" class="form-label">Teléfono</label>
-                            <input type="number" class="form-control" id="telPerfil"
+                            <input type="text" class="form-control" id="telPerfil" maxlength="10"
                                 placeholder="Teléfono a 10 dígitos">
-                        </div>
+            </div>      
                         <!--Dirección-->
                         <div>
                             <label for="callePerfil" class="form-label">Calle</label>
+                            <p class="mensajeError" id="calleError"></p>
                             <input type="text" class="form-control" id="callePerfil" placeholder="Calle">
                         </div>
                         <div>
                             <label for="localidadPerfil" class="form-label">Municipio/Alcaldía</label>
+                            <p class="mensajeError" id="localidadError"></p>
                             <input type="text" class="form-control" id="localidadPerfil" placeholder="Localidad">
                         </div>
                         <div>
                             <label for="estadoPerfil" class="form-label">Estado</label>
+                            <p class="mensajeError" id="estadoError"></p>
                             <input type="text" class="form-control" id="estadoPerfil" placeholder="Estado">
                         </div>
                         <div class="ciudadCodPostal">
                             <div class="ciudad">
                                 <label for="ciudadPerfil" class="form-label ciudad">Ciudad</label>
+                                <p class="mensajeError" id="ciudadError"></p>
                                 <input type="text" class="form-control" id="ciudadPerfil" placeholder="Ciudad">
                             </div>
                             <div class="codPostal">
                                 <label for="cpPerfil" class="form-label codPostal">Código postal</label>
-                                <input type="text" class="form-control" maxlength="5" id="cpPerfil" placeholder="#####">
+                                <p class="mensajeError" id="cpError"></p>
+                                <input type="text" class="form-control" maxlength="5" id="cpPerfil" placeholder="09700">
                             </div>
                         </div>
-                        <div class="botonDonar">
+                        <div class="botonDonar botonesPerfil">
                             <button type="button" class="boton" id="editarPerfil">
                                 <i class="bi bi-pencil-fill"></i> Editar
+                            </button>
+                            <button type="button" class="boton" id="guardarPerfil">
+                                <i class="bi bi-floppy2-fill"></i> Guardar
                             </button>
                         </div>
                     </div>
@@ -211,6 +220,26 @@
                 </div>
             </div>
         </div>
+        <!-- Modal de alerta para boton de pago en construccion -->
+        <!-- Button trigger modal para ModalPago -->
+        <button
+            id="btnEnvioBotonPago"
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalPago"
+            style="display: none"
+        ></button>
+
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="modalPago"
+            tabindex="-1"
+            aria-labelledby="estadoModalLabel"
+            aria-hidden="true"
+        ></div>
+        <!-- Fin Modal de BotonPago -->
     </section>
 
     <!--Información de ventas-->
@@ -218,44 +247,9 @@
         <!--Título-->
         <h2 class="titulosRosas">Información de ventas</h2>
         <!--Contenido de ventas-->
-        <div class="ventas container" id="ventasPerfil" style="display: none;">
-            <div class="row">
-                <!--Últimas 5 ventas-->
-                <div class="col-sm-4 ultimasVentas">
-                    <h3>Últimas ventas</h3>
-                    <ul>
-                        <li>
-                            <p>No hay nada para mostrar</p>
-                        </li>
-                        <li>
-                            <p>lorem ipsum - fecha</p>
-                        </li>
-                        <li>
-                            <p>lorem ipsum - fecha</p>
-                        </li>
-                        <li>
-                            <p>lorem ipsum - fecha</p>
-                        </li>
-                        <li>
-                            <p>lorem ipsum - fecha</p>
-                        </li>
-                    </ul>
-                </div>
-                <!--Ingresos de la semana-->
-                <div class="col-sm-4 ingresos">
-                    <h3>Ingresos de esta semana</h3>
-                    <h2 class="titulosAzul">$5000</h2>
-                </div>
-                <!--Ventas totales-->
-                <div class="col-sm-4 ventasTotales">
-                    <h3>Ventas online totales</h3>
-                    <h2 class="titulosAzul">##</h2>
-                </div>
-            </div>
-        </div>
-        <div class="ventas container" id="noVentasPerfil">
+        <div class="ventas container text-center" id="noVentasPerfil">
             <h3>Por el momento no hay información que mostrar</h3>
-            <h3><a href="publicaProducto.html">¡Publica tu producto!</a></h3>
+            <h3>Aquí encontrarás un historial de los últimos 4 productos que hayas vendido</h3>
         </div>
     </section>
 
@@ -411,7 +405,7 @@
         </div>
         <div class="ventas container  text-center" id="noComprasPerfil">
             <h3>Por el momento no hay información que mostrar</h3>
-            <h3><a href="tienda.html">¡Visita nuestra tienda!</a></h3>
+            <h3><a href="tienda.html" class="boton">¡Visita nuestra tienda!</a></h3>
         </div>
     </section>
 
