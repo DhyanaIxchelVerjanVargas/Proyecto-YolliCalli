@@ -20,6 +20,7 @@ const cloudName = "dayprjvbg";
 const unsignedUploadPreset = "preset_YolliCalli";
 let imagenUrlPerfil = "";
 let fotografia = "";
+let isValid = true;
 
 /* Agregado para Modal Pago */
 let metodoPago = document.getElementById("metodoPago");
@@ -27,108 +28,17 @@ let modalPago = document.getElementById("modalPago");
 let btnEnvioBotonPago = document.getElementById("btnEnvioBotonPago");
 /* Fin agregado para Modal Pago */
 
-const expresiones = {
-    nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
-    telefono: /^\d{10}$/,
-    calle: /[a-zA-Z0-9áéíóúüÁÉÍÓÚÜñÑ#]+$/,
-    cp: /^\d{5}$/,
-};
-
-callePerfil.addEventListener("blur", e=>{
-    e.preventDefault;
-    if(callePerfil.value.length >=3){
-
-        if(/[a-zA-Z0-9áéíóúüÁÉÍÓÚÜñÑ#]+$/.test(callePerfil.value)){
-            calleError.classList.remove("mensajeError");
-            calleError.innerText="";
-        } else{
-            calleError.classList.add("mensajeError");
-            calleError.innerText="No cumple con el formato"
-        }
-    }else{
-        calleError.classList.add("mensajeError");
-        calleError.innerText="Nombre de la calle muy corto";   
-    }
-});
-
-
-localidadPerfil.addEventListener("blur", e=>{
-    e.preventDefault;
-    if(localidadPerfil.value.length >=4){
-
-        if(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(localidadPerfil.value)){
-            localidadError.classList.remove("mensajeError");
-            localidadError.innerText="";
-        } else{
-            localidadError.classList.add("mensajeError");
-            localidadError.innerText="No cumple con el formato"
-        }
-    }else{
-        localidadError.classList.add("mensajeError");
-        localidadError.innerText="Nombre muy corto";   
-    }
-});
-
-estadoPerfil.addEventListener("blur", e=>{
-    e.preventDefault;
-    if(estadoPerfil.value.length >=4){
-
-        if(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(estadoPerfil.value)){
-            estadoError.classList.remove("mensajeError");
-            estadoError.innerText="";
-        } else{
-            estadoError.classList.add("mensajeError");
-            estadoError.innerText="No cumple con el formato"
-        }
-    }else{
-        estadoError.classList.add("mensajeError");
-        estadoError.innerText="Nombre muy corto";   
-    }
-});
-
-ciudadPerfil.addEventListener("blur", e=>{
-    e.preventDefault;
-    if(ciudadPerfil.value.length >=4){
-
-        if(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(ciudadPerfil.value)){
-            ciudadError.classList.remove("mensajeError");
-            ciudadError.innerText="";
-        } else{
-            ciudadError.classList.add("mensajeError");
-            ciudadError.innerText="No cumple con el formato"
-        }
-    }else{
-        ciudadError.classList.add("mensajeError");
-        ciudadError.innerText="Nombre muy corto";   
-    }
-});
-
-cpPerfil.addEventListener("blur", e=>{
-    e.preventDefault;
-    if(cpPerfil.value.length >4){
-        if(/^\d{5}$/.test(cpPerfil.value)){
-            cpError.classList.remove("mensajeError");
-            cpError.innerText="";
-        } else{
-            cpError.classList.add("mensajeError");
-            cpError.innerText="No cumple con el formato"
-        }
-    }else{
-        cpError.classList.add("mensajeError");
-        cpError.innerText="Código postal muy corto";   
-    }
-});
-
 //Usuario de prueba temporal
 let usuario = {
-    nombre: "John Doe",
-    telefono: "555555555",
-    calle: "Platanito 12",
-    localidad: "Tlalpan",
-    estado: "CDMX",
-    ciudad: "Valle Gómez",
-    cp: "00100"
+    correo: "",
+    foto: "",
+    calle: "",
+    localidad: "",
+    estado: "",
+    ciudad: "",
+    cp: ""
 };
+
 
 //Agregado para cambiar foto de perfil
 imagenPerfilFake.addEventListener("click",function(event){
@@ -172,15 +82,22 @@ imagenPerfilInput.addEventListener("change",function(event){
         uploadFile(fotografia)
             .then(imagenUrl => {   
                 imagenUrlPerfil = imagenUrl;
+                let usuarioLocalStorage = JSON.parse(localStorage.getItem('usuario'));
+
+                if (usuarioLocalStorage) {
+                    usuarioLocalStorage.foto = imagenUrlPerfil;
+                    localStorage.setItem('usuario', JSON.stringify(usuarioLocalStorage));
+                } else {
+                    console.log("No se encontró ningún usuario en localStorage.");
+                }
+
                 imagenPerfilMostrada.src = imagenUrlPerfil;
             })
             .catch(error => { 
                 console.log(error);
-                imagenUrlPerfil = "https://res.cloudinary.com/dayprjvbg/image/upload/v1712112724/img_perfil-01_hq450o.png";
             });
     } else {
         console.log('El archivo seleccionado no es una imagen');
-        imagenUrlPerfil = "https://res.cloudinary.com/dayprjvbg/image/upload/v1712112724/img_perfil-01_hq450o.png";
     }}
 )
 //Fin de foto de perfil
@@ -190,7 +107,7 @@ function cargarInformacionUsuario() {
     const correoUsuario = sessionStorage.getItem('correoUsuario');
     if (correoUsuario) {
         // Realizar una solicitud GET para obtener la información del usuario correspondiente al correo electrónico
-        fetch(`http://localhost:8080/api/usuarios/?correo=${correoUsuario}`)
+        fetch(`https://yollicalli-back.onrender.com/api/usuarios/`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -198,15 +115,31 @@ function cargarInformacionUsuario() {
                 throw new Error("Error al obtener la información del usuario");
             })
             .then(data => {
-                // Suponiendo que la respuesta de la API contiene la información del usuario
                 // Buscar el usuario que coincide con el correo electrónico del usuario actual
-                const usuarioRegistrado = data.find(usuario => usuario.correo === correoUsuario);
-                if (usuarioRegistrado) {
+                const usuarioFetch = data.find(usuario => usuario.correo === correoUsuario);
+                if (usuarioFetch) {
                     // Mostrar la información del usuario en los campos correspondientes del perfil
-                    nombrePerfil.value = usuarioRegistrado.nombre;
-                    telPerfil.value = usuarioRegistrado.telefono;
-                    // Resto de los campos
-                    console.log("Información del usuario cargada:", usuarioRegistrado);
+                    nombrePerfil.value = usuarioFetch.nombre;
+                    telPerfil.value = usuarioFetch.telefono;
+                    usuario.correo = usuarioFetch.correo;
+
+                    const usuarioEnLocalStorage = obtenerUsuarioPorCorreo(usuarioFetch.correo);
+                    if (usuarioEnLocalStorage) {
+                        callePerfil.value = usuarioEnLocalStorage.calle;
+                        localidadPerfil.value = usuarioEnLocalStorage.localidad;
+                        estadoPerfil.value = usuarioEnLocalStorage.estado;
+                        ciudadPerfil.value = usuarioEnLocalStorage.ciudad;
+                        cpPerfil.value = usuarioEnLocalStorage.cp;
+                        imagenPerfilMostrada.src = usuarioEnLocalStorage.foto;
+                        console.log("Usuario encontrado en localStorage:", usuarioEnLocalStorage);
+                    } else {
+                        usuario.correo = usuarioFetch.correo;
+                        localStorage.setItem('usuario', JSON.stringify(usuario));
+                        console.log("No se encontró ningún usuario en localStorage con el correo proporcionado.");
+                        console.log("Se crea nuevo usuario", usuario);
+                    }
+
+                    console.log("Información del usuario cargada:", usuarioFetch);
                 } else {
                     console.log("No se encontró ningún usuario con el correo electrónico proporcionado.");
                 }
@@ -214,6 +147,87 @@ function cargarInformacionUsuario() {
             .catch(error => {
                 console.error("Error:", error);
             });
+    }
+}
+
+function obtenerUsuarioPorCorreo(correo) {
+    const usuarioLocalStorage = JSON.parse(localStorage.getItem('usuario'));
+    if (usuarioLocalStorage && usuarioLocalStorage.correo === correo) {
+        return usuarioLocalStorage;
+    } else {
+        return null;
+    }
+}
+
+function validarCalle() {
+    if (callePerfil.value.length >= 3 && /[a-zA-Z0-9áéíóúüÁÉÍÓÚÜñÑ#]+$/.test(callePerfil.value)) {
+        calleError.classList.remove("mensajeError");
+        calleError.innerText = "";
+        return true;
+    } else {
+        calleError.classList.add("mensajeError");
+        calleError.innerText = "Ingrese una calle válida.";
+        return false;
+    }
+}
+
+function validarLocalidad() {
+    if (localidadPerfil.value.length >= 4 && /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(localidadPerfil.value)) {
+        localidadError.classList.remove("mensajeError");
+        localidadError.innerText = "";
+        return true;
+    } else {
+        localidadError.classList.add("mensajeError");
+        localidadError.innerText = "Ingrese un municipio válido.";
+        return false;
+    }
+}
+
+function validarEstado() {
+    if (estadoPerfil.value.length >= 4 && /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(estadoPerfil.value)) {
+        estadoError.classList.remove("mensajeError");
+        estadoError.innerText = "";
+        return true;
+    } else {
+        estadoError.classList.add("mensajeError");
+        estadoError.innerText = "Ingrese un estado válido.";
+        return false;
+    }
+}
+
+function validarEstado() {
+    if (estadoPerfil.value.length >= 4 && /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(estadoPerfil.value)) {
+        estadoError.classList.remove("mensajeError");
+        estadoError.innerText = "";
+        return true;
+    } else {
+        estadoError.classList.add("mensajeError");
+        estadoError.innerText = "Ingrese un estado válido.";
+        return false;
+    }
+}
+
+function validarCiudad() {
+    if (ciudadPerfil.value.length >= 4 && /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/.test(ciudadPerfil.value)) {
+        ciudadError.classList.remove("mensajeError");
+        ciudadError.innerText = "";
+        return true;
+    } else {
+        ciudadError.classList.add("mensajeError");
+        ciudadError.innerText = "Ingrese una ciudad válida.";
+        return false;
+    }
+}
+
+function validarCp() {
+    if (/^[1-9]\d{4}$/.test(cpPerfil.value)) {
+        cpError.classList.remove("mensajeError");
+        cpError.innerText = "";
+        return true;
+    } else {
+        cpError.classList.add("mensajeError");
+        cpError.innerText = "Ingrese un código postal válido.";
+        return false;
     }
 }
 
@@ -228,11 +242,6 @@ function habilitarEdicion() {
 }
 
 function deshabilitarEdicion() {
-    callePerfil.value = usuario.calle;
-    localidadPerfil.value = usuario.localidad;
-    estadoPerfil.value = usuario.estado;
-    ciudadPerfil.value = usuario.ciudad;
-    cpPerfil.value = usuario.cp;
 
     nombrePerfil.disabled = true;
     telPerfil.disabled = true;
@@ -241,6 +250,17 @@ function deshabilitarEdicion() {
     estadoPerfil.disabled = true;
     ciudadPerfil.disabled = true;
     cpPerfil.disabled = true;
+
+    calleError.classList.remove("mensajeError");
+    localidadError.classList.remove("mensajeError");
+    ciudadError.classList.remove("mensajeError");
+    estadoError.classList.remove("mensajeError");
+    cpError.classList.remove("mensajeError");
+    calleError.innerText="";
+    localidadError.innerText="";
+    ciudadError.innerText="";
+    estadoError.innerText="";
+    cpError.innerText="";
 
     editarPerfil.style.display = "inline-block";
     guardarPerfil.style.display = "none";
@@ -251,28 +271,41 @@ editarPerfil.addEventListener("click", function() {
     habilitarEdicion();
 });
 
+callePerfil.addEventListener("blur", validarCalle);
+localidadPerfil.addEventListener("blur", validarLocalidad);
+estadoPerfil.addEventListener("blur", validarEstado);
+ciudadPerfil.addEventListener("blur", validarCiudad);
+cpPerfil.addEventListener("blur", validarCp);
+
 //Botón para guardar formulario
 guardarPerfil.addEventListener("click", function(event) {
     event.preventDefault();
-    const nuevoNombre = nombrePerfil.value;
-    const nuevoTelefono = telPerfil.value;
-    const nuevaCalle = callePerfil.value;
-    const nuevaLocalidad = localidadPerfil.value;
-    const nuevoEstado = estadoPerfil.value;
-    const nuevaCiudad = ciudadPerfil.value;
-    const nuevoCp = cpPerfil.value;
 
-    usuario = {
-    nombre: nuevoNombre,
-    telefono: nuevoTelefono,
-    calle: nuevaCalle,
-    localidad: nuevaLocalidad,
-    estado: nuevoEstado,
-    ciudad: nuevaCiudad,
-    cp: nuevoCp
-    };
+    const camposPerfil = [
+        { elemento: cpPerfil, valido: validarCp(), valor: 'cp' },
+        { elemento: ciudadPerfil, valido: validarCiudad(), valor: 'ciudad' },
+        { elemento: estadoPerfil, valido: validarEstado(), valor: 'estado' },
+        { elemento: localidadPerfil, valido: validarLocalidad(), valor: 'localidad' },
+        { elemento: callePerfil, valido: validarCalle(), valor: 'calle' }
+    ];
 
+    let usuarioLocalStorage = JSON.parse(localStorage.getItem('usuario'));
+
+    camposPerfil.forEach(campo => {
+        if (campo.valido) {
+            usuario[campo.valor] = campo.elemento.value;
+
+            if (usuarioLocalStorage) {
+                usuario.foto = usuarioLocalStorage.foto;
+            }
+        } else {
+            campo.elemento.value = "";
+        }
+    });
+    
+    localStorage.setItem('usuario', JSON.stringify(usuario));
     deshabilitarEdicion();
+    console.log(usuario);
 });
 
 window.addEventListener("load", function(event){
@@ -294,7 +327,7 @@ metodoPago.addEventListener("click", function(event){
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerral"></button>
         </div>
         <div class="modal-body">
-        <p class="fs-3">Estamos trabajando en ello ...</p>
+        <p class="fs-3">Esta función estará disponible próximamente ...</p>
         </div>
     </div>
     </div>
