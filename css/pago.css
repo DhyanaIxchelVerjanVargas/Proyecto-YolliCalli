@@ -36,7 +36,7 @@
 /* Main */
 
 .contenedorPago {
-    margin-inline: 10rem;
+    margin-inline: 5rem;
 }
 
 .contenedorPago .row {
@@ -101,8 +101,8 @@
 }
 
 .resumenPedido {
-    max-width: 40rem;
-    padding: 5rem;
+    max-width: 44rem;
+    padding: 3rem;
     height: max-content;
     box-shadow: 0 18px 28px #091e424b;
     border: solid var(--rosa-mexicano) 2px;
@@ -115,6 +115,12 @@
     font-size: var(--titulo-rosa-h2);
     font-weight: bold;
     color: var(--rosa-mexicano);
+}
+
+.cantidadDeProductos {
+    padding: 0 10px;
+    border: solid 1px var(--bordes);
+    width: fit-content;
 }
 
 .table {
@@ -131,117 +137,330 @@
     font-weight: bold;
 }
 
+/* Opciones de pago */
+.opcionesDePago {
+    width: 38rem;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
+    gap: 1rem;
+}
+
+.radioButton {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    border: 1px solid var(--rosa-mexicano);
+    border-radius: 5rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.radioSelected {
+    outline-color: white;
+}
+
+.opcion {
+    border-radius: 1rem;
+    padding-inline: 2rem;
+    transition: all ease 0.3s;
+}
+
+.opcion:hover {
+    background-color: var(--rosa-mexicano);
+    color: white;
+}
+.opcion svg {
+    color: var(--rosa-mexicano);
+}
+
+.opcion:hover svg {
+    color: white;
+}
+
+.selected {
+    background-color: var(--rosa-mexicano);
+    color: white;
+}
+
+.selectorDePago:hover {
+    cursor: pointer;
+}
 .selectorDePago {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
     margin-block: 1.5rem;
-    transition: all 0.1s ease;
-}
-
-input[type="radio"] {
-    /* box-sizing: border-box; */
-    width: 20px;
-    height: 20px;
-    margin: 6px;
-    padding: 0;
-    border: 1px solid #9f9f9f;
-    border-radius: 50%;
-    appearance: none;
-    background-color: transparent;
-    outline: none;
-    transition: transform 0.3s ease;
-}
-
-input[type="radio"]:checked {
-    border-width: 1px;
-    border-color: var(--rosa-mexicano);
-    background-color: var(--rosa-mexicano);
-    background-clip: content-box;
-    padding: 2px;
-}
-
-input[type="radio"]:disabled {
-    background-color: gray;
-}
-
-input[type="radio"]:hover {
-    transform: scale(1.15);
-}
-
-.botonRealizarPago {
-    color: var(--blanco);
-    background-color: var(--rosa-mexicano);
-    border: var(--rosa-mexicano);
-    border-radius: 10px;
-    width: 29rem;
-    height: 5rem;
-    font-size: var(--texto-general);
-    flex: 1 1 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-block: 2.5rem;
-    margin-inline: auto;
+    gap: 1rem;
 }
 
-.tdc {
-    margin-bottom: 2rem;
+.selectorDePago p {
+    margin: 0;
+    font-size: var(--texto-general);
 }
 
-.despliegueTdc {
-    margin-left: 0;
-    margin-bottom: 0;
-    max-width: 35rem;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.3s ease;
-}
-
-.opcionPagoTdc {
-    height: 3.5rem;
-}
-
-.opcionPagoTdc:focus-within .despliegueTdc {
-    margin-left: 3rem;
-    margin-bottom: 3rem;
-    height: auto;
-}
-
-.reversoTarjeta {
+.controlTarjeta {
     display: flex;
     justify-content: space-between;
+    margin-block: 2rem;
+}
+
+.botonTarjeta {
+    width: 12rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 1rem;
+    color: white;
+    z-index: 5;
+}
+
+.botonTarjeta .bi {
+    font-size: x-large;
+}
+
+/* tdc card */
+.wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+    transition-delay: 0.3s;
+}
+
+.extend {
+    grid-template-rows: 1fr;
+}
+
+.tdc,
+.paypalButton {
+    overflow: hidden;
+}
+
+.cardContainer {
+    position: relative;
+    height: 21rem;
+    overflow: visible;
+}
+
+.card {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.mostrarReverso {
+    transform: rotateY(0.5turn);
+}
+
+.cardFront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin: auto;
+    background-image: radial-gradient(circle at 40% 91%, rgba(251, 251, 251, 0.04) 0%, rgba(251, 251, 251, 0.04) 50%, rgba(229, 229, 229, 0.04) 50%, rgba(229, 229, 229, 0.04) 100%),
+        radial-gradient(circle at 66% 97%, rgba(36, 36, 36, 0.04) 0%, rgba(36, 36, 36, 0.04) 50%, rgba(46, 46, 46, 0.04) 50%, rgba(46, 46, 46, 0.04) 100%),
+        radial-gradient(circle at 86% 7%, rgba(40, 40, 40, 0.04) 0%, rgba(40, 40, 40, 0.04) 50%, rgba(200, 200, 200, 0.04) 50%, rgba(200, 200, 200, 0.04) 100%),
+        radial-gradient(circle at 15% 16%, rgba(99, 99, 99, 0.04) 0%, rgba(99, 99, 99, 0.04) 50%, rgba(45, 45, 45, 0.04) 50%, rgba(45, 45, 45, 0.04) 100%),
+        radial-gradient(circle at 75% 99%, rgba(243, 243, 243, 0.04) 0%, rgba(243, 243, 243, 0.04) 50%, rgba(37, 37, 37, 0.04) 50%, rgba(37, 37, 37, 0.04) 100%),
+        linear-gradient(90deg, rgb(40, 38, 103), rgb(225, 69, 108));
+    height: 21rem;
+    padding: 1.5rem;
+    border-width: 0 3px 3px 0;
+    border-style: solid;
+    border-color: #2826672f;
+    border-radius: 1.5rem;
+    box-shadow: 2px 3px 2px 2px rgba(71, 71, 71, 0.253);
+}
+
+.cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 40% 91%, rgba(251, 251, 251, 0.04) 0%, rgba(251, 251, 251, 0.04) 50%, rgba(229, 229, 229, 0.04) 50%, rgba(229, 229, 229, 0.04) 100%),
+        radial-gradient(circle at 66% 97%, rgba(36, 36, 36, 0.04) 0%, rgba(36, 36, 36, 0.04) 50%, rgba(46, 46, 46, 0.04) 50%, rgba(46, 46, 46, 0.04) 100%),
+        radial-gradient(circle at 86% 7%, rgba(40, 40, 40, 0.04) 0%, rgba(40, 40, 40, 0.04) 50%, rgba(200, 200, 200, 0.04) 50%, rgba(200, 200, 200, 0.04) 100%),
+        radial-gradient(circle at 15% 16%, rgba(99, 99, 99, 0.04) 0%, rgba(99, 99, 99, 0.04) 50%, rgba(45, 45, 45, 0.04) 50%, rgba(45, 45, 45, 0.04) 100%),
+        radial-gradient(circle at 75% 99%, rgba(243, 243, 243, 0.04) 0%, rgba(243, 243, 243, 0.04) 50%, rgba(37, 37, 37, 0.04) 50%, rgba(37, 37, 37, 0.04) 100%),
+        linear-gradient(90deg, rgb(40, 38, 103), rgb(225, 69, 108));
+    height: 21rem;
+    padding-top: 2rem;
+    border-width: 0 3px 3px 0;
+    border-style: solid;
+    border-color: #2826672f;
+    border-radius: 1.5rem;
+    box-shadow: 6px 2px 2px 2px rgba(71, 71, 71, 0.253);
+    backface-visibility: hidden;
+    transform: rotateY(0.5turn);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 2rem;
+}
+
+/* card flip */
+
+.cardLogo {
+    grid-column: span 3;
+    grid-row: span 1;
+    filter: brightness(0) invert(100%);
+}
+
+.cardType {
+    grid-row: span 1;
+    align-content: center;
+    justify-content: end;
+    position: relative;
+}
+
+.cardType svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--blanco);
+}
+
+.cardType svg path {
+    width: 100%;
+    height: 100%;
+    color: var(--blanco);
+}
+
+.numeroTarjeta {
+    align-self: center;
+    grid-row: span 2;
+    grid-column: span 4;
+}
+
+.numeroTarjeta input {
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+.nombreTarjeta {
+    align-self: center;
+    grid-column: span 3;
+    width: 22rem;
+}
+
+.nombreTarjeta input {
+    letter-spacing: 2px;
 }
 
 .vencimiento {
+    align-self: center;
+}
+
+.vencimiento input {
+    letter-spacing: 2px;
+}
+
+.magneticBand {
+    width: 100%;
+    height: 4rem;
+    background-color: var(--negro);
+}
+
+.cvc {
+    width: 5rem;
+    margin-right: 2rem;
+}
+.formInput {
+    max-height: 3rem;
+    background-color: transparent;
+    position: relative;
+    color: var(--blanco);
+    border-bottom: 1px solid var(--blanco);
+    line-height: 1.6;
+}
+
+.formInput label {
+    font-size: 1.8rem;
+    color: var(--blanco);
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all ease 0.2s;
+}
+
+.formInput input {
+    margin-left: 0.5rem;
+    background-color: transparent;
+    width: 100%;
+    padding-left: 0.5rem;
+    border: none;
+    outline: none;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+
+.formInput input::placeholder {
+    color: transparent;
+}
+
+.formInput input:focus ~ label,
+.formInput input:valid ~ label {
+    transform: translateY(-210%);
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.formInput input:focus::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.botonPago {
+    top: 30rem;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 20rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4.5rem;
+    margin-top: 8rem;
+    margin-bottom: 2.5rem;
+    background-color: var(--azul-talavera);
+    font-weight: 500;
+    border: none;
+    color: white;
+    border-radius: 1rem;
+    transition: transform ease 0.2s;
 }
 
-.vencimientoFecha {
-    display: flex;
-    width: 16rem;
-    justify-content: space-evenly;
+.botonPago p {
+    margin: 0;
 }
 
-.cvvInput,
-.vencimientoMonth {
-    width: 6rem;
+.botonPago:hover {
+    cursor: pointer;
+    filter: brightness(1.3);
 }
 
-.vencimientoYear {
-    width: 9rem;
+.bi-credit-card {
+    margin-right: 1rem;
+    font-size: x-large;
 }
 
-.cvvElement {
-    display: flex;
+.visaLogo {
+    color: #282667;
+    width: 5rem;
 }
 
-input:focus {
-    border: var(--rosa-mexicano);
+.avisoPrivacidad {
+    margin-top: 3rem;
 }
 
 /* Main */
@@ -299,6 +518,4 @@ input:focus {
     .datosDeContacto {
         margin-block: 5rem;
     }
-
-    /* Main */
 }
