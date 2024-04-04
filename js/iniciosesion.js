@@ -191,7 +191,7 @@ botonRegistrar.addEventListener("click", function (event) {
     body: JSON.stringify(datos) 
 };
 
-    fetch("http://localhost:8080/api/usuarios/", requestOptions)
+    fetch("https://yollicalli-back.onrender.com/api/usuarios/", requestOptions)
     .then(response => {
         if (response.ok) {
             if (response.status === 204) {
@@ -260,7 +260,7 @@ botonIniciar.addEventListener("click", function (event) {
       redirect: "follow"
     };
 
-    fetch("http://localhost:8080/api/login/", requestOptions)
+    fetch("https://yollicalli-back.onrender.com/api/usuarios/", requestOptions)
       .then((response) => {
           if (response.ok) {
               return response.text();
@@ -270,6 +270,7 @@ botonIniciar.addEventListener("click", function (event) {
       })
       .then((result) => {
           console.log(result);
+          sessionStorage.setItem('correoUsuario', inputEmailInicioSesion.value.trim());
           alertRegistroUsuarioTexto.insertAdjacentHTML("beforeend", `
               <span style="font-family: var(--barlow); font-size: var(--titulos-h3-rutas);">
                   Iniciando sesión...
