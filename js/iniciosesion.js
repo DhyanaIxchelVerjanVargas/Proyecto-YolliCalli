@@ -260,7 +260,7 @@ botonIniciar.addEventListener("click", function (event) {
       redirect: "follow"
     };
 
-    fetch("http://localhost:8080/api/login/", requestOptions)
+    fetch("http://localhost:8080/api/usuarios/", requestOptions)
       .then((response) => {
           if (response.ok) {
               return response.text();
