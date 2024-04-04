@@ -97,7 +97,7 @@
 
         <main>
             <div class="container">
-                <div class="row" id="contenedorProducto">
+                <div class="row" id="contenedorProducto" style="display: none">
                     <!--Imagen del producto-->
                     <div class="col-sm-6 imagen">
                         <img id="imagenProductoIndividual" src="#" alt="Imagen de producto" />
@@ -150,8 +150,13 @@
             <div class="container contenedorNoProducto" id="noProducto" style="display: none">
                 <h2 class="titulosRosas">No se puede mostrar el producto.</h2>
                 <p>
-                    <a href="./nosotros.html#contacto">Por favor, haga clic aquí para ponerse en contacto con nuestro equipo técnico.</a>
+                    Por favor, <a href="./nosotros.html#contacto">haga clic aquí</a> para ponerse en contacto con nuestro equipo técnico.
                 </p>
+            </div>
+            <div class="container justify-content-center" id="cargando" style="display: none">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
         </main>
 

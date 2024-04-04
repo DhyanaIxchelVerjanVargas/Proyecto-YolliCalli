@@ -100,6 +100,9 @@
         <div class="alert alert-success alert-dismissible fade show" role="alert" id="alertProductoAgregado" style="display: none;">
           <p style="margin-bottom: 0;" id="alertProductoAgregadoTexto"></p>
         </div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alertProductoNoAgregado" style="display: none;">
+          <p style="margin-bottom: 0;" id="alertProductoNoAgregadoTexto"></p>
+        </div>
         <div class="mb-3">
           <label for="nombreProducto" class="form-label">Nombre del producto</label>
           <input 
@@ -139,12 +142,12 @@
               <label for="categoria" class="form-label">Categoría</label>
               <select name="categoria" class="form-select opciones" id="categoria" required>
                 <option class="opciones" value="" disabled selected hidden>Selecciona una categoría</option>
-                <option class="opciones" value="Accesorios">Accesorios para el hogar</option>
-                <option class="opciones" value="Alimentos">Alimentos</option>
-                <option class="opciones" value="Cuidado personal">Cuidado personal</option>
-                <option class="opciones" value="Joyería">Joyería</option>
-                <option class="opciones" value="Muebles">Muebles</option>
-                <option class="opciones" value="Ropa">Ropa</option>
+                <option class="opciones" value="1">Accesorios para el hogar</option>
+                <option class="opciones" value="2">Ropa</option>
+                <option class="opciones" value="3">Alimentos</option>
+                <option class="opciones" value="4">Joyería y Bisutería</option>
+                <option class="opciones" value="5">Arte y Pintura</option>
+                <option class="opciones" value="6">Cerámica y alfarería</option>
               </select>
               <div id="alertCategoria" style="display: none"></div>
             </div>

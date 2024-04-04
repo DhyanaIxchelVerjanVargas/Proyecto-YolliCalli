@@ -8,6 +8,7 @@ let tallas = document.querySelectorAll('input[name="radioTallas"]');
 let tallaProductoIndividual = document.getElementById("tallaProductoIndividual")
 let imagenProductoIndividual = document.getElementById("imagenProductoIndividual");
 let noProducto = document.getElementById("noProducto");
+let contenedorCargando = document.getElementById("cargando");
 //Agregado para carrito
 let botonProductoCarrito = document.getElementById("botonProductoCarrito");
 let modalEnvioCarrito = document.getElementById("modalEnvioCarrito");
@@ -37,8 +38,106 @@ class ProductoCarrito{
     }
 }// Class ProductoCarrito
 
+const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+  };
+
+async function fecthProductoIndividual(){
+    try{
+        contenedorCargando.style.display = "flex"
+        const prodId = new URLSearchParams(window.location.search).get('id');
+        const response = await fetch(`https://yollicalli-back.onrender.com/api/products/${prodId}`, requestOptions);
+        const productoIndividual = await response.json();
+        console.log(productoIndividual, prodId);
+
+        displayProductoIndividual(productoIndividual);
+
+    }catch(err){
+        console.log("Algo salió mal", err)
+        contenedorProducto.style.display="none";
+        noProducto.style.display="flex";
+    }
+}
+
+function displayProductoIndividual(productoIndividual){
+    contenedorCargando.style.display = "none"
+    contenedorProducto.style.display = "flex";
+    nombreProductoIndividual.innerHTML = productoIndividual.nombreProducto;
+    precioProductoIndividual.innerHTML = productoIndividual.precio.toFixed(2);
+    descripcionProductoIndividual.innerHTML = productoIndividual.descripcion;
+    imagenProductoIndividual.src = productoIndividual.imagen;
+    //Nombre para categorías
+    switch (productoIndividual.idCategoria) {
+        case 1:
+            // Acciones para la categoría "Accesorios para el hogar"
+            categoriaProductoIndividual.innerText = "Accesorios para el hogar";
+            break;
+        case 2:
+            // Acciones para la categoría "Alimentos"
+            categoriaProductoIndividual.innerText = "Alimentos";
+            break;
+        case 3:
+            // Acciones para la categoría "Cuidado personal"
+            categoriaProductoIndividual.innerText = "Cuidado personal";
+            break;
+        case 4:
+            // Acciones para la categoría "Joyería"
+            categoriaProductoIndividual.innerText = "Joyería";
+            break;
+        case 5:
+            // Acciones para la categoría "Muebles"
+            categoriaProductoIndividual.innerText = "Muebles";
+            break;
+        case 6:
+            // Acciones para la categoría "Ropa"
+            categoriaProductoIndividual.innerText = "Ropa";
+            if (!productoIndividual.talla.includes("chica")) {
+                tallas.forEach(radio => {
+                    if (radio.value === "chica") {
+                        radio.disabled = true;
+                    }
+                });
+            }
+            if (!productoIndividual.talla.includes("mediana")) {
+                tallas.forEach(radio => {
+                    if (radio.value === "mediana") {
+                        radio.disabled = true;
+                    }
+                });
+            }
+            if (!productoIndividual.talla.includes("grande")) {
+                tallas.forEach(radio => {
+                    if (radio.value === "grande") {
+                        radio.disabled = true;
+                    }
+                });
+            }
+
+
+            tallaProductoIndividual.style.display = "block";
+            break;
+        default:
+            // Acciones por defecto si no coincide con ninguna categoría
+            contenedorProducto.style.display="none";
+            noProducto.style.display="flex";
+            break;
+    }
+
+    //Agregado para carrito
+    nombreProd = productoIndividual.nombreProducto;
+    precioProd = productoIndividual.precio.toFixed(2);
+    imagenProd = productoIndividual.imagen;
+    idProd = productoIndividual.idProducto;
+}
 
 window.addEventListener("load",function(event){
+    event.preventDefault();
+    fecthProductoIndividual();
+});
+
+
+/*window.addEventListener("load",function(event){
     event.preventDefault();
     if(this.localStorage.getItem("idCarta") != null){
         contenedorProducto.style.display="flex";
@@ -79,7 +178,7 @@ window.addEventListener("load",function(event){
         contenedorProducto.style.display="none";
         noProducto.style.display="flex";
     }
-});
+});*/
 
 //Agregado para carrito
 function traerProductos(productosCarrito){
