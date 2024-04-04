@@ -21,6 +21,12 @@ const unsignedUploadPreset = "preset_YolliCalli";
 let imagenUrlPerfil = "";
 let fotografia = "";
 
+/* Agregado para Modal Pago */
+let metodoPago = document.getElementById("metodoPago");
+let modalPago = document.getElementById("modalPago");
+let btnEnvioBotonPago = document.getElementById("btnEnvioBotonPago");
+/* Fin agregado para Modal Pago */
+
 const expresiones = {
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s']+$/,
     telefono: /^\d{10}$/,
@@ -273,3 +279,29 @@ window.addEventListener("load", function(event){
     deshabilitarEdicion();
     cargarInformacionUsuario();
 });
+
+/* Agregado para Modal Pago */
+metodoPago.addEventListener("click", function(event){
+    event.preventDefault();
+    
+    modalPago.innerHTML=""
+    //Modal para envío exitoso a Carrito
+    modalPago.insertAdjacentHTML("beforeend", `
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title fs-2" id="estadoModalLabel">YolliCalli</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerral"></button>
+        </div>
+        <div class="modal-body">
+        <p class="fs-3">Estamos trabajando en ello ...</p>
+        </div>
+    </div>
+    </div>
+    `);
+    
+    btnEnvioBotonPago.click();
+    
+   //console.log("Se hizo click en boton perfil");
+})
+/* Fin Modal Pago */
