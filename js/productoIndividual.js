@@ -70,52 +70,47 @@ function displayProductoIndividual(productoIndividual){
     //Nombre para categorías
     switch (productoIndividual.idCategoria) {
         case 1:
-            // Acciones para la categoría "Accesorios para el hogar"
             categoriaProductoIndividual.innerText = "Accesorios para el hogar";
             break;
         case 2:
-            // Acciones para la categoría "Alimentos"
+                categoriaProductoIndividual.innerText = "Ropa";
+                if (!productoIndividual.talla.includes("chica")) {
+                    tallas.forEach(radio => {
+                        if (radio.value === "chica") {
+                            radio.disabled = true;
+                        }
+                    });
+                }
+                if (!productoIndividual.talla.includes("mediana")) {
+                    tallas.forEach(radio => {
+                        if (radio.value === "mediana") {
+                            radio.disabled = true;
+                        }
+                    });
+                }
+                if (!productoIndividual.talla.includes("grande")) {
+                    tallas.forEach(radio => {
+                        if (radio.value === "grande") {
+                            radio.disabled = true;
+                        }
+                    });
+                }
+                tallaProductoIndividual.style.display = "block";
+                break;
+        case 3:
             categoriaProductoIndividual.innerText = "Alimentos";
             break;
         case 3:
-            // Acciones para la categoría "Cuidado personal"
             categoriaProductoIndividual.innerText = "Cuidado personal";
             break;
         case 4:
-            // Acciones para la categoría "Joyería"
-            categoriaProductoIndividual.innerText = "Joyería";
+            categoriaProductoIndividual.innerText = "Joyería y Bisutería";
             break;
         case 5:
-            // Acciones para la categoría "Muebles"
-            categoriaProductoIndividual.innerText = "Muebles";
+            categoriaProductoIndividual.innerText = "Arte y Pintura";
             break;
         case 6:
-            // Acciones para la categoría "Ropa"
-            categoriaProductoIndividual.innerText = "Ropa";
-            if (!productoIndividual.talla.includes("chica")) {
-                tallas.forEach(radio => {
-                    if (radio.value === "chica") {
-                        radio.disabled = true;
-                    }
-                });
-            }
-            if (!productoIndividual.talla.includes("mediana")) {
-                tallas.forEach(radio => {
-                    if (radio.value === "mediana") {
-                        radio.disabled = true;
-                    }
-                });
-            }
-            if (!productoIndividual.talla.includes("grande")) {
-                tallas.forEach(radio => {
-                    if (radio.value === "grande") {
-                        radio.disabled = true;
-                    }
-                });
-            }
-
-
-            tallaProductoIndividual.style.display = "block";
+            categoriaProductoIndividual.innerText = "Cerámica y alfarería";
             break;
         default:
             // Acciones por defecto si no coincide con ninguna categoría
