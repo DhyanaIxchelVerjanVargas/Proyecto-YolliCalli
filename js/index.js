@@ -233,7 +233,7 @@ function createCards(prods){
  //prueba corriendo datos desde springboot 
  async function loadProductos(){
     //console.log("esta es la url: "+url)
-    let promesa = fetch ("http://localhost:8080/api/products/destacados", { method: "GET" });
+    let promesa = fetch ("https://yollicalli-back.onrender.com/api/products/destacados", { method: "GET" });
     controlarProductos.innerHTML = `
         <div class="d-flex justify-content-center">
             <div class="spinner-border" role="status">

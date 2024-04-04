@@ -490,7 +490,7 @@ btnAnteriorPagina.addEventListener("click",function(event){
             if (cat.value.toString() == categoriaFiltroIDString ) {
                 cat.checked = true;
             }else{
-                cat.checked = true;
+                cat.checked = false;
             }
         })
 
