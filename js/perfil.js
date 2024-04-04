@@ -11,11 +11,14 @@ let calleError = document.getElementById("calleError");
 let localidadError = document.getElementById("localidadError");
 let cpPerfil = document.getElementById("cpPerfil");
 let cpError = document.getElementById("cpError");
-
 let estadoPerfil = document.getElementById("estadoPerfil");
 let estadoError = document.getElementById("estadoError");
 let ciudadPerfil = document.getElementById("ciudadPerfil");
 let ciudadError = document.getElementById("ciudadError");
+let contenedorMain = document.getElementById("contenedorMain");
+let noUsuario = document.getElementById("noUsuario");
+let cargandoPerfil = document.getElementById("cargandoPerfil");
+
 const cloudName = "dayprjvbg";
 const unsignedUploadPreset = "preset_YolliCalli";
 let imagenUrlPerfil = "";
@@ -39,6 +42,7 @@ let usuario = {
     cp: ""
 };
 
+buscarSessionStorage("isLogged");
 
 //Agregado para cambiar foto de perfil
 imagenPerfilFake.addEventListener("click",function(event){
@@ -118,6 +122,8 @@ function cargarInformacionUsuario() {
                 // Buscar el usuario que coincide con el correo electrónico del usuario actual
                 const usuarioFetch = data.find(usuario => usuario.correo === correoUsuario);
                 if (usuarioFetch) {
+                    cargandoPerfil.style.display="none"
+                    contenedorMain.style.display="block"
                     // Mostrar la información del usuario en los campos correspondientes del perfil
                     nombrePerfil.value = usuarioFetch.nombre;
                     telPerfil.value = usuarioFetch.telefono;
@@ -130,7 +136,9 @@ function cargarInformacionUsuario() {
                         estadoPerfil.value = usuarioEnLocalStorage.estado;
                         ciudadPerfil.value = usuarioEnLocalStorage.ciudad;
                         cpPerfil.value = usuarioEnLocalStorage.cp;
-                        imagenPerfilMostrada.src = usuarioEnLocalStorage.foto;
+                        if(usuarioEnLocalStorage.foto != ""){
+                            imagenPerfilMostrada.src = usuarioEnLocalStorage.foto;
+                        }
                         console.log("Usuario encontrado en localStorage:", usuarioEnLocalStorage);
                     } else {
                         usuario.correo = usuarioFetch.correo;
@@ -142,10 +150,14 @@ function cargarInformacionUsuario() {
                     console.log("Información del usuario cargada:", usuarioFetch);
                 } else {
                     console.log("No se encontró ningún usuario con el correo electrónico proporcionado.");
+                    noUsuario.style.display="flex";
+                    cargandoPerfil.style.display="none"
                 }
             })
             .catch(error => {
                 console.error("Error:", error);
+                noUsuario.style.display="flex";
+                cargandoPerfil.style.display="none"
             });
     }
 }
@@ -157,6 +169,14 @@ function obtenerUsuarioPorCorreo(correo) {
     } else {
         return null;
     }
+}
+
+function buscarSessionStorage(clave) {
+    const userLogged = sessionStorage.getItem(clave);
+    if (!userLogged) {
+        window.location.href = "./iniciosesion.html";
+    }
+    return JSON.parse(userLogged);
 }
 
 function validarCalle() {
@@ -309,6 +329,8 @@ guardarPerfil.addEventListener("click", function(event) {
 });
 
 window.addEventListener("load", function(event){
+    cargandoPerfil.style.display="flex"
+    contenedorMain.style.display="none"
     deshabilitarEdicion();
     cargarInformacionUsuario();
 });
