@@ -155,6 +155,7 @@ window.addEventListener("load",function(event){
 
                 let tallasDisponibles = producto.talla
                 console.log(tallasDisponibles);
+                contenedorCargando.style.display="none";
 
                 if(producto.categoria.toLowerCase() == "ropa"){
                     tallas.forEach(opcionTalla => {
