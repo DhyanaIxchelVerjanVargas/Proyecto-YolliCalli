@@ -47,7 +47,7 @@ async function fecthProductoIndividual(){
     try{
         contenedorCargando.style.display = "flex"
         const prodId = new URLSearchParams(window.location.search).get('id');
-        const response = await fetch(`http://localhost:8080/api/products/${prodId}`, requestOptions);
+        const response = await fetch(`https://yollicalli-back.onrender.com/api/products/${prodId}`, requestOptions);
         const productoIndividual = await response.json();
         console.log(productoIndividual, prodId);
 
