@@ -281,9 +281,9 @@ botonIniciar.addEventListener("click", function (event) {
           isLogged = true;
           sessionStorage.setItem('isLogged', true);
 
-        //   setTimeout(function () {
-        //       location.href = "index.html";
-        //   }, 2000);
+           setTimeout(function () {
+               location.href = "index.html";
+           }, 2000);
       })
       .catch((error) => {
           console.error(error);
