@@ -240,7 +240,7 @@ function validarCiudad() {
 }
 
 function validarCp() {
-    if (/^[1-9]\d{4}$/.test(cpPerfil.value)) {
+    if (/^(?:0?[1-9]|[1-4]\d|5[0-2])\d{3}$/.test(cpPerfil.value)) {
         cpError.classList.remove("mensajeError");
         cpError.innerText = "";
         return true;
