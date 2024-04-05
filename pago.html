@@ -187,7 +187,7 @@
                             </div>
                             <div class="">
                                 <label for="correoEnvio" class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" id="correoEnvio" placeholder="ejemplo@correo.com" required />
+                                <input type="email" class="form-control" id="correoEnvio" placeholder="ejemplo@correo.com" />
                                 <div id="alertCorreoEnvio" style="display: none"></div>
                             </div>
                         </div>
@@ -328,24 +328,25 @@
                                 <div id="paypal-button-container" class="paypalButton"></div>
                             </div>
                         </div>
-                        <!--Opción de pago Oxxo-->
+                        <!--Opción de pago Efectivo-->
                         <div class="opcion pagoEfectivo" id="pagoEfectivo">
                             <div class="selectorDePago">
-                                <div class="radioButton"></div>
+                                <div class="radioButton" id="radiobuttonEfectivo"></div>
                                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
+                                        id="efectivoIcon"
                                         d="M14.4944 6.10352e-05L13.125 7.24944V8.85069C13.125 10.4053 11.7644 11.6667 10.2083 11.6667C8.65229 11.6667 7.29167 10.4053 7.29167 8.84923V7.24944L11.6608 6.10352e-05H14.4944ZM10.0435 6.10352e-05L5.83333 7.24944V8.85069C5.83333 10.4053 4.47271 11.6667 2.91667 11.6667C1.36063 11.6667 0 10.4053 0 8.84923V7.24944L7.10792 6.10352e-05H10.0435ZM35 8.84923C35 10.4053 33.6394 11.6667 32.0833 11.6667C30.5273 11.6667 29.1667 10.3061 29.1667 8.75006V7.14881L24.9565 6.10352e-05H27.8935L35 7.24944V8.84923ZM20.4167 7.14589V8.74714C20.4167 10.3017 19.056 11.6667 17.5 11.6667C15.944 11.6667 14.5833 10.3061 14.5833 8.75006V7.14881L16.1102 6.10352e-05H18.8883L20.4167 7.14589ZM23.3392 6.10352e-05L27.704 7.29464V8.89589C27.7054 10.4519 26.3477 11.6667 24.7917 11.6667C23.2356 11.6667 21.875 10.3061 21.875 8.75006V7.14881L20.5056 6.10352e-05L23.3392 6.10352e-05ZM1.45833 14.5834V35.0001H16.0417V32.0834H4.375V17.5001H30.625V35.0001H33.5417V14.5834H1.45833ZM27.7083 20.4167H18.9583V35.0001H27.7083V20.4167Z"
                                         fill="currentcolor"
                                     />
                                 </svg>
                                 <p>Pago en efectivo</p>
                             </div>
-                            <!-- Stripe -->
-                            <!-- <form id="payment-form">
-                                <div id="card-element"></div>
-                                <div id="card-errors" role="alert"></div>
-                                <button type="submit">Submit Payment</button>
-                            </form> -->
+                            <div class="wrapper" id="opcionEfectivo">
+                                <button class="botonPagoEfectivo" type="submit">
+                                    <i class="bi bi-cash-stack"></i>
+                                    <p>Pagar pedido</p>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <p class="avisoPrivacidad">
