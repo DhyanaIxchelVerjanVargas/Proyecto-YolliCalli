@@ -42,7 +42,7 @@
     width: 100%;
     padding: 0 100px;
     /* margin: 100px 0 0 0; */
-    background-image: url("../src/img/bannerFondo.png");
+    background-image: url("https://res.cloudinary.com/dayprjvbg/image/upload/v1712172637/YolliCalli/YolliCalli-webp/bannerfondo-660dabd044717_ndmdnw.webp");
     background-size: 100% 100%;
 }
 
@@ -180,7 +180,7 @@ tr {
     text-align: center;
 }
 
-.table  th {
+.table th {
     background-color: var(--color-base);
     width: 160px;
     height: 40px;
@@ -188,14 +188,14 @@ tr {
     font-size: 18px;
 }
 
-.table  td {
+.table td {
     height: 180px;
     vertical-align: middle;
     font-size: 18px;
 }
 
 td > i {
-    color:#e1456c;
+    color: #e1456c;
     font-size: 25px;
 }
 
@@ -210,13 +210,13 @@ td > img {
     width: fit-content;
 }
 
-.div-cantidad-global{
+.div-cantidad-global {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.div-signos{
+.div-signos {
     display: flex;
     justify-content: center;
 }
@@ -235,11 +235,11 @@ td > img {
     cursor: pointer;
 }
 
-.bi-plus:hover  {
+.bi-plus:hover {
     cursor: pointer;
 }
 
-.bi-trash3-fill:hover  {
+.bi-trash3-fill:hover {
     cursor: pointer;
 }
 
@@ -309,7 +309,7 @@ td > img {
     font-family: var(--barlow);
     font-size: 15px;
     color: #f4f5f7;
-    margin-top:4rem;
+    margin-top: 4rem;
 }
 /*Esta propiedad está aplicada a ambos botones*/
 button:active {
@@ -319,7 +319,7 @@ button:active {
 /* Termina Main*/
 
 /*** Responsive Main ***/
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .main {
         display: flex;
         flex-direction: column;
@@ -327,7 +327,7 @@ button:active {
         margin: 0;
         padding: 0px 20px;
     }
-    
+
     /*Tabla*/
 
     .claseAlerta {
@@ -347,35 +347,35 @@ button:active {
     thead {
         display: none;
     }
-    
+
     .container-table {
         margin: 0;
     }
-    
+
     tr {
         border-bottom: solid 1px var(--negro);
     }
 
-    .table  td {
+    .table td {
         /*white-space: nowrap;*/
         font-size: 15px;
         height: 120px;
         vertical-align: middle; /*Para posicionarlo a la mitad verticalmente*/
     }
-    
+
     td > i {
         font-size: 20px;
     }
-    
+
     td > img {
         width: 75px;
     }
-    
+
     .div-cantidad {
         display: inline;
         padding: 4px 10px;
     }
-    
+
     /*Container Total*/
     .container-total {
         width: 300px;
@@ -383,11 +383,11 @@ button:active {
         margin: 20px 0;
         padding-bottom: 0;
     }
-    
+
     .container-total h2 {
         font-size: 20px;
     }
-    
+
     .container-total-subtitulos p {
         font-size: 20px;
     }
@@ -395,14 +395,13 @@ button:active {
     .sub-total {
         margin-top: 2rem;
     }
-    
+
     .btn-total {
         width: 215px;
         height: 45px;
         font-size: 16px;
         border-radius: 8px;
-        margin-top:2rem;
+        margin-top: 2rem;
     }
-
 }
 /*** Termina Responsive Main ***/

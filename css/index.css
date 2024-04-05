@@ -1,12 +1,12 @@
 .fondoContenedor {
-  width: 100%, !important;
-  background-image: url(../src/img/a013b960-d9e9-4c7f-b268-124bd66098af.png);
-  background-size:cover;
-  background-position: center;
-  height: 60rem;
-  display:flex;
-  justify-content: end;
-  align-items: center;
+    width: 100% !important;
+    background-image: url(https://res.cloudinary.com/dayprjvbg/image/upload/v1712172633/YolliCalli/YolliCalli-webp/a013b960-d9e9-4c7f-b268-124bd66098af-660dabf8c14d3_r57hun.webp);
+    background-size: cover;
+    background-position: center;
+    height: 60rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .card-body {
@@ -61,9 +61,9 @@
 /* Media Query para dispositivos de pantalla de hasta 768px */
 @media (max-width: 768px) {
     .fondoContenedor {
-        width: 100%, !important;
+        width: 100% !important;
         background-image: url(../src/img/a013b960-d9e9-4c7f-b268-124bd66098af.png);
-        background-size:cover;
+        background-size: cover;
         background-position: center;
         height: 60rem;
         display: flex;
@@ -134,18 +134,17 @@
 }
 /*Codigo para el amrgen del banner cuando esta en movil y no aparezca debajo del navbar*/
 @media (max-width: 425px) {
-
     .fondoContenedor {
-        width: 100%, !important;
+        width: 100% !important;
         background-image: url(../src/img/talavera.png);
-        background-size:cover;
+        background-size: cover;
         background-position: center;
         height: 60rem;
-        display:flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 195px;
-      }
+    }
 }
 
 /* Estilos Categorías*/
@@ -245,7 +244,6 @@
     overflow: hidden;
     transition: 0.5s all ease;
 }
-
 
 #contenedorProductos .cardProducto .caraPrincipal img {
     height: auto;
@@ -462,12 +460,13 @@
         justify-items: left;
         flex-wrap: wrap;
     }
-        .carousel-inner .carousel-item .row {
-            display: block; }
-        .carousel-inner .carousel-item .row .tarjetaCategoria {
-            display: block;
-        }
+    .carousel-inner .carousel-item .row {
+        display: block;
     }
+    .carousel-inner .carousel-item .row .tarjetaCategoria {
+        display: block;
+    }
+}
 
 /* Card de Producto */
 #contenedorCategorias .cardCategorias {
@@ -587,15 +586,14 @@
     letter-spacing: 1px;
 }
 
-
-.titulosRosas{
+.titulosRosas {
     font-size: var(--titulo-rosa-h2);
     color: var(--rosa-mexicano);
     margin-bottom: 1rem;
     margin-top: 0;
 }
 
-.mensajeContactoError{
+.mensajeContactoError {
     font-family: var(--barlow);
     color: var(--azul-talavera);
 }
