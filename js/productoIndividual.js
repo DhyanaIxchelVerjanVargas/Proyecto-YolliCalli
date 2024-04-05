@@ -56,6 +56,7 @@ async function fecthProductoIndividual(){
     }catch(err){
         console.log("Algo salió mal", err)
         contenedorProducto.style.display="none";
+        contenedorCargando.style.display = "none"
         noProducto.style.display="flex";
     }
 }
@@ -115,6 +116,7 @@ function displayProductoIndividual(productoIndividual){
         default:
             // Acciones por defecto si no coincide con ninguna categoría
             contenedorProducto.style.display="none";
+            contenedorCargando.style.display = "none"
             noProducto.style.display="flex";
             break;
     }
