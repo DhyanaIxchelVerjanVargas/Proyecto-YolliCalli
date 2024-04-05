@@ -126,24 +126,29 @@
                         <!--Dirección-->
                         <div>
                             <label for="callePerfil" class="form-label">Calle</label>
+                            <p class="mensajeError" id="calleError"></p>
                             <input type="text" class="form-control" id="callePerfil" placeholder="Calle">
                         </div>
                         <div>
                             <label for="localidadPerfil" class="form-label">Municipio/Alcaldía</label>
+                            <p class="mensajeError" id="localidadError"></p>
                             <input type="text" class="form-control" id="localidadPerfil" placeholder="Localidad">
                         </div>
                         <div>
                             <label for="estadoPerfil" class="form-label">Estado</label>
+                            <p class="mensajeError" id="estadoError"></p>
                             <input type="text" class="form-control" id="estadoPerfil" placeholder="Estado">
                         </div>
                         <div class="ciudadCodPostal">
                             <div class="ciudad">
                                 <label for="ciudadPerfil" class="form-label ciudad">Ciudad</label>
+                                <p class="mensajeError" id="ciudadError"></p>
                                 <input type="text" class="form-control" id="ciudadPerfil" placeholder="Ciudad">
                             </div>
                             <div class="codPostal">
                                 <label for="cpPerfil" class="form-label codPostal">Código postal</label>
-                                <input type="text" class="form-control" maxlength="5" id="cpPerfil" placeholder="#####">
+                                <p class="mensajeError" id="cpError"></p>
+                                <input type="text" class="form-control" maxlength="5" id="cpPerfil" placeholder="09700">
                             </div>
                         </div>
                         <div class="botonDonar botonesPerfil">
@@ -215,6 +220,26 @@
                 </div>
             </div>
         </div>
+        <!-- Modal de alerta para boton de pago en construccion -->
+        <!-- Button trigger modal para ModalPago -->
+        <button
+            id="btnEnvioBotonPago"
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalPago"
+            style="display: none"
+        ></button>
+
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="modalPago"
+            tabindex="-1"
+            aria-labelledby="estadoModalLabel"
+            aria-hidden="true"
+        ></div>
+        <!-- Fin Modal de BotonPago -->
     </section>
 
     <!--Información de ventas-->

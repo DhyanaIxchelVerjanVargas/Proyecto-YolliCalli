@@ -210,10 +210,10 @@ function leerDatosCard(card){
         auxBusqueda = localStorage.getItem("productoBuscar");
         inputBusqueda.value=auxBusqueda;
         auxBusqueda = auxBusqueda.replace(/\s+/g, '_');
-        solicitudURL="http://localhost:8080/tienda/productos?buscar="+auxBusqueda+"&ordenPrecio="+ordenPrecio+"&ordenNombre="+ordenNombre+"&categorias="+categoriaFiltroIDString+"&precioMenor="+precioMenor+"&precioMayor="+precioMayor+"&pagina=";
+        solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?buscar="+auxBusqueda+"&ordenPrecio="+ordenPrecio+"&ordenNombre="+ordenNombre+"&categorias="+categoriaFiltroIDString+"&precioMenor="+precioMenor+"&precioMayor="+precioMayor+"&pagina=";
         buscando = true;
     }else {
-        solicitudURL="http://localhost:8080/tienda/productos?"+"ordenPrecio="+ordenPrecio+"&ordenNombre="+ordenNombre+"&categorias="+categoriaFiltroIDString+"&precioMenor="+precioMenor+"&precioMayor="+precioMayor+"&pagina=";
+        solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?"+"ordenPrecio="+ordenPrecio+"&ordenNombre="+ordenNombre+"&categorias="+categoriaFiltroIDString+"&precioMenor="+precioMenor+"&precioMayor="+precioMayor+"&pagina=";
 
         buscando = false;
     }
@@ -257,10 +257,10 @@ function leerDatosCard(card){
         auxBusqueda = localStorage.getItem("productoBuscar");
         inputBusqueda.value=auxBusqueda;
         auxBusqueda = auxBusqueda.replace(/\s+/g, '_');
-        solicitudURL="http://localhost:8080/tienda/productos?buscar="+auxBusqueda+"&pagina=";
+        solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?buscar="+auxBusqueda+"&pagina=";
         buscando = true;
     }else {
-        solicitudURL="http://localhost:8080/tienda/productos?pagina=";
+        solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?pagina=";
         buscando = false;
     }
     localStorage.removeItem("precioMenor");
@@ -371,9 +371,9 @@ function leerDatosCard(card){
         categoriaFiltroIDString = localStorage.getItem("categoriaFiltroIDString");
         ordenPrecio = localStorage.getItem("ordenPrecio");
         ordenNombre = localStorage.getItem("ordenNombre");
-        solicitudURL="http://localhost:8080/tienda/productos?"+"ordenPrecio="+ordenPrecio+"&ordenNombre="+ordenNombre+"&categorias="+categoriaFiltroIDString+"&precioMenor="+precioMenor+"&precioMayor="+precioMayor+"&pagina=";
+        solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?"+"ordenPrecio="+ordenPrecio+"&ordenNombre="+ordenNombre+"&categorias="+categoriaFiltroIDString+"&precioMenor="+precioMenor+"&precioMayor="+precioMayor+"&pagina=";
     }else{
-        solicitudURL="http://localhost:8080/tienda/productos?pagina="
+        solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?pagina="
     }
     loadProductos(solicitudURL+paginaActual);
     btnLimpiarBusquda.style.display = "none";
@@ -390,7 +390,7 @@ function leerDatosCard(card){
     busqueda = inputBusqueda.value.replace(/\s+/g, '_');
     if(inputBusqueda.value.length > 2){
         paginaActual=1;
-        solicitudURL="http://localhost:8080/tienda/productos?buscar="+busqueda+"&pagina=";
+        solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?buscar="+busqueda+"&pagina=";
         buscando=true;
         btnLimpiarBusquda.style.display = "flex";
         loadProductos(solicitudURL+paginaActual);
@@ -406,7 +406,7 @@ function leerDatosCard(card){
         busqueda = inputBusqueda.value.replace(/\s+/g, '_');
         if(inputBusqueda.value.length > 3){
             paginaActual=1;
-            solicitudURL="http://localhost:8080/tienda/productos?buscar="+busqueda+"&pagina=";
+            solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?buscar="+busqueda+"&pagina=";
             buscando=true;
             btnLimpiarBusquda.style.display = "flex";
             loadProductos(solicitudURL+paginaActual);
@@ -424,10 +424,10 @@ function leerDatosCard(card){
 
  contenedorProdutos.addEventListener('click', function(event) {
     if (event.target.classList.contains('irProducto')) {
-        const idProducto = event.target.closest('.cardProducto').id;
-        console.log('ID de la carta:', idProducto);
-        localStorage.setItem("idProducto",idProducto);
-        window.location.href = "productoIndividual.html?id=" + idProducto;
+        const idCarta = event.target.closest('.cardProducto').id;
+        console.log('ID de la carta:', idCarta);
+        localStorage.setItem("idCarta",idCarta);
+        window.location.href = "productoIndividual.html?id=" + idCarta;
     }
 });
 
@@ -470,13 +470,13 @@ btnAnteriorPagina.addEventListener("click",function(event){
  document.addEventListener("DOMContentLoaded", function(event){
     event.preventDefault();
     paginaActual=1;
-    solicitudURL="http://localhost:8080/tienda/productos?pagina=";
+    solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?pagina=";
     if(localStorage.getItem("productoBuscar") != null && localStorage.getItem("categoriaFiltroIDString") == null){
         btnLimpiarBusquda.style.display = "flex";
         auxBusqueda = localStorage.getItem("productoBuscar");
         inputBusqueda.value=auxBusqueda;
         auxBusqueda = auxBusqueda.replace(/\s+/g, '_');
-        solicitudURL="http://localhost:8080/tienda/productos?buscar="+auxBusqueda+"&pagina=";
+        solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?buscar="+auxBusqueda+"&pagina=";
         buscando = true;
     }else { 
         buscando = false;
@@ -490,11 +490,11 @@ btnAnteriorPagina.addEventListener("click",function(event){
             if (cat.value.toString() == categoriaFiltroIDString ) {
                 cat.checked = true;
             }else{
-                cat.checked = true;
+                cat.checked = false;
             }
         })
 
-        solicitudURL="http://localhost:8080/tienda/productos?categorias="+categoriaFiltroIDString+"&pagina=";
+        solicitudURL="https://yollicalli-back.onrender.com/tienda/productos?categorias="+categoriaFiltroIDString+"&pagina=";
         filtrando = true;
     }else {
         filtrando = false;

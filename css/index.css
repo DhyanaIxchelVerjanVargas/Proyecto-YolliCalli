@@ -586,3 +586,29 @@
     word-spacing: 1px;
     letter-spacing: 1px;
 }
+
+
+.titulosRosas{
+    font-size: var(--titulo-rosa-h2);
+    color: var(--rosa-mexicano);
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.mensajeContactoError{
+    font-family: var(--barlow);
+    color: var(--azul-talavera);
+}
+
+/*Spiner de carga*/
+.spinner-border {
+    --bs-spinner-width: 2rem;
+    --bs-spinner-height: 2rem;
+    --bs-spinner-vertical-align: -0.125em;
+    --bs-spinner-border-width: 0.25em;
+    --bs-spinner-animation-speed: 0.75s;
+    --bs-spinner-animation-name: spinner-border;
+    border: var(--bs-spinner-border-width) solid var(--rosa-mexicano);
+    border-right-color: transparent;
+}
+/*Spiner de carga*/

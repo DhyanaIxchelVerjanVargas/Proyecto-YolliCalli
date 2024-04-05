@@ -422,7 +422,7 @@ botonProducto.addEventListener("click", function (event){
             redirect: "follow"
           };
           
-          fetch("http://localhost:8080/api/products/", requestOptions)
+          fetch("https://yollicalli-back.onrender.com/api/products/", requestOptions)
             .then((response) => response.text())
             .then((result) => {
                 console.log(result);
