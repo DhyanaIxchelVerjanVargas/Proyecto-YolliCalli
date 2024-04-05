@@ -187,7 +187,7 @@
     cursor: pointer;
 }
 .selectorDePago {
-    margin-block: 1.5rem;
+    padding-block: 1.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -440,6 +440,23 @@
     transition: transform ease 0.2s;
 }
 
+.botonPagoEfectivo {
+    top: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    background-color: var(--azul-talavera);
+    font-weight: 500;
+    border: none;
+    color: white;
+    border-radius: 1rem;
+    transition: transform ease 0.2s;
+}
+
 .botonPago p {
     margin: 0;
 }
@@ -449,7 +466,8 @@
     filter: brightness(1.3);
 }
 
-.bi-credit-card {
+.bi-credit-card,
+.bi-cash-stack {
     margin-right: 1rem;
     font-size: x-large;
 }

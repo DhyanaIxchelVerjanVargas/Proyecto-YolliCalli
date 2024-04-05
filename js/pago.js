@@ -5,7 +5,10 @@ let opcionTdc = document.querySelector("#opcionTdc");
 let pagoTarjeta = document.querySelector("#pagoTarjeta");
 let tdcIcon = document.querySelector("#tdcIcon");
 let paypalIcon = document.querySelector("#paypalIcon");
+let efectivoIcon = document.querySelector("#efectivoIcon");
 let radiobuttonTdc = document.querySelector("#radiobuttonTdc");
+let radiobuttonPaypal = document.querySelector("#radiobuttonPaypal");
+let radiobuttonEfectivo = document.querySelector("#radiobuttonEfectivo");
 let tarjeta = document.querySelector("#card");
 let botonTarjetaFrente = document.querySelector("#botonTarjetaFrente");
 let botonTarjetaReverso = document.querySelector("#botonTarjetaReverso");
@@ -13,6 +16,7 @@ let botonTarjetaReverso = document.querySelector("#botonTarjetaReverso");
 pagoTarjeta.addEventListener("click", function () {
     opcionTdc.classList.add("extend");
     opcionPaypal.classList.remove("extend");
+    opcionEfectivo.classList.remove("extend");
     //
     pagoTarjeta.classList.add("selected");
     tdcIcon.classList.add("selected");
@@ -21,6 +25,10 @@ pagoTarjeta.addEventListener("click", function () {
     pagoPaypal.classList.remove("selected");
     paypalIcon.classList.remove("selected");
     radiobuttonPaypal.classList.remove("radioSelected");
+    //
+    pagoEfectivo.classList.remove("selected");
+    efectivoIcon.classList.remove("selected");
+    radiobuttonEfectivo.classList.remove("radioSelected");
 });
 
 botonTarjetaFrente.addEventListener("click", (e) => {
@@ -81,13 +89,19 @@ let nombre = "JC";
 pagoPaypal.addEventListener("click", function () {
     opcionTdc.classList.remove("extend");
     opcionPaypal.classList.add("extend");
+    opcionEfectivo.classList.remove("extend");
     //
     pagoTarjeta.classList.remove("selected");
     tdcIcon.classList.remove("selected");
     radiobuttonTdc.classList.remove("radioSelected");
+    //
     pagoPaypal.classList.add("selected");
     paypalIcon.classList.add("selected");
     radiobuttonPaypal.classList.add("radioSelected");
+    //
+    pagoEfectivo.classList.remove("selected");
+    efectivoIcon.classList.remove("selected");
+    radiobuttonEfectivo.classList.remove("radioSelected");
 });
 
 paypal
@@ -102,7 +116,7 @@ paypal
                 purchase_units: [
                     {
                         amount: {
-                            value: 1000,
+                            value: parseFloat(total),
                         },
                     },
                 ],
@@ -120,53 +134,34 @@ function resultMessage(message) {
     const container = document.querySelector("#result-message");
     container.innerHTML = message;
 }
-//////////////////////// Paypal //////////////////////////
+///////////////////////// Paypal ///////////////////////////
 
-// Stripe //
-/* const stripe = Stripe("pk_test_51P0I0YCxoXxcqfyiASCv6f4xl2sa6nVg3TYKtMJEJiUBGq89OSWw2YSzBEwpg2031rU77ieLLfjg0KrW9pNapIix004JmlfZF1");
+//////////////////////// Efectivo //////////////////////////
 
-const form = document.getElementById("payment-form");
-form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-    const { token, error } = await stripe.createToken(card);
-    if (error) {
-        console.error("Error:", error);
-        const errorElement = document.getElementById("card-errors");
-        errorElement.textContent = error.message;
-    } else {
-        // Send token to your server
-        fetch("http://127.0.0.1:4567/charge", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ token: token.id }),
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.json();
-            })
-            .then((data) => {
-                console.log("Success:", data);
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
-    }
-}); */
+let opcionEfectivo = document.querySelector("#opcionEfectivo");
+let pagoEfectivo = document.querySelector("#pagoEfectivo");
 
-// Create an instance of Stripe Elements
-/* const elements = stripe.elements(); */
+pagoEfectivo.addEventListener("click", function () {
+    opcionTdc.classList.remove("extend");
+    opcionPaypal.classList.remove("extend");
+    opcionEfectivo.classList.add("extend");
+    //
+    pagoTarjeta.classList.remove("selected");
+    tdcIcon.classList.remove("selected");
+    radiobuttonTdc.classList.remove("radioSelected");
+    //
+    pagoPaypal.classList.remove("selected");
+    paypalIcon.classList.remove("selected");
+    radiobuttonPaypal.classList.remove("radioSelected");
+    //
+    pagoEfectivo.classList.add("selected");
+    efectivoIcon.classList.add("selected");
+    radiobuttonEfectivo.classList.add("radioSelected");
+});
 
-// Create an instance of the card Element.
-/* const card = elements.create("card"); */
+//////////////////////// Efectivo //////////////////////////
 
-// Add an instance of the card Element into the `card-element` div.
-/* card.mount("#card-element"); */
-
-///////////// Validaciones /////////////////
+////////////////////// Validaciones ////////////////////////
 let resumenPedido = document.getElementById("resumenPedido");
 
 //Inputs
@@ -356,8 +351,6 @@ cantidadProductos.innerText = "$" + subtotal;
 cantidadSubtotal.innerText = "$" + subtotal;
 cantidadEnvio.innerHTML = "$" + envio;
 cantidadTotal.innerText = "$" + total;
-
-console.log(productosCarrito);
 
 let sumaProductos = 0;
 
