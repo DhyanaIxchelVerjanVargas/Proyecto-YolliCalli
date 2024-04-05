@@ -76,6 +76,12 @@ form.infoPerfil .datosPersonales div input:disabled{
     display: flex;
     font-size: 16px;
 }
+.datosPersonales input#nombrePerfil, .datosPersonales input#telPerfil{
+    border-bottom: none;
+    color: var(--rosa-mexicano);
+    font-weight: bold;
+    font-size: var(--titulos-h3-rutas);
+} 
 .ciudadCodPostal{
     display: flex;
     justify-content: space-between;
@@ -318,6 +324,9 @@ div.ventas h3 a{
 .mensajeError{
     font-size: 1.4rem;
     color: red;
+}
+input .inputActivo{
+    -webkit-box-shadow: 2px 4px 9px 3px rgba(51, 255, 92, 0.65);-moz-box-shadow: 2px 4px 9px 3px rgba(51, 255, 92, 0.65);box-shadow: 2px 4px 9px 3px rgba(51, 255, 92, 0.65);
 }
 
 /* Modal para BotonPago */
