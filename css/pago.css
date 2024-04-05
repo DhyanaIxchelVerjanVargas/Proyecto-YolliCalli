@@ -230,6 +230,10 @@
     transition-delay: 0.3s;
 }
 
+div.paypal-buttons {
+    z-index: 0 !important;
+}
+
 .extend {
     grid-template-rows: 1fr;
 }
