@@ -216,8 +216,6 @@ function createCards(prods){
                     <span class="productoSlogan colorBlanco">Hecho con el corazón</span>
                     <h4>${producto.nombreProducto}</h4>
                     <span class="productPrecio">$ ${parseFloat(producto.precio).toFixed(2)}</span>
-                    <span>por</span>
-                    <span class="productMadeBy">Artesanos de Tenango</span>
                     <div class="verProducto"><a class="irProducto" ><i class="bi bi-plus-circle irProducto"></i> Información</a></div>
                     <div class="productIconos">
                         <a  class="productoIcon"><i class="bi bi-cart3 iconoCarrito borrarProducto"></i></a>
