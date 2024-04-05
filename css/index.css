@@ -62,7 +62,7 @@
 @media (max-width: 768px) {
     .fondoContenedor {
         width: 100% !important;
-        background-image: url(../src/img/a013b960-d9e9-4c7f-b268-124bd66098af.png);
+        background-image: url(https://res.cloudinary.com/dayprjvbg/image/upload/v1712172633/YolliCalli/YolliCalli-webp/a013b960-d9e9-4c7f-b268-124bd66098af-660dabf8c14d3_r57hun.webp);
         background-size: cover;
         background-position: center;
         height: 60rem;
@@ -136,14 +136,14 @@
 @media (max-width: 425px) {
     .fondoContenedor {
         width: 100% !important;
-        background-image: url(../src/img/talavera.png);
+        background-image: url(https://res.cloudinary.com/dayprjvbg/image/upload/v1712172675/YolliCalli/YolliCalli-webp/talavera-660daac997163_xun045.webp);
         background-size: cover;
         background-position: center;
         height: 60rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 195px;
+        margin-top: 137px;
     }
 }
 
