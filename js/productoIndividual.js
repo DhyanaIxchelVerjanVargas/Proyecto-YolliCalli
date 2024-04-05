@@ -125,7 +125,7 @@ function displayProductoIndividual(productoIndividual){
     nombreProd = productoIndividual.nombreProducto;
     precioProd = productoIndividual.precio.toFixed(2);
     imagenProd = productoIndividual.imagen;
-    idProd = productoIndividual.idProducto;
+    idProd = productoIndividual.idProducto.toString();
 }
 
 window.addEventListener("load",function(event){
