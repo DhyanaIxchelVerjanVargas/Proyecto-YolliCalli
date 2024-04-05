@@ -1,14 +1,23 @@
 //////////////////////// TDC /////////////////////////////
 let numeroTarjeta = document.querySelector("#numeroTarjeta");
 let vencimiento = document.querySelector("#vencimiento");
+//
 let opcionTdc = document.querySelector("#opcionTdc");
+let opcionPaypal = document.querySelector("#opcionPaypal");
+let opcionEfectivo = document.querySelector("#opcionEfectivo");
+//
 let pagoTarjeta = document.querySelector("#pagoTarjeta");
+let pagoPaypal = document.querySelector("#pagoPaypal");
+let pagoEfectivo = document.querySelector("#pagoEfectivo");
+//
 let tdcIcon = document.querySelector("#tdcIcon");
 let paypalIcon = document.querySelector("#paypalIcon");
 let efectivoIcon = document.querySelector("#efectivoIcon");
+//
 let radiobuttonTdc = document.querySelector("#radiobuttonTdc");
 let radiobuttonPaypal = document.querySelector("#radiobuttonPaypal");
 let radiobuttonEfectivo = document.querySelector("#radiobuttonEfectivo");
+//
 let tarjeta = document.querySelector("#card");
 let botonTarjetaFrente = document.querySelector("#botonTarjetaFrente");
 let botonTarjetaReverso = document.querySelector("#botonTarjetaReverso");
@@ -81,10 +90,6 @@ vencimiento.addEventListener("keyup", (e) => {
 //////////////////////// TDC /////////////////////////////
 
 //////////////////////// Paypal //////////////////////////
-let opcionPaypal = document.querySelector("#opcionPaypal");
-let pagoPaypal = document.querySelector("#pagoPaypal");
-let pagoTotal = 1000;
-let nombre = "JC";
 
 pagoPaypal.addEventListener("click", function () {
     opcionTdc.classList.remove("extend");
@@ -137,9 +142,6 @@ function resultMessage(message) {
 ///////////////////////// Paypal ///////////////////////////
 
 //////////////////////// Efectivo //////////////////////////
-
-let opcionEfectivo = document.querySelector("#opcionEfectivo");
-let pagoEfectivo = document.querySelector("#pagoEfectivo");
 
 pagoEfectivo.addEventListener("click", function () {
     opcionTdc.classList.remove("extend");
