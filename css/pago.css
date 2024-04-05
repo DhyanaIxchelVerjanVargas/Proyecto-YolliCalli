@@ -235,7 +235,8 @@
 }
 
 .tdc,
-.paypalButton {
+.paypalButton,
+.contenedorEfectivo {
     overflow: hidden;
 }
 
@@ -424,7 +425,6 @@
 }
 
 .botonPago {
-    top: 30rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -455,10 +455,6 @@
     color: white;
     border-radius: 1rem;
     transition: transform ease 0.2s;
-}
-
-.botonPago p {
-    margin: 0;
 }
 
 .botonPago:hover {
