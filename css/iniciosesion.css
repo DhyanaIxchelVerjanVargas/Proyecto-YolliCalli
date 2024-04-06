@@ -1,0 +1,106 @@
+/* Estilos globales */
+body {
+    font-family: 'Barlow', sans-serif;
+}
+
+label {
+    font-size: 1.8rem;
+}
+
+.alerta {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para dispositivos de pantalla pequeña */
+@media screen and (max-width: 47.6rem) {
+    .inicioSesion form,
+    .registro form {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        padding: 1.3rem;
+    }
+
+    .logo-formulario {
+        width: 100%;
+        height: auto;
+        margin-top: 5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"] {
+        border: 0.1rem solid var(--rosa-mexicano);
+        border-radius: 0.3rem;
+        padding: 0.6rem;
+        width: 100%;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="password"]::placeholder,
+    input[type="date"]::placeholder {
+        font-size: 1.8rem;
+    }
+
+    .boton {
+        font-size: 16px;
+        width: 12.2rem;
+        height: 2.6rem;
+    }
+
+    .titulosRosas {
+        color: var(--rosa-mexicano);
+    }
+
+    /* Ajuste para el logo en dispositivos móviles */
+    .logo-formulario {
+        margin-top: 10rem;
+    }
+}
+
+/* Estilos para dispositivos de pantalla grande */
+@media screen and (min-width: 47.6rem) {
+    .inicioSesion form,
+    .registro form {
+        margin: 0 auto;
+        max-width: 37.5rem;
+        border: 0.1rem solid var(--rosa-mexicano);
+        border-radius: 1rem;
+        padding: 3.12rem;
+        box-shadow: 0px 18px 28px #091e424c;
+    }
+
+    .logo-formulario {
+        width: 100%;
+        height: auto;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"] {
+        border: 0.1rem solid var(--rosa-mexicano);
+        border-radius: 1rem;
+        padding: 0.6rem;
+        width: 100%;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="password"]::placeholder,
+    input[type="date"]::placeholder {
+        font-size: 1.8rem;
+    }
+
+    .boton {
+        width: 14.8rem;
+        height: 3.4rem;
+    }
+
+    .titulosRosas {
+        color: var(--rosa-mexicano);
+    }
+}

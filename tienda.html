@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./src/img/yc.ico" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"/>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="./css/estilosGlobales.css" />
+        <link rel="stylesheet" href="./css/tienda.css">
+        <title>Tienda</title>
+    </head>
+    <body>
+        <header>
+            <!--Navegación-->
+            <nav class="navbar" id="navbar">
+                <div class="navbarContainer navLogo" id="navLogo">
+                    <div class="vacio"></div>
+                    <a href="./index.html"><img src="https://res.cloudinary.com/dayprjvbg/image/upload/v1712172641/YolliCalli/YolliCalli-webp/logorosa-660dabd1a6d5e_zxccma.webp" alt="Logo"/></a>
+                    <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
+                        <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
+                </div>
+                <div class="navbarContainer navMenu" id="navMenu">
+                    <ul>
+                        <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
+                        <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
+                        <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
+                        <li>
+                            <a href="./perfil.html" class="menuLink"><i class="bi bi-person-circle"></i><button class="profileButton" id="profileButton">Perfil</button></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbarContainer navIcons" id="navIcons">
+                    <div class="searchField" role="search" id="searchField">
+                        <input
+                            class="searchBox searchInput"
+                            type="search"
+                            placeholder="Buscar"
+                            aria-label="Search"
+                            id="txtBusqueda"
+                        />
+                        <a class="navIconsItems btnBuscar" id="btnBuscar"><i class="bi bi-search"></i></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
+                        </li>
+                        <li>
+                            <a href="./iniciosesion.html" class="loginLink" id="loginLink"
+                                ><button class="loginButton" id="loginButton"><i class="bi bi-person-fill-x"></i></button
+                            ></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div id="Banner" class="banner">
+                <div>
+                    <h1>Tienda</h1>
+                </div>
+                <div class="breadcrumb">
+                    <nav aria-labelledby="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item" aria-current="page">
+                                <!-- link cambiado a index -->
+                                <a href="./index.html">Inicio</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Tienda</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--Menu hamburguesa-->
+        <aside>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <div class="vacio"></div>
+                <img src="https://res.cloudinary.com/dayprjvbg/image/upload/v1712172641/YolliCalli/YolliCalli-webp/logorosa-660dabd1a6d5e_zxccma.webp" alt="Logo" />
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body" id="offcanvas-body">
+            </div>
+            </div>
+        </aside>
+        <div><!--Barra de busqueda-->
+            <nav class="navbar navTienda">
+                <div class="container">
+                <div class="row">
+                    <div class="col navFiltrar">
+                    <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#filtro" id="btnMuestraFiltro">
+                        <span><i class="bi bi-sliders"></i></span>  Filtrar
+                    </button>
+                    </div>
+                    <div class="col navBuscar">
+                    <form class="d-flex" role="search">
+                        <input id="inputBusqueda" class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+                        <button id="btnBusqueda" class="btn">Buscar</button>
+                    </form>
+                    </div>
+                </div>
+                </div>
+            </nav>
+        </div>
+        <!--Menu de filtros-->
+        <div class="collapse" id="filtro">
+            <div class="cardFiltros">
+                <div class="tituloFiltro">
+                    <h4>Filtrar</h4>
+                </div>
+                <div class="tipoFiltros">
+                    <div class="filtroPrecio">
+                        <h5>Precio:</h5>
+                        <div>
+                            <div class="flex-row d-flex contentTxtMinMax">
+                                <div class="minValue numberVal flex-row">
+                                    <label for="txtMinValue">Min. $</label>
+                                    <input type="number" id="txtMinValue" min="0" max="10000" value="0" disabled>
+                                </div>
+                                <div class="maxValue numberVal flex-row">
+                                    <label for="txtMaxValue">Max. $</label>
+                                    <input type="number" id="txtMaxValue" min="0" max="10000" value="10000" disabled>
+                                </div>
+                            </div>
+                            <div class="rangeSlider flex-row d-flex">
+                                <div class="progres"></div>
+                                <input type="range" class="rangeMin" min="0" max="10000" value="0">
+                                <input type="range" class="rangeMAx" min="0" max="10000" value="10000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filtroCategorias">
+                        <h5>Categorías:</h5>
+                        <div class="contenedorTipoFiltros">
+                            <div>
+                                <label for="CAT-0"><input class="checkCategorias" type="checkbox" name="categorias" value=0 id="CAT-0" checked>Todas las categorias</label>
+                            </div>
+                            <div>
+                                <label for="CAT-1"><input class="checkCategorias" type="checkbox" name="categorias" value=1 id="CAT-1">Accesorios para el hogar</label>
+                            </div>
+                            <div>
+                                <label for="CAT-2"><input class="checkCategorias" type="checkbox" name="categorias" value=2 id="CAT-2">Ropa</label>
+                            </div>
+                            <div>
+                                <label for="CAT-3"><input class="checkCategorias" type="checkbox" name="categorias" value=3 id="CAT-3">Alimentos</label>
+                            </div>
+                            <div>
+                                <label for="CAT-4"><input class="checkCategorias" type="checkbox" name="categorias" value=4 id="CAT-4">Joyería y Bisutería</label>
+                            </div>
+                            <div>
+                                <label for="CAT-5"><input class="checkCategorias" type="checkbox" name="categorias" value=5 id="CAT-5">Arte y Pintura</label>
+                            </div>
+                            <div>
+                                <label for="CAT-6"><input class="checkCategorias" type="checkbox" name="categorias" value=6 id="CAT-6">Cerámica y alfarería</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filtroOrdenar">
+                        <h5>Ordenar por:</h5>
+                        <div class="contenedorTipoFiltros">
+                            <span>Precio</span>
+                            <div class="contenedorTipoFiltros ordenPrecio">
+                                <div>
+                                    <input type="radio" name="rPrecio" id="rMenorMayor" checked>
+                                    <label for="rMenorMayor">Menor-Mayor</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="rPrecio" id="rMayorMenor">
+                                    <label for="rMayorMenor">Mayor-Menor</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedorTipoFiltros">
+                            <span>Nombre</span>
+                            <div class="contenedorTipoFiltros ordenNombre">
+                                <div>
+                                    <input type="radio" name="rNombre" id="rAZ" checked>
+                                    <label for="rAZ">A-Z</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="rNombre" id="rZA">
+                                    <label for="rZA">Z-A</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filtroBoton">
+                    <button class="boton" type="button" id="btnAplicarFiltro">Aplicar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="limpiezaBusquedaFiltros">
+            <button type="button" class="limpiar" id="btnLimpiarBusquda" style="display: none;"><span>Limpiar busqueda</span> <i class="bi bi-x"></i></button>
+            <button type="button" class="limpiar" id="btnLimpiarFiltros" style="display: none;"><span>Limpiar filtros</span> <i class="bi bi-x"></i></button>
+        </div>
+
+        <!--Contenedor de las trajetas de productos-->
+        <div id="contenedorProductos" class="grid-fluid">
+            <!--Tarjeta de prueba
+            <div class="cardProducto" id="CP1">
+                <div class="caraPrincipal">
+                    <img src="./src/img/productos/cojinTenango.png" alt="">
+                    <div class="card-body fondoAzul">
+                        <h4 class="card-title colorBlanco">Cojin Tenango</h4>
+                    </div>
+                </div>
+                <div class="overlay">
+                    <span class="productoSlogan colorBlanco">Hecho con el corazón</span>
+                    <h4>Cojin Tenango</h4>
+                    <span class="productPrecio">$ 0.00</span>
+                    <span>por</span>
+                    <span class="productMadeBy">Artesanos de Tenango</span>
+                    <div><a href="#"><i class="bi bi-plus-circle"></i>Información</a></div>
+                    <div class="productIconos">
+                        <a href="" class="productoIcon"><i class="bi bi-heart"></i></a>
+                        <a href="" class="productoIcon"><i class="bi bi-share-fill"></i></a>
+                        <a href="" class="productoIcon"><i class="bi bi-cart3"></i></a>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+
+        <!-- Modal de alerta de envio exitoso de carrito -->
+            <!-- Button trigger modal para Carrito -->
+            <button
+                id="btnEnvioCarrito"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalEnvioCarrito"
+                style="display: none"
+            ></button>
+
+            <!-- Modal -->
+            <div
+                class="modal fade"
+                id="modalEnvioCarrito"
+                tabindex="-1"
+                aria-labelledby="estadoModalLabel"
+                aria-hidden="true"
+            ></div>
+        <!-- Fin Modal de Carrito -->
+
+        <!-- Botones para cambiar de página -->
+        <div class="paginacion">
+            <div id="contnedorBtnPaginacion" class="contnedorBtnPaginacion">
+                
+                <button class="btnSiguienteAtras" id="btnAnteriorPagina" style="display: none;"><i class="bi bi-caret-left-fill"></i></button>
+                <button class="btnSiguienteAtras" id="btnSiguientePagina" style="display: none;"><i class="bi bi-caret-right-fill"></i></button>
+
+            </div>
+        </div>
+
+        <footer class="col-12 flex-column d-flex">
+            <div class="footerContent row d-flex">
+                <div class="footerLogo col-sm-4 d-flex flex-column align-items-center">
+                    <img class="logoRosa" src="https://res.cloudinary.com/dayprjvbg/image/upload/v1712172641/YolliCalli/YolliCalli-webp/logorosa-660dabd1a6d5e_zxccma.webp" alt="">
+                    <span>By Generation México</span>
+                </div>
+                <div class="footerVinculos col-sm-4 d-flex flex-column">
+                    <h4>Vínculos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="tienda.html">Tienda</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footerAyuda col-sm-4 d-flex flex-column">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a></li>
+                        <li><a href="./nosotros.html#contacto">Contacto</a></li>
+                        <li><a href="./politicas.html">Políticas de privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="footerDerechos row d-flex">
+                <span>2024 YolliCalli. Todos los derechos reservados.</span>
+            </div>
+        </footer>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/tienda.js"></script>
+</body>
+</html>

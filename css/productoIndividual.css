@@ -1,0 +1,138 @@
+main{
+    margin: 6rem 10rem 10rem 10rem;
+}
+
+p{
+    font-size: var(--texto-general);
+}
+
+.imagen{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+}
+
+img{
+    max-width: 85%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+}
+
+.titulosRosas{
+    font-size: var(--titulo-rosa-h2);
+    color: var(--rosa-mexicano);
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.titulosAzules{
+    font-size: var(--titulo-rosa-h2);
+    color: var(--azul-talavera);
+    margin: 0;
+}
+
+.linea{
+    border: solid 1px var(--rosa-mexicano);
+}
+
+.textoProducto{
+    margin-bottom: 3rem;
+}
+
+.botonProductoIndividual{
+    display: flex;
+    justify-content: center;
+}
+
+.contenedorNoProducto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tallasLabel{
+    font-size: var(--texto-general);
+    border: 1px solid var(--rosa-mexicano);
+    color: var(--negro);
+}
+
+.btn-group input.btn-check:checked + label {
+    background-color: var(--rosa-mexicano);
+    border: 1px solid var(--rosa-mexicano);
+    color: #fff;
+}
+
+.btn-group input.btn-check:hover + label {
+    border: 1px solid var(--rosa-mexicano);
+    background-color: #e1456ccc;
+}
+
+.btn-group input.btn-check:disabled + label {
+    border: 1px solid #33333380;
+}
+
+@media (max-width: 992px) {
+    main  {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 10rem;
+    }
+    .textoProducto{
+        margin-bottom: 5rem;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    .imagen{
+        margin-top: 0;
+    }
+    .textoProducto{
+        margin-top: 3rem;
+    }
+    img{
+        max-width: 100%;
+    }
+    
+}
+
+.spinner-border {
+    --bs-spinner-width: 2rem;
+    --bs-spinner-height: 2rem;
+    --bs-spinner-vertical-align: -0.125em;
+    --bs-spinner-border-width: 0.25em;
+    --bs-spinner-animation-speed: 0.75s;
+    --bs-spinner-animation-name: spinner-border;
+    border: var(--bs-spinner-border-width) solid var(--rosa-mexicano);
+    border-right-color: transparent;
+}
+
+/* Modal para Carrito */
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.modal-content {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto 0;
+    transform: translate(0, -50px);
+    position: relative;
+}
+
+.modal-title {
+    letter-spacing: 2px;
+}
+
+.modal-body p {
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}

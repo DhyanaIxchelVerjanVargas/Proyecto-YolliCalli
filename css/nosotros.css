@@ -1,0 +1,445 @@
+
+/*Garantias*/
+.garantias {
+    height: 270px;
+    background-color: var(--color-base);
+    padding: 0;
+    margin: 0;
+}
+.garantias .garantiasContenedor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.garantias .garantiasContenedor .garantiasItem {
+    justify-content: center;
+    align-items: center;
+    color: var(--azul-talavera);
+}
+
+.garantias .garantiasContenedor .garantiasItem .texto {
+    padding-left: 5px;
+}
+
+.garantias .garantiasContenedor .garantiasItem h3 {
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    margin: 0;
+}
+
+.garantias .garantiasContenedor .garantiasItem span {
+    font-size: var(--texto-general);
+    font-weight: var(--regular);
+}
+/*Garantias*/
+
+@media (max-width: 575.98px) {
+    /*Garantias*/
+    .garantias {
+        height: 600px;
+        width: 100%;
+    }
+    .garantias .garantiasContenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 50px;
+    }
+
+    .garantias .garantiasContenedor .garantiasItem {
+        width: 100%;
+    }
+    /*Garantias*/
+}
+
+/*Aquí inicia seccion Donaciones*/
+.sectionDonar {
+    background-color: var(--color-base);
+    margin: 0;
+    padding: 4rem 100px;
+}
+
+.contenidoDonar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenidoDonar > div {
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.contenidoDonar > div:nth-child(1) {
+    flex: 1 1 0;
+}
+
+.contenidoDonar > div:nth-child(2) {
+    flex: 2 1 50%;
+}
+
+.contenidoDonar > div:nth-child(3) {
+    flex: 1 1 0;
+}
+
+.iconoDonar {
+    display: flex;
+    justify-content: center;
+}
+
+.iconoDonar img {
+    width: 60px;
+    height: 60px;
+}
+
+.botonDonar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botonDonar img {
+    width: 20px;
+    height: 20px;
+    margin: 0.5rem;
+}
+
+.botonDonar .btn {
+    color: var(--blanco);
+    display: flex;
+    background-color: var(--rosa-mexicano);
+    border: var(--rosa-mexicano);
+    border-radius: 10px;
+    width: 18rem;
+    height: 5rem;
+    font-size: var(--texto-general);
+    justify-content: center;
+    align-items: center;
+}
+
+.textoDonar {
+    padding-left: 2rem;
+}
+
+.textoDonar h3 {
+    text-align: left;
+    color: var(--azul-talavera);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+}
+
+.textoDonar span {
+    text-align: left;
+    color: var(--azul-talavera);
+    font-size: var(--texto-general);
+    font-weight: var(--regular);
+}
+
+@media (max-width: 425px) {
+    .sectionDonar {
+        padding: 2.5rem 1rem;
+    }
+    .contenidoDonar {
+        flex-direction: column;
+    }
+
+    .contenidoDonar > div {
+        text-align: center;
+    }
+
+    .textoDonar h3 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+/*Aquí inicia seccion Acerca de*/
+.misionVision {
+    display: grid;
+    padding: 0 20px;
+}
+
+.tituloMision {
+    color: var(--negro);
+    text-align: center;
+}
+
+.titulosRosas {
+    color: var(--rosa-mexicano);
+    font-size: var(--titulo-rosa-h2);
+}
+
+.mision {
+    color: var(--negro);
+}
+
+.vision {
+    color: var(--negro);
+}
+
+/*Telefono*/ /* ? */ /* Responsividad está al revés en comparación a los demás */
+@media (min-width: 768px) {
+    .misionVision {
+        padding: 0 100px;
+        margin: 0;
+    }
+}
+
+.linea {
+    margin-block: 30px;
+    border: solid 2px var(--rosa-mexicano);
+    z-index: -1;
+}
+
+/*  Sección Animaciones: Boton ENVIAR*/
+#boton-enviar {
+    background-color: var(--rosa-mexicano);
+    border-radius: 10px;
+    width: 237px;
+    height: 50.48px;
+    cursor: pointer;
+    border: none;
+    font-size: var(--texto-general);
+    color: var(--blanco);
+    transition: all 0.2s ease;
+}
+
+/*Esta propiedad está aplicada a ambos botones*/
+button:active {
+    transform: scale(0.96);
+}
+
+/* Estilos para el margen */
+.margenes {
+    margin-inline: 100px;
+}
+
+/* Margen responsivos pequeños*/
+@media (max-width: 576px) {
+    .margenes {
+        margin: 20px;
+    }
+}
+
+/* Sección Contacto */
+.icono {
+    width: 23px;
+    height: 23px;
+    color: var(--azul-talavera);
+}
+
+.contactoElementos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.mediosElemento {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.medioTexto {
+    margin-left: 23px;
+}
+
+.formulario {
+    background-color: var(--color-base);
+    border-radius: 10px;
+    box-shadow: 0px 18px 28px #091e424c;
+    margin-block: 50px;
+    padding: 50px;
+    flex: 2 1 60%;
+    max-width: 60rem;
+}
+
+.formulario div input {
+    font-size: var(--texto-general);
+}
+
+.formulario div textarea {
+    font-size: var(--texto-general);
+}
+
+.mediosDeContacto {
+    margin-block: 50px;
+    padding: 50px;
+}
+
+.contactanosTexto {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 3rem;
+}
+
+@media (max-width: 425px) {
+    .contactoElementos {
+        flex-wrap: wrap;
+    }
+
+    .contactanosTexto,
+    .mediosDeContacto {
+        padding: 0;
+        margin-block: 20px;
+    }
+
+    .formulario {
+        padding: 30px;
+    }
+}
+
+.conocenosTexto {
+    text-align: center;
+    color: var(--azul-talavera);
+    margin-bottom: 3rem;
+}
+
+/* Estilos para modal */
+.modal-content {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+.persona p {
+    color: var(--azul-talavera);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: bold;
+}
+
+.persona img {
+    width: 100%; /* Tamaño de la imagen */
+    border-radius: 50%; /* Forma de círculo */
+}
+
+/*Modales*/
+/* Sección Animaciones: FOTOS*/
+.conocenos {
+    width: 80%;
+    margin: 0 auto;
+}
+.contenedorEquipo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Columnas dinámicas */
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .conocenos {
+        width: 90%;
+    }
+    .conocenos .contenedorEquipo {
+        grid-template-columns: repeat(3, 1fr); /* Columnas dinámicas */
+        grid-template-rows: repeat(3, 350px);
+    }
+}
+@media (max-width: 425px) {
+    .conocenos {
+        width: 100%;
+    }
+    .conocenos .contenedorEquipo {
+        grid-template-columns: repeat(1, 300px); /* Columnas dinámicas */
+        grid-template-rows: repeat(8, 350px);
+    }
+}
+
+.persona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    gap: 5px;
+}
+
+.persona img {
+    width: 200px; /* Tamaño deseado para las imágenes */
+    height: auto; /* Para mantener la proporción de aspecto */
+}
+
+.conocenos {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    flex-direction: column; /* Alinea los elementos en una columna */
+}
+
+.texto-intro {
+    text-align: center; /* Centra el contenido */
+    margin-bottom: 20px; /* Espacio entre el texto y las imágenes */
+}
+.persona {
+    padding: 10px;
+    text-align: center;
+    background-color: #fff3e3;
+    transition: transform ease 300ms;
+}
+.persona p {
+    font-size: 24px;
+    color: #282667;
+    font-weight: bold;
+}
+.persona a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: var(--azul-talavera);
+}
+
+.persona:hover {
+    font-family: var(--Fuente-primaria);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+.modal-body .nombreModal {
+    font-size: var(--titulos-h3-rutas);
+    font-weight: bold;
+    color: var(--azul-talavera);
+}
+.modal-content {
+    background-color: var(--color-base);
+    margin: auto 0;
+    transform: translate(0, -50px);
+    position: relative;
+}
+
+/* Botones de cierrre de modales emergentes*/
+.btn-close-position {
+    position: absolute;
+    right: 20px;
+    z-index: 2;
+}
+
+.boton-cerrar {
+    color: var(--blanco);
+    margin-top: 1rem;
+    background-color: var(--rosa-mexicano);
+    border: var(--rosa-mexicano);
+    border-radius: 10px;
+    width: 16rem;
+    height: 3.6rem;
+    font-size: var(--texto-general);
+    text-align: center;
+}
+
+.modal-title {
+    letter-spacing: 1px;
+}

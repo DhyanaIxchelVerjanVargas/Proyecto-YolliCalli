@@ -1,0 +1,539 @@
+/*Garantias*/
+.garantias {
+    height: 270px;
+    background-color: var(--color-base);
+    padding: 0;
+    margin: 0;
+}
+.garantias .garantiasContenedor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.garantias .garantiasContenedor .garantiasItem {
+    justify-content: center;
+    align-items: center;
+    color: var(--azul-talavera);
+}
+
+.garantias .garantiasContenedor .garantiasItem .texto {
+    padding-left: 5px;
+}
+
+.garantias .garantiasContenedor .garantiasItem h3 {
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    margin: 0;
+}
+
+.garantias .garantiasContenedor .garantiasItem span {
+    font-size: var(--texto-general);
+    font-weight: var(--regular);
+}
+/*Garantias*/
+
+/* Main */
+
+.contenedorPago {
+    margin-inline: 5rem;
+}
+
+.contenedorPago .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-block: 10rem;
+}
+.formularioDatos {
+    background-color: var(--color-base);
+    max-width: 40rem;
+    padding: 3rem;
+    height: max-content;
+    box-shadow: 0 18px 28px #091e424b;
+    border-radius: 1rem;
+}
+
+.formData {
+    margin-bottom: 2rem;
+}
+
+.form-control {
+    height: 5rem;
+    font-size: var(--texto-general);
+    color: #333333;
+    border-radius: 1rem;
+}
+
+.groupedData {
+    display: flex;
+    justify-content: space-between;
+}
+
+.groupedData .estadoEnvio {
+    flex-grow: 1;
+    max-width: 20rem;
+}
+
+.groupedData .cpEnvio {
+    text-align: center;
+    max-width: 10rem;
+}
+
+.ladaTel {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+.ladaTelSelect {
+    max-width: 5.5rem;
+    background-color: #f4f5f7;
+}
+
+.telInput {
+    max-width: 20rem;
+}
+
+.datosDeContacto {
+    margin-top: 5rem;
+}
+
+.resumenPedido {
+    max-width: 44rem;
+    padding: 3rem;
+    height: max-content;
+    box-shadow: 0 18px 28px #091e424b;
+    border: solid var(--rosa-mexicano) 2px;
+    border-radius: 1rem;
+}
+
+.titulosRosas {
+    margin-top: 0;
+    margin-bottom: 3rem;
+    font-size: var(--titulo-rosa-h2);
+    font-weight: bold;
+    color: var(--rosa-mexicano);
+}
+
+.cantidadDeProductos {
+    padding: 0 10px;
+    border: solid 1px var(--bordes);
+    width: fit-content;
+}
+
+.table {
+    font-size: 1.8rem;
+    border: solid transparent 0px;
+}
+
+.tablaCantidades {
+    text-align: end;
+}
+
+.cantidadTotal {
+    color: var(--rosa-mexicano);
+    font-weight: bold;
+}
+
+/* Opciones de pago */
+.opcionesDePago {
+    width: 38rem;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
+    gap: 1rem;
+}
+
+.radioButton {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    border: 1px solid var(--rosa-mexicano);
+    border-radius: 5rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.radioSelected {
+    outline-color: white;
+}
+
+.opcion {
+    border-radius: 1rem;
+    padding-inline: 2rem;
+    transition: all ease 0.3s;
+}
+
+.opcion:hover {
+    background-color: var(--rosa-mexicano);
+    color: white;
+}
+.opcion svg {
+    color: var(--rosa-mexicano);
+}
+
+.opcion:hover svg {
+    color: white;
+}
+
+.selected {
+    background-color: var(--rosa-mexicano);
+    color: white;
+}
+
+.selectorDePago:hover {
+    cursor: pointer;
+}
+.selectorDePago {
+    padding-block: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.selectorDePago p {
+    margin: 0;
+    font-size: var(--texto-general);
+}
+
+.controlTarjeta {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 2rem;
+}
+
+.botonTarjeta {
+    width: 12rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 1rem;
+    color: white;
+    z-index: 5;
+}
+
+.botonTarjeta .bi {
+    font-size: x-large;
+}
+
+/* tdc card */
+.wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+    transition-delay: 0.3s;
+}
+
+div.paypal-buttons {
+    z-index: 0 !important;
+}
+
+.extend {
+    grid-template-rows: 1fr;
+}
+
+.tdc,
+.paypalButton,
+.contenedorEfectivo {
+    overflow: hidden;
+}
+
+.cardContainer {
+    position: relative;
+    height: 21rem;
+    overflow: visible;
+}
+
+.card {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.mostrarReverso {
+    transform: rotateY(0.5turn);
+}
+
+.cardFront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin: auto;
+    background-image: radial-gradient(circle at 40% 91%, rgba(251, 251, 251, 0.04) 0%, rgba(251, 251, 251, 0.04) 50%, rgba(229, 229, 229, 0.04) 50%, rgba(229, 229, 229, 0.04) 100%),
+        radial-gradient(circle at 66% 97%, rgba(36, 36, 36, 0.04) 0%, rgba(36, 36, 36, 0.04) 50%, rgba(46, 46, 46, 0.04) 50%, rgba(46, 46, 46, 0.04) 100%),
+        radial-gradient(circle at 86% 7%, rgba(40, 40, 40, 0.04) 0%, rgba(40, 40, 40, 0.04) 50%, rgba(200, 200, 200, 0.04) 50%, rgba(200, 200, 200, 0.04) 100%),
+        radial-gradient(circle at 15% 16%, rgba(99, 99, 99, 0.04) 0%, rgba(99, 99, 99, 0.04) 50%, rgba(45, 45, 45, 0.04) 50%, rgba(45, 45, 45, 0.04) 100%),
+        radial-gradient(circle at 75% 99%, rgba(243, 243, 243, 0.04) 0%, rgba(243, 243, 243, 0.04) 50%, rgba(37, 37, 37, 0.04) 50%, rgba(37, 37, 37, 0.04) 100%),
+        linear-gradient(90deg, rgb(40, 38, 103), rgb(225, 69, 108));
+    height: 21rem;
+    padding: 1.5rem;
+    border-width: 0 3px 3px 0;
+    border-style: solid;
+    border-color: #2826672f;
+    border-radius: 1.5rem;
+    box-shadow: 2px 3px 2px 2px rgba(71, 71, 71, 0.253);
+}
+
+.cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 40% 91%, rgba(251, 251, 251, 0.04) 0%, rgba(251, 251, 251, 0.04) 50%, rgba(229, 229, 229, 0.04) 50%, rgba(229, 229, 229, 0.04) 100%),
+        radial-gradient(circle at 66% 97%, rgba(36, 36, 36, 0.04) 0%, rgba(36, 36, 36, 0.04) 50%, rgba(46, 46, 46, 0.04) 50%, rgba(46, 46, 46, 0.04) 100%),
+        radial-gradient(circle at 86% 7%, rgba(40, 40, 40, 0.04) 0%, rgba(40, 40, 40, 0.04) 50%, rgba(200, 200, 200, 0.04) 50%, rgba(200, 200, 200, 0.04) 100%),
+        radial-gradient(circle at 15% 16%, rgba(99, 99, 99, 0.04) 0%, rgba(99, 99, 99, 0.04) 50%, rgba(45, 45, 45, 0.04) 50%, rgba(45, 45, 45, 0.04) 100%),
+        radial-gradient(circle at 75% 99%, rgba(243, 243, 243, 0.04) 0%, rgba(243, 243, 243, 0.04) 50%, rgba(37, 37, 37, 0.04) 50%, rgba(37, 37, 37, 0.04) 100%),
+        linear-gradient(90deg, rgb(40, 38, 103), rgb(225, 69, 108));
+    height: 21rem;
+    padding-top: 2rem;
+    border-width: 0 3px 3px 0;
+    border-style: solid;
+    border-color: #2826672f;
+    border-radius: 1.5rem;
+    box-shadow: 6px 2px 2px 2px rgba(71, 71, 71, 0.253);
+    backface-visibility: hidden;
+    transform: rotateY(0.5turn);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 2rem;
+}
+
+/* card flip */
+
+.cardLogo {
+    grid-column: span 3;
+    grid-row: span 1;
+    filter: brightness(0) invert(100%);
+}
+
+.cardType {
+    grid-row: span 1;
+    align-content: center;
+    justify-content: end;
+    position: relative;
+}
+
+.cardType svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--blanco);
+}
+
+.cardType svg path {
+    width: 100%;
+    height: 100%;
+    color: var(--blanco);
+}
+
+.numeroTarjeta {
+    align-self: center;
+    grid-row: span 2;
+    grid-column: span 4;
+}
+
+.numeroTarjeta input {
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+.nombreTarjeta {
+    align-self: center;
+    grid-column: span 3;
+    width: 22rem;
+}
+
+.nombreTarjeta input {
+    letter-spacing: 2px;
+}
+
+.vencimiento {
+    align-self: center;
+}
+
+.vencimiento input {
+    letter-spacing: 2px;
+}
+
+.magneticBand {
+    width: 100%;
+    height: 4rem;
+    background-color: var(--negro);
+}
+
+.cvc {
+    width: 5rem;
+    margin-right: 2rem;
+}
+.formInput {
+    max-height: 3rem;
+    background-color: transparent;
+    position: relative;
+    color: var(--blanco);
+    border-bottom: 1px solid var(--blanco);
+    line-height: 1.6;
+}
+
+.formInput label {
+    font-size: 1.8rem;
+    color: var(--blanco);
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all ease 0.2s;
+}
+
+.formInput input {
+    margin-left: 0.5rem;
+    background-color: transparent;
+    width: 100%;
+    padding-left: 0.5rem;
+    border: none;
+    outline: none;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+
+.formInput input::placeholder {
+    color: transparent;
+}
+
+.formInput input:focus ~ label,
+.formInput input:valid ~ label {
+    transform: translateY(-210%);
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.formInput input:focus::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.botonPago {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4.5rem;
+    margin-top: 8rem;
+    margin-bottom: 2.5rem;
+    background-color: var(--azul-talavera);
+    font-weight: 500;
+    border: none;
+    color: white;
+    border-radius: 1rem;
+    transition: transform ease 0.2s;
+}
+
+.botonPagoEfectivo {
+    top: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    background-color: var(--azul-talavera);
+    font-weight: 500;
+    border: none;
+    color: white;
+    border-radius: 1rem;
+    transition: transform ease 0.2s;
+}
+
+.botonPago:hover {
+    cursor: pointer;
+    filter: brightness(1.3);
+}
+
+.bi-credit-card,
+.bi-cash-stack {
+    margin-right: 1rem;
+    font-size: x-large;
+}
+
+.visaLogo {
+    color: #282667;
+    width: 5rem;
+}
+
+.avisoPrivacidad {
+    margin-top: 3rem;
+}
+
+/* Main */
+
+@media (max-width: 575.98px) {
+    /*Garantias*/
+    .garantias {
+        height: 600px;
+        width: 100%;
+    }
+    .garantias .garantiasContenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 50px;
+    }
+
+    .garantias .garantiasContenedor .garantiasItem {
+        width: 100%;
+    }
+    /*Garantias*/
+
+    /* Main */
+    .contenedorPago {
+        margin-inline: 2rem;
+    }
+
+    .contenedorPago .row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-block: 2rem;
+    }
+
+    .formularioDatos {
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0rem;
+    }
+
+    .resumenPedido {
+        padding: 0;
+        margin-bottom: 5rem;
+        box-shadow: none;
+        border: solid var(--rosa-mexicano) 0px;
+        border-radius: 1rem;
+    }
+
+    .form-control {
+        border: solid var(--rosa-mexicano) 1px;
+    }
+
+    .datosDeContacto {
+        margin-block: 5rem;
+    }
+}

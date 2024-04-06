@@ -1,0 +1,737 @@
+:root {
+    /*/* Tipografia */
+    --barlow: "Barlow", sans-serif;
+
+    /* Tamaño 1rem = 10px */
+    --titulo-banner: 7rem;
+    --encabezados-h1: 5.2rem;
+    --encabezados-h2: 4rem;
+    --titulo-rosa-h2: 3.2rem;
+    --titulos-h3-rutas: 2.4rem;
+    --texto-general: 1.8rem;
+    --header-footer: 1.6rem;
+    /* Cuerpo */
+    --bold: 700;
+    --medium: 600;
+    --regular: 400;
+
+    /* Paleta de colores */
+    --color-base: #fff3e3;
+    --azul-talavera: #282667;
+    --rosa-mexicano: #e1456c;
+
+    /* Colores neutros */
+    --negro: #333333;
+    --blanco: #ffffff;
+    --gris: #f4f5f7;
+    --bordes: #e1456c;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    color: var(--negro);
+}
+
+body {
+    font-size: 16px;
+    font-family: var(--barlow);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--encabezados-h1);
+    color: var(--rosaMexicano);
+}
+
+h2 {
+    font-size: var(--encabezados-h2);
+    color: var(--negro);
+    margin: 3rem 0;
+}
+
+h3 {
+    font-size: var(--titulos-h3-rutas);
+    color: var(--rosaMexicano);
+}
+
+.boton {
+    width: 240px;
+    height: 58px;
+    border: 0.5px solid #e1456c;
+    background-color: #e1456c;
+    border-color: #e1456c;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: var(--barlow);
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.boton:hover {
+    background-color: #ffffff;
+    color: #e1456c;
+    border-color: #e1456c;
+}
+
+/*Header Barra de navegacion*/
+
+header {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+header .navbar {
+    width: 100%;
+    height: 10rem;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    display: flex;
+    position: fixed;
+    top: 0;
+    box-shadow: 0.5rem 0 1rem #333333;
+    z-index: 5;
+}
+
+.navbarContainer {
+    height: 100%;
+}
+
+.navbarContainer img {
+    width: 18rem;
+}
+
+.vacio {
+    width: 0;
+}
+
+.navbarContainer.navMenu ul {
+    font-family: var(--barlow);
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbarContainer.navIcons ul {
+    font-family: var(--barlow);
+    color: var(--azul-talavera);
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding-inline: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbarContainer a {
+    text-decoration-line: none;
+    color: var(--azul-talavera);
+    font-weight: 600;
+}
+
+.navLogo {
+    display: flex;
+    align-items: center;
+    flex: 0 1 30%;
+}
+
+.nav-toggler {
+    height: 0;
+    padding: 0;
+    border: transparent;
+    overflow: hidden;
+}
+
+.nav-toggler::before {
+    height: 0;
+    overflow: hidden;
+}
+
+.navMenu {
+    flex: 1 0 40%;
+}
+
+.navMenu i {
+    font-size: 0;
+}
+
+.navMenu li {
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.navMenu li:hover {
+    transform: scale(1.2);
+}
+
+.navMenu li::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    height: 2px;
+    background-color: var(--bordes);
+    transform: scaleX(0);
+    transition: all 0.2s ease;
+}
+
+.navMenu li:hover::before {
+    transform: scaleX(1);
+}
+
+.navIcons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 1 30%;
+}
+
+.navIcons h4 {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.navIcons li > * {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navIcons p {
+    color: transparent;
+}
+
+.navIconsItems {
+    height: 2.7rem;
+    width: 2.7rem;
+    overflow: hidden;
+}
+
+.bi-heart,
+.bi-cart3,
+.bi-person {
+    font-size: 2.2rem;
+}
+
+.profileButton {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: var(--azul-talavera);
+    font-weight: 600;
+}
+
+.loginLink {
+    display: flex;
+}
+
+.loginButton {
+    box-sizing: border-box;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    background-color: var(--rosa-mexicano);
+    border: solid transparent 1px;
+    border-radius: 1rem;
+    color: var(--blanco);
+    font-weight: 600;
+    text-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+    background-color: var(--blanco);
+    color: var(--rosa-mexicano);
+    transform: scale(1.1);
+    border-color: var(--bordes);
+}
+
+.bi-person-fill-x {
+    display: flex;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.searchField {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    padding-left: 1px;
+    border: solid var(--rosa-mexicano) 1px;
+    border-radius: 3rem;
+    height: 2.7rem;
+    width: 2.7rem;
+    max-width: 35rem;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.searchField:focus-within {
+    flex-grow: 1;
+    border-width: 2px;
+}
+
+.searchField:focus-within .btnBuscar {
+    color: #282667;
+}
+
+.btnBuscar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--rosa-mexicano);
+    cursor: pointer;
+    z-index: 0;
+}
+.searchInput {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    line-height: 2.8rem;
+    background: transparent;
+    border: solid transparent 1px;
+    padding-left: 1rem;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    flex-grow: 1;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.searchInput:focus {
+    outline: transparent;
+    opacity: 100%;
+    margin-left: 1.5rem;
+    width: calc(100% - 1.3rem);
+    cursor: initial;
+    z-index: 0;
+}
+
+@media (max-width: 670px) {
+    header .navbar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .navbarContainer {
+        height: auto;
+        font-size: var(--texto-general);
+    }
+
+    .navbarContainer ul li {
+        display: flex;
+    }
+
+    .nav-toggler {
+        height: 5rem;
+        width: 5rem;
+        color: #e1456c;
+        font-size: x-large;
+        background: #eaeaea;
+        border: solid transparent 0px;
+        border-radius: 5rem;
+    }
+
+    .navIcons h4 {
+        height: auto;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        font-size: var(--texto-general);
+    }
+
+    .navIcons p {
+        color: var(--azul-talavera);
+    }
+
+    .vacio {
+        width: 4.6rem;
+        height: 100%;
+    }
+
+    .navbarContainer.navLogo {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .navbarContainer.navMenu ul {
+        width: 100%;
+        height: 20rem;
+        flex-direction: column;
+    }
+
+    .navbarContainer.navIcons ul {
+        height: auto;
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+
+    .navbarContainer li {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: 4rem;
+    }
+
+    .navMenu i {
+        font-size: 2.2rem;
+        color: var(--rosa-mexicano);
+    }
+
+    .navbarContainer a {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: 2rem;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .navbarContainer.navIcons {
+        height: auto;
+    }
+
+    .navIcons i {
+        font-size: 2.2rem;
+        color: var(--rosa-mexicano);
+    }
+
+    .navIconsItems {
+        height: 2.7rem;
+        width: auto;
+    }
+
+    .navIconsItems.btnBuscar {
+        height: 2.7rem;
+        width: 2.7rem;
+    }
+
+    .loginButton {
+        width: 24rem;
+        position: absolute;
+        bottom: 2rem;
+    }
+
+    .loginLink {
+        height: auto;
+        position: absolute;
+        bottom: 2rem;
+    }
+
+    .bi-person-fill-x {
+        position: absolute;
+        bottom: 2rem;
+        color: var(--blanco);
+    }
+
+    .searchField {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-inline: auto;
+        margin-block: 1.5rem;
+        padding-inline: 1px;
+        border: solid var(--rosa-mexicano) 1px;
+        border-radius: 3rem;
+        height: 3.5rem;
+        width: 80%;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+    }
+
+    .searchInput {
+        line-height: 3.2rem;
+        padding-inline: 1rem;
+    }
+
+    /* bootstrap menu */
+
+    .offcanvas-header img {
+        width: 18rem;
+    }
+    .offcanvas-body {
+        flex-grow: 0;
+        overflow-y: visible;
+    }
+
+    .offcanvas-header .btn-close {
+        margin-right: calc(2 * var(--bs-offcanvas-padding-x));
+    }
+
+    .offcanvas.offcanvas-end {
+        width: 30rem;
+    }
+}
+
+/*Header banner*/
+#Banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 293px;
+    width: 100%;
+    padding: 0 100px;
+    margin: 100px 0 0 0;
+    background-image: url("https://res.cloudinary.com/dayprjvbg/image/upload/v1712172637/YolliCalli/YolliCalli-webp/bannerfondo-660dabd044717_ndmdnw.webp");
+    background-size: 100% 100%;
+}
+
+#Banner h1 {
+    font-size: var(--titulo-banner);
+    font-weight: var(--bold);
+    color: var(--blanco);
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-shadow: 3px 3px 2px var(--bordes);
+}
+
+#Banner .breadcrumb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#Banner .breadcrumb nav {
+    --bs-breadcrumb-divider: ">";
+    --breadcrumb-divider-color: var(--blanco);
+    --bs-breadcrumb-divider-color: var(--blanco);
+    color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-shadow: 1px 1px 2px var(--bordes);
+    --bs-breadcrumb-divider-color: var(--blanco);
+}
+
+#Banner .breadcrumb .breadcrumb-item a {
+    color: var(--blanco);
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--bold);
+    text-decoration: none;
+    text-shadow: 2px 1px 2px var(--bordes);
+}
+
+#Banner .breadcrumb .breadcrumb-item:hover {
+    pointer-events: auto;
+}
+/*Header banner*/
+
+/*Footer*/
+footer {
+    justify-content: space-between;
+    width: 100%;
+    height: 505px;
+    background-color: var(--blanco);
+    padding: 0 100px;
+    margin: 0;
+    margin-top: 3rem;
+    border-top: 2px solid var(--gris);
+}
+
+footer .footerContent {
+    height: 90%;
+    padding: 0;
+    margin: 0;
+}
+footer .footerDerechos {
+    padding: 0;
+    margin: 0;
+    height: 10%;
+}
+
+footer .footerContent .footerLogo,
+footer .footerContent .footerVinculos,
+footer .footerContent .footerAyuda {
+    height: 100%;
+}
+
+footer .footerContent .footerVinculos,
+footer .footerContent .footerAyuda {
+    padding-top: 48px;
+}
+
+footer .footerContent .footerVinculos h4,
+footer .footerContent .footerAyuda h4 {
+    font-family: var(--barlow);
+    font-size: 20px;
+    color: var(--rosa-mexicano);
+}
+
+footer .footerContent .footerVinculos ul,
+footer .footerContent .footerAyuda ul {
+    width: 100%;
+    padding: 0;
+}
+
+footer .footerContent .footerVinculos ul li,
+footer .footerContent .footerAyuda ul li {
+    font-family: var(--barlow);
+    font-size: 16px;
+    color: var(--azul-talavera);
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+footer .footerContent .footerVinculos ul li a,
+footer .footerContent .footerAyuda ul li a {
+    font-family: var(--barlow);
+    font-size: 16px;
+    color: var(--azul-talavera);
+    text-decoration: none;
+}
+
+footer .footerContent .footerLogo .logoRosa {
+    height: 117px;
+    width: 267px;
+}
+
+footer .footerContent .footerLogo span {
+    font-family: var(--barlow);
+    font-size: 20px;
+    font-weight: var(--regular);
+    text-align: center;
+    color: var(--azul-talavera);
+}
+
+footer hr {
+    color: var(--bordes);
+    height: 6px;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+}
+
+footer .footerDerechos span {
+    font-family: var(--barlow);
+    font-size: 20px;
+    font-weight: var(--regular);
+}
+/*Footer*/
+
+@media (max-width: 575.98px) {
+    /*Banner*/
+    #Banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        margin-top: 194px;
+        padding: 0 50px;
+    }
+
+    #Banner h1 {
+        font-size: var(--titulos-h3-rutas);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-shadow: 3px 3px 2px var(--bordes);
+        line-height: 40px;
+    }
+
+    #Banner .breadcrumb {
+        line-height: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    /* #Banner .breadcrumb nav ol li { */
+    #Banner .breadcrumb .breadcrumb-item {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    /* #Banner .breadcrumb nav ol li a { */
+    #Banner .breadcrumb .breadcrumb-item a {
+        font-size: 12px;
+        font-weight: var(--bold);
+        text-decoration: none;
+        text-shadow: 2px 1px 2px var(--bordes);
+    }
+    /*Banner*/
+}
+
+@media (max-width: 767.98px) {
+    /*footer*/
+    footer {
+        justify-content: space-between;
+        width: 100%;
+        height: 513px;
+        padding: 0 50px;
+        margin: 0;
+        border-top: 2px solid var(--gris);
+    }
+
+    footer .footerContent {
+        display: flex;
+        flex-direction: row;
+        height: 90%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    footer .footerContent .footerLogo {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer .footerContent .footerVinculos,
+    footer .footerContent .footerAyuda {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    /*footer*/
+}
+/*Parte de los Media Querys*/

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./src/img/yc.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"/>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <!-- <link rel="stylesheet" href="./css/normalize.css" /> -->
+        <link rel="stylesheet" href="./css/estilosGlobales.css" />
+        <link rel="stylesheet" href="./css/nosotros.css" />
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <title>Políticas de privacidad</title>
+    </head>
+<body>
+    <header>
+        <!--Navegación-->
+            <nav class="navbar" id="navbar">
+                <div class="navbarContainer navLogo" id="navLogo">
+                    <div class="vacio"></div>
+                    <a href="./index.html"><img src="https://res.cloudinary.com/dayprjvbg/image/upload/v1712172641/YolliCalli/YolliCalli-webp/logorosa-660dabd1a6d5e_zxccma.webp" alt="Logo"/></a>
+                    <button class="nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
+                        <span class="btnIconCollapse"><i class="bi bi-list"></i></span>
+                </div>
+                <div class="navbarContainer navMenu" id="navMenu">
+                    <ul>
+                        <li><a href="./index.html" class="menuLink"><i class="bi bi-house"></i>Inicio</a></li>
+                        <li><a href="./tienda.html" class="menuLink"><i class="bi bi-shop"></i>Tienda</a></li>
+                        <li><a href="./nosotros.html" class="menuLink"><i class="bi bi-people-fill"></i>Nosotros</a></li>
+                        <li>
+                            <a href="./perfil.html" class="menuLink"><i class="bi bi-person-circle"></i><button class="profileButton" id="profileButton">Perfil</button></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbarContainer navIcons" id="navIcons">
+                    <div class="searchField" role="search" id="searchField">
+                        <input
+                            class="searchBox searchInput"
+                            type="search"
+                            placeholder="Buscar"
+                            aria-label="Search"
+                            id="txtBusqueda"
+                        />
+                        <a class="navIconsItems btnBuscar" id="btnBuscar"><i class="bi bi-search"></i></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="./carrito.html" class="navIconsItems"><i class="bi bi-cart3"></i><p>Carrito</p></a>
+                        </li>
+                        <li>
+                            <a href="./iniciosesion.html" class="loginLink" id="loginLink"
+                                ><button class="loginButton" id="loginButton"><i class="bi bi-person-fill-x"></i></button
+                            ></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
+    <!--Menu hamburguesa-->
+        <aside>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <div class="vacio"></div>
+                <img src="https://res.cloudinary.com/dayprjvbg/image/upload/v1712172641/YolliCalli/YolliCalli-webp/logorosa-660dabd1a6d5e_zxccma.webp" alt="Logo" />
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body" id="offcanvas-body">
+            </div>
+            </div>
+        </aside>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+    <h1>Políticas de privacidad</h1>
+    <img src="https://images.ecestaticos.com/9ZBvrDTk4FVT9qPOehRYF439-2c=/1x88:1697x1041/1600x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F91e%2F555%2F6ac%2F91e5556ace366c7619af99ddf1fc956a.jpg" alt="changuito chambeador" style="width: 100%;">
+    </div>
+    <footer class="col-12 flex-column d-flex">
+        <div class="footerContent row d-flex">
+            <div class="footerLogo col-sm-4 d-flex flex-column align-items-center">
+                <img class="logoRosa" src="https://res.cloudinary.com/dayprjvbg/image/upload/v1712172641/YolliCalli/YolliCalli-webp/logorosa-660dabd1a6d5e_zxccma.webp" alt="">
+                <span>By Generation México</span>
+            </div>
+            <div class="footerVinculos col-sm-4 d-flex flex-column">
+                <h4>Vinculos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footerAyuda col-sm-4 d-flex flex-column">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="https://www.paypal.com/mx/webapps/mpp/donar/institution?name=ollin" target="_blank">Donar</a></li>
+                    <li><a href="./nosotros.html#contacto">Contacto</a></li>
+                    <li><a href="./politicas.html">Politicas de privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="footerDerechos row d-flex">
+            <span>2024 YolliCalli. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+        <script src="./js/main.js"></script>
+</body>
+</html>

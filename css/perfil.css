@@ -1,0 +1,374 @@
+
+/* Datos de perfil */
+.datosPerfil{
+    /* background-color: #963; */
+    margin-top: 3rem;
+}
+.contenedorDatos{
+    display: flex;
+    justify-content: space-between;
+}
+.infoUsuario{
+    flex-basis: 50%;
+}
+.estilosContenedores{
+    padding: 4rem;
+    background-color:var(--blanco);
+    border: var(--rosa-mexicano) 2px solid;
+    border-radius: 1rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+form.infoPerfil .datosPersonales div input:disabled{
+    background-color: transparent;
+}
+.infoPerfil .imagenPerfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagenPerfil p{
+    font-weight: var(-header-footer);
+    color: var(--rosa-mexicano);
+}
+.imagenPerfil button{
+    display: inline-block;
+    background-color: var(--rosa-mexicano);
+    padding: 1rem;
+    font-size: var(--texto-general);
+    font-weight: bold;
+    margin: 1rem 0;
+}
+.titulosRosas{
+    text-align: center;
+    color: var(--rosa-mexicano);
+    font-weight: bold;
+    font-size: var(--titulo-rosa-h2);
+}
+.infoPerfil img{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+.imagenPerfil .form-control{
+    width: 45%;
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+}
+
+.datosPersonales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--texto-general);
+}
+.datosPersonales > div{
+    width: 80%;
+    margin: .5rem 0;
+}
+.datosPersonales input{
+    padding-top: .5rem;
+    border: none;
+    border-bottom: solid var(--rosa-mexicano) 2px;
+    border-radius: 0.5rem;
+    display: flex;
+    font-size: 16px;
+}
+.datosPersonales input#nombrePerfil, .datosPersonales input#telPerfil{
+    border-bottom: none;
+    color: var(--rosa-mexicano);
+    font-weight: bold;
+    font-size: var(--titulos-h3-rutas);
+} 
+.ciudadCodPostal{
+    display: flex;
+    justify-content: space-between;
+}
+.ciudad{
+    flex-basis: 45%;
+}
+.codPostal{
+    flex-basis: 45%;
+}
+.infoPerfil div.botonesPerfil{
+    display: flex;
+    justify-content: space-between;
+}
+.botonesPerfil button.boton{
+    width: 20rem;
+}
+/* Datos perfil movil */
+@media (max-width: 425px) {
+    .estilosContenedores{
+        margin-bottom: 3rem;
+    }
+    .datosPerfil{
+        /* background-color: #963; */
+        margin-top: 3rem;
+    }
+    .contenedorDatos{
+        display: flex;
+        flex-direction: column;
+    }
+    .estilosContenedores{
+        padding: 1rem;
+    }
+    .imagenPerfil .form-control{
+        width: 80%;
+    }   
+    .datosPersonales > div{
+        width: 95%;
+    }
+    .ciudadCodPostal{
+        display: flex;
+    }
+    .ciudad{
+        flex-basis: 45%;
+    }
+    .codPostal{
+        flex-basis: 45%;
+    }
+}
+.botonDonar{
+    display: flex;
+    justify-content: center;
+}
+.botonDonar button{
+    margin-top: 3rem;
+}
+.contenedorDatosPago{
+    flex-basis: 45%;
+}
+.datosPago .opcionesPago h2{
+    text-align: left;
+    margin-top: 0;
+}
+.opcionPago{
+    display: flex;
+    align-items: center;
+    border: solid 2px var(--rosa-mexicano);
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 80%;
+    margin-bottom: 2.5rem;
+    background-color: var(--blanco);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.opcionPago .form-label{
+    margin: 0;
+}
+.opcionPago > input, label, p{
+    margin: 0 0.7rem;
+}
+.agregarMetodoPago{
+    justify-content: start;
+}
+.agregarMetodoPago button{
+    margin: 0;
+}
+/* Opciones pago movil */
+@media (max-width: 425px) {
+    .datosPago .opcionesPago h2{
+        text-align: center;
+        margin-top: 0;
+    }
+    .opcionPago{
+        width: 100%;
+    }
+    .agregarMetodoPago{
+        display: flex;
+        justify-content: center;
+    }
+}
+/* Creacion de producto */
+.crearProducto{
+    margin-top: 3rem;
+}
+.crearProducto h2{
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: var(--titulo-rosa-h2);
+    color: var(--rosa-mexicano);
+    font-weight: var(--medium);
+}
+.crearProducto p{
+    margin: 0;
+    margin-bottom: 3rem;
+}
+button a{
+    color: var(--blanco);
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+button:hover a{
+    color: var(--rosa-mexicano);
+}
+/* Creacion de producto movil */
+@media (max-width: 425px) {
+    .crearProducto{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* Información de ventas */
+.informacionVentas{
+    text-align: center;
+}
+section.informacionVentas h3, section.historialCompas h3{ 
+    font-weight: bold;
+    color: var(--azul-talavera);
+}
+.historialCompas h3 a{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.ultimasVentas ul{
+    list-style: none;
+    padding: 0;
+}
+.titulosAzul{
+    font-weight: bold;
+    color: var(--azul-talavera);
+}
+/* Favoritos */
+.contenedorCards{
+    display: flex;
+    justify-content: space-around;
+}
+.articulosFavoritos div .card{
+    width: 25rem;
+    border: none;
+}
+.card img{
+    aspect-ratio: 1/1;
+}
+.card-body{
+    background-color: var(--color-base);
+}
+.precioIconos{
+    display: flex;
+    height: 7rem;
+}
+.precio{
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    color: var(--azul-talavera);
+    font-weight: var(--medium);
+    font-size: var(--titulos-h3-rutas);
+}
+.iconos{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.iconos svg{
+    margin: 0 .5rem;
+    transition: transform .3s linear;
+}
+.iconos svg:hover{
+    transform: scale(1.3);
+}
+.card-text{
+    font-size: var(--titulos-h3-rutas);
+    font-weight: var(--medium);
+    color: var(--azul-talavera);
+}
+/* Favoritos movil */
+@media (max-width: 425px) {
+    .contenedorCards{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .contenedorCards .card-body{
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    .articulosFavoritos div .card{
+        width: 48%;
+    }
+    .precioIconos{
+        height: 11rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .precio{
+        flex-basis: 45%;
+    }
+    .iconos{
+        flex-basis: 45%;
+    }
+    .iconos svg{
+        margin: 0 .7rem;
+    }
+    .iconos svg:hover{
+        transform: scale(1.3);
+    }
+    .card-text{
+        font-size: var(--titulos-h3-rutas);
+        font-weight: var(--medium);
+        color: var(--azul-talavera);
+    }
+}
+div.ventas h3 a{
+    text-decoration: none;
+}
+.mensajeError{
+    font-size: 1.4rem;
+    color: red;
+}
+input .inputActivo{
+    -webkit-box-shadow: 2px 4px 9px 3px rgba(51, 255, 92, 0.65);-moz-box-shadow: 2px 4px 9px 3px rgba(51, 255, 92, 0.65);box-shadow: 2px 4px 9px 3px rgba(51, 255, 92, 0.65);
+}
+
+/* Modal para BotonPago */
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.modal-content {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto 0;
+    transform: translate(0, -50px);
+    position: relative;
+}
+
+.modal-title {
+    letter-spacing: 2px;
+}
+
+.modal-body p {
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+.contenedorNoProducto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.spinner-border {
+    --bs-spinner-width: 2rem;
+    --bs-spinner-height: 2rem;
+    --bs-spinner-vertical-align: -0.125em;
+    --bs-spinner-border-width: 0.25em;
+    --bs-spinner-animation-speed: 0.75s;
+    --bs-spinner-animation-name: spinner-border;
+    border: var(--bs-spinner-border-width) solid var(--rosa-mexicano);
+    border-right-color: transparent;
+}
